@@ -1,4 +1,28 @@
-// import React from 'react';
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router";
+import {
+    Grid,
+} from "@material-ui/core";
+
+export default function Main(props) {
+
+    useEffect(() => {
+
+    }, []);
+
+    const history = useHistory();
+
+    const nextPath = (path) => {
+        history.push(path);
+    };
+
+    return (
+        <React.Fragment>
+            <>
+
+                {/* 
+            
+            // import React from 'react';
 // import { withRouter } from 'react-router-dom';
 // import clsx from 'clsx';
 // import { createMuiTheme, withStyles, makeStyles, ThemeProvider, useTheme } from '@material-ui/core/styles';
@@ -153,48 +177,15 @@
 
 
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import PropTypes from 'prop-types';
-import { useMediaQuery, Typography } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
-import Slide from '@material-ui/core/Slide';
-
 import Sidebar from './Sidebar';
 const drawerWidth = 240;
-
-
-
-
-function HideOnScroll(props) {
-    const { children, window } = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
-    const trigger = useScrollTrigger({ target: window ? window() : undefined });
-
-    return (
-        <Slide appear={false} direction="down" in={!trigger}>
-            {children}
-        </Slide>
-    );
-}
-
-HideOnScroll.propTypes = {
-    children: PropTypes.element.isRequired,
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window: PropTypes.func,
-};
-
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -208,25 +199,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function ButtonAppBar(props) {
-
+export default function ButtonAppBar() {
     const classes = useStyles();
-    const { history } = props;
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [Open, setOpen] = React.useState(Boolean(anchorEl));
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
-    const isTablet = useMediaQuery(theme.breakpoints.down('sm'));
-
-    const handleMenu = (event) => {
-        setOpen(true);
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleMenuClick = (PageURL) => {
-        history.push(PageURL);
-        setAnchorEl(null);
-    };
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -238,17 +212,26 @@ export default function ButtonAppBar(props) {
 
     return (
         <div className={classes.root}>
-            <HideOnScroll {...props}>
-                <AppBar>
-                    <Toolbar>
-                        <Sidebar />
-                        <Typography variant="h6" className={classes.title}>
-                            Math calc
-                    </Typography>
-                    </Toolbar>
-                </AppBar>
-            </HideOnScroll>
-            <Toolbar />
+            <AppBar position="static">
+                <Toolbar>
+                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                        <MenuIcon />
+                    </IconButton>
+                    <Typography variant="h6" className={classes.title}>
+                        Math calc
+          </Typography>
+
+                </Toolbar>
+            </AppBar>
         </div>
+    );
+}
+
+            
+            
+            */}
+
+            </>
+        </React.Fragment >
     );
 }
