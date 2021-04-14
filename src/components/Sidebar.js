@@ -12,6 +12,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
+
 const useStyles = makeStyles({
     list: {
         width: 250,
@@ -54,107 +55,64 @@ const Sidebar = (props) => {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List>
-                <Link to='/general' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'general'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'general'} />
+            <Link to='/mathcalc/' style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <ListItem button key={'Home'}>
+                        <ListItemText primary={'Home'} />
                     </ListItem>
                 </Link>
-                <Link to='/scientific' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'scientific'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'scientific'} />
+                <Link to='/mathcalc/general' style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <ListItem button key={'General'}>
+                        <ListItemText primary={'General'} />
                     </ListItem>
                 </Link>
-                <Link to='/finance' style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to='/mathcalc/finance' style={{ textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button key={'finance'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'finance'} />
-                    </ListItem>
-                </Link>
-                <Link to='/life' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'life'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'Life'} />
+                        <ListItemText primary={'Finance'} />
                     </ListItem>
                 </Link>
             </List>
             <Divider />
             <List>
                 {/* // ['Algebric', 'Equations', 'Conceptual', 'Grafs'] */}
-                <Link to='/algebric' style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to='/mathcalc/algebric' style={{ textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button key={'Algebric'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
                         <ListItemText primary={'Algebric'} />
                     </ListItem>
                 </Link>
-                <Link to='/equations' style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to='/mathcalc/equations' style={{ textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button key={'equations'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'equations'} />
+
+                        <ListItemText primary={'Equations'} />
                     </ListItem>
                 </Link>
-                <Link to='/concepts' style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to='/mathcalc/concepts' style={{ textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button key={'concepts'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'concepts'} />
+                        <ListItemText primary={'Concepts'} />
                     </ListItem>
                 </Link>
-                <Link to='/grafs' style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to='/mathcalc/grafs' style={{ textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button key={'grafs'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'grafs'} />
+
+                        <ListItemText primary={'Grafs'} />
                     </ListItem>
                 </Link>
             </List>
             <Divider />
             <List>
-                <Link to='/about' style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to='/mathcalc/about' style={{ textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button key={'about'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'about'} />
+
+                        <ListItemText primary={'About'} />
                     </ListItem>
                 </Link>
-                <Link to='/feedbacks' style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to='/mathcalc/feedbacks' style={{ textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button key={'feedbacks'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'feedbacks'} />
+                        <ListItemText primary={'Feedbacks'} />
                     </ListItem>
                 </Link>
-                <Link to='/donate' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'donate'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'donate'} />
-                    </ListItem>
-                </Link>
-                <Link to='/share' style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to='/mathcalc/share' style={{ textDecoration: 'none', color: 'inherit' }}>
                     <ListItem button key={'share'}>
-                        <ListItemIcon>
-                            <MailIcon />
-                        </ListItemIcon>
-                        <ListItemText primary={'share'} />
+                        <ListItemText primary={'Share'} />
                     </ListItem>
                 </Link>
             </List>

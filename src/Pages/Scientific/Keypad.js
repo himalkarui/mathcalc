@@ -41,13 +41,14 @@ const Keypad = (props) => {
     const classes = useStyles();
 
     const handleOnDigit = (e) => {
-        
+        debugger;
         props.onDigit(e.currentTarget.value);
     };
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
     const isTablet = useMediaQuery(theme.breakpoints.down('sm'));
     const isLaptop = useMediaQuery(theme.breakpoints.down('md'));
+
 
     return (
 

@@ -157,13 +157,13 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import PropTypes from 'prop-types';
-import { useMediaQuery, Typography } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import { Typography } from '@material-ui/core';
+// import Button from '@material-ui/core/Button';
+// import IconButton from '@material-ui/core/IconButton';
+// import MenuIcon from '@material-ui/icons/Menu';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
+// import Box from '@material-ui/core/Box';
+// import Container from '@material-ui/core/Container';
 import Slide from '@material-ui/core/Slide';
 
 import Sidebar from './Sidebar';
@@ -199,6 +199,7 @@ HideOnScroll.propTypes = {
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+        backgroundColor: 'white'
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -208,25 +209,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function ButtonAppBar(props) {
+export default function Header(props) {
 
     const classes = useStyles();
-    const { history } = props;
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [Open, setOpen] = React.useState(Boolean(anchorEl));
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
-    const isTablet = useMediaQuery(theme.breakpoints.down('sm'));
 
-    const handleMenu = (event) => {
-        setOpen(true);
-        setAnchorEl(event.currentTarget);
-    };
 
-    const handleMenuClick = (PageURL) => {
-        history.push(PageURL);
-        setAnchorEl(null);
-    };
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -239,7 +230,7 @@ export default function ButtonAppBar(props) {
     return (
         <div className={classes.root}>
             <HideOnScroll {...props}>
-                <AppBar>
+                <AppBar color={'inherit'}>
                     <Toolbar>
                         <Sidebar />
                         <Typography variant="h6" className={classes.title}>

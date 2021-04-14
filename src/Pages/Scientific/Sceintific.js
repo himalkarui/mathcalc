@@ -8,14 +8,14 @@ import Display from './Display';
 import Keypad from './Keypad';
 import History from './History';
 import CalculatorEngine from './CalculatorEngine';
-import ControlPanel from './ControlPanel';
+// import ControlPanel from './ControlPanel';
 
 
 // INITIALIZATION
 const calculator = new CalculatorEngine();
 
 
-export default class Calculator extends Component {
+export default class Scientific extends Component {
 
     constructor(props) {
         super(props);
@@ -133,7 +133,7 @@ export default class Calculator extends Component {
             }));
         } catch (e) { console.log(e) }
         finally {
-           // Calculator.prototype.handleOnEquals();
+            // Calculator.prototype.handleOnEquals();
         }
     }
 

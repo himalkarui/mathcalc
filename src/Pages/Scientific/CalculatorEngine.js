@@ -1,9 +1,9 @@
 const math = require('mathjs');
 
-let currentValue = '0';
+let currentValue = '';
 let register = [];
 let history = [];
-let result = '0';
+let result = '';
 
 class CalculatorEngine {
 
@@ -22,24 +22,9 @@ class CalculatorEngine {
         if (result !== '') {
             result = '';
             currentValue = '';
-        } else {
-            // register = [];
         }
 
-        console.log(
-            'curval', currentValue,
-            'register', register,
-            'result', result
-        )
-
         currentValue += digit;
-        register.push(digit);
-
-        console.log(
-            'curval', currentValue,
-            'register', register,
-            'result', result
-        )
     }
 
     inputDecimal() {
@@ -60,15 +45,15 @@ class CalculatorEngine {
     }
 
     clear() {
-        currentValue = '0';
+        currentValue = '';
         register = [];
-        result = '0';
+        result = '';
     }
 
     clearAll() {
-        currentValue = '0';
+        currentValue = '';
         register = [];
-        result = '0';
+        result = '';
         history = [];
     }
 
@@ -89,17 +74,10 @@ class CalculatorEngine {
             return;
         }
 
-        // register.push(currentValue);
+        register.push(currentValue);
         register.push('+');
 
         currentValue = '';
-
-        console.log(
-            'curval', currentValue,
-            'register', register,
-            'result', result
-        )
-
     }
 
     subtract() {
@@ -140,6 +118,7 @@ class CalculatorEngine {
             if (currentValue === '') {
                 return;
             }
+            debugger
             register.push(currentValue);
 
             const expression = register.join(' ');
@@ -158,8 +137,8 @@ class CalculatorEngine {
             if (currentValue === '') {
                 return;
             }
-
-            let expression = result.concat(" / ", "100");
+            debugger
+            let expression = result + ' / ' + '100';
 
             currentValue = (parseFloat(currentValue) / 100).toString();
             history.splice(0, 0, { expression, result });
@@ -176,13 +155,7 @@ class CalculatorEngine {
     }
 
     getValue() {
-        try {
-            const expression = register.join(' ');
-            return math.evaluate(expression).toString();
-        }
-        catch (e) {
-            return currentValue;
-        }
+        return currentValue;
     }
 
     getExpression() {

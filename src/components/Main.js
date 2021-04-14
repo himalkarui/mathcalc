@@ -1,17 +1,51 @@
 import React, { useState, useEffect } from "react";
+
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import { useHistory } from "react-router";
 import {
-    Grid,
-} from "@material-ui/core";
+    Card, CssBaseline, CardHeader, CardMedia, Grid, CardContent, CardActions, Collapse
+    , Avatar, Button, Typography, Container, IconButton, List, ListSubheader, ListItemIcon, ListItem, ListItemText
+} from '@material-ui/core';
+import Forward from '../Assets/icons/Forward';
+import Compress from '../Assets/icons/Compress';
+import flower from '../Assets/images/flower.jpg';
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+        textAlign: 'center',
+        justifyContent: 'center',
+        paddingTop: '1.85rem',
+        overflow: 'hidden',
+        height: '47vh',
+        width: '100% !important'
+    },
+    mainHeader: {
+        fontSize: '3rem',
+    },
+    button: {
+        background: " linear-gradient(180deg, #212121 0%, #010101 100%) 0% 0% ",
+        height: 50,
+        width: 202,
+        borderRadius: 60,
+        "&:hover": {
+            background: " linear-gradient(180deg, #010101 0%, #212121 100%) 0% 0% ",
+        },
+        backgroundColor: '#212121 !important'
+    },
+    gridItem: {
+        margin: '10px 10px 20px 15px',
+        minWidth: '252px'
+    }
+}));
 
 export default function Main(props) {
 
     useEffect(() => {
 
     }, []);
-
+    const classes = useStyles();
     const history = useHistory();
-
+    let arrUrls = ['General Calculator', 'Finance Calculator', 'Algebric Calculator', 'Equations', 'Graphs', 'Physics', 'age calculator', 'bmi calculator'];
     const nextPath = (path) => {
         history.push(path);
     };
@@ -19,217 +53,60 @@ export default function Main(props) {
     return (
         <React.Fragment>
             <>
+                <Container className={classes.root} maxWidth={'lg'} style={{ paddingLeft: '0px', paddingRight: '0px', left: 0, right: 0 }}>
+                    <Card raised elevation={0} style={{ backgroundColor: 'transparent', marginTop: '8%' }} >
+                        <Typography className={classes.mainHeader} variant='h1'>
+                            <strong>
+                                Mathamatical Calculations
+                </strong></Typography>
+                        <CardContent class='appContainer'>
+                            <Grid container justify="space-around">
+                                <Button
+                                    variant="contained"
+                                    color="secondary"
+                                    className={classes.button + ' ' + classes.gridItem}
+                                >Get Start</Button>
+                            </Grid>
+                        </CardContent>
+                    </Card>
+                </Container>
+                <div>
+                    <CssBaseline />
+                    <section style={{
+                        width: '100%', paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '2rem', paddingBottom: '0.5rem',
+                        margin: 'auto',
+                    }}>
+                        <h1 style={{
+                            display: 'block', fontSize: '26px', lineHeight: '1.2', fontWeight: '800', marginTop: '0px',
+                            textTransform: 'capitalize', textAlign: 'center', marginBottom: '1rem',
+                        }}>General calculator</h1>
+                    </section>
+                    <Container maxWidth={'md'} style={{ paddingLeft: '0px', paddingRight: '0px' }}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', padding: '0px', justifyContent: 'center' }}>
 
-                {/* 
-            
-            // import React from 'react';
-// import { withRouter } from 'react-router-dom';
-// import clsx from 'clsx';
-// import { createMuiTheme, withStyles, makeStyles, ThemeProvider, useTheme } from '@material-ui/core/styles';
-// import Drawer from '@material-ui/core/Drawer';
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import CssBaseline from '@material-ui/core/CssBaseline';
-// import List from '@material-ui/core/List';
-// import Typography from '@material-ui/core/Typography';
-// import Divider from '@material-ui/core/Divider';
-// import { Button, useMediaQuery } from '@material-ui/core';
+                            {
+                                arrUrls.map(value => {
+                                    return (<li class="ak39fa-0 bhAFtM">
+                                        <div class="ojwc4z-0 jkSeLq">
+                                            <a class="sc-1bu7qfl-0 lfMGmO ojwc4z-2 kVIQfP" href={"/mathcalc/general/" + value.replace(' ', '-').replace(' s', '')}>
+                                                {value.replace('Formula', '')}</a>
+                                            <div class="sc-1gyxcpm-0 csDfHB ojwc4z-4 dOHSmX" style={{ width: '32px', height: '32px' }}>
+                                                <Compress />
+                                            </div>
+                                            <div class="ojwc4z-1 jgylRt">
+                                                <div class="sc-1gyxcpm-0 csDfHB" style={{ width: '24px', height: '24px' }}>
+                                                    <Forward />
+                                                </div></div><p class="ojwc4z-5 jZEeUz">
+                                                {value}
+                                            </p>
+                                        </div>
+                                    </li>)
+                                })
+                            }
 
-// import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-// import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-// import ListItem from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
-// import { green, purple } from '@material-ui/core/colors';
-// import Sidebar from './Sidebar';
-// const drawerWidth = 240;
-
-// const ColorButton = withStyles((theme) => ({
-//     root: {
-//         color: theme.palette.getContrastText(purple[500]),
-//         backgroundColor: 'black',
-//         '&:hover': {
-//             color: 'black !important',
-//             backgroundColor: 'white',
-//             boxShadow: '0px 0px 10px white',
-//             border: 'none'
-//         },
-//     },
-// }))(Button);
-
-
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//         display: 'flex',
-//     },
-//     appBar: {
-//         transition: theme.transitions.create(['margin', 'width'], {
-//             easing: theme.transitions.easing.sharp,
-//             duration: theme.transitions.duration.leavingScreen,
-//         }),
-//     },
-//     title: {
-//         flexGrow: 1,
-//     },
-//     hide: {
-//         display: 'none',
-//     },
-//     drawer: {
-//         width: drawerWidth,
-//         flexShrink: 0,
-//     },
-//     drawerPaper: {
-//         width: drawerWidth,
-//     },
-//     drawerHeader: {
-//         display: 'flex',
-//         alignItems: 'center',
-//         padding: theme.spacing(0, 1),
-//         // necessary for content to be below app bar
-//         ...theme.mixins.toolbar,
-//         justifyContent: 'flex-start',
-//     },
-//     content: {
-//         flexGrow: 1,
-//         padding: theme.spacing(3),
-//         transition: theme.transitions.create('margin', {
-//             easing: theme.transitions.easing.sharp,
-//             duration: theme.transitions.duration.leavingScreen,
-//         }),
-//         marginRight: -drawerWidth,
-//     },
-//     contentShift: {
-//         transition: theme.transitions.create('margin', {
-//             easing: theme.transitions.easing.easeOut,
-//             duration: theme.transitions.duration.enteringScreen,
-//         }),
-//         marginRight: 0,
-//     },
-// }));
-
-// const Header = (props) => {
-
-
-//     const classes = useStyles();
-//     const { history } = props;
-//     const [anchorEl, setAnchorEl] = React.useState(null);
-//     const [Open, setOpen] = React.useState(Boolean(anchorEl));
-//     const theme = useTheme();
-//     const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
-//     const isTablet = useMediaQuery(theme.breakpoints.down('sm'));
-
-//     const handleMenu = (event) => {
-//         setOpen(true);
-//         setAnchorEl(event.currentTarget);
-//     };
-
-//     const handleMenuClick = (PageURL) => {
-//         history.push(PageURL);
-//         setAnchorEl(null);
-//     };
-
-//     const handleDrawerOpen = () => {
-//         setOpen(true);
-//     };
-
-//     const handleDrawerClose = () => {
-//         setOpen(false);
-//     };
-
-//     return (
-//         <div className={classes.root}>
-//             <CssBaseline />
-//             <AppBar
-//                 position="sticky"
-//                 className={clsx(classes.appBar, {
-//                     [classes.appBarShift]: Open,
-//                 })}
-//                 style={{ backgroundColor: '#db4437' }}
-//             >
-//                 <Toolbar>
-//                     <Button disableRipple disableFocusRipple style={{
-//                         color: 'white',
-//                         marginLeft: -24,
-//                         borderRadius: 0,
-//                     }}
-//                         onClick={e => { history.push('/'); }}>
-//                     </Button>
-//                     <Typography variant="h6" className={classes.title}
-//                         style={{ fontFamily: 'raleway', fontWeight: 400, fontStyle: 'normal' }}
-//                     >
-//                     </Typography>
-
-//                     <div>
-//                         <Sidebar />
-//                     </div>
-//                 </Toolbar>
-//             </AppBar>
-//         </div>
-//     );
-// }
-
-// export default withRouter(Header);
-
-
-
-
-
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Sidebar from './Sidebar';
-const drawerWidth = 240;
-
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-    title: {
-        flexGrow: 1,
-    },
-}));
-
-export default function ButtonAppBar() {
-    const classes = useStyles();
-
-    const handleDrawerOpen = () => {
-        setOpen(true);
-    };
-
-    const handleDrawerClose = () => {
-        setOpen(false);
-    };
-
-    return (
-        <div className={classes.root}>
-            <AppBar position="static">
-                <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                        Math calc
-          </Typography>
-
-                </Toolbar>
-            </AppBar>
-        </div>
-    );
-}
-
-            
-            
-            */}
+                        </div>
+                    </Container>
+                </div >
 
             </>
         </React.Fragment >

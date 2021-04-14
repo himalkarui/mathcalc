@@ -1,6 +1,6 @@
 import React from "react";
 import useEffect from "react";
-
+import { Helmet } from "react-helmet";
 import {
   AppBar,
   makeStyles,
@@ -15,7 +15,7 @@ import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Fab from "@material-ui/core/Fab";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import { Zoom } from "@material-ui/core/Zoom";
-import Calculator from '../Calculator/Calculator';
+import Main from "../../Components/Main";
 
 function ScrollTop(props) {
   const { children, window } = props;
@@ -23,7 +23,7 @@ function ScrollTop(props) {
   return (
     <React.Fragment>
       <>
-        <Calculator />
+        <Main />
       </>
     </React.Fragment>
   );
@@ -34,23 +34,20 @@ export default function Home(props) {
 
   return (
     <div className={classes.root}>
-      <div>
+      <Helmet>
         <title>
-          Contact Tracing Tool | Real-Time Wellness Monitoring | Daily Assesment
-          and Hygine score | CODE-9 Technologies
+          Mathamatical Calculations || All in one app for all Mathamatical Calculations || MathCalc
         </title>
         <meta
           name="keywords"
-          content="Contact tracing tool,
-          wellness assesment tool, daily wellness assesment,
-          employee wellness assesment and monitoring tool, Real-time wellness monitoring "
+          content="Single online tool for doing all kind of mathamatical calculations"
         />
         <meta
           name="description"
-          content="CODE-9 is a contact tracing and daily wellness assessment monitoring tool that helps your organization to track the health and wellness of your employee and customers when you when you resume work and ensure a safe working environment. Real-time dashboard reporting, daily wellness assessment, safety audit and hand hygiene verification are some of the prominent features of our tool."
+          content="mathcalc is the all in one web app for all kind of mathamatical calculations like physics ,chemistry ,mathamatics, quantum physics and a lot "
         />
-      </div>
-      <Calculator />
+      </Helmet>
+      <Main />
     </div>
   );
 }
