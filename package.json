@@ -1,5 +1,5 @@
 {
-  "homepage": "https://blackLilly.github.io/mathcalc",
+  "homepage": "https://mathcalc.xyz",
   "name": "mathcalc",
   "version": "0.1.0",
   "private": true,
@@ -13,6 +13,8 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
+    "browserslist": "^4.16.4",
+    "caniuse-lite": "^1.0.30001210",
     "date-fns": "^2.20.1",
     "mathjs": "^9.2.0",
     "moment": "^2.29.1",
@@ -22,6 +24,8 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "react-snap": "^1.23.0",
+    "react-vis": "^1.11.7",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

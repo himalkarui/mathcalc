@@ -5,45 +5,59 @@ import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import { IconButton } from '@material-ui/core';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+// icons
 import MenuIcon from '@material-ui/icons/Menu';
+import { Home, Apps, AttachMoney, Functions, ScatterPlot, Accessibility } from '@material-ui/icons';
 
 const useStyles = makeStyles({
     list: {
         width: 250,
+        paddingRight: '10px'
     },
     fullList: {
         width: 'auto',
     },
+    divLinks: {
+        backgroundColor: '#00000059',
+    },
+    divdrawer: {
+        paddingRight: '10px'
+    },
+    listitem: {
+        backgroundColor: 'white',
+        borderRadius: '0px 60px 60px 0px',
+        margin: '10px 10px 0px 0px',
+        whiteSpace: 'nowrap'
+    }
 });
 
 
 const Sidebar = (props) => {
     const classes = useStyles();
-    const { history } = props;
     const [state, setState] = React.useState({
         left: false,
     });
-
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const [Open, setOpen] = React.useState(Boolean(anchorEl));
-
     const handleMenu = (event) => {
         setState({ left: true });
     };
-
     const toggleDrawer = (anchor, open) => (event) => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
-
         setState({ ...state, [anchor]: open });
     };
+
+    let urls = [
+        { url: '/', urlname: 'Home', icon: <Home /> },
+        { url: '/all-calculators', urlname: 'All Calcs', icon: <Apps /> },
+        { url: '/general', urlname: 'General', icon: <Accessibility /> },
+        { url: '/finance', urlname: 'Finance', icon: <AttachMoney /> },
+        { url: '/maths', urlname: 'Maths', icon: <Functions /> },
+        { url: '/physics', urlname: 'Physics', icon: <ScatterPlot /> },
+    ]
 
     const list = (anchor) => (
         <div
@@ -54,67 +68,17 @@ const Sidebar = (props) => {
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
-            <List>
-            <Link to='/mathcalc/' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'Home'}>
-                        <ListItemText primary={'Home'} />
-                    </ListItem>
-                </Link>
-                <Link to='/mathcalc/general' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'General'}>
-                        <ListItemText primary={'General'} />
-                    </ListItem>
-                </Link>
-                <Link to='/mathcalc/finance' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'finance'}>
-                        <ListItemText primary={'Finance'} />
-                    </ListItem>
-                </Link>
-            </List>
-            <Divider />
-            <List>
-                {/* // ['Algebric', 'Equations', 'Conceptual', 'Grafs'] */}
-                <Link to='/mathcalc/algebric' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'Algebric'}>
-                        <ListItemText primary={'Algebric'} />
-                    </ListItem>
-                </Link>
-                <Link to='/mathcalc/equations' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'equations'}>
-
-                        <ListItemText primary={'Equations'} />
-                    </ListItem>
-                </Link>
-                <Link to='/mathcalc/concepts' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'concepts'}>
-                        <ListItemText primary={'Concepts'} />
-                    </ListItem>
-                </Link>
-                <Link to='/mathcalc/grafs' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'grafs'}>
-
-                        <ListItemText primary={'Grafs'} />
-                    </ListItem>
-                </Link>
-            </List>
-            <Divider />
-            <List>
-                <Link to='/mathcalc/about' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'about'}>
-
-                        <ListItemText primary={'About'} />
-                    </ListItem>
-                </Link>
-                <Link to='/mathcalc/feedbacks' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'feedbacks'}>
-                        <ListItemText primary={'Feedbacks'} />
-                    </ListItem>
-                </Link>
-                <Link to='/mathcalc/share' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <ListItem button key={'share'}>
-                        <ListItemText primary={'Share'} />
-                    </ListItem>
-                </Link>
+            <List >
+                {
+                    urls.map(ur => {
+                        return (<Link to={ur.url} style={{ textDecoration: 'none', color: 'inherit' }} key={ur.urlname}>
+                            <ListItem className={classes.listitem} button key={ur.urlname}>
+                                <ListItemIcon>{ur.icon}</ListItemIcon>
+                                <ListItemText primary={ur.urlname} />
+                            </ListItem>
+                        </Link>)
+                    })
+                }
             </List>
         </div>
     );
@@ -131,7 +95,7 @@ const Sidebar = (props) => {
                 <MenuIcon />
             </IconButton>
 
-            <Drawer anchor={'left'} open={state['left']} onClose={toggleDrawer('left', false)}>
+            <Drawer className={classes.divdrawer} anchor={'left'} open={state['left']} onClose={toggleDrawer('left', false)}>
                 {list('left')}
             </Drawer>
         </div>

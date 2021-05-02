@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Math calc - The all in one app for all Mathamatical calculations</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>
+        Mathamatical Calculations || All in one app for all Mathamatical Calculations || MathCalc
+    </title>
+    <meta name="keywords" content="One stop tool for doing all kind of mathamatical calculations" />
+    <meta name="description"
+        content="mathcalc is the all in one web app for all kind of mathamatical calculations in all fields of science like physics ,chemistry ,mathamatics, quantum physics and a lot " />
+    <link rel="shortcut icon" href="https://mathcalc.xyz/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
     <div id="root"></div>
-    <script src="bundle.js"></script>
+    <script>
+        (function (l) {
+            if (l.search[1] === '/') {
+                var decoded = l.search.slice(1).split('&').map(function (s) {
+                    return s.replace(/~and~/g, '&')
+                }).join('?');
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + decoded + l.hash
+                );
+            }
+        }(window.location))
+    </script>
 </body>
 </html>

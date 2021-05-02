@@ -1,10 +1,14 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Divider, Container } from '@material-ui/core';
+import {  Container } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    width: '100%'
+    width: '100%',
+    backgroundColor: '#bfbfbf',
+    color: 'white',
+    marginTop: '2rem',
+    bottom: '0',
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -13,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   footerLink: {
+    color: 'white !important',
     textDecoration: 'none !important',
     listStyle: 'none',
     padding: '20px 20px 20px 0px',
@@ -20,38 +25,30 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
     "&hover:": {
       color: 'blue',
-    }
+    },
   },
   footer: {
-    borderTop: '1px solid #dadce0',
-    marginTop: '3rem',
     boxSizing: 'border-box',
-    flexShrink: '0',
-    bottom: '0px',
-    left: '0',
-    width: '100%',
+    color: '#fff;',
+    padding: '0',
+    textAlign: 'center'
   },
-  ul: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginLeft: '-30px'
-  }
 }));
 
-export default function Header() {
+export default function Footer() {
   const classes = useStyles();
 
   return (
     <div className={classes.root} >
-      <footer className={classes.footer}>
-        <ul className={classes.ul}>
+      <Container className={classes.footer}>
+        <ul className={'footer-ul'}>
           <li className={classes.footerLink}>
-            <a href='/mathcalc/'>
-              © 2021 MathCalc, Inc</a> </li>
-          <li className={classes.footerLink}><a href='/mathcalc/home'>About</a> </li>
-          <li className={classes.footerLink}><a href='/mathcalc/feedback' >Feedback</a> </li>
+            <a href='/'>
+              MathCalc</a> </li>
+          <li className={classes.footerLink}><a href='/home'>About</a> </li>
+          <li className={classes.footerLink}><a href='/feedback' >Feedback</a> </li>
         </ul>
-      </footer>
+      </Container>
     </div >
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, } from '@material-ui/core';
+import Helmet from 'react-helmet';
 import Compress from '../../Assets/icons/Compress';
 import SubNavBar from '../../Components/SubNavBar';
 
@@ -24,29 +25,31 @@ const useStyles = makeStyles((theme) => ({
     row: {
         margin: '2px'
     },
-
 }));
 
-export default function Finance() {
+export default function Physics() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
+            <Helmet>
+                <title>Physics Calculator - Calculate all physical stuff</title>
+                <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathamatical calculations" />
+                <meta name="description" content="Use Mathcalc interest calculator to calculate simple and compound interest. Simply, enter the details of the principal amount, interest rate, period, and compounding frequency to know the interest earned." />
+                <meta name="author" content="Mathcalc" />
+                <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+            </Helmet>
             <Container maxWidth={'xl'} >
                 <SubNavBar />
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item lg={8} md={8} sm={12}>
-                        <h1 className={classes.calcHeader} >Finance calculator</h1>
+                        <h1 className={classes.calcHeader} >Physics calculator</h1>
                         <div style={{ display: 'flex', flexWrap: 'wrap', padding: '0px', justifyContent: 'center' }}>
-                            <a href='/finance/simple-interest' className={'divLink'}>
+                            <a href='/physics/eeqlmc2' className={'div-card'}>
                                 <Compress style={{
                                     width: '30px',
                                     margin: '0px 8px 0px 16px'
-                                }} /> <span>Simple Interest</span></a>
-                            <a href='/finance/compound-interest' className={'divLink'}>
-                                <Compress style={{
-                                    width: '30px',
-                                    margin: '0px 8px 0px 16px'
-                                }} /> <span>Compound Interest</span></a>
+                                }} /> <span>E=MC <sup>2</sup> Energy Mass Calculator</span></a>
                         </div>
                     </Grid>
                     <Grid item lg={4} md={4} sm={false}></Grid>

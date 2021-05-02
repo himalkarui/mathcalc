@@ -40,7 +40,7 @@ export default function Home(props) {
         </title>
         <meta
           name="keywords"
-          content="Single online tool for doing all kind of mathamatical calculations"
+          content="One tool for doing all kind of mathamatical calculations"
         />
         <meta
           name="description"
@@ -55,7 +55,7 @@ export default function Home(props) {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    background: "#FFFFFF",
+    overflow: 'hidden'
   },
   cardRoot: {
     display: "flex",

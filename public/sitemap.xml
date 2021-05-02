@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://mathcalc.xyz/</loc>
+
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+   </url>
+   <url>
+        <loc>https://mathcalc.xyz/?/home</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://mathcalc.xyz/?/all-calculators</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://mathcalc.xyz/?/general</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://mathcalc.xyz/?/general/age-calculator</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://mathcalc.xyz/?/general/bmi-calculator</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+    
+    <url>
+        <loc>https://mathcalc.xyz/?/finance</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://mathcalc.xyz/?/finance/simple-interest</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://mathcalc.xyz/?/finance/compound-interest</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/physics</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/physics/eeqlmc2</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/maths</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+      <url>
+        <loc>https://mathcalc.xyz/?/maths/equations</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+      <url>
+        <loc>https://mathcalc.xyz/?/maths/shapes</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+      <url>
+        <loc>https://mathcalc.xyz/?/maths/shapes/circle</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+      <url>
+        <loc>https://mathcalc.xyz/?/maths/shapes/square</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+      <url>
+        <loc>https://mathcalc.xyz/?/maths/concepts</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+      <url>
+        <loc>https://mathcalc.xyz/?/maths/graphs</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+</urlset>

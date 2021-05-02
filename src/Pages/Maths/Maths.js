@@ -24,29 +24,37 @@ const useStyles = makeStyles((theme) => ({
     row: {
         margin: '2px'
     },
-
+    calcContent: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        padding: '0px',
+        justifyContent: 'center'
+    },
 }));
 
-export default function Finance() {
+export default function Maths() {
     const classes = useStyles();
+    let urls = [
+        { url: '/maths/shapes/', title: 'Shapes' },
+    ];
     return (
         <div className={classes.root}>
             <Container maxWidth={'xl'} >
                 <SubNavBar />
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item lg={8} md={8} sm={12}>
-                        <h1 className={classes.calcHeader} >Finance calculator</h1>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', padding: '0px', justifyContent: 'center' }}>
-                            <a href='/finance/simple-interest' className={'divLink'}>
-                                <Compress style={{
-                                    width: '30px',
-                                    margin: '0px 8px 0px 16px'
-                                }} /> <span>Simple Interest</span></a>
-                            <a href='/finance/compound-interest' className={'divLink'}>
-                                <Compress style={{
-                                    width: '30px',
-                                    margin: '0px 8px 0px 16px'
-                                }} /> <span>Compound Interest</span></a>
+                        <h1 className={classes.calcHeader} >Maths calculator</h1>
+                        <div className={classes.calcContent}>
+                            {
+                                urls.map(ur => {
+                                    return (<a href={ur.url} className={'divLink'} >
+                                        <Compress style={{
+                                            width: '30px',
+                                            margin: '0px 16px 0px 16px'
+                                        }} /> <span>{ur.title}</span></a>
+                                    )
+                                })
+                            }
                         </div>
                     </Grid>
                     <Grid item lg={4} md={4} sm={false}></Grid>

@@ -64,17 +64,17 @@ export default function Formulae() {
                 <div style={{ display: 'flex', flexWrap: 'wrap', padding: '0px', }}>
                     {
                         dicFormulas.map(value => {
-                            return (<li class="ak39fa-0 bhAFtM">
-                                <div class="ojwc4z-0 jkSeLq">
-                                    <a class="sc-1bu7qfl-0 lfMGmO ojwc4z-2 kVIQfP" href={"/mathcalc/algebric/formulae/" + value.replace(' ', '-').replace(' s', '')}>
+                            return (<li className="ak39fa-0 bhAFtM">
+                                <div className="ojwc4z-0 jkSeLq">
+                                    <a className="sc-1bu7qfl-0 lfMGmO ojwc4z-2 kVIQfP" href={"/algebric/formulae/" + value.replace(' ', '-').replace(' s', '')}>
                                         {value.replace('Formula', '')}</a>
-                                    <div class="sc-1gyxcpm-0 csDfHB ojwc4z-4 dOHSmX" style={{ width: '32px', height: '32px' }}>
+                                    <div className="sc-1gyxcpm-0 csDfHB ojwc4z-4 dOHSmX" style={{ width: '32px', height: '32px' }}>
                                         <Compress />
                                     </div>
-                                    <div class="ojwc4z-1 jgylRt">
-                                        <div class="sc-1gyxcpm-0 csDfHB" style={{ width: '24px', height: '24px' }}>
+                                    <div className="ojwc4z-1 jgylRt">
+                                        <div className="sc-1gyxcpm-0 csDfHB" style={{ width: '24px', height: '24px' }}>
                                             <Forward />
-                                        </div></div><p class="ojwc4z-5 jZEeUz">
+                                        </div></div><p className="ojwc4z-5 jZEeUz">
                                         {value}
                                     </p>
                                 </div>

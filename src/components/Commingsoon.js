@@ -1,8 +1,6 @@
 import React from 'react';
-import { Grid, Card, Typography, Container } from "@material-ui/core";
-import PropTypes from 'prop-types';
+import { Card, Typography, Container } from "@material-ui/core";
 import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
-
 
 const Commingsoon = (props) => {
     let theme = createMuiTheme();
