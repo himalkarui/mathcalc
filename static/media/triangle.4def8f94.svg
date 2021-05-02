@@ -1,0 +1,145 @@
+<svg height= "148px" version= "1.1" viewBox= "0 0 474 296" width= "237px" x= "0px" xml:space= "preserve" xmlns= "http://www.w3.org/2000/svg" y= "0px">
+   
+   <style>
+                                	text {
+		                            	font-size:55px;
+		                            	font-weight:bolder;
+	                            	}
+                                .lr-fy-svg {
+                                    display: inline-block;
+                                    font-family: Georgia;
+                                    font-size: 30px;
+                                    font-style: italic;
+                                    line-height: 0;
+                                    max-width: 237px
+                                }
+
+                                .lr-fy-i-st {
+                                    font-size: 20px
+                                }
+
+                                .lr-fy-i-lgf {
+                                    fill: black
+                                }
+
+                                .lr-fy-i-dgf {
+                                    fill: #70757a
+                                }
+
+                                .lr-fy-i-ll {
+                                    stroke: #dadce0
+                                }
+
+                                .lr-fy-i-bg {
+                                    fill: #fff
+                                }
+
+                                .lr-fy-i-bf,.lr-fy-i-tb {
+                                    fill: #4285f4
+                                }
+
+                                .lr-fy-i-bs,.lr-fy-i-ml,.lr-fy-i-mp,.lr-fy-i-tb {
+                                    stroke: #4285f4
+                                }
+
+                                .lr-fy-i-ml,.lr-fy-i-dl,.lr-fy-i-ll,.lr-fy-i-wl,.lr-fy-i-mp {
+                                    fill: none;
+                                    stroke-miterlimit: 10
+                                }
+
+                                .lr-fy-i-dl,.lr-fy-i-ll {
+                                    stroke-width: 2px
+                                }
+
+                                .lr-fy-i-ml,.lr-fy-i-mp {
+                                    stroke-width: 4px
+                                }
+
+                                .lr-fy-i-ml {
+                                    stroke-linecap: round
+                                }
+
+            </style>
+    <rect class= "lr-fy-i-bg" height= "296" width= "474"></rect>
+    <g id= "lr-fy-i-def" style= "display:inline">
+        <path class= "lr-fy-i-ll" d= "M106.801,262.922c1.498-3.377,2.628-6.955,3.329-10.685c0.553-2.94,0.842-5.974,0.842-9.075c0-20.516-12.656-38.069-30.584-45.297"></path>
+        <line class= "lr-fy-i-ll" x1= "181" x2= "181" y1= "35.156" y2= "262.844"></line>
+        <line class= "lr-fy-i-ll" x1= "201" x2= "201" y1= "240" y2= "262"></line>
+        <line class= "lr-fy-i-ll" x1= "181" x2= "201" y1= "241" y2= "241"></line>
+        <text class= "lr-fy-i-lgf" transform= "translate(74,244)">γ</text>
+        <path class= "lr-fy-i-dgf" d= "M180.444,35.121L427.86,262H42.556L180.444,35.121 M180,32L39,264h394L180,32L180,32z"></path>
+        <rect class= "lr-fy-i-bg" height= "32.001" transform= "matrix(0.7368 0.6761 -0.6761 0.7368 186.3289 -171.7348)" width= "28.774" x= "299.376" y= "137.478"></rect>
+        <rect class= "lr-fy-i-bg" height= "32" transform= "matrix(0.5106 -0.8598 0.8598 0.5106 -80.231 166.5119)" width= "33.695" x= "89.309" y= "137.735"></rect>
+        <text class= "lr-fy-i-dgf" transform= "translate(305,161)">c</text>
+        <rect class= "lr-fy-i-bg" height= "41" width= "40" x= "159.5" y= "133"></rect>
+        <text class= "lr-fy-i-dgf" transform= "translate(97,161)">a</text>
+        <text class= "lr-fy-i-lgf" transform= "translate(168,163)">h</text>
+        <text class= "lr-fy-i-st lr-fy-i-lgf" transform= "translate(186,170)">b</text>
+        <text class= "lr-fy-i-dgf" transform= "translate(220,294)">b</text>
+    </g>
+    <g id= "lr-fy-i-back" style= "display:none">
+        <line class= "lr-fy-i-ll" x1= "201" x2= "201" y1= "240" y2= "262"></line>
+        <line class= "lr-fy-i-ll" x1= "181" x2= "201" y1= "241" y2= "241"></line>
+        <path class= "lr-fy-i-ll" d= "M106.801,262.922c1.498-3.377,2.628-6.955,3.329-10.685c0.553-2.94,0.842-5.974,0.842-9.075c0-20.516-12.656-38.069-30.584-45.297"></path>
+        <line class= "lr-fy-i-ll" x1= "181" x2= "181" y1= "35.156" y2= "262.844"></line>
+        <rect class= "lr-fy-i-bg" height= "41" width= "40" x= "159.5" y= "133"></rect>
+        <text class= "lr-fy-i-lgf" transform= "translate(168,163)">h</text>
+        <text class= "lr-fy-i-st lr-fy-i-lgf" transform= "translate(186,170)">b</text>
+        <g id= "lr-fy-i-h" style= "display:none">
+            <line class= "lr-fy-i-ml" x1= "180" x2= "180" y1= "36.5" y2= "261.5"></line>
+            <rect class= "lr-fy-i-bg" height= "41" width= "40" x= "159.5" y= "133"></rect>
+            <text class= "lr-fy-i-bf" transform= "translate(168,163)">h</text>
+            <text class= "lr-fy-i-st lr-fy-i-bf" transform= "translate(186,170)">b</text>
+        </g>
+        <path class= "lr-fy-i-lgf" d= "M180.444,35.121L427.86,262H42.556L180.444,35.121 M180,32L39,264h394L180,32L180,32z"></path>
+        <rect class= "lr-fy-i-bg" height= "32.001" transform= "matrix(0.7368 0.6761 -0.6761 0.7368 186.3289 -171.7348)" width= "28.774" x= "299.376" y= "137.478"></rect>
+        <text class= "lr-fy-i-lgf" transform= "translate(305,161)">c</text>
+        <text class= "lr-fy-i-lgf" transform= "translate(74,244)">γ</text>
+        <rect class= "lr-fy-i-bg" height= "32" transform= "matrix(0.5106 -0.8598 0.8598 0.5106 -80.231 166.5119)" width= "33.695" x= "89.309" y= "137.735"></rect>
+        <text class= "lr-fy-i-lgf" transform= "translate(97,161)">a</text>
+        <text class= "lr-fy-i-lgf" transform= "translate(220,294)">b</text>
+    </g>
+    <g id= "lr-fy-i-aa" style= "display:none">
+        <line class= "lr-fy-i-ml" x1= "179.979" x2= "40.021" y1= "33.625" y2= "262.375"></line>
+        <rect class= "lr-fy-i-bg" height= "32" transform= "matrix(0.5106 -0.8598 0.8598 0.5106 -80.231 166.5119)" width= "33.695" x= "89.309" y= "137.735"></rect>
+        <text class= "lr-fy-i-bf" transform= "translate(97,161)">a</text>
+    </g>
+    <g id= "lr-fy-i-c" style= "display:none">
+        <line class= "lr-fy-i-ml" x1= "180.062" x2= "431" y1= "33.75" y2= "263"></line>
+        <rect class= "lr-fy-i-bg" height= "32.001" transform= "matrix(0.7368 0.6761 -0.6761 0.7368 186.3289 -171.7348)" width= "28.774" x= "299.376" y= "137.478"></rect>
+        <text class= "lr-fy-i-bf" transform= "translate(305,161)">c</text>
+    </g>
+    <g id= "lr-fy-i-b" style= "display:none">
+        <line class= "lr-fy-i-ml" x1= "41" x2= "431" y1= "264" y2= "264"></line>
+        <text class= "lr-fy-i-bf" transform= "translate(220,294)">b</text>
+    </g>
+    <g id= "lr-fy-i-gamma" style= "display:none">
+        <path class= "lr-fy-i-ml" d= "M106.801,262.922c1.498-3.377,2.628-6.955,3.329-10.685c0.553-2.94,0.842-5.974,0.842-9.075c0-20.516-12.656-38.069-30.584-45.297"></path>
+        <text class= "lr-fy-i-bf" transform= "translate(74,244)">γ</text>
+    </g>
+    <g id= "lr-fy-i-P" style= "display:none">
+        <rect class= "lr-fy-i-bg" height= "34.25" width= "36.5" x= "210.458" y= "260.844"></rect>
+        <rect class= "lr-fy-i-bg" height= "34.25" width= "36.5" x= "298.682" y= "134.375"></rect>
+        <line class= "lr-fy-i-ml" x1= "179.979" x2= "39.02" y1= "33.625" y2= "263.989"></line>
+        <line class= "lr-fy-i-ml" x1= "180.062" x2= "431" y1= "33.75" y2= "263"></line>
+        <line class= "lr-fy-i-ml" x1= "39.543" x2= "431" y1= "264" y2= "264"></line>
+        <rect class= "lr-fy-i-bg" height= "41.75" transform= "matrix(0.8555 0.5178 -0.5178 0.8555 94.1522 -34.2805)" width= "35.685" x= "90.651" y= "130.669"></rect>
+        <text class= "lr-fy-i-bf" transform= "translate(99,161)">P</text>
+    </g>
+    <g id= "lr-fy-i-A" style= "display:none">
+        <polygon class= "lr-fy-i-bg" points= "40.778,263 180.222,33.56 430.43,263"></polygon>
+        <path class= "lr-fy-i-lgf" d= "M180.444,35.121L427.86,262H42.556L180.444,35.121 M180,32L39,264h394L180,32L180,32z"></path>
+        <path class= "lr-fy-i-ll" d= "M106.801,262.922c1.498-3.377,2.628-6.955,3.329-10.685c0.553-2.94,0.842-5.974,0.842-9.075c0-20.516-12.656-38.069-30.584-45.297"></path>
+        <rect class= "lr-fy-i-bg" height= "32.001" transform= "matrix(0.7368 0.6761 -0.6761 0.7368 186.3289 -171.7348)" width= "28.774" x= "299.376" y= "137.478"></rect>
+        <text class= "lr-fy-i-lgf" transform= "translate(305,161)">c</text>
+        <text class= "lr-fy-i-lgf" transform= "translate(74,244)">γ</text>
+        <rect class= "lr-fy-i-bg" height= "32" transform= "matrix(0.5106 -0.8598 0.8598 0.5106 -80.231 166.5119)" width= "33.695" x= "89.309" y= "137.735"></rect>
+        <text class= "lr-fy-i-lgf" transform= "translate(97,161)">a</text>
+        <text class= "lr-fy-i-lgf" transform= "translate(220,294)">b</text>
+        <g style= "opacity:0.3">
+            <polygon class= "lr-fy-i-bf" points= "39.889,263.5 180.111,32.78 431.715,263.5"></polygon>
+            <path class= "lr-fy-i-bf" d= "M180.222,33.56L430.43,263H40.778L180.222,33.56 M180,32L39,264h394L180,32L180,32z"></path>
+        </g>
+        <text class= "lr-fy-i-bf" transform= "translate(200,187)">A</text>
+    </g>
+</svg>

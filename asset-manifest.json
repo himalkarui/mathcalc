@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.a79e1b88.chunk.css",
-    "main.js": "/static/js/main.d7184b4b.chunk.js",
-    "main.js.map": "/static/js/main.d7184b4b.chunk.js.map",
+    "main.css": "/static/css/main.bcd6ff12.chunk.css",
+    "main.js": "/static/js/main.19428360.chunk.js",
+    "main.js.map": "/static/js/main.19428360.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e72fecb6.js",
     "runtime-main.js.map": "/static/js/runtime-main.e72fecb6.js.map",
-    "static/js/2.4eaee807.chunk.js": "/static/js/2.4eaee807.chunk.js",
-    "static/js/2.4eaee807.chunk.js.map": "/static/js/2.4eaee807.chunk.js.map",
+    "static/js/2.97190de2.chunk.js": "/static/js/2.97190de2.chunk.js",
+    "static/js/2.97190de2.chunk.js.map": "/static/js/2.97190de2.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.a79e1b88.chunk.css.map": "/static/css/main.a79e1b88.chunk.css.map",
-    "static/js/2.4eaee807.chunk.js.LICENSE.txt": "/static/js/2.4eaee807.chunk.js.LICENSE.txt",
-    "static/media/flower.3bcf8659.jpg": "/static/media/flower.3bcf8659.jpg"
+    "static/css/main.bcd6ff12.chunk.css.map": "/static/css/main.bcd6ff12.chunk.css.map",
+    "static/js/2.97190de2.chunk.js.LICENSE.txt": "/static/js/2.97190de2.chunk.js.LICENSE.txt",
+    "static/media/rectangle.6eb589e9.svg": "/static/media/rectangle.6eb589e9.svg",
+    "static/media/square.5a1edb90.svg": "/static/media/square.5a1edb90.svg",
+    "static/media/triangle.4def8f94.svg": "/static/media/triangle.4def8f94.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.e72fecb6.js",
-    "static/js/2.4eaee807.chunk.js",
-    "static/css/main.a79e1b88.chunk.css",
-    "static/js/main.d7184b4b.chunk.js"
+    "static/js/2.97190de2.chunk.js",
+    "static/css/main.bcd6ff12.chunk.css",
+    "static/js/main.19428360.chunk.js"
   ]
 }
