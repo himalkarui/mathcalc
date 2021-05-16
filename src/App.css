@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');
+
 html {
-    font-family: TwitterChirpExtendedHeavy, Verdana, System !important;
-    background-color: #ffffff;
+    font-family: 'Noto Sans KR', sans-serif !important;
+    background-color: #f1f1f1 !important;
 }
 
 body {
+    font-family: 'Noto Sans KR', sans-serif !important;
     margin: 0px;
     padding: 0px;
+    background-color: #f1f1f1 !important;
 }
 
 .div-card {
@@ -29,6 +33,13 @@ body {
     max-width: 100%;
 }
 
+.mq-editable-field{
+    width: 330px;
+    box-shadow: 1px 3px 16px -10px #d0d0d0 !important;
+    border: 1px solid #f2f2f2 !important;
+    padding: 1rem;
+}
+
 .header-left {
     display: flex;
     text-align: left !important;
@@ -38,7 +49,7 @@ body {
     display: flex;
     overflow: hidden;
     -webkit-box-align: center;
-    padding: 10px;
+    padding: 10px 0px;
     align-items: center;
     margin: 0px auto;
     max-width: 1440px;
@@ -97,7 +108,6 @@ li {
     border-radius: 4px;
     width: 100%;
     cursor: pointer;
-    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 700;
     font-size: 16px;
@@ -106,7 +116,7 @@ li {
     user-select: none;
     outline: none;
     height: 90px;
-    background: rgb(250, 250, 250);
+    background: white;
 }
 
 .jkSeLq {
@@ -119,6 +129,7 @@ li {
     box-shadow: 0px 3px 8px 0 rgb(216 216 216);
     border-radius: 3px;
     width: 100%;
+    min-width: 260px;
 }
 
 .dOHSmX {
@@ -147,7 +158,6 @@ li {
 }
 
 .jZEeUz {
-    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-weight: 400;
     font-size: 14px;
@@ -185,18 +195,66 @@ li {
 
 .appHeading {
     font-weight: 700!important;
-    font-size: calc(1.275rem + .3vw);
+    font-size: calc(1rem + .3vw);
     padding-top: 1rem;
     margin-left: 1rem;
     text-align: left;
     font-style: inherit;
-    font-family: cursive;
+}
+.text-option{
+    background-color: #F0F8FF;
+    border-radius: 3px;
+    padding: 4px 10px;
+    display: inline-flex;
+    text-transform: uppercase;
+    line-height: 10px;
+}
+
+.resultDiv{
+    font-size: 15px;
+    border: 5px solid white;
+    padding: 1rem;
+}
+  
+.blink_me {
+    border:5px solid;
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    0% {
+      border-color: blue;
+    }
+    50%{
+        border-color: black;
+    }
+    100%{
+        border-color: blue;
+    }
+  }
+  
+.resPercentage{
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: flex;
+    border-radius: 3px;
 }
 
 .appContainer {
-    font-size: calc(1.05rem + .3vw);
+    font-size: calc(0.7rem + .3vw);
     margin: 1rem;
 }
+
+.MuiCardContent-root {
+    padding: 0px 16px 0px 16px !important;
+}
+
+.MuiCardContent-root:last-child {
+    padding-bottom: 24px !important;
+  }
 
 .divLink {
     color: #744cbc;
@@ -219,9 +277,13 @@ li {
     min-height: 100px;
 }
 
+.divLink span{
+    margin-right: 5px;
+}
+
 .gridItem {
-    margin: 10px 1px 20px 1px !important;
-    min-width: 252px !important;
+    margin: 10px 1px 10px 1px !important;
+    min-width: 212px !important;
 }
 
 hr {
@@ -259,7 +321,6 @@ h6 {
 }
 
 #st-el-4 {
-    font-family: "Helvetica Neue", Verdana, Helvetica, Arial, sans-serif;
     -moz-transition: all 0.2s ease-in;
     -ms-transition: all 0.2s ease-in;
     -o-transition: all 0.2s ease-in;
@@ -386,6 +447,22 @@ input[type=number] {
     margin-right: -50%;
 }
 
+.divContents{
+    background-color: white;
+    box-shadow: 1px 1px 1px 0px #cac5d0;
+    margin: 5px;
+    min-width: 255px !important;
+    position: relative;
+    height: fit-content;
+
+}
+
+.columns .column .content p{
+    padding: 0px .8rem;
+}
+.columns .column .content h5{
+    padding: 18px 0px 0px 15px;
+}
 @media (max-width: 1439px) {
     .appHeading {
         padding-left: 14px;
@@ -393,6 +470,9 @@ input[type=number] {
 }
 
 @media (min-width: 140px) and (max-width: 640px) {
+    .divLink{
+        width: 100%;
+    }
     .bhAFtM {
         width: 100%;
         padding: 5px;
@@ -404,25 +484,33 @@ input[type=number] {
         display: block;
         text-align: left;
     }
-    .divLink {
-        padding: 0px;
-        width: 90vw;
-    }
+    
     .makeStyles-header-14{
         padding:2rem !important;
     }
+    
+    .MuiContainer-root{
+        padding: 16px 0px !important;
+    }
+    .makeStyles-content-3{
+        padding: 0px !important;
+    }
+
 }
 
 @media (min-width: 640px) and (max-width: 1023px) {
     .bhAFtM {
-        width: 50%;
+        width: 90%;
         padding: 12px;
+    }
+    .divLink{
+        width: 100%;
     }
 }
 
 @media (min-width: 1024px) {
     .bhAFtM {
-        width: 33.3%;
-        padding: 12px;
+       padding: 12px;
+       min-width: 255px;
     }
 }

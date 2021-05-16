@@ -11,8 +11,6 @@ import imgTriangle from '../../../../Assets/images/triangle.svg';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
-        width: '99%',
-        backgroundColor: 'white'
     },
     formControl: {
         margin: '1rem 1rem 1rem 0rem',
@@ -29,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
     },
     inputlabel: {
         display: 'flex'
+    },
+    td: {
+        padding: '30px 14px 0px 10px',
     }
 }));
 
@@ -58,7 +59,6 @@ export default function Triangle() {
     }
 
     const onChangeMetrics = (metric, isOnchangeinput, isChoosing) => {
-        debugger
         let height = 0, base = 0, faceA = 0, faceC = 0, solveby = 0, perimeter = 0, gama = 0, area = 0;
 
         height = state.triHeight === '' ? 0 : parseFloat(state.triHeight);
@@ -213,7 +213,7 @@ export default function Triangle() {
                                             <table>
                                                 <tbody >
                                                     <tr style={{ display: (state.metrics === 2 || state.metrics === 0) ? 'block' : 'none' }}>
-                                                        <td colSpan={2}><Typography component='label'>
+                                                        <td className={classes.td} colSpan={2}><Typography component='label'>
                                                             Base
                                                             </Typography></td>
                                                         <td>
@@ -230,7 +230,7 @@ export default function Triangle() {
                                                         </td>
                                                     </tr>
                                                     <tr style={{ display: (state.metrics !== 0 && (state.metrics === 2 || state.metrics === 1)) ? 'block' : 'none' }}>
-                                                        <td colSpan={2}>  <Typography component='label'>
+                                                        <td className={classes.td} colSpan={2}>  <Typography component='label'>
                                                             Height
                                                         </Typography><br /></td>
                                                         <td>
@@ -246,7 +246,7 @@ export default function Triangle() {
                                                         </td>
                                                     </tr>
                                                     <tr style={{ display: (state.metrics === 3 || state.metrics === 4) ? 'block' : 'none' }}>
-                                                        <td colSpan={2}><Typography component='label' className={classes.inputlabel}>
+                                                        <td className={classes.td} colSpan={2}><Typography component='label' className={classes.inputlabel}>
                                                             <h3>a</h3><span>&nbsp; side</span>
                                                         </Typography></td>
                                                         <td>
@@ -263,7 +263,7 @@ export default function Triangle() {
                                                         </td>
                                                     </tr>
                                                     <tr style={{ display: (state.metrics === 3 || state.metrics === 4) ? 'block' : 'none' }}>
-                                                        <td colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
+                                                        <td className={classes.td} colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
                                                             <h3>b</h3> &nbsp; base
                                                         </Typography><br /></td>
                                                         <td>
@@ -279,7 +279,7 @@ export default function Triangle() {
                                                         </td>
                                                     </tr>
                                                     <tr style={{ display: state.metrics === 3 ? 'block' : 'none' }}>
-                                                        <td colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
+                                                        <td className={classes.td} colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
                                                             <h3>c</h3> &nbsp; side
                                                         </Typography><br /></td>
                                                         <td>
@@ -295,7 +295,7 @@ export default function Triangle() {
                                                         </td>
                                                     </tr>
                                                     <tr style={{ display: (state.metrics !== 2 && state.metrics !== 3 && (state.metrics === 4 || (state.solveby === 'Area' && (state.metrics === 0 || state.metrics === 1)))) ? 'block' : 'none' }}>
-                                                        <td colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
+                                                        <td className={classes.td} colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
                                                             Area &nbsp;&nbsp;
                                                         </Typography><br /></td>
                                                         <td>
@@ -312,7 +312,7 @@ export default function Triangle() {
                                                     </tr>
 
                                                     <tr style={{ display: (state.metrics === 4 && state.metrics === 5) ? 'block' : 'none' }}>
-                                                        <td colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
+                                                        <td className={classes.td} colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
                                                             Perimeter &nbsp;&nbsp;
                                                         </Typography><br /></td>
                                                         <td>

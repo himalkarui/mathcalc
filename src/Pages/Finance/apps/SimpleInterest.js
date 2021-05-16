@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, Card, CardContent, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
+import { Container, Grid, Card, CardContent, Typography, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Helmet from 'react-helmet';
 
@@ -16,20 +16,6 @@ const useStyles = makeStyles((theme) => ({
             width: '100%'
         },
     },
-    resultDiv: {
-        padding: '20px 0',
-        marginBottom: '10px',
-        borderRadius: '4px',
-        fontStyle: 'normal',
-        fontWeight: '700',
-        fontSize: '24px',
-        lineHeight: '34px',
-        color: '#314259',
-        '& > span': {
-            marginLeft: '8px',
-            color: '#1678fb'
-        },
-    }
 }));
 
 export default function SimpleInterest() {
@@ -110,14 +96,22 @@ export default function SimpleInterest() {
                             <div className={'appHeading'}>
                                 Calculate Your Simple Interest</div>
                             <CardContent className='appContainer'>
+
+                                <p className={'text-muted'} >
+                                    The rate at which you borrow or lend money is called the simple interest. If a borrower takes money from a lender, an extra amount of money is paid back to the lender. The borrowed money which is given for a specific period is called the principal.
+                                    The extra amount which is paid back to the lender for using the money is called the interest.
+        </p>
+
                                 <div className={classes.formelems} noValidate autoComplete="off">
                                     <TextField id="principleAmount" label="Principle Amount" variant="outlined"
                                         value={state.principleAmount}
                                         onChange={fnprincipleAmount}
+                                        type={'number'}
                                     /><br />
                                     <TextField id="anualRate" label="Anual Rate (%)" variant="outlined"
                                         value={state.anualRate}
                                         onChange={fnAnnualRate}
+                                        type={'number'}
                                     /><br />
                                     <FormControl variant="outlined" className={classes.formControl}>
                                         <InputLabel id="demo-simple-select-outlined-label">Period Unit</InputLabel>
@@ -142,17 +136,18 @@ export default function SimpleInterest() {
                                     <TextField id="period" label="Period" variant="outlined"
                                         value={state.period}
                                         onChange={fnPeriod}
+                                        type={'number'}
                                     /><br />
                                 </div>
-                                <div className={classes.resultDiv}>
-                                    <label>Interest Earned </label><span>₹ {state.interestEarned}</span>
-                                </div>
-                                <div className={classes.resultDiv}>
-                                    <label>Principle Amount </label> <span>₹ {state.principleAmount}</span>
-                                </div>
-                                <div className={classes.resultDiv}>
-                                    <label>Total value</label><span>₹{state.totalValue}</span>
-                                </div>
+                                <Typography component='label' >
+                                    Interest Earned : &nbsp; <strong>{state.interestEarned}</strong><br /></Typography><br />
+
+                                <Typography component='label' >
+                                    Principle Amount : &nbsp; <strong>{state.principleAmount}</strong><br /></Typography><br />
+
+                                <Typography component='label' >
+                                    Total value : &nbsp; <strong>{state.totalValue}</strong><br /></Typography><br />
+
                             </CardContent>
                         </Card>
                     </Grid>

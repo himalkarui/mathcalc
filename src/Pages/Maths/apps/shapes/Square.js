@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         width: '99%',
-        backgroundColor: 'white'
     },
     button: {
         height: 40,
@@ -59,7 +58,6 @@ export default function Square() {
     });
 
     const onChangeMetrics = (metric, comval) => {
-        debugger;
         let len;
         let cval;
         if (comval || comval === "") {
@@ -128,8 +126,9 @@ export default function Square() {
                 <meta name="description"
                     content="mathcalc is the all in one web app for all kind of mathamatical calculations in all fields of science like physics ,chemistry ,mathamatics, quantum physics and a lot " />
             </Helmet>
-            <SubNavBar />
+
             <Container maxWidth={'xl'} >
+                <SubNavBar />
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item lg={8} md={8} sm={12}>
                         <Card raised elevation={0} >
@@ -138,19 +137,19 @@ export default function Square() {
                                 <p className={'text-muted'} >
                                     In geometry, a square is a regular quadrilateral,
                                 which means that it has four equal sides and four equal angles</p>
-                                <Grid container justify="space-around">
-                                    <Grid item>
+                                <Grid container direction="row" justify="center" alignItems="center">
+                                    <Grid item md='6' sm='12'>
                                         <div className={classes.sqouare}>
                                             <img src={imgSquare} style={{ minWidth: '255px', maxWidth: '255px', margin: '1rem' }} alt={'square'}></img>
                                         </div>
                                     </Grid>
-                                    <Grid item>
+                                    <Grid item md='6' sm='12'>
                                         <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
                                             <InputLabel id="metrics">Calculate For</InputLabel>
                                             <Select
                                                 labelId="metrics-label"
                                                 id="metrics-outlined"
-                                                label="Calculate For" style={{ width: '100%', marginBottom: '2rem' }}
+                                                label="Calculate For" style={{ marginBottom: '2rem' }}
                                                 onChange={(e) => { onChangeMetrics(e.target.value) }}
                                                 value={state.metrics}
                                             >

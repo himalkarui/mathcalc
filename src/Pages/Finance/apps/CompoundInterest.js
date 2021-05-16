@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, Card, CardContent, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
+import { Container, Grid, Card, CardContent, Typography, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Helmet from 'react-helmet';
 
@@ -9,46 +9,11 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
         overflow: 'hidden'
     },
-    control: {
-        padding: theme.spacing(2),
-    },
-    divcalc: {
-        borderRadius: '12px',
-        padding: '1em',
-        color: '#314259'
-    },
     formelems: {
         display: 'grid',
         '& > *': {
             margin: theme.spacing(1),
             width: '100%'
-        },
-    },
-    calcHeader: {
-        fontFamily: 'system-ui',
-        fontStyle: 'normal',
-        fontSize: '22px',
-        lineHeight: '39px',
-        color: '#1e314f',
-        marginTop: '20px',
-        marginBottom: '10px',
-        fontWeight: '600'
-    },
-    row: {
-        margin: '10px'
-    },
-    resultDiv: {
-        padding: '20px 0',
-        marginBottom: '10px',
-        borderRadius: '4px',
-        fontStyle: 'normal',
-        fontWeight: '700',
-        fontSize: '24px',
-        lineHeight: '34px',
-        color: '#314259',
-        '& > span': {
-            marginLeft: '8px',
-            color: '#1678fb'
         },
     }
 }));
@@ -144,12 +109,17 @@ export default function CompoundInterest() {
                     <Grid item lg={8} md={8} sm={12}>
                         <Card raised elevation={0} >
                             <div className={'appHeading'}>
-                                Calculate Your Simple Interest</div>
+                                Calculate Your Compound Interest</div>
                             <CardContent className='appContainer'>
+                                <p className={'text-muted'}>
+                                    Compound interest is the interest on interest.
+                                    In simple terms, the addition of interest to the principal sum of the loan or deposit is called compound interest.
+                                </p>
                                 <div className={classes.formelems} noValidate autoComplete="off">
                                     <TextField id="principleAmount" label="Principle Amount" variant="outlined"
                                         value={state.principleAmount}
                                         onChange={fnprincipleAmount}
+                                        type={'number'}
                                     /><br />
                                     <FormControl variant="outlined" className={classes.formControl}>
                                         <InputLabel id="demo-simple-select-outlined-label">Compound Frequency</InputLabel>
@@ -170,6 +140,7 @@ export default function CompoundInterest() {
                                     <TextField id="anualRate" label="Anual Rate (%)" variant="outlined"
                                         value={state.anualRate}
                                         onChange={fnAnnualRate}
+                                        type={'number'}
                                     /><br />
                                     <FormControl variant="outlined" className={classes.formControl}>
                                         <InputLabel id="demo-simple-select-outlined-label">Period Unit</InputLabel>
@@ -192,17 +163,18 @@ export default function CompoundInterest() {
                                     <TextField id="period" label="Period" variant="outlined"
                                         value={state.period}
                                         onChange={fnPeriod}
+                                        type={'number'}
                                     /><br />
                                 </div>
-                                <div className={classes.resultDiv}>
-                                    <label>Interest Earned </label><span>₹ {state.interestEarned}</span>
-                                </div>
-                                <div className={classes.resultDiv}>
-                                    <label>Principle Amount </label> <span>₹ {state.principleAmount}</span>
-                                </div>
-                                <div className={classes.resultDiv}>
-                                    <label>Total value</label><span>₹{state.totalValue}</span>
-                                </div>
+
+                                <Typography component='label' >
+                                    Interest Earned : &nbsp; <strong>{state.interestEarned}</strong><br /></Typography><br />
+
+                                <Typography component='label' >
+                                    Principle Amount : &nbsp; <strong>{state.principleAmount}</strong><br /></Typography><br />
+
+                                <Typography component='label' >
+                                    Total value : &nbsp; <strong>{state.totalValue}</strong><br /></Typography><br />
                             </CardContent>
                         </Card>
                     </Grid>

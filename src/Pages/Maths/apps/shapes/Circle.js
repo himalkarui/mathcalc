@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         width: '99%',
-        backgroundColor: 'white'
     },
     button: {
         height: 40,
@@ -31,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     circle_input: {
         minHeight: '240px',
         minWidth: '240px',
+        maxWidth: '240px',
         borderRadius: '50%',
         border: '1px solid brown',
     },
@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden'
     },
     formControl: {
-        display: 'inherit',
         marginTop: '2rem'
     }
 }));
@@ -72,6 +71,7 @@ export default function Circle() {
     }
 
     const onChangeMetrics = (metric, comval) => {
+        debugger;
         let rad;
         let cval;
         if (comval || comval === "") {
@@ -79,55 +79,66 @@ export default function Circle() {
         } else {
             cval = parseFloat(state.commonval === '' ? 0 : state.commonval);
         }
-        switch (metric) {
-            case 0:
-                setState({
-                    ...state,
-                    radius: cval,
-                    diameter: (2 * cval).toFixed(3),
-                    area: (Math.PI * Math.pow(cval, 2)).toFixed(3),
-                    circumference: (2 * Math.PI * cval).toFixed(3),
-                    commonval: cval,
-                    metrics: 0
-                });
-                break;
-            case 1:
-                setState({
-                    ...state,
-                    radius: parseFloat(cval / 2).toFixed(3),
-                    diameter: (cval).toFixed(3),
-                    area: (Math.PI * Math.pow((cval / 2), 2)).toFixed(3),
-                    circumference: (2 * Math.PI * (cval / 2)).toFixed(3),
-                    commonval: cval,
-                    metrics: 1
-                });
-                break;
-            case 2:
-                rad = parseFloat(Math.sqrt(cval / Math.PI)).toFixed(3);
-                setState({
-                    ...state,
-                    radius: rad,
-                    diameter: (2 * rad).toFixed(3),
-                    area: cval,
-                    circumference: parseFloat(2 * Math.PI * rad).toFixed(3),
-                    commonval: cval,
-                    metrics: 2
-                });
-                break;
-            case 3:
-                rad = parseFloat(cval / (2 * Math.PI)).toFixed(3);
-                setState({
-                    ...state,
-                    radius: rad,
-                    diameter: (2 * rad).toFixed(3),
-                    area: (Math.PI * Math.pow(rad, 2)).toFixed(3),
-                    circumference: cval,
-                    commonval: cval,
-                    metrics: 3
-                });
-                break;
-            default:
-                break;
+        if (cval !== "") {
+
+            switch (metric) {
+                case 0:
+                    setState({
+                        ...state,
+                        radius: cval,
+                        diameter: (2 * cval).toFixed(3),
+                        area: (Math.PI * Math.pow(cval, 2)).toFixed(3),
+                        circumference: (2 * Math.PI * cval).toFixed(3),
+                        commonval: cval,
+                        metrics: 0
+                    });
+                    break;
+                case 1:
+                    setState({
+                        ...state,
+                        radius: parseFloat(cval / 2).toFixed(3),
+                        diameter: cval.toFixed(3),
+                        area: (Math.PI * Math.pow((cval / 2), 2)).toFixed(3),
+                        circumference: (2 * Math.PI * (cval / 2)).toFixed(3),
+                        commonval: cval,
+                        metrics: 1
+                    });
+                    break;
+                case 2:
+                    rad = parseFloat(Math.sqrt(cval / Math.PI)).toFixed(3);
+                    setState({
+                        ...state,
+                        radius: rad,
+                        diameter: (2 * rad).toFixed(3),
+                        area: cval,
+                        circumference: parseFloat(2 * Math.PI * rad).toFixed(3),
+                        commonval: cval,
+                        metrics: 2
+                    });
+                    break;
+                case 3:
+                    rad = parseFloat(cval / (2 * Math.PI)).toFixed(3);
+                    setState({
+                        ...state,
+                        radius: rad,
+                        diameter: (2 * rad).toFixed(3),
+                        area: (Math.PI * Math.pow(rad, 2)).toFixed(3),
+                        circumference: cval,
+                        commonval: cval,
+                        metrics: 3
+                    });
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            setState({
+                ...state, commonval: '',
+                radius: 0,
+                diameter: 0,
+                area: 0,
+                circumference: 0,
+            })
         }
     }
 
@@ -139,8 +150,8 @@ export default function Circle() {
                 <meta name="description"
                     content="mathcalc is the all in one web app for all kind of mathamatical calculations in all fields of science like physics ,chemistry ,mathamatics, quantum physics and a lot " />
             </Helmet>
-            <SubNavBar />
             <Container maxWidth={'xl'}  >
+                <SubNavBar />
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item lg={8} md={8} sm={12}>
                         <Card raised elevation={0} >
@@ -149,22 +160,26 @@ export default function Circle() {
                                 <p className={'text-muted'} >
                                     Circle is a particular shape and defined as the set of points in a plane placed at equal
                                     distance from a single point called the center of the circle
-                        </p>
-                                <Grid container justify="space-around">
-                                    <Grid item>
+                        </p><br />
+
+
+                                <Grid container direction="row" justify="center" alignItems="center">
+                                    <Grid md="6" sm="12">
+
                                         <div className={classes.circle_input}>
                                             <TextField id="radius" className={classes.radius_field}
                                                 value={state.radius} label="Enter Radius" variant="standard"
+                                                type={'number'}
                                                 onChange={onChangeRadius} />
                                         </div>
                                     </Grid>
-                                    <Grid item>
+                                    <Grid md="6" sm="12">
                                         <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
                                             <InputLabel id="metrics">Calculate For</InputLabel>
                                             <Select
                                                 labelId="metrics-label"
                                                 id="metrics-outlined"
-                                                label="Calculate For" style={{ width: '100%', marginBottom: '2rem' }}
+                                                label="Calculate For" style={{ marginBottom: '2rem' }}
                                                 onChange={(e) => { onChangeMetrics(e.target.value) }}
                                                 value={state.metrics}
                                             >
@@ -179,12 +194,17 @@ export default function Circle() {
                                                 onChange={(e) => { onChangeMetrics(state.metrics, e.target.value) }}
                                             />
                                         </FormControl>
-                                        <Typography component='label' hidden={state.metrics === 0}>Radius :<strong>{state.radius}</strong><br /></Typography>
-                                        <Typography component='label' hidden={state.metrics === 1}>Diameter :  <strong>{state.diameter}</strong><br /></Typography>
-                                        <Typography component='label' hidden={state.metrics === 2}>Area : <strong> {state.area}</strong><br /></Typography>
-                                        <Typography component='label' hidden={state.metrics === 3}>Circumference :  <strong>{state.circumference}</strong><br /></Typography>
+                                        <br />
+                                        <div>
+                                            <Typography component='label' hidden={state.metrics === 0}>Radius :<strong>{state.radius}</strong><br /></Typography>
+                                            <Typography component='label' hidden={state.metrics === 1}>Diameter :  <strong>{state.diameter}</strong><br /></Typography>
+                                            <Typography component='label' hidden={state.metrics === 2}>Area : <strong> {state.area}</strong><br /></Typography>
+                                            <Typography component='label' hidden={state.metrics === 3}>Circumference :  <strong>{state.circumference}</strong><br /></Typography>
+                                        </div>
                                     </Grid>
+
                                 </Grid>
+
                             </CardContent>
                         </Card>
                     </Grid>

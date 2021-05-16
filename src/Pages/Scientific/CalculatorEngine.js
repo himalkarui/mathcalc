@@ -118,7 +118,6 @@ class CalculatorEngine {
             if (currentValue === '') {
                 return;
             }
-            debugger
             register.push(currentValue);
 
             const expression = register.join(' ');
@@ -137,7 +136,6 @@ class CalculatorEngine {
             if (currentValue === '') {
                 return;
             }
-            debugger
             let expression = result + ' / ' + '100';
 
             currentValue = (parseFloat(currentValue) / 100).toString();

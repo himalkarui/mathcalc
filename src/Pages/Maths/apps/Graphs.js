@@ -1,8 +1,13 @@
 import React from 'react';
+import { Chart, registerables } from 'chart.js';
 import { makeStyles } from '@material-ui/core/styles';
-import { CssBaseline, Container, TextField, Button } from '@material-ui/core';
-import { XYPlot, VerticalGridLines, VerticalBarSeries, HorizontalGridLines, LineSeries } from 'react-vis';
+import { Grid, Container, TextField, Button, } from '@material-ui/core';
+import SubNavBar from '../../../Components/SubNavBar';
+import EquationEditor from "equation-editor-react";
+import Helmet from 'react-helmet';
+const math = require('mathjs');
 
+Chart.register(...registerables);
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -12,68 +17,180 @@ const useStyles = makeStyles((theme) => ({
     control: {
         padding: theme.spacing(2),
     },
-    divcalc: {
-        textDecoration: 'none',
-        border: '1px solid #e6ecf1',
-        margin: '10px',
-        padding: '16px',
-        boxSizing: 'border-box',
-        cursor: 'pointer',
-        position: 'relative',
-        display: 'inline-block',
-        flexDirection: 'row',
-        alignItems: 'center',
-        placeSelf: 'stretch',
-        color: '#242a31',
-        backgroundColor: '#fff',
-        borderRadius: '3px',
-        boxShadow: '0 3px 8px 0 rgb(216 216 216)',
-        minWidth: '143px',
+    divGraph: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        maxWidth: '600px',
+        maxHeight: '600px',
+        marginTop: '5px',
+        minWidth: '330px',
+        minHeight: '330px',
+    },
+    divCard: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        padding: '2rem',
+        cursor: 'default !important',
+        margin: '10px !important'
     }
 }));
 
 export default function Graphs() {
-    const [data, SetData] = React.useState([]);
-    const viewGraph = () => {
-        let limit = 10;
-        let d = [];
-        for (let i = 0; i < limit; i++) {
-            d.push({
-                x: i,
-                y: Math.pow(i, 2)
-            })
-        }
-        SetData(d);
+
+    const [state, SetState] = React.useState({
+        equation: 'x^2-x-1',
+        limitX: 10,
+        limitY: 10,
+        objChart: undefined,
+    });
+
+
+    const onChangeEquation = (e) => {
+        SetState({
+            ...state,
+            equation: e
+        })
     }
+
+    const createGraph = () => {
+
+        let xArray = [];
+        let yArray = [];
+        xArray = Array.from({ length: state.limitX }, (_, i) => i + 1)
+        yArray = [];
+
+        let strEquation = state.equation;
+
+        let yval = 0;
+        let strEval = '';
+        for (let i = 0; i < xArray.length; ++i) {
+            strEval = strEquation.replaceAll('x', i + 1).replaceAll("\\",'').replaceAll('right', '').replaceAll('left', '');
+            yval = math.evaluate(strEval);
+            yArray.push(yval);
+        }
+
+        let ctx = document.getElementById('myChart').getContext('2d');
+        // if (chart) {
+        //     chart.destroy();
+        // }
+
+        if (
+            window.myLine !== undefined
+            &&
+            window.myLine !== null
+        ) {
+            window.myLine.destroy();
+        }
+
+        window.myLine = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line', // also try bar or other graph types
+
+            // The data for our dataset
+            data: {
+                labels: xArray,
+                // Information about the dataset
+                datasets: [{
+                    label: "Curve",
+                    backgroundColor: 'lightblue',
+                    borderColor: 'royalblue',
+                    data: yArray,
+                }]
+            },
+
+            // Configuration options
+            options: {
+                layout: {
+                    padding: 2,
+                },
+                legend: {
+                    position: 'bottom',
+                },
+                title: {
+                    display: true,
+                    text: 'View Equation in Graphs'
+                },
+                scales: {
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Y - Axis',
+                            min: -10,
+                            max: 10,
+                            stepSize: 1,
+                            position: 'center'
+                        },
+                        ticks: {
+                            suggestedMax: 10,
+                            suggestedMin: -10
+                        }
+                    }],
+                    xAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Y - Axis',
+                            min: -10,
+                            max: 10,
+                            stepSize: 1,
+                            position: 'center'
+                        },
+                        ticks: {
+                            suggestedMax: 10,
+                            suggestedMin: -10
+                        }
+                    }]
+                }
+            }
+        })
+
+    }
+
     React.useEffect(() => {
-    }, []);
+        try {
+            createGraph();
+        }
+        catch (e) {
+            console.log(e.message);
+        }
+    }, [state.limitX, state.equation]);
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <CssBaseline />
-            <section style={{
-                width: '100%', paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '2rem', paddingBottom: '0.5rem',
-                margin: 'auto',
-            }}>
-                <h1 style={{
-                    display: 'block', fontSize: '26px', lineHeight: '1.2', fontWeight: '800', marginTop: '0px',
-                    textTransform: 'capitalize', textAlign: 'center', marginBottom: '1rem',
-                }}>Maths calculator</h1>
-            </section>
-
-            <Container maxWidth={'md'} style={{ paddingLeft: '0px', paddingRight: '0px' }}>
-                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', padding: '2rem' }} className={classes.divcalc}>
-                    <span>Y = </span>  <TextField ></TextField>
-                    <Button onClick={viewGraph}>View</Button>
-                </div>
-                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', padding: '3rem' }} className={classes.divcalc}>
-                    <XYPlot height={300} width={300}>
-                        <VerticalGridLines />
-                        <HorizontalGridLines />
-                        <VerticalBarSeries data={data} />
-                        <LineSeries data={data} />
-                    </XYPlot>
-                </div>
+            <Helmet>
+                <meta name="viewport" content="width=device-width, initial-scale=0.6" />
+                <title>Graphs - Visualize the equations in graphs || MathCalc</title>
+                <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathamatical calculations" />
+                <meta name="description" content="" />
+                <meta name="author" content="Mathcalc" />
+                <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
+                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+            </Helmet>
+            <Container maxWidth={'xl'} >
+                <SubNavBar />
+                <Grid container direction="row" justify="center" alignItems="center">
+                    <Grid item lg={8} md={8} sm={12}>
+                        <div className={'div-card ' + classes.divCard}>
+                            <span>y &nbsp;= &nbsp; </span>
+                            <EquationEditor
+                                value={state.equation}
+                                onChange={onChangeEquation}
+                                autoCommands="pi theta sqrt sum prod alpha beta gamma rho"
+                                autoOperatorNames="sin cos tan"
+                            />
+                            <div style={{ marginLeft: '10px' }}>
+                                <TextField id="limitX" value={state.limitX} type={'number'}
+                                    onChange={(e) => SetState({...state, limitX: e.target.value })}
+                                    label={"Limit of x value"}></TextField>
+                            </div>
+                        </div>
+                        <div className={'div-card ' + classes.divCard}>
+                            <canvas id="myChart" className={classes.divGraph} width={330} height={330}></canvas>
+                        </div>
+                    </Grid>
+                    <Grid item lg={4} md={4} sm={false}></Grid>
+                </Grid>
             </Container>
         </div >
     );

@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         width: '99%',
-        backgroundColor: 'white'
     },
     button: {
         height: 40,
@@ -81,7 +80,6 @@ export default function Square() {
 
 
     const onChangeMetrics = (metric, isOnchangeinput, isChoosing) => {
-        debugger
         let length, width, solveby;
 
         if (!isOnchangeinput && state.metrics !== 0 && state.metrics !== 1) {
@@ -172,16 +170,16 @@ export default function Square() {
                                             <table>
                                                 <tbody>
                                                     <tr>
-                                                        <td colSpan={2}><Typography component='label'>
+                                                        {/* <td colSpan={2}><Typography component='label'>
                                                             {
                                                                 state.metrics === 0 ? state.solveby : 'Width'
                                                             }
-                                                        </Typography></td>
+                                                        </Typography></td> */}
                                                         <td>
                                                             <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
                                                                 <TextField type={'number'}
                                                                     style={{ width: '100%', marginBottom: '2rem' }}
-                                                                    label="Enter the value"
+                                                                    label="Width"
                                                                     value={state.inputOne} variant="outlined"
                                                                     id="inputOne"
                                                                     onChange={onChangeInput}
@@ -190,15 +188,15 @@ export default function Square() {
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td colSpan={2}>  <Typography component='label'>
+                                                        {/* <td colSpan={2}>  <Typography component='label'>
                                                             {
                                                                 state.metrics === 1 ? state.solveby : 'Length'
                                                             }
-                                                        </Typography><br /></td>
+                                                        </Typography></td> */}
                                                         <td>
                                                             <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
                                                                 <TextField type={'number'}
-                                                                    style={{ width: '100%', marginBottom: '2rem' }} label="Enter the value"
+                                                                    style={{ width: '100%', marginBottom: '2rem' }} label="Length"
                                                                     value={state.inputTwo} variant="outlined"
                                                                     id="inputTwo"
                                                                     onChange={onChangeInput}

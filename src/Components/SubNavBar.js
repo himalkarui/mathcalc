@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
         top: 0,
         left: 0,
         right: 0,
-        padding: '14px'
+        padding: '14px 0px'
     },
     control: {
         padding: theme.spacing(2),

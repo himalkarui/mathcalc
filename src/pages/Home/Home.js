@@ -1,33 +1,10 @@
 import React from "react";
-import useEffect from "react";
 import { Helmet } from "react-helmet";
 import {
-  AppBar,
   makeStyles,
-  Container,
-  Grid,
-  withStyles,
-  LinearProgress,
-  Toolbar,
 } from "@material-ui/core";
-import PropTypes from "prop-types";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import Fab from "@material-ui/core/Fab";
-import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import { Zoom } from "@material-ui/core/Zoom";
 import Main from "../../Components/Main";
 
-function ScrollTop(props) {
-  const { children, window } = props;
-  const classes = useStyles();
-  return (
-    <React.Fragment>
-      <>
-        <Main />
-      </>
-    </React.Fragment>
-  );
-}
 
 export default function Home(props) {
   const classes = useStyles();
@@ -44,7 +21,7 @@ export default function Home(props) {
         />
         <meta
           name="description"
-          content="mathcalc is the all in one web app for all kind of mathamatical calculations like physics ,chemistry ,mathamatics, quantum physics and a lot "
+          content="mathcalc is the all in one web app for all kind of mathamatical calculations like general, finance, physics ,mathamatics, quantum physics and a lot "
         />
       </Helmet>
       <Main />

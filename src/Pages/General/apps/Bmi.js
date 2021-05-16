@@ -16,7 +16,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         width: '99%',
-        backgroundColor: 'white'
     },
     backdrop: {
         zIndex: theme.zIndex.drawer + 1,
@@ -108,7 +107,7 @@ export default function Bmi() {
                 <CircularProgress color="inherit" />
             </Backdrop>
             <Helmet>
-                <title>Body Mass Index (BMI) calculator || Calculate your Body Mass Index - MathCalc.xyz</title>
+                <title>Body Mass Index (BMI) calculator || Calculate your Body Mass Index - MathCalc</title>
                 <meta name="keywords" content="One stop tool for doing all kind of mathamatical calculations" />
                 <meta name="description"
                     content="mathcalc is the all in one web app for all kind of mathamatical calculations in all fields of science like physics ,chemistry ,mathamatics, quantum physics and a lot " />
@@ -128,7 +127,8 @@ export default function Bmi() {
                                     Select "Compute BMI" and your BMI will appear below.
                         </p>
                                 <Grid container justify="space-around">
-                                    <TextField id="outlined-basic" style={{ display: 'none' }} label="Outlined" variant="outlined" />
+                                    <TextField id="outlined-basic" style={{ display: 'none' }}
+                                        label="Outlined" variant="outlined" type={'number'} />
                                     <TextField
                                         label="Height in cm"
                                         id="height"
@@ -136,6 +136,7 @@ export default function Bmi() {
                                         variant="outlined"
                                         value={state.height}
                                         maxLength={'7'}
+                                        type={'number'}
                                         onChange={(e) => {
                                             if (!isNaN(e.target.value) && e.currentTarget.value.length < 7) {
                                                 setSnakOpen(null);
@@ -157,6 +158,7 @@ export default function Bmi() {
                                         variant="outlined"
                                         value={state.weight}
                                         maxLength={'7'}
+                                        type={'number'}
                                         onChange={(e) => {
                                             if (!isNaN(e.target.value) && e.currentTarget.value.length < 7) {
                                                 setSnakOpen(null);

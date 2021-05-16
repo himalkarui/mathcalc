@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
+import '../Assets/favicon/css/stylesfavicon.css';
+import Footer from "./Footer";
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    Card, CssBaseline, Grid, CardContent, Button, Typography, Container,
+    Card, Grid, CardContent, Button, Typography, Container,
 } from '@material-ui/core';
-import Forward from '../Assets/icons/Forward';
-import Compress from '../Assets/icons/Compress';
 import SendSharp from '@material-ui/icons/Telegram';
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -48,16 +48,29 @@ export default function Main(props) {
     }, []);
     const classes = useStyles();
 
-    let arrUrls = [
-        { urlname: 'age calculator', url: '/general/age-calculator', desc: 'To calculate age or date' },
-        { urlname: 'bmi calculator', url: '/general/bmi-calculator', desc: 'To calculate your BMI' },
-        { urlname: 'simple-interest', url: '/finance/simple-interest', desc: 'To calculate the simple interest' },
-        { urlname: 'compound-interest', url: '/finance/compound-interest', desc: 'To calculate the compound interest' }
-    ];
 
     return (
         <React.Fragment>
-            <>
+            <div data-server-rendered="true" id="app" class="layout" data-v-23847e07>
+                <section class="hero is-dark" data-v-677d599e>
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column is-7">
+                                    <h1 class="subtitle is-spaced is-uppercase has-text-grey-light has-text-weight-bold">Math Calc        </h1>
+                                    <p class="title is-3 has-text-letter-spacing-wide">One stop web app for all your mathamatical calculations and tools
+          </p>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="is-pulled-right">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <br />
                 <Container className={classes.root} maxWidth={'md'} style={{
                     paddingLeft: '0px', paddingRight: '0px', left: 0, right: 0
                 }}>
@@ -74,54 +87,73 @@ export default function Main(props) {
                                 <Button
                                     className={classes.button + ' ' + classes.gridItem}
                                     onClick={(e) => {
-                                        window.location = '/all-calculators'
+                                        window.location = '/maths/'
                                     }}
-                                >EXPLORE ALL CALCS
+                                >EXPLORE MATH CALCS
                                 &nbsp;  <SendSharp />
                                 </Button>
                             </Grid>
                         </CardContent>
                     </Card>
                 </Container>
-                <div style={{ marginTop: '-40px' }}>
-                    <CssBaseline />
-                    <section style={{
-                        width: '100%', paddingLeft: '2rem', paddingRight: '2rem', paddingTop: '2rem', paddingBottom: '0.5rem',
-                        margin: 'auto',
-                    }}>
-                        <h1 style={{
-                            display: 'block', fontSize: '26px', lineHeight: '1.2', fontWeight: '800', marginTop: '0px',
-                            textTransform: 'capitalize', textAlign: 'center', marginBottom: '1rem',
-                        }}>Most Popular Tools</h1>
-                    </section>
-                    <Container maxWidth={'md'} style={{ paddingLeft: '0px', paddingRight: '0px' }}>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', padding: '0px', justifyContent: 'center' }}>
 
-                            {
-                                arrUrls.map((value, i) => {
-                                    return (<li className="ak39fa-0 bhAFtM" key={i}>
-                                        <div className="ojwc4z-0 jkSeLq">
-                                            <a className="sc-1bu7qfl-0 lfMGmO ojwc4z-2 kVIQfP" href={value.url}>
-                                                {value.urlname}</a>
-                                            <div className="sc-1gyxcpm-0 csDfHB ojwc4z-4 dOHSmX" style={{ width: '32px', height: '32px' }}>
-                                                <Compress />
-                                            </div>
-                                            <div className="ojwc4z-1 jgylRt">
-                                                <div className="sc-1gyxcpm-0 csDfHB" style={{ width: '24px', height: '24px' }}>
-                                                    <Forward />
-                                                </div></div><p className="ojwc4z-5 jZEeUz">
-                                                {value.desc}
-                                            </p>
-                                        </div>
-                                    </li>)
-                                })
-                            }
+                <br />
 
+                <div class="container" style={{ marginBottom: '1rem' }}>
+                    <div class="columns">
+                        <div class="column divContents is-4 is-3 column.is-offset-1">
+                            <div class="content">
+                                <h5 class="title is-5">Mathamatics</h5>
+                                <p><a href='/maths/shapes/'  >Shapes</a></p>
+                                <p><a href='/maths/graphs/'  >Graphs</a></p>
+                                <p><a href='/maths/Percentage-calculator/'  >Percentage calculator</a></p>
+                                <p hidden><a href='/maths/Single-rule-of-three-direct/'  >Single rule of three direct</a></p>
+                                <p><a href='/maths/radians-and-degrees-converter/'  >Radians and degrees converter</a></p>
+                            </div>
+                            <p><a href='/maths/'>More</a></p>
                         </div>
-                    </Container>
-                </div >
-
-            </>
+                        <div class="column divContents is-4 is-3">
+                            <div class="content">
+                                <h5 class="title is-5">Tools</h5>
+                                <p><a href="/favicon/favicon-converter/" aria-current="page" class="active--exact active">Favicon Converter</a></p>
+                                <p hidden><a href="/favicon/favicon-generator/" class="">Favicon Generator</a></p>
+                                <p hidden><a href="/favicon/emoji-favicons/" class="">Emoji Favicons</a></p>
+                                <p hidden><a href="/favicon/logo-generator/" class="">Logo Generator</a></p>
+                            </div>
+                            <p><a href='/tools/'  >More</a></p>
+                        </div>
+                        <div class="column divContents is-4 is-3">
+                            <div class="content">
+                                <h5 class="title is-5">General</h5>
+                                <p><a href="/general/age-calculator/" class="">Age Calculator</a></p>
+                                <p><a href="/general/bmi-calculator/">BMI Calculator</a></p>
+                            </div>
+                            <p><a href='/general/'  >More</a></p>
+                        </div>
+                    </div>
+                    <div class="columns" style={{ marginTop: '3px' }}>
+                        <div class="column divContents is-4">
+                            <div class="content">
+                                <h5 class="title is-5">Finance</h5>
+                                <p><a href="/finance/simple-interest/">Simple Interest</a></p>
+                                <p><a href="/finance/compound-interest">Compound Interest</a></p>
+                                <p><a href="/finance/discount/">Discount</a></p>
+                            </div>
+                            <p><a href='/finance/'>More</a></p>
+                        </div>
+                        <div class="column divContents is-4">
+                            <div class="content">
+                                <h5 class="title is-5">Physics</h5>
+                                <p><a href="/physics/eeqlmc2/">Energy Mass Calculator</a></p>
+                                <p><a href="/physics/ohmslaw/" class="">Ohms Law</a></p>
+                                <p><a href="/physics/newtons-law-of-gravity" class="">Newtons Law of Gravity</a></p>
+                            </div>
+                            <p><a href="/physics/" class="">More</a></p>
+                        </div>
+                    </div>
+                </div>
+                <Footer />
+            </div>
         </React.Fragment >
     );
 }

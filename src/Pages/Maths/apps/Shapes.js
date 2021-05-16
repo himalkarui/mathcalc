@@ -4,6 +4,7 @@ import { Container, Grid } from '@material-ui/core';
 import Compress from '../../../Assets/icons/Compress';
 import SubNavBar from '../../../Components/SubNavBar';
 import Helmet from 'react-helmet';
+import Footer from '../../../Components/Footer';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -89,6 +90,7 @@ export default function Shapes() {
                     <Grid item lg={4} md={4} sm={false}></Grid>
                 </Grid>
             </Container>
+            <Footer />
         </div >
     );
 }

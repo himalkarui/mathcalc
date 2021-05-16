@@ -1,18 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import { IconButton } from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import logo from '../Assets/images/smlmclogo.jpg';
+
 // icons
-import MenuIcon from '@material-ui/icons/Menu';
 import { Home, Apps, AttachMoney, Functions, ScatterPlot, Accessibility } from '@material-ui/icons';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     list: {
         width: 250,
         paddingRight: '10px'
@@ -28,77 +27,75 @@ const useStyles = makeStyles({
     },
     listitem: {
         backgroundColor: 'white',
-        borderRadius: '0px 60px 60px 0px',
+        borderRadius: '0px',
         margin: '10px 10px 0px 0px',
-        whiteSpace: 'nowrap'
+        whiteSpace: 'nowrap',
+        '&:hover': {
+            backgroundColor: '#f1f1f1'
+        }
+    },
+    toolbar: theme.mixins.toolbar,
+    pinkAvatar: {
+        color: '#fff',
+        height: '30px !important',
+        width: '30px !important',
+        background: 'linear-gradient(200deg, #dfd1d1, #bdbdcf,#98ba98, #d1b4b4)',
+    },
+    logo: {
+        width: 40,
+        height: 40,
+        backgroundColor: 'black',
     }
-});
+}));
 
 
 const Sidebar = (props) => {
     const classes = useStyles();
-    const [state, setState] = React.useState({
-        left: false,
-    });
-    const handleMenu = (event) => {
-        setState({ left: true });
-    };
-    const toggleDrawer = (anchor, open) => (event) => {
-        if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-            return;
-        }
-        setState({ ...state, [anchor]: open });
-    };
 
     let urls = [
         { url: '/', urlname: 'Home', icon: <Home /> },
-        { url: '/all-calculators', urlname: 'All Calcs', icon: <Apps /> },
-        { url: '/general', urlname: 'General', icon: <Accessibility /> },
-        { url: '/finance', urlname: 'Finance', icon: <AttachMoney /> },
-        { url: '/maths', urlname: 'Maths', icon: <Functions /> },
-        { url: '/physics', urlname: 'Physics', icon: <ScatterPlot /> },
+        { url: '/maths/', urlname: 'Mathamatics', icon: <Functions /> },
+        { url: '/tools/', urlname: 'Tools', icon: <Apps /> },
+        { url: '/general/', urlname: 'General', icon: <Accessibility /> },
+        { url: '/finance/', urlname: 'Finance', icon: <AttachMoney /> },
+        { url: '/physics/', urlname: 'Physics', icon: <ScatterPlot /> },
     ]
 
-    const list = (anchor) => (
-        <div
-            className={clsx(classes.list, {
-                [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-            })}
-            role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
-        >
+    const onChangeStyle = (e) => {
+        try {
+            props.handleDrawerToggle();
+
+        } catch (e) { }
+    }
+    return (
+        <>
+            <div className={classes.toolbar} style={{ borderBottom: '1px solid #77777712' }}>
+                <div style={{ display: 'flex', alignItems: 'center', margin: '13px' }}
+                    onClick={(e) => { window.location = '/' }}>
+                    <Avatar className={classes.logo}>
+                        <img src={logo} alt="mathcalc logo" width={40} />
+                    </Avatar>
+                    <strong>&nbsp;&nbsp; Math Calc</strong>
+                </div>
+            </div>
             <List >
                 {
                     urls.map(ur => {
-                        return (<Link to={ur.url} style={{ textDecoration: 'none', color: 'inherit' }} key={ur.urlname}>
-                            <ListItem className={classes.listitem} button key={ur.urlname}>
-                                <ListItemIcon>{ur.icon}</ListItemIcon>
+                        return (<Link to={ur.url} style={{ textDecoration: 'none', color: 'inherit' }} key={ur.urlname}
+                        >
+                            <ListItem className={classes.listitem} button key={ur.urlname}
+                                onClick={(e) => {
+                                    onChangeStyle(e);
+                                }}>
+                                <ListItemIcon>
+                                    <Avatar className={classes.pinkAvatar}> {ur.icon}</Avatar></ListItemIcon>
                                 <ListItemText primary={ur.urlname} />
                             </ListItem>
                         </Link>)
                     })
                 }
             </List>
-        </div>
-    );
-
-    return (
-        <div>
-
-            <IconButton edge="start"
-                className={classes.menuButton}
-                color="inherit"
-                aria-label="menu"
-                onClick={handleMenu}
-            >
-                <MenuIcon />
-            </IconButton>
-
-            <Drawer className={classes.divdrawer} anchor={'left'} open={state['left']} onClose={toggleDrawer('left', false)}>
-                {list('left')}
-            </Drawer>
-        </div>
+        </>
     );
 }
 

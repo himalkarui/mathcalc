@@ -41,7 +41,6 @@ const Keypad = (props) => {
     const classes = useStyles();
 
     const handleOnDigit = (e) => {
-        debugger;
         props.onDigit(e.currentTarget.value);
     };
     const theme = useTheme();

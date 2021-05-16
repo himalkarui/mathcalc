@@ -1,9 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, } from '@material-ui/core';
+import { Container, Grid, Card, CardContent, Typography } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Helmet from 'react-helmet';
-import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -62,7 +61,6 @@ export default function SimpleInterest() {
     })
 
     const fnEnergy = (e) => {
-        debugger;
         if (e.target.value.length > 35) {
             return
         } else if (isNaN(e.target.value)) {
@@ -99,7 +97,7 @@ export default function SimpleInterest() {
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>E=MC^2- Einstein's Energy Mass Equation</title>
+                <title>E=MC^2- Einstein's Energy Mass Equvalance</title>
                 <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathamatical calculations" />
                 <meta name="description" content="Use Mathcalc interest calculator to calculate simple and compound interest. Simply, enter the details of the principal amount, interest rate, period, and compounding frequency to know the interest earned." />
                 <meta name="author" content="Mathcalc" />
@@ -108,26 +106,40 @@ export default function SimpleInterest() {
             </Helmet>
             <Container maxWidth={'xl'} >
                 <div className={classes.row}>
-                    <SubNavBar />
                     <Grid container direction="row" justify="center" alignItems="center">
                         <Grid item lg={8} md={8} sm={12}>
-                            <h1 className={classes.calcHeader} >Calculate Energy mass (E=MC <sup>2</sup>)</h1>
-                            <div className={classes.divcalc}>
-                                <div className={classes.formelems} noValidate autoComplete="off">
-                                    <TextField id="mass" label="Mass (Kg)" variant="outlined"
-                                        value={state.mass}
-                                        onChange={fnMass}
-                                    /><br />
-                                    <TextField id="energy" label="Energy (J)" variant="outlined"
-                                        value={state.energy}
-                                        onChange={fnEnergy}
-                                    /><br />
-                                    <TextField id="sppedoflight" label="Speed of Light(M/S)" variant="outlined"
-                                        value={state.speedoflight}
-                                        disabled
-                                    /><br />
-                                </div>
-                            </div>
+                            <Card raised elevation={0} >
+                                <div className={'appHeading'}>
+                                    Calculate Energy mass (E=MC <sup>2</sup>)</div>
+                                <CardContent className='appContainer'>
+                                    <Typography paragraph>
+                                        In physics, mass–energy equivalence is the relationship between mass and energy in a system's rest frame,
+                                        where the two values differ only by a constant and the units of measurement.
+                                    <br />
+                                        <br />
+                                        E = mc<sup>2</sup>—In SI units, the energy E is measured in Joules, the mass m is measured in kilograms, and the speed of light is measured in meters per second.
+                                    </Typography>
+                                    <div className={classes.divcalc}>
+                                        <div className={classes.formelems} noValidate autoComplete="off">
+                                            <TextField id="mass" label="Mass (Kg)" variant="outlined"
+                                                value={state.mass}
+                                                onChange={fnMass}
+                                                type={'number'}
+                                            /><br />
+                                            <TextField id="energy" label="Energy (J)" variant="outlined"
+                                                value={state.energy}
+                                                onChange={fnEnergy}
+                                                type={'number'}
+                                            /><br />
+                                            <TextField id="sppedoflight" label="Speed of Light(M/S)" variant="outlined"
+                                                value={state.speedoflight}
+                                                disabled
+                                                type={'number'}
+                                            /><br />
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
                         </Grid>
                         <Grid item lg={4} md={4} sm={false}></Grid>
                     </Grid>
