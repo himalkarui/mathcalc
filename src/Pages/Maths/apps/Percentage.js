@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, Button, Card, CardContent, Typography, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
+import { Button, Typography, Select, MenuItem } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import SettingIcon from '@material-ui/icons/Settings'
 import Helmet from 'react-helmet';
@@ -33,14 +33,15 @@ export default function Percentage() {
         result: 'Some field is empty or wrong',
         fieldOne: '',
         fieldTwo: '',
-        labelOne: '',
-        lablelTwo: '',
+        labelOne: 'Value of P (%)',
+        lablelTwo: 'Value of N',
         option: 0,
         decimalPlace: 5,
     })
 
     React.useEffect(() => {
         onClickCalculate();
+        // eslint-disable-next-line 
     }, [state.option]);
 
     const OnchangeOption = (e) => {
@@ -125,6 +126,12 @@ export default function Percentage() {
 
     const onClickCalculate = () => {
 
+  let resultDiv = document.getElementsByClassName('resultDiv')[0];
+        resultDiv.className = 'resultDiv blink_me'
+        setTimeout(() => {
+            resultDiv.className = 'resultDiv';
+        }, 1000);
+
         let valOne = state.fieldOne === '' ? 0 : parseFloat(state.fieldOne);
         let valTwo = state.fieldTwo === '' ? 0 : parseFloat(state.fieldTwo);
 
@@ -194,7 +201,7 @@ export default function Percentage() {
         <div className={classes.root}>
             <Helmet>
                 <title>Online Percentage Calculator | mathcalc</title>
-                <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathamatical calculations" />
+                <meta name="keywords" content="Online percentage calculator for doing varoius tasks in percentages for absolutly free | mathcalc" />
                 <meta name="description" content="Use Mathcalc interest calculator to calculate simple and compound interest. Simply, enter the details of the principal amount, interest rate, period, and compounding frequency to know the interest earned." />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
@@ -250,8 +257,8 @@ export default function Percentage() {
                             <div class="content" data-v-14591542>
                                 <Typography variant="h4" className={'text-option'}>Result</Typography>
                                 <div className={'resultDiv'}>
-
                                     <span dangerouslySetInnerHTML={{ __html: state.result }}></span>
+                                    <br/>
                                 </div>
                                 <br />
                                 <Button variant="contained" className={"button is-info"}

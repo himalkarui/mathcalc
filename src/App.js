@@ -4,6 +4,7 @@ import { MuiThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/
 import { createBrowserHistory } from "history";
 import './App.css';
 import Header from './Components/Header';
+import Feedback from './Components/Feedback';
 import Home from './Pages/Home/Home';
 import Commingsoon from './Components/Commingsoon';
 import Finance from './Pages/Finance/Finance';
@@ -27,14 +28,13 @@ import Rectangle from "./Pages/Maths/apps/shapes/Rectangle";
 import Triangle from "./Pages/Maths/apps/shapes/Triangle";
 import Ohmslaw from "./Pages/physics/apps/Ohmslaw";
 import Lawofgravity from "./Pages/physics/apps/Lawofgravity";
-import Favicongenerator from "./Pages/Tools/Favicon/Favicongenerator";
 import Faviconconvertor from "./Pages/Tools/Favicon/Faviconconvetor";
-import Emojifavicons from "./Pages/Tools/Favicon/Emojifavicons";
-import Logogenerator from "./Pages/Tools/Favicon/Logogenerator";
 import Privacy from "./Pages/Common/Privacy";
 import Termsofuse from "./Pages/Common/Termsofuse";
 import Percentage from "./Pages/Maths/apps/Percentage";
 import Radiandegree from "./Pages/Maths/apps/Radiandegree";
+import Singlerulethreedir from "./Pages/Maths/apps/Singlerulethreedir";
+import Singleruleinverse from "./Pages/Maths/apps/Singleruleinverse";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -77,10 +77,7 @@ function App() {
 
                 <Route exact path="/tools/" component={AllTools} />
 
-                <Route exact path="/favicon-generator/" component={Favicongenerator} />
                 <Route exact path="/favicon-converter/" component={Faviconconvertor} />
-                <Route exact path="/emoji-favicons/" component={Emojifavicons} />
-                <Route exact path="/logo-generator/" component={Logogenerator} />
 
                 <Route exact path="/general" component={General} />
                 <Route exact path="/general/age-calculator" component={Age} />
@@ -101,6 +98,8 @@ function App() {
                 <Route exact path="/maths/" component={Maths} />
                 <Route exact path="/maths/percentage-calculator/" component={Percentage} />
                 <Route exact path="/maths/radians-and-degrees-converter/" component={Radiandegree} />
+                <Route exact path="/maths/single-rule-of-three-direct/" component={Singlerulethreedir} />
+                <Route exact path="/maths/single-rule-of-three-inverse/" component={Singleruleinverse} />
                 <Route exact path="/maths/equations" component={Maths} />
                 <Route exact path="/maths/shapes" component={Shapes} />
                 <Route exact path="/maths/shapes/circle" component={Circle} />
@@ -115,7 +114,7 @@ function App() {
                 <Route exact path="/share/" component={Share} />
                 <Route exact path="/privacy-policy/" component={Privacy} />
                 <Route exact path="/terms-of-use/" component={Termsofuse} />
-
+                <Route exact path="/feedback" component={Feedback} />
                 <Route path="/" component={FileNotFound} />
               </Switch>
             </main>

@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { } from '@material-ui/core/styles';
+import React from "react";
 import Helmet from 'react-helmet';
-import * as fileSave from "file-saver";
 // import js , css and iamges
 import '../../Assets/favicon/css/stylesfavicon.css';
 
@@ -52,10 +50,10 @@ export default function Privacy(props) {
                                     <p data-v-677d599e>
                                         The fonts within the font selector are from the open source
                                         project
-              <a href="https://fonts.google.com/" target="_blank" rel="noopener" data-v-677d599e>Google Fonts</a>
+              <a href="https://fonts.google.com/" rel="noreferrer" target="_blank" data-v-677d599e>Google Fonts</a>
                                     .
               Click
-              <a href="https://fonts.google.com/attribution" data-v-677d599e>here</a>
+              <a href="https://fonts.google.com/attribution" rel="noreferrer" data-v-677d599e>here</a>
                                     for the
               full list of fonts and their respective licenses. You should
               review the license of the font you've chosen before usage in
@@ -65,10 +63,10 @@ export default function Privacy(props) {
                                     <h4 class="title is-4" data-v-677d599e>Twemoji</h4>
                                     <p data-v-677d599e>
                                         The emoji graphics are from the open source project
-              <a target="_blank" href="https://twemoji.twitter.com/" data-v-677d599e>Twemoji</a>
+              <a target="_blank" href="https://twemoji.twitter.com/" rel="noreferrer" data-v-677d599e>Twemoji</a>
                                     . The graphics are copyright 2020 Twitter, Inc and other
               contributors. The graphics are licensed under
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/" data-v-677d599e>CC-BY 4.0</a>
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/" rel="noreferrer" data-v-677d599e>CC-BY 4.0</a>
                                     . You should review the license before usage in your project.
 
                                 </p>

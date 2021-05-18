@@ -59,7 +59,7 @@ export default function Main(props) {
                                 <div class="column is-7">
                                     <h1 class="subtitle is-spaced is-uppercase has-text-grey-light has-text-weight-bold">Math Calc        </h1>
                                     <p class="title is-3 has-text-letter-spacing-wide">One stop web app for all your mathamatical calculations and tools
-          </p>
+        for FREE 😎!  </p>
                                 </div>
                                 <div class="column is-4">
                                     <div class="is-pulled-right">
@@ -106,8 +106,9 @@ export default function Main(props) {
                                 <h5 class="title is-5">Mathamatics</h5>
                                 <p><a href='/maths/shapes/'  >Shapes</a></p>
                                 <p><a href='/maths/graphs/'  >Graphs</a></p>
-                                <p><a href='/maths/Percentage-calculator/'  >Percentage calculator</a></p>
-                                <p hidden><a href='/maths/Single-rule-of-three-direct/'  >Single rule of three direct</a></p>
+                                <p><a href='/maths/percentage-calculator/'  >Percentage calculator</a></p>
+                                <p ><a href='/maths/Single-rule-of-three-direct/'  >Single rule of three direct</a></p>
+                                <p ><a href='/maths/single-rule-of-three-inverse/'  >Single rule of three inverse</a></p>
                                 <p><a href='/maths/radians-and-degrees-converter/'  >Radians and degrees converter</a></p>
                             </div>
                             <p><a href='/maths/'>More</a></p>

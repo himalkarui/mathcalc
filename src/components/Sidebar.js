@@ -7,7 +7,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import logo from '../Assets/images/smlmclogo.jpg';
-
+import FeedbackIcon from '@material-ui/icons/Feedback';
 // icons
 import { Home, Apps, AttachMoney, Functions, ScatterPlot, Accessibility } from '@material-ui/icons';
 
@@ -59,6 +59,7 @@ const Sidebar = (props) => {
         { url: '/general/', urlname: 'General', icon: <Accessibility /> },
         { url: '/finance/', urlname: 'Finance', icon: <AttachMoney /> },
         { url: '/physics/', urlname: 'Physics', icon: <ScatterPlot /> },
+        { url: '/feedback/', urlname: 'Feedback', icon: <FeedbackIcon /> },
     ]
 
     const onChangeStyle = (e) => {

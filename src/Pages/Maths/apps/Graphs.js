@@ -1,7 +1,7 @@
 import React from 'react';
 import { Chart, registerables } from 'chart.js';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Container, TextField, Button, } from '@material-ui/core';
+import { Grid, Container, TextField } from '@material-ui/core';
 import SubNavBar from '../../../Components/SubNavBar';
 import EquationEditor from "equation-editor-react";
 import Helmet from 'react-helmet';
@@ -66,7 +66,7 @@ export default function Graphs() {
         let yval = 0;
         let strEval = '';
         for (let i = 0; i < xArray.length; ++i) {
-            strEval = strEquation.replaceAll('x', i + 1).replaceAll("\\",'').replaceAll('right', '').replaceAll('left', '');
+            strEval = strEquation.replaceAll('x', i + 1).replaceAll("\\", '').replaceAll('right', '').replaceAll('left', '');
             yval = math.evaluate(strEval);
             yArray.push(yval);
         }
@@ -148,12 +148,8 @@ export default function Graphs() {
     }
 
     React.useEffect(() => {
-        try {
-            createGraph();
-        }
-        catch (e) {
-            console.log(e.message);
-        }
+        createGraph();
+        // eslint-disable-next-line
     }, [state.limitX, state.equation]);
     const classes = useStyles();
     return (
@@ -181,7 +177,7 @@ export default function Graphs() {
                             />
                             <div style={{ marginLeft: '10px' }}>
                                 <TextField id="limitX" value={state.limitX} type={'number'}
-                                    onChange={(e) => SetState({...state, limitX: e.target.value })}
+                                    onChange={(e) => SetState({ ...state, limitX: e.target.value })}
                                     label={"Limit of x value"}></TextField>
                             </div>
                         </div>

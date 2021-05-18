@@ -86,7 +86,7 @@ function Header(props) {
                         <Avatar className={classes.logo}>
                             <img src={logo} alt="mathcalc logo" width={40} />
                         </Avatar>
-                        <h2> <strong>&nbsp;&nbsp; Math Calc</strong></h2>
+                        <h2> <strong>&nbsp;&nbsp; MathCalc</strong></h2>
                     </div>
 
                 </Toolbar>

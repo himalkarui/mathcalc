@@ -1,9 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import Compress from '../../Assets/icons/Compress';
-import SubNavBar from '../../Components/SubNavBar';
 import Footer from '../../Components/Footer';
 
 const useStyles = makeStyles((theme) => ({
@@ -41,8 +40,8 @@ export default function Maths() {
         { url: '/maths/shapes/', title: 'Shapes' },
         { url: '/maths/graphs/', title: 'Graphs' },
         { url: '/maths/percentage-calculator/', title: 'Percentage calculator' },
-        // { url: '/maths/Single-rule-of-three-direct/', title: 'Single rule of three direct' },
-        // { url: '/maths/Single-rule-of-three-inverse/', title: 'Single rule of three inverse' },
+        { url: '/maths/single-rule-of-three-direct/', title: 'Single rule of three direct' },
+        { url: '/maths/single-rule-of-three-inverse/', title: 'Single rule of three inverse' },
         // { url: '/maths/Trigonometric-functions/', title: 'Trigonometric functions' },
         { url: '/maths/radians-and-degrees-converter/', title: 'Radians and degrees converter' },
     ];

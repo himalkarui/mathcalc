@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { } from '@material-ui/core/styles';
+import React from "react";
 import Helmet from 'react-helmet';
-import * as fileSave from "file-saver";
 // import js , css and iamges
 import '../../Assets/favicon/css/stylesfavicon.css';
 
@@ -40,6 +38,42 @@ export default function Privacy(props) {
                         <div class="content" data-v-077c0c4a>
                             <div class="columns" data-v-077c0c4a>
                                 <div class="column is-7 is-offset-1" data-v-077c0c4a>
+                                    <p data-v-077c0c4a>      This privacy policy has been compiled to better serve those who are concerned with how their 'Personally identifiable information' (PII) is being used online. PII, as used in US privacy law and information security, is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context. Please read our privacy policy carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our website.
+                                    </p>
+                                    <p data-v-077c0c4a>
+                                        What personal information do we collect from the people that visit our blog, website or app?
+                                        We do not collect information from visitors of our site.
+                                    </p>
+                                    <h3 class="title is-3" data-v-077c0c4a> When do we collect information?
+                                    </h3>
+                                    <p data-v-077c0c4a>
+                                        We collect information from you when you or enter information on our site.
+                                    </p>
+                                    <h3 class="title is-3" data-v-077c0c4a>
+                                        How do we use your information?
+                                    </h3>
+                                    <p data-v-077c0c4a>
+                                        We may use the information we collect from you when you register, make a purchase, sign up for our newsletter, respond to a survey or marketing communication, surf the website, or use certain other site features.
+                                    </p>
+                                    <h3 class="title is-3" data-v-077c0c4a>
+                                        How do we protect visitor information?</h3>
+                                    <ul>
+                                        <li>   We do not use vulnerability scanning and/or scanning to PCI standards.
+                                     </li>
+                                        <li>     We do not use Malware Scanning.
+                                     </li>
+                                        <li>     We do not use an SSL certificate.
+                                     </li>
+                                        <li>   We only provide articles and information, we never ask for personal or private information like email addresses, or credit card numbers.
+                                         </li>
+                                    </ul>
+                                    <h3 class="title is-3" data-v-077c0c4a>Do we use 'cookies'?</h3>
+                                    <p data-v-077c0c4a>
+                                        We do not use cookies for tracking purposes
+</p>
+                                        You can choose to have your computer warn you each time a cookie is being sent, or you can choose to turn off all cookies. You do this through your browser (like Internet Explorer) settings. Each browser is a little different, so look at your browser's Help menu to learn the correct way to modify your cookies.
+
+                                        If you disable cookies off, some features will be disabled that make your site experience more efficient and some of our services will not function properly.
                                     <h3 class="title is-3" data-v-077c0c4a>Summary</h3>
                                     <ul data-v-077c0c4a>
                                         <li data-v-077c0c4a>We do not collect any personal information.</li>

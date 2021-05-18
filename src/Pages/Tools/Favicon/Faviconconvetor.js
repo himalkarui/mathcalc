@@ -69,10 +69,7 @@ export default function Faviconconvertor(props) {
     }
 
     useEffect(() => {
-        let fileInput = document.getElementById('image');
-        debugger;
-        // fileInput.addEventListener('change',
-
+       
     }, []);
 
     function onCHangeFile(ev) {
@@ -110,7 +107,7 @@ export default function Faviconconvertor(props) {
         <React.Fragment>
             <div data-server-rendered="true" class="layout" data-v-14591542>
                 <Helmet>
-                    <title>Favicon Generator - Image to Favicon - favicon.io</title>
+                    <title>Favicon Generator - Image to Favicon - Mathcalc</title>
                     <meta charset="utf-8" />
                     <meta name="generator" content="Gridsome v0.7.20" />
                     <meta data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
