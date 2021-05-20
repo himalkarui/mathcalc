@@ -158,6 +158,36 @@
         <priority>1</priority>
     </url>
 
+     <url>
+        <loc>https://mathcalc.xyz/?/physics/capacitance/</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/physics/inductance/</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/physics/kinetic-energy/</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
     <url>
         <loc>https://mathcalc.xyz/?/maths</loc>
         
