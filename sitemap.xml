@@ -28,7 +28,16 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/covid19-tracker//</loc>
+        <loc>https://mathcalc.xyz/?/covid19-tracker/</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/?/image-editor/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
