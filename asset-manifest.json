@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.93c4c691.chunk.css",
-    "main.js": "/static/js/main.f59d6bc2.chunk.js",
-    "main.js.map": "/static/js/main.f59d6bc2.chunk.js.map",
+    "main.js": "/static/js/main.0743dc4b.chunk.js",
+    "main.js.map": "/static/js/main.0743dc4b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e72fecb6.js",
     "runtime-main.js.map": "/static/js/runtime-main.e72fecb6.js.map",
     "static/css/2.a753e63a.chunk.css": "/static/css/2.a753e63a.chunk.css",
-    "static/js/2.9b06d890.chunk.js": "/static/js/2.9b06d890.chunk.js",
-    "static/js/2.9b06d890.chunk.js.map": "/static/js/2.9b06d890.chunk.js.map",
+    "static/js/2.796b9cbf.chunk.js": "/static/js/2.796b9cbf.chunk.js",
+    "static/js/2.796b9cbf.chunk.js.map": "/static/js/2.796b9cbf.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.a753e63a.chunk.css.map": "/static/css/2.a753e63a.chunk.css.map",
     "static/css/main.93c4c691.chunk.css.map": "/static/css/main.93c4c691.chunk.css.map",
-    "static/js/2.9b06d890.chunk.js.LICENSE.txt": "/static/js/2.9b06d890.chunk.js.LICENSE.txt",
+    "static/js/2.796b9cbf.chunk.js.LICENSE.txt": "/static/js/2.796b9cbf.chunk.js.LICENSE.txt",
     "static/media/mathquill.css": "/static/media/Symbola.c2f28720.woff",
     "static/media/UHC-800-million.ce3017e8.gif": "/static/media/UHC-800-million.ce3017e8.gif",
     "static/media/capacitanceform.b1f51d95.svg": "/static/media/capacitanceform.b1f51d95.svg",
@@ -19,6 +19,7 @@
     "static/media/covidawarness.30e1f4ec.gif": "/static/media/covidawarness.30e1f4ec.gif",
     "static/media/kineticenergy.4aa0c642.gif": "/static/media/kineticenergy.4aa0c642.gif",
     "static/media/kineticenergy.bcefe76b.svg": "/static/media/kineticenergy.bcefe76b.svg",
+    "static/media/mathcalcblack.c3ad9508.png": "/static/media/mathcalcblack.c3ad9508.png",
     "static/media/rectangle.6eb589e9.svg": "/static/media/rectangle.6eb589e9.svg",
     "static/media/smlmclogo.19270871.jpg": "/static/media/smlmclogo.19270871.jpg",
     "static/media/square.5a1edb90.svg": "/static/media/square.5a1edb90.svg",
@@ -27,8 +28,8 @@
   "entrypoints": [
     "static/js/runtime-main.e72fecb6.js",
     "static/css/2.a753e63a.chunk.css",
-    "static/js/2.9b06d890.chunk.js",
+    "static/js/2.796b9cbf.chunk.js",
     "static/css/main.93c4c691.chunk.css",
-    "static/js/main.f59d6bc2.chunk.js"
+    "static/js/main.0743dc4b.chunk.js"
   ]
 }
