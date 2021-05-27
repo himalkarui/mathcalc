@@ -109,7 +109,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/general</loc>
+        <loc>https://mathcalc.xyz/?/general/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -118,7 +118,7 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/general/age-calculator</loc>
+        <loc>https://mathcalc.xyz/?/general/age-calculator/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -127,7 +127,7 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/general/bmi-calculator</loc>
+        <loc>https://mathcalc.xyz/?/general/bmi-calculator/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -136,7 +136,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/general/flames-calculator</loc>
+        <loc>https://mathcalc.xyz/?/general/flames-calculator/</loc>
         
         <lastmod>2021-05-18</lastmod>
 
@@ -144,7 +144,7 @@
 
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/general/time-calculator</loc>
+        <loc>https://mathcalc.xyz/?/general/time-calculator/</loc>
         
         <lastmod>2021-05-18</lastmod>
 
@@ -162,7 +162,25 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/finance</loc>
+        <loc>https://mathcalc.xyz/?/general/cpm-roi-calculator/</loc>
+        
+        <lastmod>2021-05-27</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/general/cpc-roi-calculator/</loc>
+        
+        <lastmod>2021-05-27</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/finance/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -171,7 +189,7 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/finance/simple-interest</loc>
+        <loc>https://mathcalc.xyz/?/finance/simple-interest/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -180,7 +198,7 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/finance/compound-interest</loc>
+        <loc>https://mathcalc.xyz/?/finance/compound-interest/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -189,7 +207,7 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/finance/discount</loc>
+        <loc>https://mathcalc.xyz/?/finance/discount/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -199,7 +217,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/finance/emi-calculator</loc>
+        <loc>https://mathcalc.xyz/?/finance/emi-calculator/</loc>
         
         <lastmod>2021-05-18</lastmod>
 
@@ -208,7 +226,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/physics</loc>
+        <loc>https://mathcalc.xyz/?/physics/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -218,7 +236,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/physics/eeqlmc2</loc>
+        <loc>https://mathcalc.xyz/?/physics/eeqlmc2/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -228,7 +246,7 @@
     </url>
  
  	<url>
-        <loc>https://mathcalc.xyz/?/physics/ohmslaw</loc>
+        <loc>https://mathcalc.xyz/?/physics/ohmslaw/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -238,7 +256,7 @@
     </url>
     
     <url>
-        <loc>https://mathcalc.xyz/?/physics/newtons-law-of-gravity</loc>
+        <loc>https://mathcalc.xyz/?/physics/newtons-law-of-gravity/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -277,7 +295,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths</loc>
+        <loc>https://mathcalc.xyz/?/maths/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -322,7 +340,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/shapes</loc>
+        <loc>https://mathcalc.xyz/?/maths/shapes/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -332,7 +350,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/shapes/circle</loc>
+        <loc>https://mathcalc.xyz/?/maths/shapes/circle/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -342,7 +360,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/shapes/square</loc>
+        <loc>https://mathcalc.xyz/?/maths/shapes/square/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -352,7 +370,7 @@
     </url>
 
 	<url>
-        <loc>https://mathcalc.xyz/?/maths/shapes/rectangle</loc>
+        <loc>https://mathcalc.xyz/?/maths/shapes/rectangle/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -360,7 +378,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/shapes/triangle</loc>
+        <loc>https://mathcalc.xyz/?/maths/shapes/triangle/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -368,7 +386,7 @@
     </url>
     
     <url>
-        <loc>https://mathcalc.xyz/?/maths/graphs</loc>
+        <loc>https://mathcalc.xyz/?/maths/graphs/</loc>
         
         <lastmod>2021-05-01</lastmod>
 
