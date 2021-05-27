@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://mathcalc.xyz/</loc>
+        <loc>https://mathcalc.xyz</loc>
 
         <lastmod>2021-05-01</lastmod>
 
@@ -10,7 +10,7 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/tools/</loc>
+        <loc>https://mathcalc.xyz/?/tools</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -19,7 +19,7 @@
     </url>
 
      <url>
-        <loc>https://mathcalc.xyz/?/email-validator/</loc>
+        <loc>https://mathcalc.xyz/?/email-validator</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -28,7 +28,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/covid19-tracker/</loc>
+        <loc>https://mathcalc.xyz/?/covid19-tracker</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -37,7 +37,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/image-editor/</loc>
+        <loc>https://mathcalc.xyz/?/image-editor</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -46,7 +46,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/generate-list-numbers/</loc>
+        <loc>https://mathcalc.xyz/?/generate-list-numbers</loc>
         
         <lastmod>2021-05-24</lastmod>
 
@@ -55,7 +55,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/binary-converter/</loc>
+        <loc>https://mathcalc.xyz/binary-converter</loc>
         
         <lastmod>2021-05-25</lastmod>
 
@@ -64,7 +64,7 @@
     </url>
 
      <url>
-        <loc>https://mathcalc.xyz/?/hexadecimal-converter/</loc>
+        <loc>https://mathcalc.xyz/?/hexadecimal-converter</loc>
         
         <lastmod>2021-05-25</lastmod>
 
@@ -73,7 +73,7 @@
     </url>
 
      <url>
-        <loc>https://mathcalc.xyz/?/sort-numbers/</loc>
+        <loc>https://mathcalc.xyz/?/sort-numbers</loc>
         
         <lastmod>2021-05-25</lastmod>
 
@@ -82,7 +82,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/filter-numbers/</loc>
+        <loc>https://mathcalc.xyz/?/filter-numbers</loc>
         
         <lastmod>2021-05-25</lastmod>
 
@@ -91,7 +91,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/favicon/favicon-converter/</loc>
+        <loc>https://mathcalc.xyz/?/favicon/favicon-converter</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -100,7 +100,7 @@
     </url>
     
     <url>
-        <loc>https://mathcalc.xyz/?/favicon/favicon-generator/</loc>
+        <loc>https://mathcalc.xyz/?/favicon/favicon-generator</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -109,16 +109,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/general/</loc>
-        
-        <lastmod>2021-05-01</lastmod>
-
-        <changefreq>yearly</changefreq>
-
-        <priority>1</priority>
-    </url>
-    <url>
-        <loc>https://mathcalc.xyz/?/general/age-calculator/</loc>
+        <loc>https://mathcalc.xyz/?/general</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -127,7 +118,16 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/general/bmi-calculator/</loc>
+        <loc>https://mathcalc.xyz/?/general/age-calculator</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://mathcalc.xyz/?/general/bmi-calculator</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -136,7 +136,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/general/flames-calculator/</loc>
+        <loc>https://mathcalc.xyz/?/general/flames-calculator</loc>
         
         <lastmod>2021-05-18</lastmod>
 
@@ -144,16 +144,7 @@
 
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/general/time-calculator/</loc>
-        
-        <lastmod>2021-05-18</lastmod>
-
-        <changefreq>yearly</changefreq>
-
-    </url>
-
-    <url>
-        <loc>https://mathcalc.xyz/?/general/google-adsense-calculator/</loc>
+        <loc>https://mathcalc.xyz/?/general/time-calculator</loc>
         
         <lastmod>2021-05-18</lastmod>
 
@@ -162,7 +153,16 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/general/cpm-roi-calculator/</loc>
+        <loc>https://mathcalc.xyz/?/general/google-adsense-calculator</loc>
+        
+        <lastmod>2021-05-18</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/general/cpm-roi-calculator</loc>
         
         <lastmod>2021-05-27</lastmod>
 
@@ -171,7 +171,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/general/cpc-roi-calculator/</loc>
+        <loc>https://mathcalc.xyz/?/general/cpc-roi-calculator</loc>
         
         <lastmod>2021-05-27</lastmod>
 
@@ -180,7 +180,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/finance/</loc>
+        <loc>https://mathcalc.xyz/?/finance</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -189,7 +189,7 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/finance/simple-interest/</loc>
+        <loc>https://mathcalc.xyz/?/finance/simple-interest</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -198,7 +198,7 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/finance/compound-interest/</loc>
+        <loc>https://mathcalc.xyz/?/finance/compound-interest</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -207,7 +207,7 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/finance/discount/</loc>
+        <loc>https://mathcalc.xyz/?/finance/discount</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -217,7 +217,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/finance/emi-calculator/</loc>
+        <loc>https://mathcalc.xyz/?/finance/emi-calculator</loc>
         
         <lastmod>2021-05-18</lastmod>
 
@@ -226,7 +226,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/physics/</loc>
+        <loc>https://mathcalc.xyz/?/physics</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -236,7 +236,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/physics/eeqlmc2/</loc>
+        <loc>https://mathcalc.xyz/?/physics/eeqlmc2</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -246,7 +246,7 @@
     </url>
  
  	<url>
-        <loc>https://mathcalc.xyz/?/physics/ohmslaw/</loc>
+        <loc>https://mathcalc.xyz/?/physics/ohmslaw</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -256,7 +256,7 @@
     </url>
     
     <url>
-        <loc>https://mathcalc.xyz/?/physics/newtons-law-of-gravity/</loc>
+        <loc>https://mathcalc.xyz/?/physics/newtons-law-of-gravity</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -266,7 +266,7 @@
     </url>
 
      <url>
-        <loc>https://mathcalc.xyz/?/physics/capacitance/</loc>
+        <loc>https://mathcalc.xyz/?/physics/capacitance</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -275,17 +275,7 @@
         <priority>1</priority>
     </url>
     <url>
-        <loc>https://mathcalc.xyz/?/physics/inductance/</loc>
-        
-        <lastmod>2021-05-01</lastmod>
-
-        <changefreq>yearly</changefreq>
-
-        <priority>1</priority>
-    </url>
-
-    <url>
-        <loc>https://mathcalc.xyz/?/physics/kinetic-energy/</loc>
+        <loc>https://mathcalc.xyz/?/physics/inductance</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -295,7 +285,17 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/</loc>
+        <loc>https://mathcalc.xyz/?/physics/kinetic-energy</loc>
+        
+        <lastmod>2021-05-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/maths</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -304,7 +304,7 @@
     </url>
 
      <url>
-        <loc>https://mathcalc.xyz/?/maths/percentage-calculator/</loc>
+        <loc>https://mathcalc.xyz/?/maths/percentage-calculator</loc>
         
         <lastmod>2021-05-17</lastmod>
 
@@ -313,7 +313,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/radians-and-degrees-converter/</loc>
+        <loc>https://mathcalc.xyz/?/maths/radians-and-degrees-converter</loc>
         
         <lastmod>2021-05-17</lastmod>
 
@@ -322,7 +322,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/single-rule-of-three-direct/</loc>
+        <loc>https://mathcalc.xyz/?/maths/single-rule-of-three-direct</loc>
         
         <lastmod>2021-05-17</lastmod>
 
@@ -331,7 +331,7 @@
     </url>
 
      <url>
-        <loc>https://mathcalc.xyz/?/maths/single-rule-of-three-inverse/</loc>
+        <loc>https://mathcalc.xyz/?/maths/single-rule-of-three-inverse</loc>
         
         <lastmod>2021-05-17</lastmod>
 
@@ -340,7 +340,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/shapes/</loc>
+        <loc>https://mathcalc.xyz/?/maths/shapes</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -350,7 +350,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/shapes/circle/</loc>
+        <loc>https://mathcalc.xyz/?/maths/shapes/circle</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -360,7 +360,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/shapes/square/</loc>
+        <loc>https://mathcalc.xyz/?/maths/shapes/square</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -370,7 +370,7 @@
     </url>
 
 	<url>
-        <loc>https://mathcalc.xyz/?/maths/shapes/rectangle/</loc>
+        <loc>https://mathcalc.xyz/?/maths/shapes/rectangle</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -378,7 +378,7 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/maths/shapes/triangle/</loc>
+        <loc>https://mathcalc.xyz/?/maths/shapes/triangle</loc>
         
         <lastmod>2021-05-01</lastmod>
 
@@ -386,7 +386,7 @@
     </url>
     
     <url>
-        <loc>https://mathcalc.xyz/?/maths/graphs/</loc>
+        <loc>https://mathcalc.xyz/?/maths/graphs</loc>
         
         <lastmod>2021-05-01</lastmod>
 
