@@ -135,7 +135,7 @@
 
     </url>
 
-     <url>
+    <url>
         <loc>https://mathcalc.xyz/?/add-text-each-line</loc>
         
         <lastmod>2021-05-29</lastmod>
@@ -144,6 +144,41 @@
 
     </url>
 
+    <url>
+        <loc>https://mathcalc.xyz/?/sort-list</loc>
+        
+        <lastmod>2021-05-29</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/?/count-lines</loc>
+        
+        <lastmod>2021-05-29</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/?/count-letters</loc>
+        
+        <lastmod>2021-05-29</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/?/count-words</loc>
+        
+        <lastmod>2021-05-29</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
 
     <url>
         <loc>https://mathcalc.xyz/?/general</loc>
