@@ -109,6 +109,43 @@
     </url>
 
     <url>
+        <loc>https://mathcalc.xyz/?/text-lists</loc>
+        
+        <lastmod>2021-05-29</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/?/reverse-list</loc>
+        
+        <lastmod>2021-05-29</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/?/list-randomizer</loc>
+        
+        <lastmod>2021-05-29</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/?/add-text-each-line</loc>
+        
+        <lastmod>2021-05-29</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+
+    <url>
         <loc>https://mathcalc.xyz/?/general</loc>
         
         <lastmod>2021-05-01</lastmod>
