@@ -1,45 +1,33 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+import { Breadcrumbs, Typography } from '@material-ui/core';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-        overflow: 'hidden',
-        top: 0,
-        left: 0,
-        right: 0,
-        padding: '14px 0px'
-    },
-    control: {
-        padding: theme.spacing(2),
-    }
-}));
+export default function SubNavBar(props) {
 
-export default function SubNavBar() {
-    const classes = useStyles();
-    let urlpathname = window.location.pathname;
-    let splitedPath = urlpathname.split('/');
-    let SubNavList = '  <li class="js35eu-0 cXgXUQ">';
-    SubNavList += '<a class="sc-1bu7qfl-0 lfMGmO js35eu-1 cXpuyZ" href="/">';
-    SubNavList += ' <div class="js35eu-3 cXGnHr">Home</div></a></li>';
-    let path = '';
-    for (let i = 1; i < splitedPath.length; i++) {
-        for (let j = 0; j < i; ++j) {
-            path += '/' + splitedPath[j + 1];
-        }
-        // if (splitedPath.length === 1) {
-        //     SubNavList += '<li style="cursor:pointer,color:black !important" key="' + i + '" class="js35eu-0 cXgXUQ"><div class="js35eu-6 cYfDtS">' + splitedPath[i] + '</div></li>'
-        // } else {
-        SubNavList += '<li key="' + i + '" class="js35eu-0 cXgXUQ">';
-        SubNavList += '<a class="sc-1bu7qfl-0 lfMGmO js35eu-1 cXpuyZ" href=' + path + '>';
-        SubNavList += '<div class="js35eu-6 cYfDtS">' + splitedPath[i] + '</div></li>'
-        // }
-        path = '';
-    }
+
+
     return (
-        <div className={classes.root}>
-            <ol className={"sc-1rq1wxh-0 chtnE"} dangerouslySetInnerHTML={{ __html: SubNavList }}>
-            </ol>
-        </div >
+        <section className="hero" data-v-23847e07>
+            <div style={{ padding: '2rem 0.5rem 0rem 0.5rem' }}>
+                <div className="container">
+                    <h1 style={{ margin: '0px' }} className="subtitle is-spaced is-uppercase has-text-weight-bold">
+                        <Breadcrumbs className="subtitle is-spaced is-uppercase has-text-weight-bold" separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+                            {
+                                props.links ? props.links.map((link, i) => {
+                                    return <Link key={i} to={link.url}>{link.urlName}</Link>
+                                }) : <></>
+                            }
+                            {
+                                props.pageTitle ? <Typography className="has-text-weight-bold">{props.pageTitle}</Typography>
+                                    : <></>
+                            }
+                        </Breadcrumbs>
+                    </h1>
+                    {props.txtTitle ? <p style={{ marginTop: '1rem' }} className="has-text-letter-spacing-wide has-text-grey">
+                        {props.txtTitle}</p> : <></>}
+                </div>
+            </div>
+        </section>
     )
 }

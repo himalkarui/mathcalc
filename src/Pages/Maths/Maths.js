@@ -1,9 +1,10 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 import Compress from '../../Assets/icons/Compress';
 import Footer from '../../Components/Footer';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -49,40 +50,42 @@ export default function Maths() {
         <div className={classes.root}>
             <Helmet>
                 <title>Free Math Calculator - Calculate all  Mathamatical calculations</title>
-                <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathamatical calculations" />
-                <meta name="description" content="Use Mathcalc interest calculator to calculate simple and compound interest. Simply, enter the details of the principal amount, interest rate, period, and compounding frequency to know the interest earned." />
+                <meta name="keywords" content="Mathcalc, online calculator, free tools, free online calculator" />
+                <meta name="description" content="Mathcalc is an Online free tool for doing all kind of  mathamatical calculations" />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
             </Helmet>
-            <section class="hero" data-v-23847e07>
-                <div style={{ padding: '1rem 0.5rem' }}>
-                    <div class="container">
-                        <h1 class="subtitle is-spaced is-uppercase has-text-weight-bold">Mathamatics
+            <Container maxWidth="xl">
+                <Grid direction="row" container justify="center" alignItems="center">
+                    <Grid item lg={8} md={8} sm={12}>
+                        <section className="hero" data-v-23847e07>
+                            <div style={{ padding: '2rem 0.5rem' }}>
+                                <div className="container">
+                                    <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Mathamatics
           </h1>
-                        <p class="has-text-letter-spacing-wide has-text-grey">
-                            Various mathematical tasks, such as calculate percentages, simple shapes, graph fnctions and more..
+                                    <p className="has-text-letter-spacing-wide has-text-grey">
+                                        Various mathamatical tasks, such as calculate percentages, simple shapes, graph functions and more.
           </p>
-                    </div>
-                </div>
-            </section>
-            <Grid direction="row" justify="center" alignItems="center">
-                <Grid item lg={8} md={8} sm={12}>
-                    <div className={classes.calcContent}>
-                        {
-                            urls.map((ur, i) => {
-                                return (<a href={ur.url} className={'divLink'} key={i} >
-                                    <Compress style={{
-                                        width: '30px',
-                                        margin: '0px 16px 0px 16px'
-                                    }} /> <span>{ur.title}</span></a>
-                                )
-                            })
-                        }
-                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <div className={classes.calcContent}>
+                            {
+                                urls.map((ur, i) => {
+                                    return (<Link to={ur.url} className={'divLink'} key={i} >
+                                        <Compress style={{
+                                            width: '30px',
+                                            margin: '0px 16px 0px 16px'
+                                        }} /> <span>{ur.title}</span></Link>
+                                    )
+                                })
+                            }
+                        </div>
+                    </Grid>
+                    <Grid item lg={4} md={4} sm={false}></Grid>
                 </Grid>
-                <Grid item lg={4} md={4} sm={false}></Grid>
-            </Grid>
+            </Container>
             <Footer />
         </div >
     );

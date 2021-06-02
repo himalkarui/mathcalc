@@ -13,19 +13,19 @@ export default function Privacy(props) {
                 <meta data-vue-tag="ssr" data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
                 <meta data-vue-tag="ssr" data-key="description" name="description" content="The only favicon generator you need for your next project. Quickly generate your favicon from text, image, or choose from hundreds of emojis." />
             </Helmet>
-            <div data-server-rendered="true" id="app" class="layout" data-v-677d599e>
-                <section class="hero is-dark" style={{ backgroundColor: '#563279 !important' }} data-v-677d599e>
-                    <div class="hero-body">
-                        <div class="container">
-                            <div class="columns">
-                                <div class="column is-7">
-                                    <h1 class="subtitle is-spaced is-uppercase has-text-grey-light has-text-weight-bold">Terms of Use
+            <div data-server-rendered="true" id="app" className="layout" data-v-677d599e>
+                <section className="hero is-dark" style={{ backgroundColor: '#563279 !important' }} data-v-677d599e>
+                    <div className="hero-body">
+                        <div className="container">
+                            <div className="columns">
+                                <div className="column is-7">
+                                    <h1 className="subtitle is-spaced is-uppercase has-text-grey-light has-text-weight-bold">Terms of Use
           </h1>
-                                    <p class="title is-3 has-text-letter-spacing-wide">Terms of Use
+                                    <p className="title is-3 has-text-letter-spacing-wide">Terms of Use
           </p>
                                 </div>
-                                <div class="column is-4">
-                                    <div class="is-pulled-right">
+                                <div className="column is-4">
+                                    <div className="is-pulled-right">
 
                                     </div>
                                 </div>
@@ -33,20 +33,20 @@ export default function Privacy(props) {
                         </div>
                     </div>
                 </section>
-                <section class="section is-small" data-v-677d599e>
-                    <div class="container" data-v-677d599e>
-                        <div class="content" data-v-677d599e>
-                            <div class="columns" data-v-677d599e>
-                                <div class="column is-7 is-offset-1" data-v-677d599e>
-                                    <h3 class="title is-3" data-v-677d599e>Terms</h3>
+                <section className="section is-small" data-v-677d599e>
+                    <div className="container" data-v-677d599e>
+                        <div className="content" data-v-677d599e>
+                            <div className="columns" data-v-677d599e>
+                                <div className="column is-7 is-offset-1" data-v-677d599e>
+                                    <h3 className="title is-3" data-v-677d599e>Terms</h3>
                                     <p data-v-677d599e>Mathcalc.xyz is a online free web tool for doing all kind of mathamatical calculations and other common tools
             </p>
-                                    <h3 class="title is-4" data-v-677d599e>Images</h3>
+                                    <h3 className="title is-4" data-v-677d599e>Images</h3>
                                     <p data-v-677d599e>Mathcalc.xyz is not responsible for any images you convert to
                                     favicon format. You should only use images that you have
                                     permission or license to use.
             </p>
-                                    <h4 class="title is-4" data-v-677d599e>Google Fonts</h4>
+                                    <h4 className="title is-4" data-v-677d599e>Google Fonts</h4>
                                     <p data-v-677d599e>
                                         The fonts within the font selector are from the open source
                                         project
@@ -60,7 +60,7 @@ export default function Privacy(props) {
               your project.
 
                                 </p>
-                                    <h4 class="title is-4" data-v-677d599e>Twemoji</h4>
+                                    <h4 className="title is-4" data-v-677d599e>Twemoji</h4>
                                     <p data-v-677d599e>
                                         The emoji graphics are from the open source project
               <a target="_blank" href="https://twemoji.twitter.com/" rel="noreferrer" data-v-677d599e>Twemoji</a>
@@ -71,7 +71,7 @@ export default function Privacy(props) {
 
                                 </p>
                                 </div>
-                                <div class="column is-4" data-v-677d599e></div>
+                                <div className="column is-4" data-v-677d599e></div>
                             </div>
                         </div>
                     </div>

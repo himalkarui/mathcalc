@@ -1,9 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, } from '@material-ui/core';
+import { Container, Grid, } from '@material-ui/core';
 import Helmet from 'react-helmet';
 import Compress from '../../Assets/icons/Compress';
 import Footer from '../../Components/Footer';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,50 +31,63 @@ const useStyles = makeStyles((theme) => ({
 export default function AllTools() {
     const classes = useStyles();
 
-    let Url = [{
-        urlname: 'Favicon Converter',
-        urlpath: '/favicon-converter/'
-    }]
-
+    let Url = [
+        {
+            urlname: 'Favicon Converter', urlpath: '/favicon-converter/'
+        },
+        {
+            urlname: 'Favicon Generator', urlpath: '/favicon-generator/'
+        },
+        {
+            urlname: 'COVID-19 Tracker', urlpath: '/covid19-tracker/'
+        },
+        {
+            urlname: 'Free Email Validation', urlpath: '/email-validator/'
+        },
+        {
+            urlname: 'Online Image Editor', urlpath: '/image-editor/'
+        }
+    ]
 
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Free Online Tools | Mathcalc</title>
-                <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathamatical calculations" />
-                <meta name="description" content="Use Mathcalc to calculate all mathamatical expression" />
+                <title>Free Online Tools - Mathcalc</title>
+                <meta name="keywords" content="Mathamatical calculations, free online tools, mathcalc, email validator, age calculator, online calculator, free online calculator" />
+                <meta name="description" content="Mathcalc online tools are free to use and it have various kinds of tools to ease your tasks" />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
             </Helmet>
-            <section class="hero" data-v-23847e07>
-                <div style={{ padding: '1rem 0.5rem' }}>
-                    <div class="container">
-                        <h1 class="subtitle is-spaced is-uppercase has-text-weight-bold">Free Online Tools
+            <Container maxWidth="xl">
+                <section className="hero" data-v-23847e07>
+                    <div style={{ padding: '2rem 0.5rem' }}>
+                        <div className="container">
+                            <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Free Online Tools
           </h1>
-                        <p class="has-text-letter-spacing-wide has-text-grey">
-                            Free online tools for various tasks
+                            <p className="has-text-letter-spacing-wide has-text-grey">
+                                Free online tools for various tasks
           </p>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <Grid direction="row" justify="center" alignItems="center">
-                <Grid item lg={8} md={8} sm={12}>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', padding: '0px', justifyContent: 'center' }}>
-                        {
-                            Url.map((val, i) => {
-                                return < a href={val.urlpath} className={'divLink'} key={i}>
-                                    <Compress style={{
-                                        width: '30px',
-                                        margin: '0px 8px 0px 16px'
-                                    }} /> <span>{val.urlname}</span></a>
-                            })
-
-                        }
-                    </div>
+                </section>
+                <Grid container direction="row" justify="center" alignItems="center">
+                    <Grid item lg={8} md={8} sm={12}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', padding: '0px', justifyContent: 'center' }}>
+                            {
+                                Url.map((val, i) => {
+                                    return <Link to={val.urlpath} className={'divLink'} key={i}>
+                                        <Compress style={{
+                                            width: '30px',
+                                            margin: '0px 8px 0px 16px'
+                                        }} /> <span>{val.urlname}</span></Link>
+                                })
+                            }
+                        </div>
+                    </Grid>
+                    <Grid item lg={4} md={4} sm={false}></Grid>
                 </Grid>
-                <Grid item lg={4} md={4} sm={false}></Grid>
-            </Grid>
+            </Container>
             <Footer />
         </div >
     );

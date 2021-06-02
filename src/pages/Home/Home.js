@@ -12,17 +12,12 @@ export default function Home(props) {
   return (
     <div className={classes.root}>
       <Helmet>
-        <title>
-          Mathamatical Calculations || All in one app for all Mathamatical Calculations || MathCalc
-        </title>
-        <meta
-          name="keywords"
-          content="One tool for doing all kind of mathamatical calculations"
-        />
-        <meta
-          name="description"
-          content="mathcalc is the all in one web app for all kind of mathamatical calculations like general, finance, physics ,mathamatics, quantum physics and a lot "
-        />
+        <title>Mathcalc - Free online calculators and tools</title>
+        <meta name="keywords" content="One stop tool for doing all kind of mathamatical calculations" />
+        <meta name="description" content="Mathcalc is the all in one web app for 
+        all kind of mathamatical calculations in all fields of science like physics ,chemistry ,mathamatics, 
+        quantum physics and a lot " />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>
       <Main />
     </div>

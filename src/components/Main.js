@@ -3,8 +3,9 @@ import '../Assets/favicon/css/stylesfavicon.css';
 import Footer from "./Footer";
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    Card, Grid, CardContent, Button, Typography, Container,
+    Card, CardContent, Typography, Container
 } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 import SendSharp from '@material-ui/icons/Telegram';
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -17,13 +18,15 @@ const useStyles = makeStyles((theme) => ({
     },
     mainHeader: {
         fontSize: '3rem',
-        marginBottom: '20px'
+        marginBottom: '20px',
+        fontFamily: 'system-ui !important',
+        fontWeight: '900',
     },
     button: {
         height: 40,
         minWidth: "175px",
         background:
-            "transparent linear-gradient(180deg, #2D88FC 0%, #1962BF 100%) 0% 0% no-repeat padding-box",
+            "transparent linear-gradient(180deg, #2D88FC 0%, rebeccapurple 100%) 0% 0% no-repeat padding-box",
         fontSize: 15,
         color: "white",
         marginTop: 14,
@@ -38,6 +41,24 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px 10px 20px 15px',
         minWidth: '252px',
         maxWidth: '252px'
+    },
+    linkRoot: {
+        textAlign: 'center',
+        marginBottom: '15px',
+        '&:hover': {
+            transform: 'rotate(-2deg)',
+            color: '#fafafa'
+        }
+    },
+    linkElem: {
+        backgroundColor: 'rebeccapurple',
+        padding: '0.4rem 1.5rem',
+        color: 'white !important',
+        borderRadius: '28px',
+        '&:hover': {
+            transform: 'rotate(-2deg)',
+            color: '#fafafa'
+        }
     }
 }));
 
@@ -48,22 +69,19 @@ export default function Main(props) {
     }, []);
     const classes = useStyles();
 
-
     return (
         <React.Fragment>
-            <div data-server-rendered="true" id="app" class="layout" data-v-23847e07>
-                <section class="hero is-dark" data-v-677d599e>
-                    <div class="hero-body">
-                        <div class="container">
-                            <div class="columns">
-                                <div class="column is-7">
-                                    <h1 class="subtitle is-spaced is-uppercase has-text-grey-light has-text-weight-bold">Math Calc        </h1>
-                                    <p class="title is-3 has-text-letter-spacing-wide">One stop web app for all your mathamatical calculations and tools
-        for FREE 😎!  </p>
+            <div data-server-rendered="true" className="layout">
+                <section className="hero box appContainer" style={{ backgroundColor: '#5d3980', borderRadius: '0px' }} data-v-677d599e>
+                    <div className="hero-body">
+                        <div className="container">
+                            <div className="columns">
+                                <div className="column is-7">
+                                    <h1 className="subtitle is-spaced is-uppercase has-text-grey-light has-text-weight-bold">Mathcalc        </h1>
+                                    <p className="title is-3 has-text-letter-spacing-wide has-text-white">One stop web app for all your mathamatical calculations and tools for FREE !  </p>
                                 </div>
-                                <div class="column is-4">
-                                    <div class="is-pulled-right">
-
+                                <div className="column is-4">
+                                    <div className="is-pulled-right">
                                     </div>
                                 </div>
                             </div>
@@ -71,89 +89,158 @@ export default function Main(props) {
                     </div>
                 </section>
                 <br />
-                <Container className={classes.root} maxWidth={'md'} style={{
-                    paddingLeft: '0px', paddingRight: '0px', left: 0, right: 0
-                }}>
+                <Container className={classes.root} maxWidth={'md'} >
                     <Card raised elevation={0} style={{ backgroundColor: 'transparent', marginTop: '3%' }} >
                         <Typography className={classes.mainHeader} variant='h1'>
-                            <strong>
-                                Mathcalc
-                </strong></Typography>
+                            Mathcalc
+                </Typography>
                         <span className='subtext'>
                             We make calculations easy.  One stop tool for all mathamatical calculations.
                 </span>
                         <CardContent className='appContainer'>
-                            <Grid container justify="space-around">
-                                <Button
-                                    className={classes.button + ' ' + classes.gridItem}
-                                    onClick={(e) => {
-                                        window.location = '/maths/'
-                                    }}
-                                >EXPLORE MATH CALCS
+                            <Link
+                                className={classes.button + ' button ' + classes.gridItem}
+                                to='/maths/'
+                            >EXPLORE MATH CALCS
                                 &nbsp;  <SendSharp />
-                                </Button>
-                            </Grid>
+                            </Link>
                         </CardContent>
                     </Card>
                 </Container>
-
                 <br />
-
-                <div class="container" style={{ marginBottom: '1rem' }}>
-                    <div class="columns">
-                        <div class="column divContents is-4 is-3 column.is-offset-1">
-                            <div class="content">
-                                <h5 class="title is-5">Mathamatics</h5>
-                                <p><a href='/maths/shapes/'  >Shapes</a></p>
-                                <p><a href='/maths/graphs/'  >Graphs</a></p>
-                                <p><a href='/maths/percentage-calculator/'  >Percentage calculator</a></p>
-                                <p ><a href='/maths/Single-rule-of-three-direct/'  >Single rule of three direct</a></p>
-                                <p ><a href='/maths/single-rule-of-three-inverse/'  >Single rule of three inverse</a></p>
-                                <p><a href='/maths/radians-and-degrees-converter/'  >Radians and degrees converter</a></p>
+                <div className="container" style={{ margin: '1rem' }}>
+                    <div className="columns">
+                        <div className="column divContents is-4 is-3 column.is-offset-1">
+                            <div className="content">
+                                <h5 className="title is-5">
+                                    <Link to={'/maths'} key={'Maths'}
+                                    >Mathamatics
+                                    </Link>
+                                </h5>
+                                <p><Link to='/maths/shapes/'  >Shapes</Link></p>
+                                <p><Link to='/maths/graphs/'  >Graphs</Link></p>
+                                <p><Link to='/maths/percentage-calculator/'  >Percentage calculator</Link></p>
+                                <p ><Link to='/maths/Single-rule-of-three-direct/'  >Single rule of three direct</Link></p>
+                                <p ><Link to='/maths/single-rule-of-three-inverse/'  >Single rule of three inverse</Link></p>
+                                <p><Link to='/maths/radians-and-degrees-converter/'  >Radians and degrees converter</Link></p>
                             </div>
-                            <p><a href='/maths/'>More</a></p>
+                            <p className={classes.linkRoot}>
+                                <Link className={classes.linkElem} to='/maths/'>More →</Link></p>
                         </div>
-                        <div class="column divContents is-4 is-3">
-                            <div class="content">
-                                <h5 class="title is-5">Tools</h5>
-                                <p><a href="/favicon/favicon-converter/" aria-current="page" class="active--exact active">Favicon Converter</a></p>
-                                <p hidden><a href="/favicon/favicon-generator/" class="">Favicon Generator</a></p>
-                                <p hidden><a href="/favicon/emoji-favicons/" class="">Emoji Favicons</a></p>
-                                <p hidden><a href="/favicon/logo-generator/" class="">Logo Generator</a></p>
+                        <div className="column divContents is-4 is-3">
+                            <div className="content">
+                                <h5 className="title is-5">
+                                    <Link to={'/tools'} key={'tools'}>                                        Tools
+                                    </Link>
+                                </h5>
+                                <p><Link to="/favicon-converter/" aria-current="page" className="active--exact active">Favicon Converter</Link></p>
+                                <p><Link to="/favicon-generator/" className="">Favicon Generator</Link></p>
+                                <p><Link to="/covid19-tracker/" className="">COVID-19 Tracker</Link></p>
+                                <p><Link to="/email-validator/" className="">Free Email Validator</Link></p>
+                                <p><Link to="/image-editor/" className="">Online Image Editor</Link></p>
+                                <p hidden><Link to="/favicon/emoji-favicons/" className="">Emoji Favicons</Link></p>
+                                <p hidden><Link to="/favicon/logo-generator/" className="">Logo Generator</Link></p>
                             </div>
-                            <p><a href='/tools/'  >More</a></p>
+                            <p className={classes.linkRoot}> <Link className={classes.linkElem} to='/tools/'  >More →</Link></p>
                         </div>
-                        <div class="column divContents is-4 is-3">
-                            <div class="content">
-                                <h5 class="title is-5">General</h5>
-                                <p><a href="/general/age-calculator/" class="">Age Calculator</a></p>
-                                <p><a href="/general/bmi-calculator/">BMI Calculator</a></p>
+                        <div className="column divContents is-4 is-3">
+                            <div className="content">
+                                <h5 className="title is-5">
+                                    <Link to={'/general'} key={'general'}
+                                    >
+                                        General
+                                    </Link>
+                                </h5>
+                                <p><Link to="/general/age-calculator/" className="">Age Calculator</Link></p>
+                                <p><Link to="/general/bmi-calculator/">BMI Calculator</Link></p>
+                                <p><Link to="/general/flames-calculator/">Flames Calculator</Link></p>
+                                <p><Link to="/general/time-calculator/">Time Calculator</Link></p>
+                                <p><Link to="/general/google-adsense-calculator/">Google Adsense Calculator</Link></p>
+                                <p><Link to="/general/cpc-roi-calculator/">CPC ROI Calculator</Link></p>
                             </div>
-                            <p><a href='/general/'  >More</a></p>
+                            <p className={classes.linkRoot}> <Link className={classes.linkElem} to='/general/'  >More →</Link></p>
                         </div>
                     </div>
-                    <div class="columns" style={{ marginTop: '3px' }}>
-                        <div class="column divContents is-4">
-                            <div class="content">
-                                <h5 class="title is-5">Finance</h5>
-                                <p><a href="/finance/simple-interest/">Simple Interest</a></p>
-                                <p><a href="/finance/compound-interest">Compound Interest</a></p>
-                                <p><a href="/finance/discount/">Discount</a></p>
+                    <hr />
+                    <div className="columns" style={{ marginTop: '3px' }}>
+                        <div className="column divContents is-4">
+                            <div className="content">
+                                <h5 className="title is-5">
+                                    <Link to={'/finance'} key={'finance'}
+                                    >
+                                        Finance
+                                    </Link>
+                                </h5>
+                                <p><Link to="/finance/simple-interest/">Simple Interest</Link></p>
+                                <p><Link to="/finance/compound-interest">Compound Interest</Link></p>
+                                <p><Link to="/finance/discount/">Discount</Link></p>
+                                <p><Link to="/finance/emi-calculator/">EMI Calculator</Link></p>
                             </div>
-                            <p><a href='/finance/'>More</a></p>
+                            <p className={classes.linkRoot}>
+                                <Link className={classes.linkElem} to='/finance/'>More →</Link>
+                            </p>
                         </div>
-                        <div class="column divContents is-4">
-                            <div class="content">
-                                <h5 class="title is-5">Physics</h5>
-                                <p><a href="/physics/eeqlmc2/">Energy Mass Calculator</a></p>
-                                <p><a href="/physics/ohmslaw/" class="">Ohms Law</a></p>
-                                <p><a href="/physics/newtons-law-of-gravity" class="">Newtons Law of Gravity</a></p>
+                        <div className="column divContents is-4">
+                            <div className="content">
+                                <h5 className="title is-5">
+                                    <Link to={'/physics'} key={'physics'}>
+                                        Physics
+                                    </Link>
+                                </h5>
+                                <p><Link to="/physics/eeqlmc2/">Energy Mass Calculator</Link></p>
+                                <p><Link to="/physics/ohmslaw/">Ohms Law</Link></p>
+                                <p><Link to="/physics/newtons-law-of-gravity/" >Newtons Law of Gravity</Link></p>
+                                <p><Link to="/physics/capacitance/">Capacitance</Link></p>
+                                <p><Link to="/physics/inductance/" >Inductance</Link></p>
+                                <p><Link to="/physics/kinetic-energy/" >Kinetic Energy</Link></p>
                             </div>
-                            <p><a href="/physics/" class="">More</a></p>
+                            <p className={classes.linkRoot}>
+                                <Link className={classes.linkElem} to="/physics/">More →</Link>
+                            </p>
+                        </div>
+                        <div className="column divContents is-4">
+                            <div className="content">
+                                <h5 className="title is-5">
+                                    <Link to={'/numbers'} key={'numbers'}>
+                                        Numbers
+                                    </Link>
+                                </h5>
+                                <p><Link to="/generate-list-numbers/" className="">Generate List of Numbers</Link></p>
+                                <p><Link to="/binary-converter/" className="">Binary Converter</Link></p>
+                                <p><Link to="/hexadecimal-converter/" className="">Hexadecimal Converter</Link></p>
+                                <p><Link to="/sort-numbers/" className="">Sort Numbers</Link></p>
+                                <p><Link to="/minimum-maximum-list/" className="">Maximum and minimum of a list</Link></p>
+                                <p><Link to="/filter-numbers/" className="">Filter Numbers</Link></p>
+                            </div>
+                            <p className={classes.linkRoot}>
+                                <Link className={classes.linkElem} to="/numbers/">More →</Link>
+                            </p>
                         </div>
                     </div>
+                    <hr />
+                    <div className="columns" style={{ marginTop: '3px' }}>
+                        <div className="column divContents is-4">
+                            <div className="content">
+                                <h5 className="title is-5">
+                                    <Link to={'/text-lists'}
+                                        key={'text-lists'}>
+                                        Text and Lists
+                                    </Link>
+                                </h5>
+                                <p><Link to="/reverse-list/" className="">Reverse List</Link></p>
+                                <p><Link to="/list-randomizer/" className="">List Randomizer</Link></p>
+                                <p><Link to="/add-text-each-line/" className="">Add text to each line</Link></p>
+                                <p><Link to="/sort-list/" className="">Sort List</Link></p>
+                                <p><Link to="/count-letters/" className="">Count Letters</Link></p>
+                                <p><Link to="/count-words/" className="">Count Words</Link></p>
+                            </div>
+                            <p className={classes.linkRoot}>
+                                <Link className={classes.linkElem} to="/text-lists/">More →</Link>
+                            </p>
+                        </div>
+                    </div>
+                    <Footer />
                 </div>
-                <Footer />
             </div>
         </React.Fragment >
     );

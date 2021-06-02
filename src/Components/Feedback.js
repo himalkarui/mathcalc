@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
-import { TextField, } from '@material-ui/core';
+import { Card, Container, Divider, TextField, } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Send from '@material-ui/icons/SendSharp';
 import CustomSnakbar from './CustomSnakbar';
@@ -87,7 +87,7 @@ export default function Feedback() {
     }, []);
 
     return (
-        <div data-server-rendered="true" id="app" class="layout" data-v-23847e07>
+        <div data-server-rendered="true" id="app" className="layout" data-v-23847e07>
             <Helmet>
                 <title>Contact Us, Suggest a new calculator or  tool | mathcalc</title>
                 <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathamatical calculations" />
@@ -96,61 +96,69 @@ export default function Feedback() {
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
             </Helmet>
-            <section class="hero" data-v-677d599e>
-                <div class="hero-body">
-                    <h1 class="subtitle is-spaced is-uppercase has-text-weight-bold">Contact Us
+            <Container maxWidth="xl">
+                <section className="hero">
+                    <div className="hero-body">
+                        <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Contact Us
           </h1>
-                    <div class="container">
-                        <div class="columns">
+                        <div className="container">
+                            <div className="columns">
+                                <div className="column is-6">
+                                    <Card elevation={1} className="box">
 
-                            <div className="column is-6">
-                                <CustomSnakbar
-                                    open={snakOpen}
-                                    msg={snakMessage}
-                                    handleClose={handlesnackClose}
-                                />
-                                <form>
-                                    <TextField className={classes.inputField}
-                                        id="first_name" label={'First Name'}
-                                        onChange={onInputChange}
-                                        value={state.first_name}
-                                        placeholder={'First name'} required type={'text'} variant="outlined" />
-                                    <br />
-                                    <TextField className={classes.inputField}
-                                        onChange={onInputChange}
-                                        value={state.last_name}
-                                        id="last_name" label={'Last Name'} placeholder={'Last name'}
-                                        type={'text'} variant="outlined" />
-                                    <br />
-                                    <TextField className={classes.inputField}
-                                        onChange={onInputChange}
-                                        value={state.email_id}
-                                        id="email_id" label={'Email'} placeholder={'Email'}
-                                        required type={'text'} variant="outlined" />
-                                    <br />
-                                    <TextField className={classes.inputField}
-                                        onChange={onInputChange}
-                                        value={state.comments}
-                                        id="comments" multiline rows={6} required
-                                        variant={"outlined"}
-                                        aria-label="Have feedback? We’d love to hear it, but please don’t share sensitive information. Have questions? Try help or support." placeholder={'Have feedback? We’d love to hear it, but please don’t share sensitive information. Have questions? Try help or support.'} /><br />
-                                    <br />
-                                    <Button style={{
-                                        width: '100%',
-                                        height: '42px',
-                                        marginLeft: '9px',
-                                        letterSpacing: '4px'
-                                    }} className="button is-info" onClick={handleSendClose} color="primary"
-                                    >
-                                        Send message &nbsp; {<Send />}
-                                    </Button>
-                                </form>
-                            </div >
+                                        <CustomSnakbar
+                                            open={snakOpen}
+                                            msg={snakMessage}
+                                            handleClose={handlesnackClose}
+                                        />
+                                        <TextField className={classes.inputField}
+                                            id="first_name" label={'First Name'}
+                                            onChange={onInputChange}
+                                            value={state.first_name}
+                                            placeholder={'First name'} required type={'text'} variant="outlined" />
+                                        <br />
+                                        <TextField className={classes.inputField}
+                                            onChange={onInputChange}
+                                            value={state.last_name}
+                                            id="last_name" label={'Last Name'} placeholder={'Last name'}
+                                            type={'text'} variant="outlined" />
+                                        <br />
+                                        <TextField className={classes.inputField}
+                                            onChange={onInputChange}
+                                            value={state.email_id}
+                                            id="email_id" label={'Email'} placeholder={'Email'}
+                                            required type={'text'} variant="outlined" />
+                                        <br />
+                                        <TextField className={classes.inputField}
+                                            onChange={onInputChange}
+                                            value={state.comments}
+                                            id="comments" multiline rows={6} required
+                                            variant={"outlined"}
+                                            aria-label="Have feedback? We’d love to hear it, but please don’t share sensitive information. Have questions? Try help or support." placeholder={'Have feedback? We’d love to hear it, but please don’t share sensitive information. Have questions? Try help or support.'} /><br />
+                                        <br />
+                                        <Divider />
+                                        <br />
+                                        <Button style={{
+                                            width: '100%',
+                                            height: '42px',
+                                            marginLeft: '9px',
+                                            letterSpacing: '4px',
+                                            fontWeight: 'bolder'
+                                        }} onClick={handleSendClose} color="primary"
+                                        >
+                                            Send message &nbsp; {<Send />}
+                                        </Button>
+                                    </Card>
+                                </div >
+                                <div className="column is-6">
 
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+
+            </Container>
         </div>
     );
 }

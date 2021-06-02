@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import mclogo from '../Assets/images/mathcalcblack.jpg';
+import mclogo from '../Assets/images/mathcalcblack.png';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     padding: '10px 20px',
-    backgroundColor: '#c1c1c1',
+    backgroundColor: '#fafafa',
     marginTop: '25px',
+    borderTop: '1px solid #00000012',
   },
   divLinks: {
     justifyContent: 'space-evenly',
@@ -49,9 +51,9 @@ export default function Footer() {
     <footer className={classes.root}>
       <div className={classes.divLinks}>
         <a className={classes.footerLink} href="/" target="_blank" style={{ display: 'flex', alignItems: 'center', marginTop: '-5px' }}>
-          <img src={mclogo} style={{borderRadius:'100%', marginRight:'3px'}} alt='mathcalc' width={30} height={27} />
-          MathCalc</a>
-        <a className={classes.footerLink} href="/feedback/">Contact Us</a>
+          <img src={mclogo} style={{ borderRadius: '100%', marginRight: '3px' }} alt='mathcalc' width={30} height={27} />
+          Mathcalc</a>
+        <Link className={classes.footerLink} to="/feedback/">Contact Us</Link>
         <a className={classes.footerLink} href="/privacy-policy/" target="_blank">Privacy Policy</a>
         <a className={classes.footerLink} href="/terms-of-use" target="_blank">Terms of Use</a>
       </div>

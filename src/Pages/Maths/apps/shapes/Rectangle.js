@@ -2,11 +2,12 @@ import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Helmet } from "react-helmet";
 import {
-    Card, Grid, CardContent, FormControl, InputLabel, MenuItem,
-    Typography, Container, TextField, Select,
+    Grid, FormControl, InputLabel, MenuItem,
+    Breadcrumbs, Typography, Container, TextField, Select, Card,
 } from '@material-ui/core';
-import SubNavBar from '../../../../Components/SubNavBar';
+import { Link } from 'react-router-dom';
 import imgRectangle from '../../../../Assets/images/rectangle.svg';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -50,6 +51,12 @@ const useStyles = makeStyles((theme) => ({
         padding: '0px !important',
         height: '60px',
         maxWidth: '255px'
+    },
+    ulElem: {
+        "& li": {
+            listStyleType: 'decimal',
+            marginLeft: '20px'
+        }
     },
 
 }));
@@ -126,97 +133,169 @@ export default function Square() {
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Rectangle calculator || Calculate Area, perimete and diagonal of a Rectangle || MathCalc.xyz</title>
-                <meta name="keywords" content="One stop tool for doing all kind of mathamatical calculations" />
+                <title>Online Rectangle calculator | mathcalc</title>
+                <meta name="keywords" content="calculate Area, perimeter and diagonal of a Rectangle, area calculator, perimeter calculator,free calculator, mathcalc" />
                 <meta name="description"
-                    content="mathcalc is the all in one web app for all kind of mathamatical calculations in all fields of science like physics ,chemistry ,mathamatics, quantum physics and a lot " />     </Helmet>
+                    content="Online rectangle calculator is used to calculate the area , perimeter and diagonal of the rectangle online for free" />     </Helmet>
             <Container maxWidth={'xl'} >
-                <SubNavBar />
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item lg={8} md={8} sm={12}>
-                        <Card raised elevation={0} >
-                            <div className={'appHeading'}>Rectangle Calculator</div>
-                            <CardContent className='appContainer'>
-                                <p className={'text-muted'} >
-                                    In Euclidean plane geometry, a rectangle is a quadrilateral with four right angles.
-                                    It can also be defined as: an equiangular quadrilateral, since equiangular means that all of its angles are equal (360°/4 = 90°);
-                                    or a parallelogram containing a right angle. A rectangle with four sides of equal length is a square.
+                        <section className="hero" data-v-23847e07>
+                            <div style={{ padding: '2rem 0.5rem' }}>
+                                <div className="container">
+                                    <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
+                                        <Breadcrumbs className="subtitle is-spaced is-uppercase has-text-weight-bold" separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
+                                            <Link to='/maths/'>Mathamatics</Link>
+                                            <Link to='/maths/shapes/'>Shapes</Link>
+                                            <Typography className="has-text-weight-bold">Rectangle calculator</Typography>
+                                        </Breadcrumbs>
+                                    </h1>
+                                    <p className="has-text-letter-spacing-wide has-text-grey">
+                                        Calculate the area, perimeter and diagonal of a rectangle.</p>
+                                </div>
+                            </div>
+                        </section>
+                        <Card elevation={1} className="box">
+                            <h2 className={'title is-5'}>Rectangle Calculator</h2>
+                            <p>
+                                In Euclidean plane geometry, a rectangle is a quadrilateral with four right angles.
+                                It can also be defined as: an equiangular quadrilateral, since equiangular means that all of its angles are equal (360°/4 = 90°);
+                                or a parallelogram containing a right angle. A rectangle with four sides of equal length is a square.
                                  </p>
-                                <div><FormControl variant="outlined" className={classes.solved_for} aria-autocomplete={'none'}>
-                                    <InputLabel id="metrics">Solved For</InputLabel>
-                                    <Select
-                                        labelId="metrics-label"
-                                        id="metrics-outlined"
-                                        label="Solved For" style={{ width: '100%', marginBottom: '2rem' }}
-                                        onChange={(e) => { onChangeMetrics(e.target.value, false, true) }}
-                                        value={state.metrics}
-                                    >
-                                        <MenuItem value={2}>Area</MenuItem>
-                                        <MenuItem value={3}>Perimeter</MenuItem>
-                                        <MenuItem value={4}>Diagonal</MenuItem>
-                                    </Select>
-                                </FormControl>
-                                </div>
-                                <div className='chtnE' style={{ fontSize: '30px' }}>
-                                    <Typography component='label' hidden={!(state.metrics === 0)}>Width :<strong>{state.length}</strong><br /></Typography>
-                                    <Typography component='label' hidden={!(state.metrics === 1)}>Length :<strong>{state.length}</strong><br /></Typography>
-                                    <Typography component='label' hidden={!(state.metrics === 2)}>Area :  <strong>{state.area}</strong><br /></Typography>
-                                    <Typography component='label' hidden={!(state.metrics === 3)}>Perimeter : <strong> {state.perimeter}</strong><br /></Typography>
-                                    <Typography component='label' hidden={!(state.metrics === 4)}>Diagonal :  <strong>{state.diagonal}</strong><br /></Typography>
-                                </div>
-                                <Grid container justify="flex-start" >
-                                    <Grid item>
-                                        <div>
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        {/* <td colSpan={2}><Typography component='label'>
+                            <div><FormControl variant="outlined" className={classes.solved_for} aria-autocomplete={'none'}>
+                                <InputLabel id="metrics">Solved For</InputLabel>
+                                <Select
+                                    labelId="metrics-label"
+                                    id="metrics-outlined"
+                                    label="Solved For" style={{ width: '100%', marginBottom: '2rem' }}
+                                    onChange={(e) => { onChangeMetrics(e.target.value, false, true) }}
+                                    value={state.metrics}
+                                >
+                                    <MenuItem value={2}>Area</MenuItem>
+                                    <MenuItem value={3}>Perimeter</MenuItem>
+                                    <MenuItem value={4}>Diagonal</MenuItem>
+                                </Select>
+                            </FormControl>
+                            </div>
+                            <div className='chtnE' style={{ fontSize: '30px' }}>
+                                <Typography component='label' hidden={!(state.metrics === 0)}>Width :<strong>{state.length}</strong><br /></Typography>
+                                <Typography component='label' hidden={!(state.metrics === 1)}>Length :<strong>{state.length}</strong><br /></Typography>
+                                <Typography component='label' hidden={!(state.metrics === 2)}>Area :  <strong>{state.area}</strong><br /></Typography>
+                                <Typography component='label' hidden={!(state.metrics === 3)}>Perimeter : <strong> {state.perimeter}</strong><br /></Typography>
+                                <Typography component='label' hidden={!(state.metrics === 4)}>Diagonal :  <strong>{state.diagonal}</strong><br /></Typography>
+                            </div>
+                            <Grid container justify="flex-start" >
+                                <Grid item>
+                                    <div>
+                                        <table>
+                                            <tbody>
+                                                <tr>
+                                                    {/* <td colSpan={2}><Typography component='label'>
                                                             {
                                                                 state.metrics === 0 ? state.solveby : 'Width'
                                                             }
                                                         </Typography></td> */}
-                                                        <td>
-                                                            <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
-                                                                <TextField type={'number'}
-                                                                    style={{ width: '100%', marginBottom: '2rem' }}
-                                                                    label="Width"
-                                                                    value={state.inputOne} variant="outlined"
-                                                                    id="inputOne"
-                                                                    onChange={onChangeInput}
-                                                                />
-                                                            </FormControl>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        {/* <td colSpan={2}>  <Typography component='label'>
+                                                    <td>
+                                                        <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
+                                                            <TextField type={'number'}
+                                                                style={{ width: '100%', marginBottom: '2rem' }}
+                                                                label="Width"
+                                                                value={state.inputOne} variant="outlined"
+                                                                id="inputOne"
+                                                                onChange={onChangeInput}
+                                                            />
+                                                        </FormControl>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    {/* <td colSpan={2}>  <Typography component='label'>
                                                             {
                                                                 state.metrics === 1 ? state.solveby : 'Length'
                                                             }
                                                         </Typography></td> */}
-                                                        <td>
-                                                            <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
-                                                                <TextField type={'number'}
-                                                                    style={{ width: '100%', marginBottom: '2rem' }} label="Length"
-                                                                    value={state.inputTwo} variant="outlined"
-                                                                    id="inputTwo"
-                                                                    onChange={onChangeInput}
-                                                                />
-                                                            </FormControl>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                                    <td>
+                                                        <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
+                                                            <TextField type={'number'}
+                                                                style={{ width: '100%', marginBottom: '2rem' }} label="Length"
+                                                                value={state.inputTwo} variant="outlined"
+                                                                id="inputTwo"
+                                                                onChange={onChangeInput}
+                                                            />
+                                                        </FormControl>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
 
-                                    </Grid>
-                                    <Grid item>
-                                        <div className={classes.sqouare}>
-                                            <img src={imgRectangle} style={{ margin: '1rem' }} alt={'square'}></img>
-                                        </div>
-                                    </Grid>
                                 </Grid>
-                            </CardContent>
+                                <Grid item>
+                                    <div className={classes.sqouare}>
+                                        <img src={imgRectangle} style={{ margin: '1rem' }} alt={'square'}></img>
+                                    </div>
+                                </Grid>
+                            </Grid>
                         </Card>
+                        <br />
+                        <Card elevation={1} className="box" >
+                            <h2 className="title is-5"> Definition</h2>
+                            <p>
+                                A rectangle is a type of quadrilateral that has its parallel sides equal to each other and all the four vertices are equal to 90 degrees. Hence, it is also called an equiangular quadrilateral.
+
+                                Since, the opposite sides are equal and parallel, in rectangle, therefore, it can also be termed as a parallelogram.
+                            </p>
+                            <br />
+                            <h2 className="title is-5">Shape of Rectangle</h2>
+                            <p> A rectangle is a two-dimensional flat shape. In an XY plane, we can easily represent a rectangle, where the arms of x-axis and y-axis show the length and width of the rectangle, respectively.
+                            </p>
+                            <br />
+                            <h2 className="title is-5">Rectangular Shaped Objects</h2>
+                            <p>The most common everyday things or objects we see and are rectangular in shape is Television, computer screen, notebook, mobile phones, CPU , Notice boards, Table, Book, TV screen, Mobile phone, Wall, Magazine, Tennis court, etc.
+                            </p>
+                            <br />
+                            <h2 className="title is-5"> Properties of Rectangle</h2>
+                            <p>The properties of rectangle are given below:</p>
+                            <ul className={classes.ulElem}>
+                                <li>    It has four sides and four vertices
+                        </li><li>  Each vertex has angle equal to 90 degrees
+                        </li><li>    The opposite sides are equal and parallel
+                        </li><li>  Diagonal bisect each other
+                                </li><li>  Perimeter is equal to twice of sum of its length and breadth
+                                </li><li> Area is equal to product of its length and breadth
+                                </li><li> It’s a parallelogram with four right angles.
+                                </li><li>    Sum of all interior angles equal to 360 degrees
+                         </li>
+                            </ul>
+                            <br />
+                            <h2 className="title is-5">Perimeter of a Rectangle</h2>
+                            <p>
+                                The perimeter of a rectangle is defined as the total distance covered by the outer boundary of the rectangle. It is measured in unit length. The formula of perimeter is given by:
+                            </p>
+                            <br />
+                            <p><strong> Perimeter, P = 2 (Length + Width)</strong> </p>
+                            <br />
+                            <h2 className="title is-5">Area of Rectangle</h2>
+                            <p>
+                                Area is the region covered by a two-dimensional shape in a plane. It is measured in square units. Therefore, the area of the rectangle is the area covered by its outer boundaries. It is equal to the product of length and width.
+                                The formula of area of rectangle is:
+                            <p><strong> A&nbsp;=&nbsp;Length&nbsp;× &nbsp;Width &nbsp; unit<sup>2</sup></strong> </p>
+                            </p>
+                            <br />
+                            <h2 className="title is-5">Diagonal of a Rectangle</h2>
+                            <p>
+                                A rectangle has two diagonals, that bisects each other. Both the diagonals are equal in length.
+                                Rectangle- Diagonals
+                            </p>
+                            <br />
+                            <h2 className="title is-5">Length of Diagonals</h2>
+                            <p>  The rectangle is a symmetrical shape and has both the diagonals equal in length. A diagonal will divide the rectangle into two right angle triangles. Therefore we can easily calculate the length of diagonals using the Pythagoras Theorem, where the diagonals are considered as hypotenuse of the right triangle.
+                            </p>
+                            <p>  Let D is the hypotenuse, length (L)  and width (W) are the base and perpendicular, respectively.
+                             Hence, the length of the diagonal of rectangle will be:</p>
+
+                            <p><strong> D &nbsp;= &nbsp; √(L<sup>2</sup>+W<sup>2</sup>) </strong></p>
+                        </Card>
+                        <br />
                     </Grid>
                     <Grid item lg={4} md={4} sm={false}></Grid>
                 </Grid>

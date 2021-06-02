@@ -1,9 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Typography, FormGroup, Switch, FormControlLabel, } from '@material-ui/core';
+import { Button, Typography, FormGroup, Switch, FormControlLabel, Container, Card, } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import SettingIcon from '@material-ui/icons/Settings'
 import Helmet from 'react-helmet';
+import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -95,65 +96,75 @@ export default function Radiandegree() {
         <div className={classes.root}>
             <Helmet>
                 <title>Free Online Radians and Degrees converter | mathcalc</title>
-                <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathamatical calculations" />
-                <meta name="description" content="Use Mathcalc interest calculator to calculate simple and compound interest. Simply, enter the details of the principal amount, interest rate, period, and compounding frequency to know the interest earned." />
+                <meta name="keywords" content="Mathcalc, free online radian and degree calculator, free calculator, radians and degree" />
+                <meta name="description" content="Online radians and degree converter calculator use the convert radians to degrees and degrees to radians conversion" />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
             </Helmet>
-            <section class="hero" data-v-23847e07>
-                <div style={{ padding: '1rem 0.5rem' }}>
-                    <div class="container">
-                        <h1 class="subtitle is-spaced is-uppercase has-text-weight-bold">
-                            ONLINE RADIANS AND DEGREES CONVERTER</h1>
-                        <p class="has-text-letter-spacing-wide has-text-grey">
-                            Radians to degrees and degrees to radians conversion   </p>
-                    </div>
-                </div>
-            </section>
-            <div class="container" data-v-14591542>
-                <div class="columns" data-v-14591542>
-                    <div class="column is-6" data-v-14591542>
-                        <div class="box" data-v-14591542>
-                            <div class="content" data-v-14591542>
-                                <Typography variant="h4" className={'text-option'}>Options</Typography>
-                                <FormGroup>
-                                    <FormControlLabel
-                                        control={<Switch checked={state.isRadians} onChange={toggleChecked} />}
-                                        label="Radians to Degrees"
-                                    />
-                                    <FormControlLabel
-                                        control={<Switch checked={!state.isRadians} onChange={toggleChecked} />}
-                                        label="Degrees to Radians"
-                                    />
-                                </FormGroup>
-                                <br />
-                                <span><strong> {state.labelInput}</strong></span><br />
-                                <TextField className={classes.formelems} onChange={onInputChange}
-                                    value={state.inputVal} id="inputVal" variant="outlined" type="number"></TextField><br />
-                                <span> <strong>Number of decimal places</strong></span><br />
-                                <TextField className={classes.formelems} onChange={onInputChange} value={state.decimalPlace} id="decimalPlace" variant="outlined" type="number"></TextField>
-                            </div>
+            <Container maxWidth="xl">
+                <SubNavBar
+                    pageTitle="Radians to degrees and vice versa"
+                    links={[{
+                        url: "/maths/",
+                        urlName: "Mathamatics"
+                    }]}
+                />
+                <section className="hero" >
+                    <div style={{ padding: '2rem 0.5rem' }}>
+                        <div className="container">
+                            <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
+                                ONLINE RADIANS AND DEGREES CONVERTER</h1>
+                            <p className="has-text-letter-spacing-wide has-text-grey">
+                                Radians to degrees and degrees to radians conversion   </p>
                         </div>
                     </div>
-                    <div class="column is-6" data-v-14591542>
-                        <div class="box " data-v-14591542>
-                            <div class="content" data-v-14591542>
-                                <Typography variant="h4" className={'text-option'}>Result</Typography>
-                                <div className={'resultDiv blink_me'}>
-                                    <span className={'resPercentage'}>{state.resultLabel}</span><br /><br />
-                                    <span dangerouslySetInnerHTML={{ __html: state.result }}></span>
+                </section>
+                <div className="container" >
+                    <div className="columns" >
+                        <div className="column is-6" >
+                            <Card elevation={1} className="box" >
+                                <div className="content" >
+                                    <Typography variant="h4" className={'text-option'}>Options</Typography>
+                                    <FormGroup>
+                                        <FormControlLabel
+                                            control={<Switch checked={state.isRadians} onChange={toggleChecked} />}
+                                            label="Radians to Degrees"
+                                        />
+                                        <FormControlLabel
+                                            control={<Switch checked={!state.isRadians} onChange={toggleChecked} />}
+                                            label="Degrees to Radians"
+                                        />
+                                    </FormGroup>
+                                    <br />
+                                    <span><strong> {state.labelInput}</strong></span><br />
+                                    <TextField className={classes.formelems} onChange={onInputChange}
+                                        value={state.inputVal} id="inputVal" variant="outlined" type="number"></TextField><br />
+                                    <span> <strong>Number of decimal places</strong></span><br />
+                                    <TextField className={classes.formelems} onChange={onInputChange} value={state.decimalPlace} id="decimalPlace" variant="outlined" type="number"></TextField>
                                 </div>
-                                <br />
-                                <Button variant="contained" className={"button is-info"}
-                                    startIcon={<SettingIcon />}
-                                    onClick={onClickCalculate}
-                                >Calculate</Button>
-                            </div>
+                            </Card>
+                        </div>
+                        <div className="column is-6" >
+                            <Card elevation={1} className="box" >
+                                <div className="content" >
+                                    <Typography variant="h4" className={'text-option'}>Result</Typography>
+                                    <div className={'resultDiv blink_me'}>
+                                        <span className={'resPercentage'}>{state.resultLabel}</span><br /><br />
+                                        <span dangerouslySetInnerHTML={{ __html: state.result }}></span>
+                                    </div>
+                                    <br />
+                                    <Button variant="contained" className={"button is-info"}
+                                        startIcon={<SettingIcon />}
+                                        onClick={onClickCalculate}
+                                    >Calculate</Button>
+                                </div>
+                            </Card>
                         </div>
                     </div>
+                    <br />
                 </div>
-            </div>
+            </Container>
         </div >
     );
 }

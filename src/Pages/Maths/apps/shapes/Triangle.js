@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Helmet } from "react-helmet";
 import {
-    Card, Grid, CardContent, FormControl, InputLabel, MenuItem,
-    Typography, Container, TextField, Select, Divider
+    Grid, FormControl, InputLabel, MenuItem,
+    Typography, Container, TextField, Select, Divider, Card
 } from '@material-ui/core';
 import SubNavBar from '../../../../Components/SubNavBar';
 import imgTriangle from '../../../../Assets/images/triangle.svg';
@@ -30,7 +30,13 @@ const useStyles = makeStyles((theme) => ({
     },
     td: {
         padding: '30px 14px 0px 10px',
-    }
+    },
+    ulElem: {
+        "& li": {
+            listStyleType: 'decimal',
+            marginLeft: '20px'
+        }
+    },
 }));
 
 
@@ -48,7 +54,16 @@ export default function Triangle() {
         gamaArea: '0',
         metrics: 2,
         solveby: '',
-        error: ''
+        error: '',
+        triInRadius: '',
+        isHeight: true,
+        isBase: true,
+        isperimeter: false,
+        isFaceA: false,
+        isFaceB: false,
+        isFaceC: false,
+        isArea: false,
+        isGamma: false,
     });
 
     const onChangeInput = (e) => {
@@ -59,14 +74,16 @@ export default function Triangle() {
     }
 
     const onChangeMetrics = (metric, isOnchangeinput, isChoosing) => {
-        let height = 0, base = 0, faceA = 0, faceC = 0, solveby = 0, perimeter = 0, gama = 0, area = 0;
+        debugger;
+        let height = 0, base = 0, faceA = 0, faceB = 0, faceC = 0, solveby = 0, perimeter = 0, gama = 0, area = 0;
 
         height = state.triHeight === '' ? 0 : parseFloat(state.triHeight);
         base = state.triBase === '' ? 0 : parseFloat(state.triBase);
         faceA = state.triFaceA === '' ? 0 : parseFloat(state.triFaceA);
+        faceB = state.triFaceB === '' ? 0 : parseFloat(state.triFaceB);
         faceC = state.triFaceC === '' ? 0 : parseFloat(state.triFaceC);
         area = parseFloat(height * base / 2).toFixed(5);
-        perimeter = parseFloat(faceA + base + faceC).toFixed(5);
+        perimeter = parseFloat(faceA + faceB + faceC).toFixed(5);
         gama = Math.asin((2 * area) / (faceA * base));
 
         if (!isOnchangeinput) {
@@ -94,17 +111,33 @@ export default function Triangle() {
         if (metric === 0) {
             setState({
                 ...state,
-                triHeight: ((2 * state.gamaArea) / base).toFixed(5),
-                triArea: state.gamaArea,
+                triHeight: ((2 * state.triArea) / base).toFixed(5),
+                triArea: state.triArea,
                 metrics: metric,
-                solveby: solveby
+                solveby: solveby,
+                isHeight: false,
+                isBase: true,
+                isperimeter: false,
+                isFaceA: false,
+                isFaceB: false,
+                isFaceC: false,
+                isArea: true,
+                isGamma: false,
             });
         } else if (metric === 1) {
             setState({
                 ...state,
-                triBase: ((2 * state.gamaArea) / height).toFixed(5),
+                triBase: ((2 * state.triArea) / height).toFixed(5),
                 metrics: metric,
-                solveby: solveby
+                solveby: solveby,
+                isHeight: true,
+                isBase: false,
+                isperimeter: false,
+                isFaceA: false,
+                isFaceB: false,
+                isFaceC: false,
+                isArea: true,
+                isGamma: false,
             });
         } else if (metric === 2)
             setState({
@@ -113,7 +146,15 @@ export default function Triangle() {
                 triPerimeter: perimeter,
                 triGama: gama,
                 metrics: metric,
-                solveby: solveby
+                solveby: solveby,
+                isFaceA: false,
+                isFaceB: false,
+                isFaceC: false,
+                isHeight: true,
+                isBase: true,
+                isperimeter: false,
+                isArea: false,
+                isGamma: false,
             });
         else if (metric === 3)
             setState({
@@ -122,7 +163,15 @@ export default function Triangle() {
                 triPerimeter: perimeter,
                 triGama: gama,
                 metrics: metric,
-                solveby: solveby
+                solveby: solveby,
+                isFaceA: true,
+                isFaceB: true,
+                isFaceC: true,
+                isHeight: false,
+                isBase: false,
+                isperimeter: false,
+                isArea: false,
+                isGamma: false,
             });
         else if (metric === 4) {
             if (state.gamaArea > (faceA * base / 2)) {
@@ -131,19 +180,55 @@ export default function Triangle() {
                     error: ' Invalid input: make sure &nbsp; A ≤ a×b / 2',
                     metrics: metric,
                     solveby: solveby,
-                    triGama: ''
+                    triGama: '',
+                    isFaceA: true,
+                    isFaceB: true,
+                    isFaceC: false,
+                    isHeight: false,
+                    isBase: false,
+                    isperimeter: false,
+                    isArea: true,
+                    isGamma: false,
                 })
             } else {
                 setState({
                     ...state,
                     // triArea: area,
                     triPerimeter: perimeter,
-                    triGama: ((Math.asin((2 * state.gamaArea) / (faceA * base))) * (180 / Math.PI)).toFixed(5) + "°",
+                    triGama: ((Math.asin((2 * state.triArea) / (faceA * faceB))) * (180 / Math.PI)).toFixed(5) + "°",
                     metrics: metric,
                     solveby: solveby,
-                    error: ''
+                    error: '',
+                    isFaceA: true,
+                    isFaceB: true,
+                    isFaceC: false,
+                    isHeight: false,
+                    isBase: false,
+                    isperimeter: false,
+                    isArea: true,
+                    isGamma: false,
                 });
             }
+        }
+        else if (metric === 5) {
+            setState({
+                ...state,
+                // triArea: area,
+                triPerimeter: perimeter,
+                triGama: ((Math.asin((2 * state.triArea) / (faceA * faceB))) * (180 / Math.PI)).toFixed(5) + "°",
+                metrics: metric,
+                solveby: solveby,
+                triInRadius: ((faceA + faceB + faceC) / 2).toFixed(3),
+                error: '',
+                isFaceA: true,
+                isFaceB: true,
+                isFaceC: true,
+                isHeight: false,
+                isBase: false,
+                isperimeter: false,
+                isArea: false,
+                isGamma: false,
+            });
         }
     }
 
@@ -157,30 +242,40 @@ export default function Triangle() {
     useEffect(() => {
         onChangeMetrics(state.metrics, false);
         // eslint-disable-next-line
-    }, [state.triHeight, state.triBase, state.gamaArea, state.triPerimeter, state.triGama, state.triFaceA, state.triFaceC]);
+    }, [state.metrics, state.triHeight, state.triArea, state.triBase, state.gamaArea, state.triPerimeter, state.triGama, state.triFaceA, state.triFaceB, state.triFaceC]);
 
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Triangle calculator || Calculate Area, perimeter of a triangle, three sides of the triangle and angle (gamma) || MathCalc.xyz</title>
-                <meta name="keywords" content="One stop tool for doing all kind of mathamatical calculations" />
+                <title>Online Triangle calculator | mathcalc</title>
+                <meta name="keywords" content="Online triangle calculator, mathcalc, free calculator, online calculator, free triangle calculator" />
                 <meta name="description"
-                    content="mathcalc is the all in one web app for all kind of mathamatical calculations in all fields of science like physics ,chemistry ,mathamatics, quantum physics and a lot " />
+                    content="Online triangle calculator is used to calculate Area, perimeter of a triangle, three sides of the triangle and angle (gamma)" />
             </Helmet>
             <Container maxWidth={'xl'} >
-                <SubNavBar />
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item lg={8} md={8} sm={12}>
-                        <Card raised elevation={0} >
-                            <div className={'appHeading'}>Triangle Calculator</div>
-                            <CardContent className='appContainer'>
-                                <p className={'text-muted'} >
-                                    A triangle is a polygon with three edges and three vertices. It is one of the basic shapes in geometry.
-                                    A triangle with vertices A, B, and C is denoted \triangle ABC. In Euclidean geometry,
+                        <SubNavBar
+                            links={[{
+                                url: '/maths/',
+                                urlName: 'Mathamatics'
+                            }, {
+                                url: '/maths/shapes/',
+                                urlName: 'Shapes'
+                            }]}
+                            pageTitle="Triangle Calculator"
+                            txtTitle="Triangle calculator is used to calculate Area, Perimeter, Gamma and InRadius of triangle"
+                        />
+                        <Card elevation={1} className="box" >
+                            <h2 className={'title is-5'}>Triangle Calculator</h2>
+                            <p >
+                                A triangle is a polygon with three edges and three vertices. It is one of the basic shapes in geometry.
+                                A triangle with vertices A, B, and C is denoted \triangle ABC. In Euclidean geometry,
                                 any three points, when non-collinear, determine a unique triangle and simultaneously, a unique plane.  </p>
 
-                                <div><FormControl variant="outlined" className={classes.solved_for} aria-autocomplete={'none'}>
-                                    <InputLabel id="metrics">Solved For</InputLabel>
+                            <div>
+                                <FormControl variant="outlined" className={classes.solved_for} aria-autocomplete={'none'}>
+                                    <InputLabel id="metrics" >Solved For</InputLabel>
                                     <Select
                                         labelId="metrics-label"
                                         id="metrics-outlined"
@@ -194,163 +289,284 @@ export default function Triangle() {
                                         <MenuItem value={2}>Area</MenuItem>
                                         <MenuItem value={3}>Perimeter</MenuItem>
                                         <MenuItem value={4}>Gamma</MenuItem>
+                                        <MenuItem value={5}>InRadius</MenuItem>
                                     </Select>
                                 </FormControl>
-                                </div>
-                                <div className='chtnE' style={{ fontSize: '30px' }}>
-                                    <Typography component='label' hidden={!(state.metrics === 0)}>Height :<strong>{state.triHeight}</strong><br /></Typography>
-                                    <Typography component='label' hidden={!(state.metrics === 1)}>Base :<strong>{state.triBase}</strong><br /></Typography>
-                                    <Typography component='label' hidden={!(state.metrics === 2)}>Area :  <strong>{state.triArea}</strong><br /></Typography>
-                                    <Typography component='label' hidden={!(state.metrics === 3)}>Perimeter : <strong> {state.triPerimeter}</strong><br /></Typography>
-                                    <Typography component='label' hidden={!(state.metrics === 4)}>Gamma (γ) :  <strong>{state.triGama}</strong><br /></Typography>
-                                </div>
-                                <div className='chtnE' style={{ color: 'red' }}>
-                                    <span>{state.error}</span>
-                                </div>
-                                <Grid container justify="flex-start" >
-                                    <Grid item>
-                                        <div>
-                                            <table>
-                                                <tbody >
-                                                    <tr style={{ display: (state.metrics === 2 || state.metrics === 0) ? 'block' : 'none' }}>
-                                                        <td className={classes.td} colSpan={2}><Typography component='label'>
-                                                            Base
-                                                            </Typography></td>
-                                                        <td>
-                                                            <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
-                                                                <TextField type={'number'}
-                                                                    style={{ width: '100%', marginBottom: '2rem' }}
-                                                                    label="Enter the value"
-                                                                    value={state.triBase} variant="outlined"
-                                                                    id="triBase"
-                                                                    onChange={onChangeInput}
-                                                                    placeholder={'0'}
-                                                                />
-                                                            </FormControl>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style={{ display: (state.metrics !== 0 && (state.metrics === 2 || state.metrics === 1)) ? 'block' : 'none' }}>
-                                                        <td className={classes.td} colSpan={2}>  <Typography component='label'>
-                                                            Height
-                                                        </Typography><br /></td>
-                                                        <td>
-                                                            <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
-                                                                <TextField type={'number'}
-                                                                    style={{ width: '100%', marginBottom: '2rem' }} label="Enter the value"
-                                                                    value={state.triHeight} variant="outlined"
-                                                                    id="triHeight"
-                                                                    onChange={onChangeInput}
-                                                                    placeholder={'0'}
-                                                                />
-                                                            </FormControl>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style={{ display: (state.metrics === 3 || state.metrics === 4) ? 'block' : 'none' }}>
-                                                        <td className={classes.td} colSpan={2}><Typography component='label' className={classes.inputlabel}>
-                                                            <h3>a</h3><span>&nbsp; side</span>
-                                                        </Typography></td>
-                                                        <td>
-                                                            <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
-                                                                <TextField type={'number'}
-                                                                    style={{ width: '100%', marginBottom: '2rem' }}
-                                                                    label="Enter the value"
-                                                                    value={state.triFaceA} variant="outlined"
-                                                                    id="triFaceA"
-                                                                    onChange={onChangeInput}
-                                                                    placeholder={'0'}
-                                                                />
-                                                            </FormControl>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style={{ display: (state.metrics === 3 || state.metrics === 4) ? 'block' : 'none' }}>
-                                                        <td className={classes.td} colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
-                                                            <h3>b</h3> &nbsp; base
-                                                        </Typography><br /></td>
-                                                        <td>
-                                                            <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
-                                                                <TextField type={'number'}
-                                                                    style={{ width: '100%', marginBottom: '2rem' }} label="Enter the value"
-                                                                    value={state.triBase} variant="outlined"
-                                                                    id="triBase"
-                                                                    onChange={onChangeInput}
-                                                                    placeholder={'0'}
-                                                                />
-                                                            </FormControl>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style={{ display: state.metrics === 3 ? 'block' : 'none' }}>
-                                                        <td className={classes.td} colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
-                                                            <h3>c</h3> &nbsp; side
-                                                        </Typography><br /></td>
-                                                        <td>
-                                                            <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
-                                                                <TextField type={'number'}
-                                                                    style={{ width: '100%', marginBottom: '2rem', }} label="Enter the value"
-                                                                    value={state.triFaceC} variant="outlined"
-                                                                    id="triFaceC"
-                                                                    onChange={onChangeInput}
-                                                                    placeholder={'0'}
-                                                                />
-                                                            </FormControl>
-                                                        </td>
-                                                    </tr>
-                                                    <tr style={{ display: (state.metrics !== 2 && state.metrics !== 3 && (state.metrics === 4 || (state.solveby === 'Area' && (state.metrics === 0 || state.metrics === 1)))) ? 'block' : 'none' }}>
-                                                        <td className={classes.td} colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
-                                                            Area &nbsp;&nbsp;
-                                                        </Typography><br /></td>
-                                                        <td>
-                                                            <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
-                                                                <TextField type={'number'}
-                                                                    style={{ width: '100%', marginBottom: '2rem' }} label="Enter the value"
-                                                                    value={state.gamaArea} variant="outlined"
-                                                                    id="gamaArea"
-                                                                    onChange={onChangeInput}
-                                                                    placeholder={'0'}
-                                                                />
-                                                            </FormControl>
-                                                        </td>
-                                                    </tr>
+                            </div>
+                            <div className='chtnE' style={{ fontSize: '30px' }}>
+                                <Typography component='label' hidden={!(state.metrics === 0)}>Height : <strong>{state.triHeight.toString()}</strong><br /></Typography>
+                                <Typography component='label' hidden={!(state.metrics === 1)}>Base : <strong>{state.triBase.toString()}</strong><br /></Typography>
+                                <Typography component='label' hidden={!(state.metrics === 2)}>Area :  <strong>{state.triArea.toString()}</strong><br /></Typography>
+                                <Typography component='label' hidden={!(state.metrics === 3)}>Perimeter : <strong> {state.triPerimeter.toString()}</strong><br /></Typography>
+                                <Typography component='label' hidden={!(state.metrics === 4)}>Gamma (γ) :  <strong>{state.triGama.toString()}</strong><br /></Typography>
+                                <Typography component='label' hidden={!(state.metrics === 5)}>In Radius :  <strong>{state.triInRadius.toString()}</strong><br /></Typography>
+                            </div>
+                            <div className='chtnE' style={{ color: 'red' }}>
+                                <span>{state.error}</span>
+                            </div>
+                            <Grid container justify="flex-start" >
+                                <Grid item xl={6} lg={6} md={12} sm={12}>
+                                    <div>
+                                        {
+                                            state.isBase ? <>  <span><strong>Base</strong></span><br />
+                                                <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
+                                                    <TextField type={'number'}
+                                                        style={{ width: '100%', marginBottom: '2rem' }}
+                                                        value={state.triBase} variant="outlined"
+                                                        id="triBase"
+                                                        onChange={onChangeInput}
+                                                        placeholder={'0'}
+                                                    />
+                                                </FormControl>
+                                            </> : <></>
+                                        }
+                                        {
+                                            state.isHeight ? <>
+                                                <span><strong>Height</strong></span><br />
+                                                <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
+                                                    <TextField type={'number'}
+                                                        style={{ width: '100%', marginBottom: '2rem' }}
+                                                        value={state.triHeight} variant="outlined"
+                                                        id="triHeight"
+                                                        onChange={onChangeInput}
+                                                        placeholder={'0'}
+                                                    />
+                                                </FormControl>
+                                            </> : <></>
+                                        }
+                                        {
+                                            state.isArea ? <>
+                                                <span><strong>Area</strong></span><br />
+                                                <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
+                                                    <TextField type={'number'}
+                                                        style={{ width: '100%', marginBottom: '2rem' }}
+                                                        value={state.triArea} variant="outlined"
+                                                        id="triArea"
+                                                        onChange={onChangeInput}
+                                                        placeholder={'0'}
+                                                    />
+                                                </FormControl>
+                                            </> : <></>
+                                        }
+                                        {
+                                            state.isFaceA ? <>
+                                                <span><strong>A Side</strong></span><br />
+                                                <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
+                                                    <TextField type={'number'}
+                                                        style={{ width: '100%', marginBottom: '2rem' }}
+                                                        value={state.triFaceA} variant="outlined"
+                                                        id="triFaceA"
+                                                        onChange={onChangeInput}
+                                                        placeholder={'0'}
+                                                    />
+                                                </FormControl>
+                                            </> : <></>
+                                        }
+                                        {
+                                            state.isFaceB ? <> <span><strong>B Side</strong></span><br />
+                                                <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
+                                                    <TextField type={'number'}
+                                                        style={{ width: '100%', marginBottom: '2rem', }}
+                                                        value={state.triFaceB} variant="outlined"
+                                                        id="triFaceB"
+                                                        onChange={onChangeInput}
+                                                        placeholder={'0'}
+                                                    />
+                                                </FormControl>
+                                            </> : <></>
+                                        }
+                                        {
+                                            state.isFaceC ? <> <span><strong>C Side</strong></span><br />
+                                                <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
+                                                    <TextField type={'number'}
+                                                        style={{ width: '100%', marginBottom: '2rem', }}
+                                                        value={state.triFaceC} variant="outlined"
+                                                        id="triFaceC"
+                                                        onChange={onChangeInput}
+                                                        placeholder={'0'}
+                                                    />
+                                                </FormControl>
+                                            </> : <></>
+                                        }
+                                        {
+                                            state.isperimeter ? <><span><strong>Perimeter</strong></span><br />
+                                                <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
+                                                    <TextField type={'number'}
+                                                        style={{ width: '100%', marginBottom: '2rem' }}
+                                                        value={state.perimeter} variant="outlined"
+                                                        id="perimeter"
+                                                        onChange={onChangeInput}
+                                                        placeholder={'0'}
+                                                    />
+                                                </FormControl>
+                                            </> : <></>
+                                        }
+                                        {
+                                            state.istriGama ? <>
+                                                <span><strong>Gamma</strong></span><br />
+                                                <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
+                                                    <TextField type={'number'}
+                                                        style={{ width: '100%', marginBottom: '2rem' }}
+                                                        value={state.triGama} variant="outlined"
+                                                        id="triGama"
+                                                        onChange={onChangeInput}
+                                                        placeholder={'0'}
+                                                    />
+                                                </FormControl></> : <></>
+                                        }
+                                    </div>
 
-                                                    <tr style={{ display: (state.metrics === 4 && state.metrics === 5) ? 'block' : 'none' }}>
-                                                        <td className={classes.td} colSpan={2}>  <Typography component='label' className={classes.inputlabel}>
-                                                            Perimeter &nbsp;&nbsp;
-                                                        </Typography><br /></td>
-                                                        <td>
-                                                            <FormControl variant="outlined" className={classes.formControl} aria-autocomplete={'none'}>
-                                                                <TextField type={'number'}
-                                                                    style={{ width: '100%', marginBottom: '2rem' }} label="Enter the value"
-                                                                    value={state.perimeter} variant="outlined"
-                                                                    id="perimeter"
-                                                                    onChange={onChangeInput}
-                                                                    placeholder={'0'}
-                                                                />
-                                                            </FormControl>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
 
-                                            </table>
-                                        </div>
-                                    </Grid>
-                                    <Grid item>
-                                        <div className={classes.sqouare}>
-                                            <img src={imgTriangle} style={{ margin: '1rem' }} alt={'square'}></img>
-                                        </div>
-                                    </Grid>
                                 </Grid>
-                                <div className='div-card' style={{ backgroundColor: '#fafafa', width: '100%', color: 'InfoText', fontSize: '1rem' }}>
-                                    <Typography variant="h6" style={{ fontWeight: '800', fontSize: '1.5rem' }}>
-                                        Notes :
-                                </Typography>
-                                    <label>  <strong>Area:</strong> ½ × base × height</label><br />
-                                    <label>  <strong>Perimeter:</strong> sum of side lengths of the triangle</label><br />
-                                    <label>  <strong>Number of edges:</strong>3</label><br />
-                                    <label>  <strong>Number of vertices: </strong>3</label><br />
-                                    <label>  <strong>Internal angle: </strong> 60° (for equilateral)</label><br />
-                                    <label>  <strong>Sum of interior angles:</strong> 180°</label><br />
-                                </div>
-                            </CardContent>
+                                <Grid item xl={6} lg={6} md={12} sm={12}>
+                                    <div className={classes.sqouare}>
+                                        <img src={imgTriangle} style={{ margin: '1rem' }} alt={'square'}></img>
+                                    </div>
+                                </Grid>
+                            </Grid>
                         </Card>
+                        <br />
+                        <Card elevation={1} className="box">
+                            <h2 className="title is-5">Definition</h2>
+                            <p>
+                                As we discussed in the introduction, a triangle is a type of polygon, which has three sides, and the two sides are joined end to end is called the vertex of the triangle. An angle is formed between two sides. This is one of the important parts of geometry.
+
+                                Some major concepts, such as Pythagoras theorem and trigonometry, are dependent on triangle properties. A triangle has different types based on its angles and sides.
+                            </p>
+                            <br />
+                            <h2 className="title is-5"> Shape of Triangle</h2>
+                            <p>
+                                Triangle is a closed two-dimensional shape. It is a three-sided polygon. All sides are made of straight lines. The point where two straight lines join is the vertex. Hence, the triangle has three vertices. Each vertex forms an angle.
+                            </p>
+                            <br />
+                            <h2 className="title is-5"> Angles of Triangle</h2>
+                            <p>
+                                There are three angles in a triangle. These angles are formed by two sides of the triangle, which meets at a common point, known as the vertex. The sum of all three interior angles is equal to 180 degrees.
+                            </p>
+
+                            <p>
+                                If we extend the side length outwards, then it forms an exterior angle. The sum of consecutive interior and exterior angles of a triangle is supplementary.
+                            </p>
+
+                            <p> Let us say, ∠1, ∠2 and ∠3 are the interior angles of a triangle.
+                                </p>
+                            <p> When we extend the sides of the triangle in the outward direction, then the three exterior angles formed are ∠4, ∠5 and ∠6, which are consecutive to ∠1, ∠2 and ∠3, respectively.
+                          </p>
+
+                            <br />
+                            <p>   Hence,</p>
+
+                            <p>∠1 + ∠4 = 180°   ……(i)</p>
+
+                            <p>∠2 + ∠5 = 180°  …..(ii)</p>
+
+                            <p>∠3 + ∠6 = 180°  …..(iii)</p>
+
+                            <p>   If we add the above three equations, we get;</p>
+
+                            <p>    ∠1+∠2+∠3+∠4+∠5+∠6 = 180° + 180° + 180°</p>
+
+                            <p>    Now, by angle sum property we know,</p>
+
+                            <p>   ∠1+∠2+∠3 = 180°</p>
+
+                            <p>   Therefore,</p>
+
+                            <p>   180 + ∠4+∠5+∠6 = 180° + 180° + 180°</p>
+
+                            <p>   ∠4+∠5+∠6 = 360°</p>
+
+                            <p>   This proves that the sum of the exterior angles of a triangle is equal to 360 degrees.
+                         </p>
+                            <br />
+                            <h2 className="title is-5">Properties</h2>
+
+                            <p>Each and every shape in Maths has some properties which distinguish them from each other. Let us discuss here some of the properties of triangles.
+                            </p>
+
+                            <ul className={classes.ulElem}>
+
+                                <li>          A triangle has three sides and three angles.
+                   </li><li>     The sum of the angles of a triangle is always 180 degrees.
+                   </li><li> The exterior angles of a triangle always add up to 360 degrees.
+                   </li><li> The sum of consecutive interior and exterior angle is supplementary.
+                   </li><li>The sum of the lengths of any two sides of a triangle is greater than the length of the third side. Similarly, the difference between the lengths of any two sides of a triangle is less than the length of the third side.
+                   </li><li>The shortest side is always opposite the smallest interior angle. Similarly, the longest side is always opposite the largest interior angle.
+                            </li>
+                            </ul>
+                            <br />
+                            <h2 className="title is-5">  Types</h2>
+                            <p>                            On the basis of length of the sides, triangles are classified into three categories:
+                            </p>
+
+                            <ul className={classes.ulElem}>
+                                <li>Scalene Triangle</li>
+                                <li>Isosceles Triangle</li>
+                                <li>Equilateral Triangle</li>
+                            </ul>
+                            <br />
+                            <p> On the basis of measurement of the angles, triangles are classified into three categories:
+                           </p>
+                            <ul className={classes.ulElem}>
+                                <li>Acute Angle Triangle</li>
+                                <li>Right Angle Triangle</li>
+                                <li>Obtuse Angle Triangle</li>
+                            </ul>
+                            <br />
+                            <h2 className="title is-5">  Scalene Triangle</h2>
+                            <p>
+                                A scalene triangle is a type of triangle, in which all the three sides have different side measures. Due to this, the three angles are also different from each other.
+                             </p>
+                            <br />
+                            <h2 className="title is-5"> Isosceles Triangle</h2>
+                            <p> In an isosceles triangle, two sides have equal length. The two angles opposite to the two equal sides are also equal to each other.
+                            </p>
+                            <br />
+                            <h2 className="title is-5"> Equilateral Triangle</h2>
+                            <p>     An equilateral triangle has all three sides equal to each other. Due to this all the internal angles are of equal degrees, i.e. each of the angles is 60°
+
+                       </p>
+                            <br />
+                            <h2 className="title is-5"> Acute Angled Triangle</h2>
+                            <p> An acute triangle has all of its angles less than 90°.
+                           </p>
+                            <br />
+                            <h2 className="title is-5"> Right Angled Triangle</h2>
+                            <p> In a right triangle, one of the angles is equal to 90° or right angle.
+                           </p>
+                            <br />
+                            <h2 className="title is-5"> Obtuse Angled Triangle</h2>
+                            <p>
+                                An obtuse triangle has any of its one angles more than 90°.
+                            </p>
+                            <br />
+                            <h2 className="title is-5">  Perimeter of Triangle</h2>
+                            <p>
+                                A perimeter of a triangle is defined as the total length of the outer boundary of the triangle. Or we can say, the perimeter of the triangle is equal to the sum of all its three sides. The unit of the perimeter is same as the unit of sides of the triangle.
+                            </p>
+                            <br />
+                            <p><strong> Perimeter = Sum of All Sides</strong></p>
+                            <br />
+                            If ABC is a triangle, where AB, BC and AC are the lengths of its sides, then the perimeter of ABC is given by:
+
+                            <p><strong>  Perimeter = AB+BC+AC</strong></p>
+                            <br />
+                            <h2 className="title is-5">  Area of a Triangle</h2>
+                            <p>
+                                The area of a triangle is the region occupied by the triangle in 2d space. The area for different triangles varies from each other depending on their dimensions. We can calculate the area if we know the base length and the height of a triangle. It is measured in square units.
+
+                                Suppose a triangle with base ‘B’ and height ‘H’ is given to us, then, the area of a triangle is given by-
+                            </p>
+                            <br />
+                            <strong><p>Area of a triangle formula</p> </strong>
+                            Formula:
+
+                            <strong><p>  Area of triangle =  Half of Product of Base and Height
+                               </p>
+                            </strong>
+                            <strong><p>  Area = 1/2 × Base × Height </p></strong>
+                        </Card>
+                        <br />
                     </Grid>
                     <Grid item lg={4} md={4} sm={false}></Grid>
                 </Grid>

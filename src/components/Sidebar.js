@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import { Avatar } from '@material-ui/core';
+import { Avatar, CssBaseline } from '@material-ui/core';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import logo from '../Assets/images/smlmclogo.jpg';
+import Lettern from '../Assets/icons/lettern';
 import FeedbackIcon from '@material-ui/icons/Feedback';
 // icons
 import { Home, Apps, AttachMoney, Functions, ScatterPlot, Accessibility } from '@material-ui/icons';
@@ -19,14 +20,11 @@ const useStyles = makeStyles((theme) => ({
     fullList: {
         width: 'auto',
     },
-    divLinks: {
-        backgroundColor: '#00000059',
-    },
     divdrawer: {
         paddingRight: '10px'
     },
     listitem: {
-        backgroundColor: 'white',
+        backgroundColor: '#fafafa',
         borderRadius: '0px',
         margin: '10px 10px 0px 0px',
         whiteSpace: 'nowrap',
@@ -55,7 +53,9 @@ const Sidebar = (props) => {
     let urls = [
         { url: '/', urlname: 'Home', icon: <Home /> },
         { url: '/maths/', urlname: 'Mathamatics', icon: <Functions /> },
+        { url: '/numbers/', urlname: 'Numbers', icon: <Lettern /> },
         { url: '/tools/', urlname: 'Tools', icon: <Apps /> },
+        { url: '/text-lists/', urlname: 'Text and Lists', icon: <>T</> },
         { url: '/general/', urlname: 'General', icon: <Accessibility /> },
         { url: '/finance/', urlname: 'Finance', icon: <AttachMoney /> },
         { url: '/physics/', urlname: 'Physics', icon: <ScatterPlot /> },
@@ -65,11 +65,11 @@ const Sidebar = (props) => {
     const onChangeStyle = (e) => {
         try {
             props.handleDrawerToggle();
-
         } catch (e) { }
     }
     return (
         <>
+            <CssBaseline />
             <div className={classes.toolbar} style={{ borderBottom: '1px solid #77777712' }}>
                 <div style={{ display: 'flex', alignItems: 'center', margin: '13px' }}
                     onClick={(e) => { window.location = '/' }}>

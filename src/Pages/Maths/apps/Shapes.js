@@ -2,14 +2,14 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid } from '@material-ui/core';
 import Compress from '../../../Assets/icons/Compress';
-import SubNavBar from '../../../Components/SubNavBar';
 import Helmet from 'react-helmet';
 import Footer from '../../../Components/Footer';
+import { Link } from 'react-router-dom';
+import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        flexGrow: 1,
-        overflow: 'hidden'
+        flexGrow: 1
     },
     control: {
         padding: theme.spacing(2),
@@ -62,26 +62,31 @@ export default function Shapes() {
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Shapes Calculator - Calculate all the geomatric shapes</title>
-                <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathamatical calculations" />
-                <meta name="description" content="Use Mathcalc interest calculator to calculate simple and compound interest. Simply, enter the details of the principal amount, interest rate, period, and compounding frequency to know the interest earned." />
-                <meta name="author" content="Mathcalc" />
-                <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
+                <title>Geometric shapes calculator online</title>
+                <meta name="keywords" content="mathcalc,shapes,area,circumference, geometric shapes calculations,geometrics, area" />
+                <meta name="description" content="Geometric shape calculator used to calculate the dimentions of geometric shapes" />
+                <meta name="author" content="mathcalc" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
             </Helmet>
             <Container maxWidth={'xl'} >
-                <SubNavBar />
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item lg={8} md={8} sm={12}>
-                        <h1 className={classes.calcHeader} >Shapes calculator</h1>
+                        <SubNavBar
+                            links={[{
+                                url: '/maths/',
+                                urlName: 'Mathamatics'
+                            }]}
+                            pageTitle="GEOMETRIC SHAPES CALCULATORS ONLINE"
+                        />
+                        <br />
                         <div className={classes.calcContent}>
                             {
                                 urls.map(ur => {
-                                    return (<a href={ur.url} className={'divLink'} >
+                                    return (<Link to={ur.url} className={'divLink'} key={ur.url} >
                                         <Compress style={{
                                             width: '30px',
                                             margin: '0px 16px 0px 16px'
-                                        }} /> <span>{ur.title}</span></a>
+                                        }} /> <span>{ur.title}</span></Link>
                                     )
                                 })
                             }
