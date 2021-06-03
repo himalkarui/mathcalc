@@ -223,14 +223,14 @@ export default function Square() {
                             <br />
                             <h2 className="title is-5">Area</h2>
                             <p> Area of the square is the region covered by it in a two-dimensional plane. The area here is equal to the square of the sides or side squared. It is measured in square unit.
-
+</p>
                             <p><strong>  Area = side <sup>2</sup> per square unit</strong></p>
 
                             If ‘a’ is the length of the side of square, then;
 
                             <p><strong>   Area = a <sup>2</sup> sq.unit</strong></p>
 
-                            Also, learn to find Area Of Square Using Diagonals.
+                            <p>  Also, learn to find Area Of Square Using Diagonals.
                             </p>
                             <br />
                             <h2 className="title is-5">Perimeter</h2>

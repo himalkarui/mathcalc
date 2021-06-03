@@ -5,7 +5,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Toolbar, Avatar, Typography } from '@material-ui/core';
+import { Toolbar, Avatar, Typography, Button } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Sidebar from './Sidebar';
 import logo from '../Assets/images/mathcalcblack.png';
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '4px',
         transition: 'margin 0.5s',
         border: '1px solid #e0d7d7',
-       // boxShadow: '1px 2px 5px 2px #afaead',
+        // boxShadow: '1px 2px 5px 2px #afaead',
         [theme.breakpoints.down("xs")]: {
             minWidth: "146px",
             fontSize: "13px",
@@ -153,6 +153,9 @@ function Header(props) {
     };
 
     const container = window !== undefined ? () => window().document.body : undefined;
+
+    React.useEffect(() => {
+    }, []);
 
     return (
         <>

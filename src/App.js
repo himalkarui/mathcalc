@@ -65,6 +65,7 @@ import Sortlist from './Pages/Text/apps/Sortlist';
 import CountLetters from './Pages/Text/apps/CountLetters';
 import Countwords from './Pages/Text/apps/Countwords';
 import Countlines from './Pages/Text/apps/Countlines';
+import Exchangerate from './Pages/Finance/apps/Exchangerate';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -144,6 +145,7 @@ function App() {
                 <Route exact path="/general/cpm-roi-calculator/" component={Cpmroicalc}></Route>
 
                 <Route exact path="/finance" component={Finance} />
+                <Route exact path="/finance/foreign-currency-exchangerate" component={Exchangerate} />
                 <Route exact path="/finance/simple-interest" component={SimpleInterest} />
                 <Route exact path="/finance/compound-interest" component={CompoundInterest} />
                 <Route exact path="/finance/discount" component={Discount} />

@@ -29,7 +29,8 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px 10px 0px 0px',
         whiteSpace: 'nowrap',
         '&:hover': {
-            backgroundColor: '#f1f1f1'
+            backgroundColor: '#f1f1f1',
+            color: '#3298dc !important'
         }
     },
     toolbar: theme.mixins.toolbar,

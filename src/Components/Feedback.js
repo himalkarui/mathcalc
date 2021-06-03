@@ -63,6 +63,8 @@ export default function Feedback() {
                 redirect: 'follow'
             };
 
+            //            get-exchangecurrate
+
             fetch("https://apimathcalc.herokuapp.com/api/v1/feedback/create", requestOptions)
                 .then(response => response.text())
                 .then(result => console.log(result))

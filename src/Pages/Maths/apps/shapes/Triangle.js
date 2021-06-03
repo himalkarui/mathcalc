@@ -266,6 +266,7 @@ export default function Triangle() {
                             pageTitle="Triangle Calculator"
                             txtTitle="Triangle calculator is used to calculate Area, Perimeter, Gamma and InRadius of triangle"
                         />
+                        <br />
                         <Card elevation={1} className="box" >
                             <h2 className={'title is-5'}>Triangle Calculator</h2>
                             <p >

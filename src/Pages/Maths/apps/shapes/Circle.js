@@ -171,6 +171,7 @@ export default function Circle() {
                             pageTitle="Circle calculator"
                             txtTitle="Circle calculator is used to calculate the area , circumference and diameter of a circle"
                         />
+                        <br />
                         <Card elevation={1} className="box">
                             <h2 className={'title is-5'}>Circle Calculator</h2>
                             <p>
