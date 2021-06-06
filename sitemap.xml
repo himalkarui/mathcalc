@@ -187,16 +187,22 @@
 
         <changefreq>yearly</changefreq>
 
-        <priority>1</priority>
     </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/general/waist-to-hip-ratio-calculator</loc>
+        
+        <lastmod>2021-06-06</lastmod>
+
+        <changefreq>yearly</changefreq>
+    </url>
+
     <url>
         <loc>https://mathcalc.xyz/?/general/age-calculator</loc>
         
         <lastmod>2021-05-01</lastmod>
 
         <changefreq>yearly</changefreq>
-
-        <priority>1</priority>
     </url>
     <url>
         <loc>https://mathcalc.xyz/?/general/bmi-calculator</loc>
