@@ -472,6 +472,30 @@
 
         <changefreq>yearly</changefreq>
     </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/?/maths/matrices</loc>
+        
+        <lastmod>2021-06-08</lastmod>
+
+        <changefreq>yearly</changefreq>
+    </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/?/maths/matrices/add</loc>
+        
+        <lastmod>2021-06-08</lastmod>
+
+        <changefreq>yearly</changefreq>
+    </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/?/maths/matrices/subtract</loc>
+        
+        <lastmod>2021-06-08</lastmod>
+
+        <changefreq>yearly</changefreq>
+    </url>
     
     <url>
         <loc>https://mathcalc.xyz/?/maths/graphs</loc>
