@@ -156,7 +156,7 @@ export default function Graphs() {
                 <meta name="viewport" content="width=device-width, initial-scale=0.6" />
                 <title>Graphs - Visualize the equations in graphs | MathCalc</title>
                 <meta name="keywords" content="Mathcalc, online graph calculator, visualize equation, visualize algebric equation" />
-                <meta name="description" content="online free graph calculator can calculate your mathamatical algebric expression into the visible graph format" />
+                <meta name="description" content="online free graph calculator can calculate your mathematical algebric expression into the visible graph format" />
                 <meta name="author" content="Mathcalc" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
             </Helmet>
@@ -167,7 +167,7 @@ export default function Graphs() {
                             pageTitle="Visualize equations in graphs"
                             links={[{
                                 url: "/maths/",
-                                urlName: "Mathamatics"
+                                urlName: "Mathematics"
                             }]}
                             txtTitle="Evaluate the equation and view in the cartesian plane"
                         />

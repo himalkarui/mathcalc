@@ -258,7 +258,7 @@ export default function Triangle() {
                         <SubNavBar
                             links={[{
                                 url: '/maths/',
-                                urlName: 'Mathamatics'
+                                urlName: 'Mathematics'
                             }, {
                                 url: '/maths/shapes/',
                                 urlName: 'Shapes'

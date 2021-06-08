@@ -55,7 +55,7 @@ export default function Numbers() {
         <div className={classes.root}>
             <Helmet>
                 <title>Numbers Free Tools - Mathcalc</title>
-                <meta name="keywords" content="mathcalc,numbers,numbers tools, general calculator, mathamatics calculator, online calculator, free calculator" />
+                <meta name="keywords" content="mathcalc,numbers,numbers tools, general calculator, mathematics calculator, online calculator, free calculator" />
                 <meta name="description" content="Use Mathcalc numbers online free tools to calculate varoius calculations of numbers" />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />

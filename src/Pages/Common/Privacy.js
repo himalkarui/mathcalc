@@ -11,7 +11,7 @@ export default function Privacy(props) {
             <Helmet>
                 <title>Privacy Policy - Mathcalc.xyz</title>
                 <meta charset="utf-8" />
-                <meta property="description" content="With Mathcalc.xyz you can do all mathamatical calculations for free!" />
+                <meta property="description" content="With Mathcalc.xyz you can do all mathematical calculations for free!" />
             </Helmet>
             <div data-server-rendered="true" className="layout" data-v-077c0c4a>
                 <section className="hero is-dark" style={{ backgroundColor: '#563279 !important' }} data-v-077c0c4a>

@@ -107,7 +107,7 @@ export default function Radiandegree() {
                     pageTitle="Radians to degrees and vice versa"
                     links={[{
                         url: "/maths/",
-                        urlName: "Mathamatics"
+                        urlName: "Mathematics"
                     }]}
                 />
                 <section className="hero" >

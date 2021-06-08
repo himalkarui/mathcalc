@@ -78,7 +78,7 @@ export default function Main(props) {
                             <div className="columns">
                                 <div className="column is-7">
                                     <h1 className="subtitle is-spaced is-uppercase has-text-grey-light has-text-weight-bold">Mathcalc        </h1>
-                                    <p className="title is-3 has-text-letter-spacing-wide has-text-white">One stop web app for all your mathamatical calculations and tools for FREE !  </p>
+                                    <p className="title is-3 has-text-letter-spacing-wide has-text-white">One stop web app for all your mathematical calculations and tools for FREE !  </p>
                                 </div>
                                 <div className="column is-4">
                                     <div className="is-pulled-right">
@@ -95,7 +95,7 @@ export default function Main(props) {
                             Mathcalc
                 </Typography>
                         <span className='subtext'>
-                            We make calculations easy.  One stop tool for all mathamatical calculations.
+                            We make calculations easy.  One stop tool for all mathematical calculations.
                 </span>
                         <CardContent className='appContainer'>
                             <Link
@@ -114,7 +114,7 @@ export default function Main(props) {
                             <div className="content">
                                 <h5 className="title is-5">
                                     <Link to={'/maths'} key={'Maths'}
-                                    >Mathamatics
+                                    >Mathematics
                                     </Link>
                                 </h5>
                                 <p><Link to='/maths/shapes/'  >Shapes</Link></p>
@@ -171,6 +171,7 @@ export default function Main(props) {
                                         Finance
                                     </Link>
                                 </h5>
+                                <p><Link to='/finance/foreign-currency-convertor'>Foreign currency rate convertor</Link></p>
                                 <p><Link to="/finance/simple-interest/">Simple Interest</Link></p>
                                 <p><Link to="/finance/compound-interest">Compound Interest</Link></p>
                                 <p><Link to="/finance/discount/">Discount</Link></p>

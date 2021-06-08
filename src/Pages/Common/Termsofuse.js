@@ -39,7 +39,7 @@ export default function Privacy(props) {
                             <div className="columns" data-v-677d599e>
                                 <div className="column is-7 is-offset-1" data-v-677d599e>
                                     <h3 className="title is-3" data-v-677d599e>Terms</h3>
-                                    <p data-v-677d599e>Mathcalc.xyz is a online free web tool for doing all kind of mathamatical calculations and other common tools
+                                    <p data-v-677d599e>Mathcalc.xyz is a online free web tool for doing all kind of mathematical calculations and other common tools
             </p>
                                     <h3 className="title is-4" data-v-677d599e>Images</h3>
                                     <p data-v-677d599e>Mathcalc.xyz is not responsible for any images you convert to

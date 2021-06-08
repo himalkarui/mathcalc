@@ -33,7 +33,7 @@ export default function Finance() {
     const classes = useStyles();
 
     const urls = [
-        { url: '/finance/foreign-currency-exchangerate', desc: 'Foreign currency Exchange rate' },
+        { url: '/finance/foreign-currency-convertor', desc: 'Foreign currency rate convertor' },
         { url: '/finance/simple-interest', desc: 'Simple Interest' },
         { url: '/finance/compound-interest', desc: 'Compound Interest' },
         { url: '/finance/discount', desc: 'Discount' },

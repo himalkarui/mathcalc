@@ -53,11 +53,11 @@ const Sidebar = (props) => {
 
     let urls = [
         { url: '/', urlname: 'Home', icon: <Home /> },
-        { url: '/maths/', urlname: 'Mathamatics', icon: <Functions /> },
+        { url: '/general/', urlname: 'General', icon: <Accessibility /> },
+        { url: '/maths/', urlname: 'Mathematics', icon: <Functions /> },
         { url: '/numbers/', urlname: 'Numbers', icon: <Lettern /> },
         { url: '/tools/', urlname: 'Tools', icon: <Apps /> },
         { url: '/text-lists/', urlname: 'Text and Lists', icon: <>T</> },
-        { url: '/general/', urlname: 'General', icon: <Accessibility /> },
         { url: '/finance/', urlname: 'Finance', icon: <AttachMoney /> },
         { url: '/physics/', urlname: 'Physics', icon: <ScatterPlot /> },
         { url: '/feedback/', urlname: 'Feedback', icon: <FeedbackIcon /> },

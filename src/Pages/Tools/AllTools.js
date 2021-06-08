@@ -53,7 +53,7 @@ export default function AllTools() {
         <div className={classes.root}>
             <Helmet>
                 <title>Free Online Tools - Mathcalc</title>
-                <meta name="keywords" content="Mathamatical calculations, free online tools, mathcalc, email validator, age calculator, online calculator, free online calculator" />
+                <meta name="keywords" content="Mathematical calculations, free online tools, mathcalc, email validator, age calculator, online calculator, free online calculator" />
                 <meta name="description" content="Mathcalc online tools are free to use and it have various kinds of tools to ease your tasks" />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />

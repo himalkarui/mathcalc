@@ -373,7 +373,7 @@ export default function Favicongenerator(props) {
                       </option > <option    >
                                                     Amaranth
                       </option > <option    >
-                                                    Amatic SC
+                                                    ematic SC
                       </option > <option    >
                                                     Amethysta
                       </option > <option    >

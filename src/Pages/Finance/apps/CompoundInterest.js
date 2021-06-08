@@ -134,8 +134,8 @@ export default function CompoundInterest() {
                             </div>
                         </section>
                         <Card className="box" elevation={1} >
-                            < h2 className="title is-5">
-                                Calculate Your Compound Interest</h2>
+                            <h1 className="title is-5">
+                                Calculate Your Compound Interest</h1>
                             <p>
                                 Compound interest is the interest on interest.
                                 In simple terms, the addition of interest to the principal sum of the loan or deposit is called compound interest.

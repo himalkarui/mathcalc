@@ -1,8 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { BrowserRouter, Route, Switch, } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import { MuiThemeProvider, createMuiTheme, makeStyles } from '@material-ui/core/styles';
-import { createBrowserHistory } from "history";
 import './App.css';
 import './Assets/favicon/css/stylesfavicon.css';
 import Header from './Components/Header';
@@ -66,6 +65,11 @@ import CountLetters from './Pages/Text/apps/CountLetters';
 import Countwords from './Pages/Text/apps/Countwords';
 import Countlines from './Pages/Text/apps/Countlines';
 import Exchangerate from './Pages/Finance/apps/Exchangerate';
+// import Coloriedeficit from './Pages/General/apps/Coloriedeficit';
+import Waisttohip from './Pages/General/apps/Waisttohip';
+import Matrices from './Pages/Maths/apps/Matrices';
+import Matrixadd from './Pages/Maths/apps/Matrix/Matrixadd';
+import Matrixsubtract from './Pages/Maths/apps/Matrix/Matrixsubtract';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,109 +83,113 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function App() {
-  const history = createBrowserHistory();
-  let currentPath = history.location.pathname;
-  if (currentPath === "/") {
-    currentPath = "Home";
-  }
 
+function usePageViews() {
+  let location = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+}
+
+
+function App() {
+  usePageViews();
   const THEME = createMuiTheme({
     typography: {
       fontFamily: 'Noto Sans KR, sans-serif !important',
     }
   });
-
   const classes = useStyles();
-
   const [open, setOpen] = React.useState(false);
   return (
     <div className="App">
       <MuiThemeProvider theme={THEME}>
-        <BrowserRouter>
-          {/* Common Pages for All roles */}
-          <div className={classes.root}>
-            <Header setmOpen={setOpen} />
-            <main
-              className={clsx(classes.content, {
-                [classes.contentShift]: open,
-              })}
-            >
-              <div className={classes.toolbar} />
-              <Switch>
-                <Route exact path="/" component={Home} />
+        {/* Common Pages for All roles */}
+        <div className={classes.root}>
+          <Header setmOpen={setOpen} />
+          <main
+            className={clsx(classes.content, {
+              [classes.contentShift]: open,
+            })}
+          >
+            <div className={classes.toolbar} />
+            <Switch>
+              <Route exact path="/" component={Home} />
 
-                <Route exact path="/tools/" component={AllTools} />
-                <Route exact path="/favicon-converter/" component={Faviconconvertor} />
-                <Route exact path="/favicon-generator/" component={Favicongenerator} />
-                <Route exact path="/covid19-tracker/" component={Covidtracker} />
-                <Route exact path="/email-validator/" component={Emailvalidator} />
-                <Route exact path="/image-editor/" component={Imageeditor} />
+              <Route exact path="/tools/" component={AllTools} />
+              <Route exact path="/favicon-converter/" component={Faviconconvertor} />
+              <Route exact path="/favicon-generator/" component={Favicongenerator} />
+              <Route exact path="/covid19-tracker/" component={Covidtracker} />
+              <Route exact path="/email-validator/" component={Emailvalidator} />
+              <Route exact path="/image-editor/" component={Imageeditor} />
 
-                <Route exact path="/text-lists/" component={Textandlist} />
-                <Route exact path="/reverse-list/" component={Reverselist} />
-                <Route exact path="/list-randomizer/" component={Listrandomizer} />
-                <Route exact path="/add-text-each-line/" component={Addtexttoeachline} />
-                <Route exact path="/sort-list/" component={Sortlist} />
-                <Route exact path="/count-letters/" component={CountLetters} />
-                <Route exact path="/count-words/" component={Countwords} />
-                <Route exact path="/count-lines/" component={Countlines} />
+              <Route exact path="/text-lists/" component={Textandlist} />
+              <Route exact path="/reverse-list/" component={Reverselist} />
+              <Route exact path="/list-randomizer/" component={Listrandomizer} />
+              <Route exact path="/add-text-each-line/" component={Addtexttoeachline} />
+              <Route exact path="/sort-list/" component={Sortlist} />
+              <Route exact path="/count-letters/" component={CountLetters} />
+              <Route exact path="/count-words/" component={Countwords} />
+              <Route exact path="/count-lines/" component={Countlines} />
 
-                <Route exact path="/numbers/" component={Numbers} />
-                <Route exact path="/generate-list-numbers/" component={Generatelistofnums} />
-                <Route exact path="/binary-converter/" component={Binaryconverter} />
-                <Route exact path="/hexadecimal-converter/" component={Hexadecimalconverter} />
-                <Route exact path="/sort-numbers/" component={Sortnumbers} />
-                <Route exact path="/minimum-maximum-list/" component={Maxminlist} />
-                <Route exact path="/filter-numbers/" component={Filternumbers} />
+              <Route exact path="/numbers/" component={Numbers} />
+              <Route exact path="/generate-list-numbers/" component={Generatelistofnums} />
+              <Route exact path="/binary-converter/" component={Binaryconverter} />
+              <Route exact path="/hexadecimal-converter/" component={Hexadecimalconverter} />
+              <Route exact path="/sort-numbers/" component={Sortnumbers} />
+              <Route exact path="/minimum-maximum-list/" component={Maxminlist} />
+              <Route exact path="/filter-numbers/" component={Filternumbers} />
 
-                <Route exact path="/general/" component={General} />
-                <Route exact path="/general/age-calculator/" component={Age} />
-                <Route exact path="/general/bmi-calculator/" component={Bmi} />
-                <Route exact path="/general/flames-calculator/" component={Flamescalc} />
-                <Route exact path="/general/time-calculator/" component={Time}></Route>
-                <Route exact path="/general/google-adsense-calculator/" component={Googleadsensecalc}></Route>
-                <Route exact path="/general/cpc-roi-calculator/" component={Roiadsensecalc}></Route>
-                <Route exact path="/general/cpm-roi-calculator/" component={Cpmroicalc}></Route>
+              <Route exact path="/general/" component={General} />
+              <Route exact path="/general/waist-to-hip-ratio-calculator" component={Waisttohip} />
+              <Route exact path="/general/age-calculator/" component={Age} />
+              <Route exact path="/general/bmi-calculator/" component={Bmi} />
+              <Route exact path="/general/flames-calculator/" component={Flamescalc} />
+              <Route exact path="/general/time-calculator/" component={Time}></Route>
+              <Route exact path="/general/google-adsense-calculator/" component={Googleadsensecalc}></Route>
+              <Route exact path="/general/cpc-roi-calculator/" component={Roiadsensecalc}></Route>
+              <Route exact path="/general/cpm-roi-calculator/" component={Cpmroicalc}></Route>
 
-                <Route exact path="/finance" component={Finance} />
-                <Route exact path="/finance/foreign-currency-exchangerate" component={Exchangerate} />
-                <Route exact path="/finance/simple-interest" component={SimpleInterest} />
-                <Route exact path="/finance/compound-interest" component={CompoundInterest} />
-                <Route exact path="/finance/discount" component={Discount} />
-                <Route exact path="/finance/emi-calculator" component={EmiCalc} />
+              <Route exact path="/finance" component={Finance} />
+              <Route exact path="/finance/foreign-currency-convertor" component={Exchangerate} />
+              <Route exact path="/finance/simple-interest" component={SimpleInterest} />
+              <Route exact path="/finance/compound-interest" component={CompoundInterest} />
+              <Route exact path="/finance/discount" component={Discount} />
+              <Route exact path="/finance/emi-calculator" component={EmiCalc} />
 
-                {/* routes for physics */}
-                <Route exact path="/physics/" component={Physics} />
-                <Route exact path="/physics/eeqlmc2/" component={Emcsqr} />
-                <Route exact path="/physics/ohmslaw/" component={Ohmslaw} />
-                <Route exact path="/physics/newtons-law-of-gravity/" component={Lawofgravity} />
-                <Route exact path="/physics/capacitance/" component={Capacitance} />
-                <Route exact path="/physics/inductance/" component={Inductance} />
-                <Route exact path="/physics/kinetic-energy/" component={Kineticenergy} />
+              {/* routes for physics */}
+              <Route exact path="/physics/" component={Physics} />
+              <Route exact path="/physics/eeqlmc2/" component={Emcsqr} />
+              <Route exact path="/physics/ohmslaw/" component={Ohmslaw} />
+              <Route exact path="/physics/newtons-law-of-gravity/" component={Lawofgravity} />
+              <Route exact path="/physics/capacitance/" component={Capacitance} />
+              <Route exact path="/physics/inductance/" component={Inductance} />
+              <Route exact path="/physics/kinetic-energy/" component={Kineticenergy} />
 
-                {/* routes for maths */}
-                <Route exact path="/maths/" component={Maths} />
-                <Route exact path="/maths/percentage-calculator/" component={Percentage} />
-                <Route exact path="/maths/radians-and-degrees-converter/" component={Radiandegree} />
-                <Route exact path="/maths/single-rule-of-three-direct/" component={Singlerulethreedir} />
-                <Route exact path="/maths/single-rule-of-three-inverse/" component={Singleruleinverse} />
-                <Route exact path="/maths/equations" component={Maths} />
-                <Route exact path="/maths/shapes" component={Shapes} />
-                <Route exact path="/maths/shapes/circle" component={Circle} />
-                <Route exact path="/maths/shapes/square" component={Square} />
-                <Route exact path="/maths/shapes/rectangle" component={Rectangle} />
-                <Route exact path="/maths/shapes/triangle" component={Triangle} />
-                <Route exact path="/maths/graphs" component={Graphs} />
+              {/* routes for maths */}
+              <Route exact path="/maths/" component={Maths} />
+              <Route exact path="/maths/percentage-calculator/" component={Percentage} />
+              <Route exact path="/maths/radians-and-degrees-converter/" component={Radiandegree} />
+              <Route exact path="/maths/single-rule-of-three-direct/" component={Singlerulethreedir} />
+              <Route exact path="/maths/single-rule-of-three-inverse/" component={Singleruleinverse} />
+              <Route exact path="/maths/equations" component={Maths} />
+              <Route exact path="/maths/shapes" component={Shapes} />
+              <Route exact path="/maths/shapes/circle" component={Circle} />
+              <Route exact path="/maths/shapes/square" component={Square} />
+              <Route exact path="/maths/shapes/rectangle" component={Rectangle} />
+              <Route exact path="/maths/shapes/triangle" component={Triangle} />
+              <Route exact path="/maths/graphs" component={Graphs} />
+              <Route exact path="/maths/matrices" component={Matrices} />
+              <Route exact path="/maths/matrices/add" component={Matrixadd} />
+              <Route exact path="/maths/matrices/subtract" component={Matrixsubtract} />
 
-                <Route exact path="/privacy-policy/" component={Privacy} />
-                <Route exact path="/terms-of-use/" component={Termsofuse} />
-                <Route exact path="/feedback" component={Feedback} />
-                <Route path="/" component={FileNotFound} />
-              </Switch>
-            </main>
-          </div>
-        </BrowserRouter>
+              <Route exact path="/privacy-policy/" component={Privacy} />
+              <Route exact path="/terms-of-use/" component={Termsofuse} />
+              <Route exact path="/feedback" component={Feedback} />
+              <Route path="/" component={FileNotFound} />
+            </Switch>
+          </main>
+        </div>
       </MuiThemeProvider>
     </div >
   );

@@ -13,9 +13,9 @@ export default function Home(props) {
     <div className={classes.root}>
       <Helmet>
         <title>Mathcalc - Free online calculators and tools</title>
-        <meta name="keywords" content="One stop tool for doing all kind of mathamatical calculations" />
+        <meta name="keywords" content="One stop tool for doing all kind of mathematical calculations" />
         <meta name="description" content="Mathcalc is the all in one web app for 
-        all kind of mathamatical calculations in all fields of science like physics ,chemistry ,mathamatics, 
+        all kind of mathematical calculations in all fields of science like physics ,chemistry ,mathematics, 
         quantum physics and a lot " />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Helmet>

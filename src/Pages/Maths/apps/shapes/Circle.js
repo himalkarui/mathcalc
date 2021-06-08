@@ -162,7 +162,7 @@ export default function Circle() {
                         <SubNavBar
                             links={[{
                                 url: '/maths/',
-                                urlName: 'Mathamatics'
+                                urlName: 'Mathematics'
                             },
                             {
                                 url: '/maths/shapes/',

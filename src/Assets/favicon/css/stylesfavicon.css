@@ -464,7 +464,7 @@ html {
   box-sizing: border-box;
   line-height: 27px !important;
   font-weight: 400;
-  font-size: 1rem !important;
+  font-size: 0.95rem !important;
 }
 
 *,
@@ -540,7 +540,7 @@ pre {
 
 body {
   color: #4a4a4a !important;
-  font-size: 1rem !important;
+  font-size: 0.95rem !important;
   font-weight: 400;
   line-height: 27px !important;
 }
@@ -642,7 +642,7 @@ table th {
   background-color: #fff;
   border-radius: 3px;
   font-size: 1rem;
-  line-height: 27px ;
+  line-height: 27px;
   box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
     0 0 0 1px rgba(10, 10, 10, 0.02);
   color: #4a4a4a;

@@ -39,6 +39,7 @@ export default function Maths() {
     const classes = useStyles();
     let urls = [
         { url: '/maths/shapes/', title: 'Shapes' },
+        { url: '/maths/matrices/', title: 'Matrices' },
         { url: '/maths/graphs/', title: 'Graphs' },
         { url: '/maths/percentage-calculator/', title: 'Percentage calculator' },
         { url: '/maths/single-rule-of-three-direct/', title: 'Single rule of three direct' },
@@ -49,9 +50,9 @@ export default function Maths() {
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Free Math Calculator - Calculate all  Mathamatical calculations</title>
+                <title>Free Math Calculator - Calculate all  Mathematical calculations</title>
                 <meta name="keywords" content="Mathcalc, online calculator, free tools, free online calculator" />
-                <meta name="description" content="Mathcalc is an Online free tool for doing all kind of  mathamatical calculations" />
+                <meta name="description" content="Mathcalc is an Online free tool for doing all kind of  mathematical calculations" />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
@@ -62,10 +63,10 @@ export default function Maths() {
                         <section className="hero" data-v-23847e07>
                             <div style={{ padding: '2rem 0.5rem' }}>
                                 <div className="container">
-                                    <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Mathamatics
+                                    <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Mathematics
           </h1>
                                     <p className="has-text-letter-spacing-wide has-text-grey">
-                                        Various mathamatical tasks, such as calculate percentages, simple shapes, graph functions and more.
+                                        Various mathematical tasks, such as calculate percentages, simple shapes, graph functions and more.
           </p>
                                 </div>
                             </div>

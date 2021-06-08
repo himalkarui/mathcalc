@@ -56,7 +56,6 @@ export default function Singlerulethreedir() {
             result: res,
         });
 
-
         let resultDiv = document.getElementsByClassName('resultDiv')[0];
         resultDiv.className = 'resultDiv blink_me'
         setTimeout(() => {
@@ -90,7 +89,7 @@ export default function Singlerulethreedir() {
                     pageTitle="single rule of three inverse"
                     links={[{
                         url: "/maths/",
-                        urlName: "Mathamatics"
+                        urlName: "Mathematics"
                     }]}
                 />
                 <section className="hero" >

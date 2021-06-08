@@ -19,13 +19,13 @@ export default function SubNavBar(props) {
                                 }) : <></>
                             }
                             {
-                                props.pageTitle ? <Typography className="has-text-weight-bold">{props.pageTitle}</Typography>
+                                props.pageTitle ? <Typography component="h1" className="has-text-weight-bold">{props.pageTitle}</Typography>
                                     : <></>
                             }
                         </Breadcrumbs>
                     </h1>
-                    {props.txtTitle ? <p style={{ marginTop: '1rem' }} className="has-text-letter-spacing-wide has-text-grey">
-                        {props.txtTitle}</p> : <></>}
+                    {props.txtTitle ? <h1 style={{ marginTop: '1rem' }} className="has-text-letter-spacing-wide has-text-grey">
+                        {props.txtTitle}</h1> : <></>}
                 </div>
             </div>
         </section>

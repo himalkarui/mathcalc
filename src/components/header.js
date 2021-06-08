@@ -5,7 +5,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Toolbar, Avatar, Typography, Button } from '@material-ui/core';
+import { Toolbar, Avatar, Typography } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Sidebar from './Sidebar';
 import logo from '../Assets/images/mathcalcblack.png';

@@ -92,7 +92,7 @@ export default function Feedback() {
         <div data-server-rendered="true" id="app" className="layout" data-v-23847e07>
             <Helmet>
                 <title>Contact Us, Suggest a new calculator or  tool | mathcalc</title>
-                <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathamatical calculations" />
+                <meta name="keywords" content="Mathcalc- the one web app for doing all kind of Mathematical calculations" />
                 <meta name="description" content="Use Mathcalc interest calculator to calculate simple and compound interest. Simply, enter the details of the principal amount, interest rate, period, and compounding frequency to know the interest earned." />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />

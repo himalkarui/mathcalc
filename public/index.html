@@ -8,21 +8,20 @@
     <title>
         Mathcalc - Free online calculators and tools
     </title>
-    <meta name="keywords" content="One stop tool for doing all kind of mathamatical calculations" />
-    <meta name="description" content="Mathcalc is the all in one web app for 
-        all kind of mathamatical calculations in all fields of science like physics ,chemistry ,mathamatics, 
-        quantum physics and a lot " />
+    <meta name="keywords"
+        content="online, calculators, calculator, calc, mathcalc,mathematics,calculations,tools, online tools, free tools, free calculators" />
+    <meta name="description"
+        content="Mathcalc is the all in one web app for all kind of mathematical calculators and online tools for free" />
     <link rel="shortcut icon" href="https://mathcalc.xyz/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="https://mathcalc.xyz/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://mathcalc.xyz/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://mathcalc.xyz/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://mathcalc.xyz/favicon-96x96.png">
     <link rel="manifest" href="./site.webmanifest">
     <meta property="og:title" content=" Mathcalc - Free online calculators and tools">
     </meta>
     <meta property="og:url" content="https://mathcalc.xyz/">
     </meta>
     <meta property="og:description"
-        content="Mathcalc is the all in one web app for all kind of mathamatical calculations in all fields of science like physics ,chemistry ,mathamatics,quantum physics and a lot">
+        content="Mathcalc is the all in one web app for all kind of mathematical calculations and some important online tools for free!">
     </meta>
     <meta property="og:locale" content="en" />
     <meta name="google-site-verification" content="_7H3uI_y-D35Mm0n0oIR4AguYtRHC4S4kYxKmzbEbKE" />
@@ -39,8 +38,6 @@
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7365466138029430"
         crossorigin="anonymous"></script>
-    <link rel="alternate" href="http://mathcalc.xyz" hreflang="en-us" />
-    <link rel="alternate" href="http://mathcalc.xyz" hreflang="en-eu" />
 </head>
 
 <body>
@@ -50,43 +47,6 @@
     <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script>
-        //ask to install the app
-        // Initialize deferredPrompt for use later to show browser install prompt.
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            // Prevent the mini-infobar from appearing on mobile
-            e.preventDefault();
-            // Stash the event so it can be triggered later.
-            deferredPrompt = e;
-            // Update UI notify the user they can install the PWA
-            // showInstallPromotion();
-            // Optionally, send analytics event that PWA install promo was shown.
-            console.log(`'beforeinstallprompt' event was fired.`);
-        });
-        window.addEventListener('appinstalled', () => {
-            // Hide the app-provided install promotion
-            //   hideInstallPromotion();
-            // Clear the deferredPrompt so it can be garbage collected
-            deferredPrompt = null;
-            // Optionally, send analytics event to indicate successful install
-            console.log('PWA was installed');
-        });
-
-
-        async function askInstall() {
-            if (deferredPrompt) {
-                // Hide the app provided install promotion
-                // hideInstallPromotion();
-                // Show the install prompt
-                deferredPrompt.prompt();
-                // Wait for the user to respond to the prompt
-                const { outcome } = await deferredPrompt.userChoice;
-                // Optionally, send analytics event with outcome of user choice
-                console.log(`User response to the install prompt: ${outcome}`);
-                // We've used the prompt, and can't use it again, throw it away
-                deferredPrompt = null;
-            }
-        }
 
         (function (l) {
             if (l.search[1] === '/') {
@@ -97,51 +57,7 @@
                     l.pathname.slice(0, -1) + decoded + l.hash
                 );
             }
-
-            let setHeadComponet = {
-                title: 'Mathcalc - Free online calculators and tools',
-            };
-            let urlPath = document.URL.split('/');
-            if (urlPath[3].toString() === '' || urlPath[4].toString() === '') {
-                setHeadComponet = {
-                    title: 'Mathcalc - Free online calculators and tools',
-                };
-            } else if (urlPath[3].toString() === 'general' || urlPath[4].toString() === 'general') {
-                setHeadComponet = {
-                    title: 'Free General Calculator',
-                };
-            } else if (urlPath[3].toString() === 'finance' || urlPath[4].toString() === 'finance') {
-                setHeadComponet = {
-                    title: 'Free Finance Calculator - Mathcalc',
-                };
-            } else if (urlPath[3].toString() === 'maths' || urlPath[4].toString() === 'maths') {
-                setHeadComponet = {
-                    title: 'Free Math Calculator - Mathcalc',
-                };
-            } else if (urlPath[3].toString() === 'physics' || urlPath[4].toString() === 'physics') {
-                setHeadComponet = {
-                    title: 'Free Physics Calculator - Mathcalc',
-                };
-            } else if (urlPath[3].toString() === 'numbers' || urlPath[4].toString() === 'numbers') {
-                setHeadComponet = {
-                    title: 'Numbers Free Tools - Mathcalc',
-                };
-            } else if (urlPath[3].toString() === 'tools' || urlPath[4].toString() === 'tools') {
-                setHeadComponet = {
-                    title: 'Free Online Tools - Mathcalc',
-                };
-            }
-            let metaTitle = document.getElementsByTagName('title')[0];
-            metaTitle.innerText = setHeadComponet.title;
-
         }(window.location));
-
-        window.addEventListener('scroll', (e) => {
-            setTimeout(() => {
-                askInstall();
-            }, 5000);
-        })
-
     </script>
 </body>
 

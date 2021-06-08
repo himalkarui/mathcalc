@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
 export default function General() {
     const classes = useStyles();
     let arrUrls = [
+        { urlname: 'Waist-To-Hip Ratio Calculator', url: '/general/waist-to-hip-ratio-calculator' },
         { urlname: 'Age Calculator', url: '/general/age-calculator/' },
         { urlname: 'BMI Calculator', url: '/general/bmi-calculator/' },
         { urlname: 'Flames Calculator', url: '/general/flames-calculator/' },
@@ -56,7 +57,7 @@ export default function General() {
         <div className={classes.root}>
             <Helmet>
                 <title>Free General Calculator - mathcalc</title>
-                <meta name="keywords" content="mathcalc, general calculator, mathamatics calculator, online calculator, free calculator" />
+                <meta name="keywords" content="mathcalc, general calculator, mathematics calculator, online calculator, free calculator" />
                 <meta name="description" content="Use Mathcalc online free tools to calculate varoius every day calculations" />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />

@@ -212,7 +212,7 @@ export default function Percentage() {
                     pageTitle="Percentage calculator"
                     links={[{
                         url: "/maths/",
-                        urlName: "Mathamatics"
+                        urlName: "Mathematics"
                     }]}
                 />
                 <section className="hero" data-v-23847e07>
@@ -220,9 +220,9 @@ export default function Percentage() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Online Percentage Calculator
           </h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <h1 className="has-text-letter-spacing-wide has-text-grey" style={{ lineHeight: '27px' }}>
                                 Calculate the percentage of a number, or find a number given its percent, or find the percent given two numbers, or calculate the percentage increment or decrement
-          </p>
+          </h1>
                         </div>
                     </div>
                 </section>
@@ -276,7 +276,7 @@ export default function Percentage() {
                             </Card>
                         </div>
                     </div>
-                    <br/>
+                    <br />
                 </div>
             </Container>
         </div >

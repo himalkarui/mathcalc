@@ -51,18 +51,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Shapes() {
+export default function Matrices() {
     const classes = useStyles();
     let urls = [
-        { url: '/maths/shapes/circle', title: 'circle' },
-        { url: '/maths/shapes/square', title: 'Square' },
-        { url: '/maths/shapes/rectangle', title: 'Rectangle' },
-        { url: '/maths/shapes/triangle', title: 'Triangle' }
+        { url: '/maths/matrices/add', title: 'Add matrices' },
+        { url: '/maths/matrices/subtract', title: 'Subtract matrices' },
     ];
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Geometric shapes calculator online</title>
+                <title>Matrix calculators online</title>
                 <meta name="keywords" content="mathcalc,shapes,area,circumference, geometric shapes calculations,geometrics, area" />
                 <meta name="description" content="Geometric shape calculator used to calculate the dimentions of geometric shapes" />
                 <meta name="author" content="mathcalc" />
@@ -76,9 +74,17 @@ export default function Shapes() {
                                 url: '/maths/',
                                 urlName: 'Mathematics'
                             }]}
-                            pageTitle="GEOMETRIC SHAPES CALCULATORS ONLINE"
+                            pageTitle="Matrices CALCULATORS ONLINE"
                         />
-                        <br />
+                        <section className="hero" data-v-23847e07>
+                            <div style={{ padding: '2rem 0.5rem' }}>
+                                <div className="container">
+                                    <p className="has-text-letter-spacing-wide has-text-grey">
+                                        In mathematics, a matrix is a rectangular array or table of numbers, symbols, or expressions, arranged in rows and columns.
+                                    </p>
+                                </div>
+                            </div>
+                        </section>
                         <div className={classes.calcContent}>
                             {
                                 urls.map(ur => {

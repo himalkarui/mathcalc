@@ -48,12 +48,16 @@ export default function Bmi() {
     const classes = useStyles();
     const [snakOpen, setSnakOpen] = React.useState(null);
     const [snakMessage, setSnakMessage] = React.useState(null);
+    const handleClose = (e) => {
+        setSnakOpen(null);
+        setSnakMessage(null);
+    };
 
     const [state, setState] = React.useState({
         weight: '',
         height: '',
         bmi: 0,
-        seviority: '',
+        seviority: 'info',
         message: '',
         showResult: false,
     });
@@ -89,14 +93,7 @@ export default function Bmi() {
             }, 250);
         }
     };
-
-    const handleClose = (e) => {
-        setSnakOpen(null);
-        setSnakMessage(null);
-    };
-
     const [backDropopen, SetBackDropopen] = React.useState(false);
-
     return (
         <div className={classes.root}>
             <CustomSnakbar
@@ -109,7 +106,7 @@ export default function Bmi() {
             </Backdrop>
             <Helmet>
                 <title>Body Mass Index (BMI) Calculator || Calculate your Body Mass Index - mathcalc</title>
-                <meta name="keywords" content="bmi, mathamatical calculations, mathcalc, bmi calculator, online free bmi calculator, free calculator" />
+                <meta name="keywords" content="bmi, mathematical calculations, mathcalc, bmi calculator, online free bmi calculator, free calculator" />
                 <meta name="description"
                     content=" Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women."></meta>
             </Helmet>
@@ -122,12 +119,13 @@ export default function Bmi() {
                                 url: "/general/",
                                 urlName: "General"
                             }]}
+                            txtTitle="Use this app to calculate your Body Mass Index (BMI) and discover a weight range that would put you in a healthy BMI category."
                         />
                         <br />
                         <Card raised elevation={1} className="box" >
-                            <h2 className={'title is-5'}>
-                                BMI Calculator
-                            </h2>
+                            <h1 className={'title is-5'}>
+                                BMI Calculator for Children and Adults
+                            </h1>
                             <p>
                                 Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.
 
@@ -184,10 +182,9 @@ export default function Bmi() {
                                 />
                                 <Button
                                     variant="contained"
-                                    color="white"
                                     className={classes.button + ' gridItem'}
                                     startIcon={<CaculateIcon />}
-                                    onClick={() => { onSubmitClick() }}
+                                    onClick={onSubmitClick}
                                 >Calculate BMI</Button>
                             </Grid>
                             <Collapse in={true} timeout="auto" unmountOnExit>

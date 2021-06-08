@@ -90,7 +90,7 @@ export default function Singlerulethreedir() {
                     pageTitle="single rule of three direct"
                     links={[{
                         url: "/maths/",
-                        urlName: "Mathamatics"
+                        urlName: "Mathematics"
                     }]}
                 />
                 <section className="hero" >

@@ -62,9 +62,9 @@ export default function Physics() {
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Free Physics Calculator - Calculate all mathamatical expression in physics</title>
+                <title>Free Physics Calculator - Calculate all mathematical expression in physics</title>
                 <meta name="keywords" content="mathcalc, physics calculator , online free physics calculator" />
-                <meta name="description" content="Use Mathcalc to calculate all mathamatical expression in physics" />
+                <meta name="description" content="Use Mathcalc to calculate all mathematical expression in physics" />
                 <meta name="author" content="Mathcalc" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
             </Helmet>

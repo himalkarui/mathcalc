@@ -145,7 +145,7 @@ export default function Square() {
                                 <div className="container">
                                     <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                         <Breadcrumbs className="subtitle is-spaced is-uppercase has-text-weight-bold" separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
-                                            <Link to='/maths/'>Mathamatics</Link>
+                                            <Link to='/maths/'>Mathematics</Link>
                                             <Link to='/maths/shapes/'>Shapes</Link>
                                             <Typography className="has-text-weight-bold">Rectangle calculator</Typography>
                                         </Breadcrumbs>
@@ -278,8 +278,8 @@ export default function Square() {
                             <p>
                                 Area is the region covered by a two-dimensional shape in a plane. It is measured in square units. Therefore, the area of the rectangle is the area covered by its outer boundaries. It is equal to the product of length and width.
                                 The formula of area of rectangle is:
-                            <p><strong> A&nbsp;=&nbsp;Length&nbsp;× &nbsp;Width &nbsp; unit<sup>2</sup></strong> </p>
                             </p>
+                            <p><strong> A&nbsp;=&nbsp;Length&nbsp;× &nbsp;Width &nbsp; unit<sup>2</sup></strong> </p>
                             <br />
                             <h2 className="title is-5">Diagonal of a Rectangle</h2>
                             <p>

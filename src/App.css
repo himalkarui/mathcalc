@@ -6,8 +6,7 @@ html {
   letter-spacing: 0.0142857143em;
   line-height: 27px !important;
   font-weight: 400;
-  font-size: 1rem !important;
-
+  font-size: 0.95rem !important;
 }
 
 body {
@@ -16,7 +15,7 @@ body {
   padding: 0px;
   line-height: 27px !important;
   font-weight: 400;
-  font-size: 1rem !important;
+  font-size: 0.95rem !important;
   background-color: #fafafa !important;
   letter-spacing: 0.0142857143em;
   font-weight: 400;
@@ -103,6 +102,19 @@ ul {
 
 li {
   list-style-type: none;
+}
+
+.matrixinput {
+  width: 60px;
+  height: 45px;
+  margin: 0px 12px;
+  border: none;
+  border-bottom: 1px solid;
+  text-align: center;
+  color: blueviolet;
+}
+matrixinput:focus {
+  border: 0 !important;
 }
 
 .kVIQfP:hover {
@@ -561,7 +573,7 @@ input[type="number"] {
   .appHeading {
     padding-left: 14px;
   }
- }
+}
 
 @media (min-width: 140px) and (max-width: 640px) {
   .divLink {
@@ -583,8 +595,8 @@ input[type="number"] {
     padding: 2rem !important;
   }
 
-  .appContainer{
-    margin:0rem;
+  .appContainer {
+    margin: 0rem;
   }
 
   /* .MuiContainer-root {
@@ -603,8 +615,8 @@ input[type="number"] {
   .divLink {
     width: 100%;
   }
-  .appContainer{
-    margin:1rem;
+  .appContainer {
+    margin: 1rem;
   }
 }
 
@@ -613,7 +625,7 @@ input[type="number"] {
     padding: 12px;
     min-width: 255px;
   }
-  .appContainer{
-    margin:1rem;
+  .appContainer {
+    margin: 1rem;
   }
 }

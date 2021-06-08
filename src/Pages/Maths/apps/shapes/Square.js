@@ -143,7 +143,7 @@ export default function Square() {
                                 <div className="container">
                                     <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                         <Breadcrumbs className="subtitle is-spaced is-uppercase has-text-weight-bold" separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
-                                            <Link to='/maths/'>Mathamatics</Link>
+                                            <Link to='/maths/'>Mathematics</Link>
                                             <Link to='/maths/shapes/'>Shapes</Link>
                                             <Typography className="has-text-weight-bold">Square calculator</Typography>
                                         </Breadcrumbs>
@@ -262,6 +262,7 @@ export default function Square() {
                             Diagonals of the square are always greater than its sides.
                                 </p>
                         </Card>
+                        <br />
                     </Grid>
                     <Grid item lg={4} md={4} sm={false}></Grid>
                 </Grid>

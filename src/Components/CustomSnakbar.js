@@ -3,10 +3,6 @@ import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import { makeStyles } from '@material-ui/core/styles';
 
-function Alert(props) {
-    return <MuiAlert elevation={6} severity={'info'} variant="filled"  {...props} />;
-}
-
 const useStyles = makeStyles((theme) => ({
     root: {
         width: '100%',
@@ -29,12 +25,16 @@ export default function CustomSnakbar(props) {
             {/* <Button variant="outlined" onClick={handleClick}>
                 Open success snackbar
       </Button> */}
-            <Snackbar open={props.open} autoHideDuration={1000}
+            <Snackbar open={props.open} autoHideDuration={2000}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                onBlur={props.handleClose}>
-                <Alert onClose={props.handleClose} className={classes.curtomAlert}>
+                onBlur={props.handleClose}
+                // onClose={props.handleClose}
+            >
+                <MuiAlert
+                    onClose={props.handleClose}
+                    elevation={6} severity={'info'} variant="filled">
                     {props.msg}
-                </Alert>
+                </MuiAlert>
             </Snackbar>
         </div>
     );
