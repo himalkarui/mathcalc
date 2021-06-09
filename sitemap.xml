@@ -496,6 +496,30 @@
 
         <changefreq>yearly</changefreq>
     </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/maths/matrix/multiplication</loc>
+        
+        <lastmod>2021-06-09</lastmod>
+
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/maths/matrix/trace</loc>
+        
+        <lastmod>2021-06-09</lastmod>
+
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/maths/matrix/determinant</loc>
+        
+        <lastmod>2021-06-09</lastmod>
+
+        <changefreq>yearly</changefreq>
+    </url>
     
     <url>
         <loc>https://mathcalc.xyz/?/maths/graphs</loc>
