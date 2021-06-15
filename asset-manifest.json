@@ -1,26 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.69eb85b9.chunk.css",
-    "main.js": "/static/js/main.38d10188.chunk.js",
-    "main.js.map": "/static/js/main.38d10188.chunk.js.map",
+    "main.css": "/static/css/main.36398aa5.chunk.css",
+    "main.js": "/static/js/main.a0c932f0.chunk.js",
+    "main.js.map": "/static/js/main.a0c932f0.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e72fecb6.js",
     "runtime-main.js.map": "/static/js/runtime-main.e72fecb6.js.map",
     "static/css/2.f2f23d4f.chunk.css": "/static/css/2.f2f23d4f.chunk.css",
-    "static/js/2.d416b781.chunk.js": "/static/js/2.d416b781.chunk.js",
-    "static/js/2.d416b781.chunk.js.map": "/static/js/2.d416b781.chunk.js.map",
+    "static/js/2.f0c91638.chunk.js": "/static/js/2.f0c91638.chunk.js",
+    "static/js/2.f0c91638.chunk.js.map": "/static/js/2.f0c91638.chunk.js.map",
     "index.html": "/index.html",
     "service-worker.js": "/service-worker.js",
     "service-worker.js.map": "/service-worker.js.map",
     "static/css/2.f2f23d4f.chunk.css.map": "/static/css/2.f2f23d4f.chunk.css.map",
-    "static/css/main.69eb85b9.chunk.css.map": "/static/css/main.69eb85b9.chunk.css.map",
-    "static/js/2.d416b781.chunk.js.LICENSE.txt": "/static/js/2.d416b781.chunk.js.LICENSE.txt",
+    "static/css/main.36398aa5.chunk.css.map": "/static/css/main.36398aa5.chunk.css.map",
+    "static/js/2.f0c91638.chunk.js.LICENSE.txt": "/static/js/2.f0c91638.chunk.js.LICENSE.txt",
     "static/media/UHC-800-million.ce3017e8.gif": "/static/media/UHC-800-million.ce3017e8.gif",
     "static/media/capacitanceform.b1f51d95.svg": "/static/media/capacitanceform.b1f51d95.svg",
     "static/media/capacitor.7c3e3275.png": "/static/media/capacitor.7c3e3275.png",
+    "static/media/click.ae2de8e7.wav": "/static/media/click.ae2de8e7.wav",
     "static/media/covidawarness.30e1f4ec.gif": "/static/media/covidawarness.30e1f4ec.gif",
     "static/media/kineticenergy.4aa0c642.gif": "/static/media/kineticenergy.4aa0c642.gif",
     "static/media/kineticenergy.bcefe76b.svg": "/static/media/kineticenergy.bcefe76b.svg",
     "static/media/mathcalcblack.c3ad9508.png": "/static/media/mathcalcblack.c3ad9508.png",
+    "static/media/App.css": "/static/media/morse.58c8d5ef.ttf",
     "static/media/rectangle.6eb589e9.svg": "/static/media/rectangle.6eb589e9.svg",
     "static/media/smlmclogo.19270871.jpg": "/static/media/smlmclogo.19270871.jpg",
     "static/media/square.5a1edb90.svg": "/static/media/square.5a1edb90.svg",
@@ -29,8 +31,8 @@
   "entrypoints": [
     "static/js/runtime-main.e72fecb6.js",
     "static/css/2.f2f23d4f.chunk.css",
-    "static/js/2.d416b781.chunk.js",
-    "static/css/main.69eb85b9.chunk.css",
-    "static/js/main.38d10188.chunk.js"
+    "static/js/2.f0c91638.chunk.js",
+    "static/css/main.36398aa5.chunk.css",
+    "static/js/main.a0c932f0.chunk.js"
   ]
 }
