@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.1eff218a.chunk.css",
-    "main.js": "/static/js/main.bd263514.chunk.js",
-    "main.js.map": "/static/js/main.bd263514.chunk.js.map",
+    "main.css": "/static/css/main.32baa9e2.chunk.css",
+    "main.js": "/static/js/main.e9870615.chunk.js",
+    "main.js.map": "/static/js/main.e9870615.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f0fb2f4a.js",
     "runtime-main.js.map": "/static/js/runtime-main.f0fb2f4a.js.map",
     "static/css/2.ebe9c4d3.chunk.css": "/static/css/2.ebe9c4d3.chunk.css",
@@ -12,7 +12,7 @@
     "service-worker.js": "/service-worker.js",
     "service-worker.js.map": "/service-worker.js.map",
     "static/css/2.ebe9c4d3.chunk.css.map": "/static/css/2.ebe9c4d3.chunk.css.map",
-    "static/css/main.1eff218a.chunk.css.map": "/static/css/main.1eff218a.chunk.css.map",
+    "static/css/main.32baa9e2.chunk.css.map": "/static/css/main.32baa9e2.chunk.css.map",
     "static/js/2.64d65569.chunk.js.LICENSE.txt": "/static/js/2.64d65569.chunk.js.LICENSE.txt",
     "static/media/UHC-800-million.ce3017e8.gif": "/static/media/UHC-800-million.ce3017e8.gif",
     "static/media/capacitanceform.b1f51d95.svg": "/static/media/capacitanceform.b1f51d95.svg",
@@ -32,7 +32,7 @@
     "static/js/runtime-main.f0fb2f4a.js",
     "static/css/2.ebe9c4d3.chunk.css",
     "static/js/2.64d65569.chunk.js",
-    "static/css/main.1eff218a.chunk.css",
-    "static/js/main.bd263514.chunk.js"
+    "static/css/main.32baa9e2.chunk.css",
+    "static/js/main.e9870615.chunk.js"
   ]
 }
