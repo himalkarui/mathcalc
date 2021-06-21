@@ -128,7 +128,7 @@ export default function CompoundInterest() {
                                 <div className="container">
                                     <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                         COMPOUND INTEREST CALCULATOR</h1>
-                                    <p className="has-text-letter-spacing-wide has-text-grey">
+                                    <p className="  has-text-grey">
                                         To calculate Compount Interest earned and total value</p>
                                 </div>
                             </div>

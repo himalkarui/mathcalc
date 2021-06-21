@@ -115,7 +115,7 @@ export default function Maxminlist() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 MINIMUM AND MAXIMUM OF A LIST ONLINE</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Find the highest and the lowest number from a list</p>
                         </div>
                     </div>
@@ -125,7 +125,7 @@ export default function Maxminlist() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>List of Numbers</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>List of Numbers</Typography><br />
                                     <span><strong>Input The numbers with comma (,) seperation</strong></span><br /><br />
                                     <textarea className="input"
                                         id="originalText"
@@ -143,7 +143,7 @@ export default function Maxminlist() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Result</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>Result</Typography><br />
                                     <div className={'resultDiv blink_me'}>
                                         <span><strong>Minimum</strong> {'= ' + state.minimum}</span><br /><br />
                                         <span><strong>Maximum</strong> {'= ' + state.maximum}</span><br /><br />

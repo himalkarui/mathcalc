@@ -116,7 +116,7 @@ export default function Lawofgravity() {
                                     <div className="container">
                                         <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                             NEWTON'S GRAVITATION CALCULATOR</h1>
-                                        <p className="has-text-letter-spacing-wide has-text-grey">
+                                        <p className="  has-text-grey">
                                             To calculate the Force between the two masses M1 and m2 at r - distance</p>
                                     </div>
                                 </div>

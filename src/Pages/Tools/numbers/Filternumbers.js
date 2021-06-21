@@ -352,7 +352,7 @@ export default function Filternumbers() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 FILTER NUMBERS ONLINE</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Filter numbers from a list, according to various criteria, such as maximum, minimum, divisor, multiple and more
                         </p>
                         </div>
@@ -363,7 +363,7 @@ export default function Filternumbers() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Original List</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>Original List</Typography><br />
                                     <span>The numbers you want to filter</span><br />
                                     <textarea className="input"
                                         id="originalText"
@@ -375,7 +375,7 @@ export default function Filternumbers() {
                                         onChange={onInputChange}
                                     ></textarea>
                                     <hr />
-                                    <Typography variant="h4" className={'text-option'}>Filtered Numbers</Typography>
+                                    <Typography variant="h6" className={'text-option'}>Filtered Numbers</Typography>
                                     <div className={'resultDiv blink_me'}>
                                         <textarea className="input"
                                             id="result"
@@ -406,7 +406,7 @@ export default function Filternumbers() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className={classes.hrElem + " content"} >
-                                    <Typography variant="h4" className={'text-option'}>Options</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>Options</Typography><br />
                                     <span><strong>Remove the numbers that meet the criteria, or preserve them?</strong></span><br />
                                     <ButtonGroup style={{ margin: '10px 0px' }}>
                                         <Button aria-label="Preserve"

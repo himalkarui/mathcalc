@@ -96,7 +96,7 @@ export default function Googleadsensecalc(props) {
                                         <div className="container">
                                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                                 Google Adsense Calculator</h1>
-                                            <p className="has-text-letter-spacing-wide has-text-grey" style={{ fontSize: '1rem', lineHeight: '27px' }}>
+                                            <p className="  has-text-grey" style={{ fontSize: '1rem', lineHeight: '27px' }}>
                                                 Google Adsense Calculator is used to calculate daily,
                                                 monthly and yearly earnings from page impressions , click through rate and cost per click
                         </p>

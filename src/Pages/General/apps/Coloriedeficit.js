@@ -123,7 +123,7 @@ export default function Coloriedeficit() {
                                     <div className="container">
                                         <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                             Calorie Deficit CALCULATOR</h1>
-                                        <p style={{ lineHeight: '27px' }} className="has-text-letter-spacing-wide has-text-grey subtitle is-6">
+                                        <p style={{ lineHeight: '27px' }} className="  has-text-grey subtitle is-6">
                                             Estimating the calories you are consuming in your food and beverages and factoring
                                         in what you burn through activity are the two key elements to calculate your goal calorie deficit.   </p>
                                     </div>

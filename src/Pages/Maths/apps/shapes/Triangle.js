@@ -74,7 +74,6 @@ export default function Triangle() {
     }
 
     const onChangeMetrics = (metric, isOnchangeinput, isChoosing) => {
-        debugger;
         let height = 0, base = 0, faceA = 0, faceB = 0, faceC = 0, solveby = 0, perimeter = 0, gama = 0, area = 0;
 
         height = state.triHeight === '' ? 0 : parseFloat(state.triHeight);

@@ -7,7 +7,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import logo from '../Assets/images/smlmclogo.jpg';
-import Lettern from '../Assets/icons/lettern';
 import FeedbackIcon from '@material-ui/icons/Feedback';
 // icons
 import { Home, Apps, AttachMoney, Functions, ScatterPlot, Accessibility } from '@material-ui/icons';
@@ -24,10 +23,11 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: '10px'
     },
     listitem: {
-        backgroundColor: '#fafafa',
+        // backgroundColor: '#fafafa',
         borderRadius: '0px',
         margin: '10px 10px 0px 0px',
         whiteSpace: 'nowrap',
+        fontSize: '0.95rem',
         '&:hover': {
             backgroundColor: '#f1f1f1',
             color: '#3298dc !important'
@@ -55,7 +55,7 @@ const Sidebar = (props) => {
         { url: '/', urlname: 'Home', icon: <Home /> },
         { url: '/general/', urlname: 'General', icon: <Accessibility /> },
         { url: '/maths/', urlname: 'Mathematics', icon: <Functions /> },
-        { url: '/numbers/', urlname: 'Numbers', icon: <Lettern /> },
+        { url: '/numbers/', urlname: 'Numbers', icon: <>N</> },
         { url: '/tools/', urlname: 'Tools', icon: <Apps /> },
         { url: '/text-lists/', urlname: 'Text and Lists', icon: <>T</> },
         { url: '/finance/', urlname: 'Finance', icon: <AttachMoney /> },
@@ -71,15 +71,16 @@ const Sidebar = (props) => {
     return (
         <>
             <CssBaseline />
-            <div className={classes.toolbar} style={{ borderBottom: '1px solid #77777712' }}>
+            {!props.handleDrawerToggle ? <div className={classes.toolbar} style={{ marginBottom: '3px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', margin: '13px' }}
                     onClick={(e) => { window.location = '/' }}>
                     <Avatar className={classes.logo}>
                         <img src={logo} alt="mathcalc logo" width={40} />
                     </Avatar>
-                    <strong>&nbsp;&nbsp; Math Calc</strong>
+                    <strong>&nbsp;&nbsp; Mathcalc</strong>
                 </div>
-            </div>
+            </div> : <></>
+            }
             <List >
                 {
                     urls.map(ur => {

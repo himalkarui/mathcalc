@@ -45,21 +45,21 @@ export default function Numbers() {
     const classes = useStyles();
     let arrUrls = [
         { urlname: 'Generate List of Numbers', url: '/generate-list-numbers/' },
-        { urlname: 'Binary Converter', url: '/binary-converter/' },
-        { urlname: 'Hexadecimal Converter', url: '/hexadecimal-converter/' },
+        { urlname: 'Base Conversion', url: '/base-converter/' },
         { urlname: 'Sort Numbers', url: '/sort-numbers/' },
         { urlname: 'Maximum and Minimun of a List', url: '/minimum-maximum-list/' },
         { urlname: 'Filter Numbers', url: '/filter-numbers/' },
+        { urlname: 'Binary Converter', url: '/binary-converter/' },
+        { urlname: 'Hexadecimal Converter', url: '/hexadecimal-converter/' },
     ];
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Numbers Free Tools - Mathcalc</title>
+                <title>Numbers tools online - Mathcalc</title>
                 <meta name="keywords" content="mathcalc,numbers,numbers tools, general calculator, mathematics calculator, online calculator, free calculator" />
                 <meta name="description" content="Use Mathcalc numbers online free tools to calculate varoius calculations of numbers" />
                 <meta name="author" content="Mathcalc" />
-                <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
             <Container maxWidth="xl">
                 <section className="hero" data-v-23847e07>
@@ -67,7 +67,7 @@ export default function Numbers() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Numbers
           </h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Generate list of numbers, filter numbers, sort list of numbers
           </p>
                         </div>

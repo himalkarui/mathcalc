@@ -121,7 +121,7 @@ export default function Emcsqr() {
                                     <div className="container">
                                         <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                             ENERGY MASS CALCULATOR</h1>
-                                        <p className="has-text-letter-spacing-wide has-text-grey">
+                                        <p className="  has-text-grey">
                                             To calculate the energy and mass of the element    </p>
                                     </div>
                                 </div>

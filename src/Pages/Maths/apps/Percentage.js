@@ -220,7 +220,7 @@ export default function Percentage() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Online Percentage Calculator
           </h1>
-                            <h1 className="has-text-letter-spacing-wide has-text-grey" style={{ lineHeight: '27px' }}>
+                            <h1 className="  has-text-grey" style={{ lineHeight: '27px' }}>
                                 Calculate the percentage of a number, or find a number given its percent, or find the percent given two numbers, or calculate the percentage increment or decrement
           </h1>
                         </div>
@@ -231,7 +231,7 @@ export default function Percentage() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Options</Typography>
+                                    <Typography variant="h6" className={'text-option'}>Options</Typography>
                                     <br /> <Select
                                         id="metrics-outlined"
                                         className={classes.formelems}
@@ -262,7 +262,7 @@ export default function Percentage() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Result</Typography>
+                                    <Typography variant="h6" className={'text-option'}>Result</Typography>
                                     <div className={'resultDiv'}>
                                         <span dangerouslySetInnerHTML={{ __html: state.result }}></span>
                                         <br />

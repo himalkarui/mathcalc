@@ -48,6 +48,7 @@ export default function Finance() {
                 <meta name="description" content="Use Mathcalc finance calculators to do the calculations for various financial expressions" />
                 <meta name="author" content="Mathcalc" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
             <Container maxWidth="xl">
                 <section className="hero" data-v-23847e07>
@@ -55,7 +56,7 @@ export default function Finance() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Finance
           </h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Common financial calculators like simple interest, Compound interest , Discount and more..
           </p>
                         </div>

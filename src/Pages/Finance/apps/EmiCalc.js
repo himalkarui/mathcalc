@@ -76,8 +76,8 @@ export default function EmiCalc() {
             setState({
                 ...state,
                 emiPayable: ((p * r) * (part / (part - 1))).toFixed(5),
-                payableAmount: ((p * r) * (part / (part - 1)) * 12).toFixed(5),
-                totalIntest: (((p * r) * (part / (part - 1)) * 12) - state.loanAmount).toFixed(5),
+                payableAmount: ((p * r) * (part / (part - 1)) * n).toFixed(5),
+                totalIntest: (((p * r) * (part / (part - 1)) * n) - state.loanAmount).toFixed(5),
             });
         }
         fnCalcDiscount();
@@ -108,7 +108,7 @@ export default function EmiCalc() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 EMI CALCULATOR</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 To calculate EMI Payable, interest and payable amount</p>
                         </div>
                     </div>

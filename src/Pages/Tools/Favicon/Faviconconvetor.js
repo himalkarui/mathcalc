@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Helmet from 'react-helmet';
 import * as fileSave from "file-saver";
 // import js , css and iamges
 import '../../../Assets/favicon/css/stylesfavicon.css';
 import Favicon from "../../../Assets/favicon/js/favicon.js/src/package";
-import imgPreview from "../../../Assets/favicon/static/preview40x40.png";
+import imgPreview from "../../../Assets/images/mathcalcblack.jpg";
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import { Breadcrumbs, Container, Typography, Grid, Card } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import { Breadcrumbs, Container, Typography, Grid, Card, Snackbar, IconButton, Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 function dataURItoBlob(dataURI) {
@@ -44,6 +45,8 @@ export default function Faviconconvertor(props) {
             let OriginalFiles = [
                 'favicon.ico',
                 'favicon-16x16.png',
+                'favicon-24x24.png',
+                'favicon-48x48.png',
                 'favicon-32x32.png',
                 'apple-touch-icon.png',
                 'android-chrome-192x192.png',
@@ -66,18 +69,12 @@ export default function Faviconconvertor(props) {
             // download.target = "_blank";
             // download.click();
         } catch (e) {
-            console.log(e)
+
         }
     }
 
-    useEffect(() => {
-
-    }, []);
-
     function onCHangeFile(ev) {
         try {
-            console.log("hi");
-            console.log(ev.target.files);
             setFile(ev.target.files[0]);
             if (ev.target.files.length !== 0) {
                 let file = ev.target.files[0];
@@ -86,13 +83,11 @@ export default function Faviconconvertor(props) {
                     let image = new Image();
                     image.src = e.target.result;
                     image.onload = function (ev) {
-                        console.log("loading");
                         let canvas = document.getElementById('canvas');
                         canvas.width = image.width;
                         canvas.height = image.height;
                         let ctx = canvas.getContext('2d');
-                        ctx.drawImage(image, 100, 100);
-
+                        ctx.drawImage(image, image.offsetLeft, image.offsetTop);
                         // Create favicon.ico dataurl
                         const resFiles = Favicon.generate(canvas);
                         setResultFiles(resFiles);
@@ -104,22 +99,46 @@ export default function Faviconconvertor(props) {
         catch (e) { }
     }
 
+    const [open, setOpen] = React.useState(false);
+    const handleClose = () => {
+        setOpen(false);
+    }
 
     const fncopytext = (e) => {
         /* Get the text field */
-
-        let copyInput = document.getElementById('copytext');
+        let copyInput = document.getElementById('copytextcode');
+        copyInput.style.display = "block";
         /* Select the text field */
         copyInput.select();
         copyInput.setSelectionRange(0, 99999); /* For mobile devices */
-
         /* Copy the text inside the text field */
         document.execCommand("copy");
+        copyInput.style.display = "none";
+        setOpen(true);
+        setTimeout(() => {
+            handleClose();
+        }, 1000);
     }
 
     return (
         <React.Fragment>
-            <input readOnly hidden id='copytext' defaultValue='<link rel="apple-touch-icon "sizes="180x180 "href="/apple-touch-icon.png "><link rel="icon "type="image/png "sizes="32x32 "href="/favicon-32x32.png "><link rel="icon "type="image/png "sizes="16x16 "href="/favicon-16x16.png "><link rel="manifest "href="/site.webmanifest ">'></input>
+
+            <Snackbar style={{ marginBottom: '85px' }} open={open} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                // onClose={handleClose}
+                message=" Copied !"
+                action={
+                    <React.Fragment>
+                        <Button color="secondary" size="small" onClick={handleClose}>
+                            Close
+                        </Button>
+                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                            <CloseIcon fontSize="small" />
+                        </IconButton>
+                    </React.Fragment>
+                }
+            />
+
+            <input readOnly style={{ display: 'none' }} id='copytextcode' value='<link rel="apple-touch-icon "sizes="180x180 "href="/apple-touch-icon.png "><link rel="icon "type="image/png "sizes="32x32 "href="/favicon-32x32.png "><link rel="icon "type="image/png "sizes="16x16 "href="/favicon-16x16.png "><link rel="manifest "href="/site.webmanifest ">'></input>
             <div data-server-rendered="true" className="layout" data-v-14591542>
                 <Helmet>
                     <title>Favicon Convertor | Image to Favicon | Mathcalc</title>
@@ -128,21 +147,22 @@ export default function Faviconconvertor(props) {
                     <meta data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
                     <meta data-key="description" name="description" content="The only favicon generator you need for your next project. Quickly generate your favicon from text, image, or choose from hundreds of emojis." />
                 </Helmet>
-                <section className="hero box appContainer" style={{ backgroundColor: '#2160c4', borderRadius: '0px' }}  >
-                    <canvas id="canvas" hidden />
-                    <div className="hero-body">
-                        <div className="container">
+                <Container maxWidth="xl">
+                    <br />
+                    <Card elevation={1} className="box" style={{ backgroundColor: '#fef7e0' }} data-v-14591542>
+                        <canvas id="canvas" hidden />
+                        <div className="hero-body" >
                             <div className="columns">
                                 <div className="column is-7">
-                                    <h1 className="subtitle is-spaced is-uppercase has-text-grey-light has-text-weight-bold">
-                                        <Breadcrumbs separator={<NavigateNextIcon fontSize="small" style={{ color: 'white' }} />} aria-label="breadcrumb">
-                                            <Link to="/tools/" style={{ color: 'white' }} className="subtitle has-text-grey-light is-spaced is-uppercase has-text-weight-bold">
+                                    <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
+                                        <Breadcrumbs separator={<NavigateNextIcon fontSize="small" className="has-text-grey-light" />} aria-label="breadcrumb">
+                                            <Link to="/tools/" className="subtitle has-text-grey-light is-5 is-spaced is-uppercase has-text-weight-bold">
                                                 Tools</Link>
-                                            <Typography style={{ color: 'white' }} className="subtitle has-text-grey-light is-spaced is-uppercase has-text-weight-bold"> Generate from Image</Typography>
+                                            <Typography className="subtitle has-text-grey-light is-5 is-spaced is-uppercase has-text-weight-bold"> Generate favicon from Image</Typography>
                                         </Breadcrumbs>
                                     </h1>
-                                    <p style={{ color: 'white' }} className="title is-3 has-text-letter-spacing-wide">Quickly generate your favicon from an image by uploading your image below. Download your favicon in the most up to date formats.
-          </p>
+                                    <p style={{ lineHeight: '35px' }} className="title is-5   ">Quickly generate your favicon from an image by uploading your image below. Download your favicon in the most up to date formats.
+                                    </p>
                                 </div>
                                 <div className="column is-4">
                                     <div className="is-pulled-right">
@@ -150,14 +170,13 @@ export default function Faviconconvertor(props) {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <Container maxWidth="xl">
+                    </Card>
+                    <br />
                     <Grid >
                         <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
                             <Card elevation={1} className="box" data-v-14591542>
-                                <h3 className="title is-3" data-v-14591542>Converter</h3>
-                                <div className="file-dropzone" data-v-14591542>
+                                <h3 className="title is-4" data-v-14591542>Favicon Converter</h3>
+                                <div className="file-dropzone" style={{ backgroundColor: 'aliceblue' }} data-v-14591542>
                                     <input id="image" type="file" data-v-14591542 onChange={onCHangeFile}
                                         accept="image/gif, image/jpeg, image/png"
                                     />
@@ -171,7 +190,7 @@ export default function Faviconconvertor(props) {
                                 <br data-v-14591542 />
                                 <div className="field is-grouped" data-v-14591542>
                                     <p className="control" data-v-14591542>
-                                        <img id="preview" alt="Favicon Preview 48x48" width="40" src={(resultFiles) ? resultFiles.png512 : imgPreview} sizes="(max-width: 40px) 100vw, 40px" className="image g-image" data-v-14591542 />
+                                        <img style={{ borderRadius: '3px' }} id="preview" alt="Favicon Preview 48x48" width="40" src={(resultFiles) ? resultFiles.png512 : imgPreview} sizes="(max-width: 40px) 100vw, 40px" className="image g-image" data-v-14591542 />
                                     </p>
                                     <p className="control" data-v-14591542>
                                         <button id="download-package" target="_blank" className="button is-rounded is-info"
@@ -190,74 +209,87 @@ export default function Faviconconvertor(props) {
                                     </p>
                                 </div>
                             </Card>
+                            <br />
+                            <br />
                             <Card elevation={1} className="box">
                                 <h3 className="title is-4">Usage Instructions</h3>
-                                <p>First, use the download button to download the files listed below.
-                                Place the files in the root directory of your website.
-            </p>
+                                <p>First, Select the file and then use the download button to download the files listed below.
+                                    Place the files in the root directory of your website.
+                                </p>
                                 <ul>
                                     <li>android-chrome-192x192.png</li>
                                     <li>android-chrome-512x512.png</li>
                                     <li>apple-touch-icon.png</li>
                                     <li>favicon-16x16.png</li>
+                                    <li>favicon-24x24.png</li>
+                                    <li>favicon-48x48.png</li>
                                     <li>favicon-32x32.png</li>
                                     <li>favicon.ico</li>
                                     <li>site.webmanifest</li>
                                 </ul>
                                 <p>
                                     Next, copy the following link tags and paste them into the
-              <code>head</code>
-                                        of your HTML.
+                                    <code>head</code>
+                                    of your HTML.
 
-                                    </p>
+                                </p>
                                 <br />
                                 <pre>
-                                    <code>&lt;link rel=&quot;apple-touch-icon &quot;sizes=&quot;180x180 &quot;href=&quot;/apple-touch-icon.png &quot;&gt; <br />
-                                             &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;32x32 &quot;href=&quot;/favicon-32x32.png &quot;&gt;<br />
-                                             &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;16x16 &quot;href=&quot;/favicon-16x16.png &quot;&gt; <br />
-                                             &lt;link rel=&quot;manifest &quot;href=&quot;/site.webmanifest &quot;&gt;</code>
+                                    <code>&lt;link rel=&quot;apple-touch-icon &quot;sizes=&quot;180x180 &quot;href=&quot;/apple-touch-icon.png &quot;&gt;
+                                        <br />
+                                        &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;32x32 &quot;href=&quot;/favicon-32x32.png &quot;&gt;
+                                        <br />
+                                        &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;16x16 &quot;href=&quot;/favicon-16x16.png &quot;&gt;
+                                        <br />
+                                        &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;24x24 &quot;href=&quot;/favicon-24x24.png &quot;&gt;
+                                        <br />
+                                        &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;48x48 &quot;href=&quot;/favicon-48x48.png &quot;&gt;
+                                        <br />
+                                        &lt;link rel=&quot;manifest &quot;href=&quot;/site.webmanifest &quot;&gt;</code>
                                 </pre>
                                 <br />
                                 <button onClick={fncopytext} className="button is-info">Copy</button>
                             </Card>
+                            <br />
+                            <br />
                             <Card className="box" data-v-14591542>
                                 <div className="content" data-v-14591542>
                                     <h3 className="title is-4" data-v-14591542>About the favicon generator</h3>
                                     <p data-v-14591542>If you already have an image that you would like to use for a
-                                    favicon on your website the this is the tool you need. The
-                                    favicon generator will convert you image to a favicon. You can
-                                    upload a PNG, JPG, or BMP and the favicon generator will
-                                    output an ICO file.
-              </p>
+                                        favicon on your website then this is the tool you need. The
+                                        favicon generator will convert you image to a favicon. You can
+                                        upload a PNG, JPG, or BMP and the favicon generator will
+                                        output an ICO file.
+                                    </p>
                                     <p data-v-14591542>For the best result you should upload an square image. You can
-                                    use a standard image editing tool if you need to crop your
-                                    image. Once your image is prepared upload it using the tool
-                                    above. Next, verify that the preview image is to your liking.
-                                    Finally, use the download button to export your favicon in ICO
-                                    format.
-              </p>
+                                        use a standard image editing tool if you need to crop your
+                                        image. Once your image is prepared upload it using the tool
+                                        above. Next, verify that the preview image is to your liking.
+                                        Finally, use the download button to export your favicon in ICO
+                                        format.
+                                    </p>
                                     <h3 className="title is-4" data-v-14591542>Why do I need an ICO file instead of a PNG?
-              </h3>
+                                    </h3>
                                     <p data-v-14591542>An ICO file is a special image file use by the browser. The
-                                    unique feature of an ICO file is that it is multilayered. Each
-                                    layer of the favicon holds a different size of the image. The
-                                    common sizes for a ICO formatted favicon are 16x16px, 32x32px,
-                                    and 48x48px.
-              </p>
+                                        unique feature of an ICO file is that it is multilayered. Each
+                                        layer of the favicon holds a different size of the image. The
+                                        common sizes for a ICO formatted favicon are 16x16px, 32x32px,
+                                        and 48x48px.
+                                    </p>
                                     <p data-v-14591542>For best compatibility web browsers can leverage the ICO file
-                                    generated by the favicon generator. The browsers will use the
-                                    different sizes for displaying in different areas of the
-                                    website such as the bookmarks bar, the address bar, the
-                                    browser tab, and as a desktop shortcut.
-              </p>
+                                        generated by the favicon generator. The browsers will use the
+                                        different sizes for displaying in different areas of the
+                                        website such as the bookmarks bar, the address bar, the
+                                        browser tab, and as a desktop shortcut.
+                                    </p>
                                     <h3 className="title is-4" data-v-14591542>What types of images work best for the favicon generator?
-              </h3>
+                                    </h3>
                                     <p data-v-14591542>The favicon generator works best with a simple icon, logo, or
-                                    letter. Intricate or complex designs don't work well when they
-                                    are resized using the favicon generator as much detail is
-                                    lost. If your logo is very complex we recommend generating the
-                                    favicon from text using the alternative generator.
-              </p>
+                                        letter. Intricate or complex designs don't work well when they
+                                        are resized using the favicon generator as much detail is
+                                        lost. If your logo is very complex we recommend generating the
+                                        favicon from text using the alternative generator.
+                                    </p>
                                 </div>
                             </Card>
                             <br />

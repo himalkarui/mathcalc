@@ -260,7 +260,7 @@ export default function Time() {
                                     <div className="container">
                                         <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                             ONLINE FREE TIME CALCULATOR</h1>
-                                        <p style={{ lineHeight: '27px' }} className="has-text-letter-spacing-wide has-text-grey subtitle is-6">
+                                        <p style={{ lineHeight: '27px' }} className="  has-text-grey subtitle is-6">
                                             This calculator can be used to "add" or "subtract" two time values.
                             Input fields can be left blank, which will be taken as 0 by default.   </p>
                                     </div>

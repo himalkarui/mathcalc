@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
-import { Card, Container, Divider, TextField, } from '@material-ui/core';
+import { Card, Container, Divider, TextField, CardHeader } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Send from '@material-ui/icons/SendSharp';
 import CustomSnakbar from './CustomSnakbar';
@@ -9,11 +9,9 @@ import Helmet from 'react-helmet';
 const useStyles = makeStyles((theme) => ({
     inputField: {
         flexGrow: 1,
-        width: '100%',
+        width: '95%',
         maxWidth: '600px',
         margin: '0.5rem',
-        backgroundColor: 'white',
-        border: 'none',
     },
 }));
 
@@ -63,15 +61,29 @@ export default function Feedback() {
                 redirect: 'follow'
             };
 
-            //            get-exchangecurrate
-
+            //Get-exchangecurrate
             fetch("https://apimathcalc.herokuapp.com/api/v1/feedback/create", requestOptions)
                 .then(response => response.text())
-                .then(result => console.log(result))
-                .catch(error => console.log('error', error));
-
-            setSnakOpen(!snakOpen);
-            setSnakMessage("Thanks for your feedback");
+                .then(result => {
+                    setSnakOpen(true);
+                    setSnakMessage("Thanks for your feedback");
+                    setTimeout(() => {
+                        setSnakOpen(false);
+                        let a = document.createElement('a');
+                        a.href = "/";
+                        a.click();
+                    }, [1000]);
+                })
+                .catch(error => {
+                    setSnakOpen(true);
+                    setSnakMessage("Thanks for your feedback");
+                    setTimeout(() => {
+                        setSnakOpen(false);
+                        let a = document.createElement('a');
+                        a.href = "/";
+                        a.click();
+                    }, [1000]);
+                });
         }
     }
 
@@ -100,66 +112,60 @@ export default function Feedback() {
             </Helmet>
             <Container maxWidth="xl">
                 <section className="hero">
-                    <div className="hero-body">
-                        <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Contact Us
-          </h1>
-                        <div className="container">
-                            <div className="columns">
-                                <div className="column is-6">
-                                    <Card elevation={1} className="box">
-
-                                        <CustomSnakbar
-                                            open={snakOpen}
-                                            msg={snakMessage}
-                                            handleClose={handlesnackClose}
-                                        />
-                                        <TextField className={classes.inputField}
-                                            id="first_name" label={'First Name'}
-                                            onChange={onInputChange}
-                                            value={state.first_name}
-                                            placeholder={'First name'} required type={'text'} variant="outlined" />
-                                        <br />
-                                        <TextField className={classes.inputField}
-                                            onChange={onInputChange}
-                                            value={state.last_name}
-                                            id="last_name" label={'Last Name'} placeholder={'Last name'}
-                                            type={'text'} variant="outlined" />
-                                        <br />
-                                        <TextField className={classes.inputField}
-                                            onChange={onInputChange}
-                                            value={state.email_id}
-                                            id="email_id" label={'Email'} placeholder={'Email'}
-                                            required type={'text'} variant="outlined" />
-                                        <br />
-                                        <TextField className={classes.inputField}
-                                            onChange={onInputChange}
-                                            value={state.comments}
-                                            id="comments" multiline rows={6} required
-                                            variant={"outlined"}
-                                            aria-label="Have feedback? We’d love to hear it, but please don’t share sensitive information. Have questions? Try help or support." placeholder={'Have feedback? We’d love to hear it, but please don’t share sensitive information. Have questions? Try help or support.'} /><br />
-                                        <br />
-                                        <Divider />
-                                        <br />
-                                        <Button style={{
-                                            width: '100%',
-                                            height: '42px',
-                                            marginLeft: '9px',
-                                            letterSpacing: '4px',
-                                            fontWeight: 'bolder'
-                                        }} onClick={handleSendClose} color="primary"
-                                        >
-                                            Send message &nbsp; {<Send />}
-                                        </Button>
-                                    </Card>
-                                </div >
-                                <div className="column is-6">
-
-                                </div>
+                    <div className="hero-body" style={{ padding: '1.5rem 1rem !important' }}>
+                        <div className="columns">
+                            <div className="column is-6">
+                                <Card elevation={1} className="box">
+                                    <CardHeader avatar="Feedback" />
+                                    <CustomSnakbar
+                                        open={snakOpen}
+                                        msg={snakMessage}
+                                        handleClose={handlesnackClose}
+                                    />
+                                    <TextField className={classes.inputField}
+                                        id="first_name" label={'First Name'}
+                                        onChange={onInputChange}
+                                        value={state.first_name}
+                                        required type={'text'} variant="outlined" />
+                                    <br />
+                                    <TextField className={classes.inputField}
+                                        onChange={onInputChange}
+                                        value={state.last_name}
+                                        id="last_name" label={'Last Name'}
+                                        type={'text'} variant="outlined" />
+                                    <br />
+                                    <TextField className={classes.inputField}
+                                        onChange={onInputChange}
+                                        value={state.email_id}
+                                        id="email_id" label={'Email'}
+                                        required type={'text'} variant="outlined" />
+                                    <br />
+                                    <TextField className={classes.inputField}
+                                        onChange={onInputChange}
+                                        value={state.comments}
+                                        id="comments" multiline rows={5} required
+                                        variant={"outlined"}
+                                        aria-label="Have feedback? We’d love to hear it, but please don’t share sensitive information. Have questions? Try help or support." placeholder={'Have feedback? We’d love to hear it, but please don’t share sensitive information. Have questions? Try help or support.'} /><br />
+                                    <br />
+                                    <Divider />
+                                    <br />
+                                    <Button style={{
+                                        width: '100%',
+                                        height: '42px',
+                                        marginLeft: '9px',
+                                        letterSpacing: '4px',
+                                        fontWeight: 'bolder'
+                                    }} onClick={handleSendClose} color="primary"
+                                    >
+                                        Send message &nbsp; {<Send />}
+                                    </Button>
+                                </Card>
+                            </div >
+                            <div className="column is-6">
                             </div>
                         </div>
                     </div>
                 </section>
-
             </Container>
         </div>
     );

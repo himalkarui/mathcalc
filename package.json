@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cortex-js/math-json": "^0.2.3",
     "@date-io/date-fns": "^2.10.8",
     "@date-io/moment": "^1.3.13",
     "@material-ui/core": "^4.11.0",
@@ -14,18 +15,19 @@
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.2",
-    "browserslist": "^4.16.4",
+    "browserslist": "^4.16.6",
     "caniuse-lite": "^1.0.30001210",
     "chart.js": "^3.2.1",
     "date-fns": "^2.20.1",
-    "equation-editor-react": "0.0.6",
     "file-saver": "^2.0.5",
     "filerobot-image-editor": "^3.12.17",
     "huebee": "^2.1.1",
     "jszip": "^3.6.0",
     "mathjs": "^9.2.0",
+    "mathlive": "^0.69.3",
     "moment": "^2.29.1",
-    "monaco-editor-webpack-plugin": "^3.1.0",
+    "morse-pro": "^2.0.0",
+    "plotly.js-dist-min": "^2.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
@@ -33,8 +35,8 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "react-share": "^4.4.0",
     "react-vis": "^1.11.7",
-    "tui-image-editor": "^3.14.3",
     "web-vitals": "^0.2.4",
     "webfontloader": "^1.6.28"
   },
@@ -65,6 +67,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.2.1"
   }
 }

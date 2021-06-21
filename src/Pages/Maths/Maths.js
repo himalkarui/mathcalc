@@ -50,12 +50,11 @@ export default function Maths() {
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Free Math Calculator - Calculate all  Mathematical calculations</title>
+                <title>Free math calculator - Calculate all  mathematical calculations</title>
                 <meta name="keywords" content="Mathcalc, online calculator, free tools, free online calculator" />
                 <meta name="description" content="Mathcalc is an Online free tool for doing all kind of  mathematical calculations" />
                 <meta name="author" content="Mathcalc" />
-                <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
             <Container maxWidth="xl">
                 <Grid direction="row" container justify="center" alignItems="center">
@@ -65,7 +64,7 @@ export default function Maths() {
                                 <div className="container">
                                     <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Mathematics
           </h1>
-                                    <p className="has-text-letter-spacing-wide has-text-grey">
+                                    <p className="  has-text-grey">
                                         Various mathematical tasks, such as calculate percentages, simple shapes, graph functions and more.
           </p>
                                 </div>

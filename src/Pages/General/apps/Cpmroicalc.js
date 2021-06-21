@@ -112,7 +112,7 @@ export default function Roiadsensecalc(props) {
                                     <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                         CPM (Cost per thousand Advertising model) Advertising ROI Calculator
                                         </h1>
-                                    <p style={{ fontSize: '1rem', lineHeight: '27px' }} className="has-text-letter-spacing-wide has-text-grey">
+                                    <p style={{ fontSize: '1rem', lineHeight: '27px' }} className="  has-text-grey">
                                         This calculator measures your ROI (return on investment) if you are using the CPM (cost per thousand)
                                         impressions advertising model (which is common to most banner and button ad campaigns).
                                         </p>

@@ -115,7 +115,7 @@ export default function Radiandegree() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 ONLINE RADIANS AND DEGREES CONVERTER</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Radians to degrees and degrees to radians conversion   </p>
                         </div>
                     </div>
@@ -125,7 +125,7 @@ export default function Radiandegree() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Options</Typography>
+                                    <Typography variant="h6" className={'text-option'}>Options</Typography>
                                     <FormGroup>
                                         <FormControlLabel
                                             control={<Switch checked={state.isRadians} onChange={toggleChecked} />}
@@ -148,7 +148,7 @@ export default function Radiandegree() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Result</Typography>
+                                    <Typography variant="h6" className={'text-option'}>Result</Typography>
                                     <div className={'resultDiv blink_me'}>
                                         <span className={'resPercentage'}>{state.resultLabel}</span><br /><br />
                                         <span dangerouslySetInnerHTML={{ __html: state.result }}></span>

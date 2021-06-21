@@ -252,7 +252,7 @@ export default function Circle() {
                             <p>
                                 If “r” is the radius of the circle, then the formula for the area and the circumference of a circle are:
                                 Circumference of a Circle = 2πr units
-                                Area of a circle = πr2 square units.
+                                Area of a circle = πr<sup>2</sup> square units.
                             </p>
                             <br />
                             <h2 className="title is-5">Radius and diameter of a circle.</h2>

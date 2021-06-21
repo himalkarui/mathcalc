@@ -56,15 +56,22 @@ export default function Matrices() {
     let urls = [
         { url: '/maths/matrices/add', title: 'Add matrices' },
         { url: '/maths/matrices/subtract', title: 'Subtract matrices' },
+        { url: '/maths/matrix/multiplication', title: 'Multiplication of matrices' },
+        { url: '/maths/matrix/trace', title: 'Trace of a matrix' },
+        { url: '/maths/matrix/determinant', title: 'Determinant of a matrix' },
+        { url: '/maths/matrix/matrix-inverse', title: 'Inverse of a matrix' },
+        { url: '/maths/matrix/matrix-transpose', title: 'Transpose of a matrix' },
+        { url: '/maths/matrix/matrix-rank', title: 'Rank of a matrix' },
     ];
     return (
         <div className={classes.root}>
             <Helmet>
                 <title>Matrix calculators online</title>
-                <meta name="keywords" content="mathcalc,shapes,area,circumference, geometric shapes calculations,geometrics, area" />
-                <meta name="description" content="Geometric shape calculator used to calculate the dimentions of geometric shapes" />
+                <meta name="keywords" content="mathcalc, matrix, matrix 2x2, matrix 3x3, inverse , add, subtract, multiplication, inverse, trace, determinant" />
+                <meta name="description" content="Mathcalc-Online matrix calculator to do matrix operations like addition, subtraction, multiplication and more" />
                 <meta name="author" content="mathcalc" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
             <Container maxWidth={'xl'} >
                 <Grid container direction="row" justify="center" alignItems="center">
@@ -74,12 +81,12 @@ export default function Matrices() {
                                 url: '/maths/',
                                 urlName: 'Mathematics'
                             }]}
-                            pageTitle="Matrices CALCULATORS ONLINE"
+                            pageTitle="Matrix CALCULATORS ONLINE"
                         />
                         <section className="hero" data-v-23847e07>
                             <div style={{ padding: '2rem 0.5rem' }}>
                                 <div className="container">
-                                    <p className="has-text-letter-spacing-wide has-text-grey">
+                                    <p className="  has-text-grey">
                                         In mathematics, a matrix is a rectangular array or table of numbers, symbols, or expressions, arranged in rows and columns.
                                     </p>
                                 </div>

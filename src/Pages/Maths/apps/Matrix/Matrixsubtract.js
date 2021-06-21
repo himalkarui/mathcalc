@@ -124,7 +124,8 @@ export default function Matrixadd() {
 
     const generateMatrix = (rows, columns, matrix) => {
         try {
-            let matrixdiv = document.createElement('div');
+            let matrixdiv = document.createElement('fieldset');
+            matrixdiv.className = "mattrixarea";
             for (let i = 0; i < rows; ++i) {
                 let div = document.createElement("div");
                 div.className = "column"
@@ -198,6 +199,7 @@ export default function Matrixadd() {
                 <meta name="keywords" content="subtract ,sutraction, subtraction of two matrix, two matrix subtraction, matrix calculation, online matrix" />
                 <meta name="description" content="Subtraction of two matrices online 2x2 matrix, 3x3 matrix, 4x4matrix and more - Mathcalc" />
                 <meta name="author" content="mathcalc" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
             <div>
                 <Dialog
@@ -249,7 +251,7 @@ export default function Matrixadd() {
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 SUBTRACTION OF MATRICES
                             </h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Subtract two matrices online
                             </p>
                         </div>
@@ -315,7 +317,7 @@ export default function Matrixadd() {
                 </Card>
                 <br />
                 <Card style={{ display: state.showResult ? 'block' : 'none' }} elevation={1} className="box">
-                    <Grid container justify="center">
+                    <Grid container justify="space-evenly">
                         <Grid item>
                             <div style={{ minWidth: '243px' }}>
                                 <Typography>Result : &nbsp; <strong>A &nbsp; - &nbsp; B = &nbsp;</strong></Typography>
@@ -334,7 +336,7 @@ export default function Matrixadd() {
                                         startIcon={<InfoIcon />}
                                         onClick={letResultasInput}
                                     >
-                                        Let Result as Matrix A
+                                        Set Result as Matrix A
                                 </Button>
                                 </div>
                             </div>

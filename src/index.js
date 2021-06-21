@@ -2,6 +2,7 @@ import React from 'react';
 import { hydrate, render } from "react-dom";
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import * as serviveregistration from './serviceWorkerRegistration';
 
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
@@ -17,3 +18,5 @@ if (rootElement.hasChildNodes()) {
     </BrowserRouter>
     , rootElement);
 }
+//for progressive web app
+serviveregistration.register();

@@ -114,7 +114,7 @@ export default function SimpleInterest() {
                                 <div className="container">
                                     <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                         SIMPLE INTEREST CALCULATOR</h1>
-                                    <p className="has-text-letter-spacing-wide has-text-grey">
+                                    <p className="  has-text-grey">
                                         To calculate the Interest earned and Total value</p>
                                 </div>
                             </div>

@@ -163,7 +163,7 @@ export default function Listrandomizer() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 ONLINE LIST RANDOMIZER</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Sort a list in random order using mathcalc</p>
                         </div>
                     </div>
@@ -173,7 +173,7 @@ export default function Listrandomizer() {
                         <div className="column is-6" data-v-14591542>
                             <Card elevation={1} className="box" data-v-14591542>
                                 <div className="content" data-v-14591542>
-                                    <Typography variant="h4" className={'text-option'}>
+                                    <Typography variant="h6" className={'text-option'}>
                                         Original List</Typography><br />
                                     <span><strong>The list you want to randomize</strong></span><br /><br />
                                     <textarea className="input"
@@ -199,7 +199,7 @@ export default function Listrandomizer() {
                         <div className="column is-6" data-v-14591542>
                             <Card className="box " data-v-14591542>
                                 <div className="content" data-v-14591542>
-                                    <Typography variant="h4" className={'text-option'}>
+                                    <Typography variant="h6" className={'text-option'}>
                                         Randomized List
                                     </Typography><br />
                                     <span><strong>The list in random order</strong></span><br /><br />

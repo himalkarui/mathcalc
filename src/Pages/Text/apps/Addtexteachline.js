@@ -208,7 +208,7 @@ export default function Addtexttoeachline() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 ADD TEXT TO EACH LINE ONLINE</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Append text to the end or beginning of each line. You can add constant text, the number of line , the line itself and more</p>
                         </div>
                     </div>
@@ -218,9 +218,9 @@ export default function Addtexttoeachline() {
                         <div className="column is-6" data-v-14591542>
                             <Card elevation={1} className="box" data-v-14591542>
                                 <div className="content" data-v-14591542>
-                                    <Typography variant="h4" className={'text-option'}>
+                                    <Typography variant="h6" className={'text-option'}>
                                         Original List</Typography><br />
-                                    <span><strong>The text you want to work with</strong></span><br /><br />
+                                    <span><strong>The text you want to work with</strong></span><br />
                                     <textarea className="input"
                                         id="inputText"
                                         type="text"
@@ -240,7 +240,7 @@ export default function Addtexttoeachline() {
                         <div className="column is-6" data-v-14591542>
                             <Card elevation={1} className="box " data-v-14591542>
                                 <div className="content" data-v-14591542>
-                                    <Typography variant="h4" className={'text-option'}>New Text</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>New Text</Typography><br />
                                     <span>Tip: write  <strong>%N%</strong> for the line number; and <strong>%L%</strong> for the line itself</span>
                                     <div className={'resultsec'}>
                                         <textarea className="input"
@@ -273,7 +273,7 @@ export default function Addtexttoeachline() {
                         <div className="column is-6">
                             <Card className="box " data-v-14591542>
                                 <div className="content" data-v-14591542>
-                                    <Typography variant="h4" className={'text-option'}>Options</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>Options</Typography><br />
                                     <FormControlLabel
                                         control={
                                             <Checkbox

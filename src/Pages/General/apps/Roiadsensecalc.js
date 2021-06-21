@@ -112,7 +112,7 @@ export default function Roiadsensecalc(props) {
                                         <div className="container">
                                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                                 Google Ads Return on Invest(ROI) Cost per Click Calculator</h1>
-                                            <p style={{ fontSize: '1rem', lineHeight: '27px' }} className="has-text-letter-spacing-wide has-text-grey">
+                                            <p style={{ fontSize: '1rem', lineHeight: '27px' }} className="  has-text-grey">
                                                 Google Ads The ROI (Return  on Investment) Calculator Tool can be used to measure
                                             the ROI of CPC (cost per click) advertising.                       </p>
                                         </div>

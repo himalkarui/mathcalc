@@ -119,7 +119,7 @@ export default function CountLetters() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 COUNT TEXT LINES ONLINE</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Count the lines of the text or list</p>
                         </div>
                     </div>
@@ -129,7 +129,7 @@ export default function CountLetters() {
                         <div className="column is-6" data-v-14591542>
                             <Card elevation={1} className="box" data-v-14591542>
                                 <div className="content" data-v-14591542>
-                                    <Typography variant="h4" className={'text-option'}>
+                                    <Typography variant="h6" className={'text-option'}>
                                         Input Text</Typography><br />
                                     <textarea className="input"
                                         id="originalText"
@@ -154,7 +154,7 @@ export default function CountLetters() {
                         <div className="column is-6" data-v-14591542>
                             <Card className="box " data-v-14591542>
                                 <div className="content" data-v-14591542>
-                                    <Typography variant="h4" className={'text-option'}>
+                                    <Typography variant="h6" className={'text-option'}>
                                         NUMBER OF LINES
                                     </Typography>
                                     <br />

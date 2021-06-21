@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Breadcrumbs, Typography, Container, Card, Grid } from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
+import { Breadcrumbs, Container, Typography, Grid, Card, Snackbar, IconButton, Button, Divider } from '@material-ui/core';
 import Helmet from 'react-helmet';
 import Huebee from 'huebee';
 import * as fileSave from "file-saver";
@@ -30,12 +31,12 @@ function dataURItoBlob(dataURI) {
 export default function Favicongenerator(props) {
 
     const [fontcolor, setFontcolor] = useState('#fff');
-    const [bgcolor, setBgcolor] = useState('#5AF');
+    const [bgcolor, setBgcolor] = useState('#000');
     const [state, setState] = useState({
-        text: "F",
-        fontfamily: "verdana",
-        shape: "Rounded",
-        fontsize: 50
+        text: "Mc",
+        fontfamily: "lobster",
+        shape: "rounded",
+        fontsize: "45"
     })
 
     const [resultFiles, setResultFiles] = useState();
@@ -81,13 +82,14 @@ export default function Favicongenerator(props) {
                 google: {
                     families: [state.fontfamily]
                 },
+                fontactive: onChangeGeneratefav(),
                 active: onChangeGeneratefav(), // eslint-disable-next-line
             });
-           
+
 
         } catch (e) { }
 
-    }, [state.text, fontcolor, state.fontfamily, bgcolor, state.fontsize, state.shape]);
+    }, [state.text, fontcolor, state.fontfamily, bgcolor, state.fontsize, state.shape]);// eslint-disable-line react-hooks/exhaustive-deps
 
     const onChangeGeneratefav = () => {
 
@@ -131,6 +133,8 @@ export default function Favicongenerator(props) {
             let OriginalFiles = [
                 'favicon.ico',
                 'favicon-16x16.png',
+                'favicon-24x24.png',
+                'favicon-48x48.png',
                 'favicon-32x32.png',
                 'apple-touch-icon.png',
                 'android-chrome-192x192.png',
@@ -183,62 +187,89 @@ export default function Favicongenerator(props) {
     }
 
 
+    const [open, setOpen] = React.useState(false);
+    const handleClose = () => {
+        setOpen(false);
+    }
+
     const fncopytext = (e) => {
         /* Get the text field */
-
-        let copyInput = document.getElementById('copytext');
+        let copyInput = document.getElementById('copytextcode');
+        copyInput.style.display = "block";
         /* Select the text field */
         copyInput.select();
         copyInput.setSelectionRange(0, 99999); /* For mobile devices */
-
         /* Copy the text inside the text field */
         document.execCommand("copy");
+        copyInput.style.display = "none";
+        setOpen(true);
+        setTimeout(() => {
+            handleClose();
+        }, 1000);
     }
 
     return (
         <React.Fragment>
-            <input hidden id='copytext' defaultValue='<link rel="apple-touch-icon "sizes="180x180 "href="/apple-touch-icon.png "><link rel="icon "type="image/png "sizes="32x32 "href="/favicon-32x32.png "><link rel="icon "type="image/png "sizes="16x16 "href="/favicon-16x16.png "><link rel="manifest "href="/site.webmanifest ">'></input>
+            <Snackbar open={open} style={{ marginBottom: '85px', }} anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                // onClose={handleClose}
+                message=" Copied !"
+                action={
+                    <React.Fragment>
+                        <Button color="secondary" size="small" onClick={handleClose}>
+                            Close
+                        </Button>
+                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
+                            <CloseIcon fontSize="small" />
+                        </IconButton>
+                    </React.Fragment>
+                }
+            />
+            <input readOnly style={{ display: 'none' }} id='copytextcode' value='<link rel="apple-touch-icon "sizes="180x180 "href="/apple-touch-icon.png "><link rel="icon "type="image/png "sizes="32x32 "href="/favicon-32x32.png "><link rel="icon "type="image/png "sizes="16x16 "href="/favicon-16x16.png "><link rel="manifest "href="/site.webmanifest ">'></input>
             <Helmet>
                 <title>Favicon Generator - Text to Favicon - mathcalc.xyz</title>
                 <meta charset="utf-8" />
                 <meta data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
                 <meta data-key="description" name="description" content="The only favicon generator you need for your next project. Quickly generate your favicon from text, image, or choose from hundreds of emojis." />
             </Helmet>
-            <section className="hero box appContainer" style={{ backgroundColor: '#2160c4', borderRadius: '0px' }}  >
-                <div className="hero-body">
-                    <div className="container">
-                        <div className="columns">
-                            <div className="column is-7">
-                                <h1 className="subtitle is-spaced is-uppercase has-text-grey-light has-text-weight-bold">
-                                    <Breadcrumbs separator={<NavigateNextIcon fontSize="small" style={{ color: 'white' }} />} aria-label="breadcrumb">
-                                        <Link to="/tools/" style={{ color: 'white' }} className="subtitle has-text-grey-light is-spaced is-uppercase has-text-weight-bold">
-                                            Tools</Link>
-                                        <Typography style={{ color: 'white' }} className="subtitle has-text-grey-light is-spaced is-uppercase has-text-weight-bold"> Generate favicon from Text</Typography>
-                                    </Breadcrumbs>
-                                </h1>
-                                <p style={{ color: 'white', padding: '1rem' }} className="title is-3 has-text-letter-spacing-wide">Quickly generate your favicon from text by selecting the text, fonts, and colors. Download your favicon in the most up to date formats.
-          </p>
-                            </div>
-                            <div className="column is-4">
-                                <div className="is-pulled-right">
+            <Container maxWidth="xl">
+                <br />
+                <Card elevation={1} className="box" style={{ backgroundColor: '#fef7e0' }} data-v-14591542>
+                    <div className="hero-body">
+                        <div className="container">
+                            <div className="columns">
+                                <div className="column is-7">
+                                    <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
+                                        <Breadcrumbs separator={<NavigateNextIcon fontSize="small" className="has-text-grey-light" />} aria-label="breadcrumb">
+                                            <Link to="/tools/" className="subtitle has-text-grey-light is-5 is-spaced is-uppercase has-text-weight-bold">
+                                                Tools</Link>
+                                            <Typography className="subtitle has-text-grey-light is-5 is-spaced is-uppercase has-text-weight-bold"> Generate favicon from Text</Typography>
+                                        </Breadcrumbs>
+                                    </h1>
+                                    <p style={{ lineHeight: '35px' }} className="title is-5  ">Quickly generate your favicon from text by selecting the text, fonts, and colors. Download your favicon in the most up to date formats.
+                                    </p>
+                                </div>
+                                <div className="column is-4">
+                                    <div className="is-pulled-right">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <Container maxWidth="xl">
+                </Card>
+                <br />
                 <div data-server-rendered="true" className="layout"  >
                     <Card elevation={1} aria-label="main navigation" className="navbar navbar-secondary is-spaced"  >
                         <div className="container"  >
                             <div className="navbar-brand"  >
                                 <div className="navbar-item"  >
                                     <strong  >Preview</strong>
-                                    <img id="preview-48x48" alt="Favicon of Preview 48x48" src={(resultFiles) ? resultFiles.png512 : preview40x40} width="40" sizes="(max-width: 40px) 100vw, 40px" className="is-hidden-mobile g-image" style={{ width: '48px', marginLeft: '0.75rem' }} />
+                                    <img id="preview-48x48" alt="Favicon of Preview 48x48" src={(resultFiles) ? resultFiles.png512 : preview40x40} width="40" sizes="(max-width: 40px) 100vw, 40px" className="g-image" style={{ width: '48px', marginLeft: '0.75rem' }} />
                                     <img id="preview-32x32" alt="Favicon of Preview 32x32" src={(resultFiles) ? resultFiles.png512 : preview40x40} width="40" sizes="(max-width: 40px) 100vw, 40px" className="is-hidden-mobile g-image" style={{ width: '32px', marginLeft: '0.75rem' }} />
                                     <img id="preview-16x16" alt="Favicon of Preview 16x16" src={(resultFiles) ? resultFiles.png512 : preview40x40} width="40" sizes="(max-width: 40px) 100vw, 40px" className="is-hidden-mobile g-image" style={{ width: '16px', marginLeft: '0.75rem' }} />
                                 </div>
                             </div>
+                            <br />
+                            <br />
                             <div className="navbar-end"  >
                                 <div className="navbar-item"  >
                                     <div className="field is-grouped"  >
@@ -261,9 +292,12 @@ export default function Favicongenerator(props) {
                     </Card>
                     <canvas id="canvas" className="canvas" width="64px" height="64px" hidden></canvas>
                     <br />
+                    <br />
                     <Card elevation={1} className="container box"   >
                         <form id="form"   >
-                            <h3 className="title is-3"   >Generate From Text</h3>
+                            <h3 className="title is-4"   >Generate Favicon From Text</h3>
+                            <Divider />
+                            <br />
                             <div className="columns is-multilie"    >
                                 <div className="column is-one-third"    >
                                     <div className="field"    >
@@ -289,8 +323,8 @@ export default function Favicongenerator(props) {
                                     </div >
                                     <div className="field"> <div className="control"> <label className="label"    >
                                         Font Family(view all on
-                < a href="https://fonts.google.com/" rel="noreferrer" target="_blank" > Google Fonts</a >)
-                  </label >
+                                        < a href="https://fonts.google.com/" rel="noreferrer" target="_blank" > Google Fonts</a >)
+                                    </label >
                                         <div className="select" style={{ width: '100%' }}    >
                                             <select id="fontfamily" style={{ width: '100%' }}
                                                 onChange={onChangeinput}
@@ -298,2109 +332,2109 @@ export default function Favicongenerator(props) {
                                             >
                                                 <option    >
                                                     ABeeZee
-                      </option > <option    >
+                                                </option > <option    >
                                                     Abel
-                      </option > <option    >
+                                                </option > <option    >
                                                     Abhaya Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Abril Fatface
-                      </option > <option    >
+                                                </option > <option    >
                                                     Aclonica
-                      </option > <option    >
+                                                </option > <option    >
                                                     Acme
-                      </option > <option    >
+                                                </option > <option    >
                                                     Actor
-                      </option > <option    >
+                                                </option > <option    >
                                                     Adamina
-                      </option > <option    >
+                                                </option > <option    >
                                                     Advent Pro
-                      </option > <option    >
+                                                </option > <option    >
                                                     Aguafina Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Akaya Kanadaka
-                      </option > <option    >
+                                                </option > <option    >
                                                     Akaya Telivigala
-                      </option > <option    >
+                                                </option > <option    >
                                                     Akronim
-                      </option > <option    >
+                                                </option > <option    >
                                                     Aladin
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alata
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alatsi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Aldrich
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alef
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alegreya
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alegreya SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alegreya Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alegreya Sans SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Aleo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alex Brush
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alfa Slab One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alice
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alike
-                      </option > <option    >
+                                                </option > <option    >
                                                     Alike Angular
-                      </option > <option    >
+                                                </option > <option    >
                                                     Allan
-                      </option > <option    >
+                                                </option > <option    >
                                                     Allerta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Allerta Stencil
-                      </option > <option    >
+                                                </option > <option    >
                                                     Allura
-                      </option > <option    >
+                                                </option > <option    >
                                                     Almarai
-                      </option > <option    >
+                                                </option > <option    >
                                                     Almendra
-                      </option > <option    >
+                                                </option > <option    >
                                                     Almendra Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Almendra SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Amarante
-                      </option > <option    >
+                                                </option > <option    >
                                                     Amaranth
-                      </option > <option    >
+                                                </option > <option    >
                                                     ematic SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Amethysta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Amiko
-                      </option > <option    >
+                                                </option > <option    >
                                                     Amiri
-                      </option > <option    >
+                                                </option > <option    >
                                                     Amita
-                      </option > <option    >
+                                                </option > <option    >
                                                     Anaheim
-                      </option > <option    >
+                                                </option > <option    >
                                                     Andada
-                      </option > <option    >
+                                                </option > <option    >
                                                     Andika
-                      </option > <option    >
+                                                </option > <option    >
                                                     Andika New Basic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Angkor
-                      </option > <option    >
+                                                </option > <option    >
                                                     Annie Use Your Telescope
-                      </option > <option    >
+                                                </option > <option    >
                                                     Anonymous Pro
-                      </option > <option    >
+                                                </option > <option    >
                                                     Antic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Antic Didone
-                      </option > <option    >
+                                                </option > <option    >
                                                     Antic Slab
-                      </option > <option    >
+                                                </option > <option    >
                                                     Anton
-                      </option > <option    >
+                                                </option > <option    >
                                                     Antonio
-                      </option > <option    >
+                                                </option > <option    >
                                                     Arapey
-                      </option > <option    >
+                                                </option > <option    >
                                                     Arbutus
-                      </option > <option    >
+                                                </option > <option    >
                                                     Arbutus Slab
-                      </option > <option    >
+                                                </option > <option    >
                                                     Architects Daughter
-                      </option > <option    >
+                                                </option > <option    >
                                                     Archivo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Archivo Black
-                      </option > <option    >
+                                                </option > <option    >
                                                     Archivo Narrow
-                      </option > <option    >
+                                                </option > <option    >
                                                     Aref Ruqaa
-                      </option > <option    >
+                                                </option > <option    >
                                                     Arima Madurai
-                      </option > <option    >
+                                                </option > <option    >
                                                     Arimo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Arizonia
-                      </option > <option    >
+                                                </option > <option    >
                                                     Armata
-                      </option > <option    >
+                                                </option > <option    >
                                                     Arsenal
-                      </option > <option    >
+                                                </option > <option    >
                                                     Artifika
-                      </option > <option    >
+                                                </option > <option    >
                                                     Arvo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Arya
-                      </option > <option    >
+                                                </option > <option    >
                                                     Asap
-                      </option > <option    >
+                                                </option > <option    >
                                                     Asap Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Asar
-                      </option > <option    >
+                                                </option > <option    >
                                                     Asset
-                      </option > <option    >
+                                                </option > <option    >
                                                     Assistant
-                      </option > <option    >
+                                                </option > <option    >
                                                     Astloch
-                      </option > <option    >
+                                                </option > <option    >
                                                     Asul
-                      </option > <option    >
+                                                </option > <option    >
                                                     Athiti
-                      </option > <option    >
+                                                </option > <option    >
                                                     Atma
-                      </option > <option    >
+                                                </option > <option    >
                                                     Atomic Age
-                      </option > <option    >
+                                                </option > <option    >
                                                     Aubrey
-                      </option > <option    >
+                                                </option > <option    >
                                                     Audiowide
-                      </option > <option    >
+                                                </option > <option    >
                                                     Autour One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Average
-                      </option > <option    >
+                                                </option > <option    >
                                                     Average Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Averia Gruesa Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Averia Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Averia Sans Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Averia Serif Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     B612
-                      </option > <option    >
+                                                </option > <option    >
                                                     B612 Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bad Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bahiana
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bahianita
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bai Jamjuree
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ballet
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baloo 2
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baloo Bhai 2
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baloo Bhaina 2
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baloo Chettan 2
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baloo Da 2
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baloo Paaji 2
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baloo Tamma 2
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baloo Tammudu 2
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baloo Thambi 2
-                      </option > <option    >
+                                                </option > <option    >
                                                     Balsamiq Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Balthazar
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bangers
-                      </option > <option    >
+                                                </option > <option    >
                                                     Barlow
-                      </option > <option    >
+                                                </option > <option    >
                                                     Barlow Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Barlow Semi Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Barriecito
-                      </option > <option    >
+                                                </option > <option    >
                                                     Barrio
-                      </option > <option    >
+                                                </option > <option    >
                                                     Basic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baskervville
-                      </option > <option    >
+                                                </option > <option    >
                                                     Battambang
-                      </option > <option    >
+                                                </option > <option    >
                                                     Baumans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bayon
-                      </option > <option    >
+                                                </option > <option    >
                                                     Be Vietnam
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bebas Neue
-                      </option > <option    >
+                                                </option > <option    >
                                                     Belgrano
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bellefair
-                      </option > <option    >
+                                                </option > <option    >
                                                     Belleza
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bellota
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bellota Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     BenchNine
-                      </option > <option    >
+                                                </option > <option    >
                                                     Benne
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bentham
-                      </option > <option    >
+                                                </option > <option    >
                                                     Berkshire Swash
-                      </option > <option    >
+                                                </option > <option    >
                                                     Beth Ellen
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bevan
-                      </option > <option    >
+                                                </option > <option    >
                                                     Big Shoulders Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Big Shoulders Inline Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Big Shoulders Inline Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Big Shoulders Stencil Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Big Shoulders Stencil Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Big Shoulders Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bigelow Rules
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bigshot One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bilbo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bilbo Swash Caps
-                      </option > <option    >
+                                                </option > <option    >
                                                     BioRhyme
-                      </option > <option    >
+                                                </option > <option    >
                                                     BioRhyme Expanded
-                      </option > <option    >
+                                                </option > <option    >
                                                     Biryani
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bitter
-                      </option > <option    >
+                                                </option > <option    >
                                                     Black And White Picture
-                      </option > <option    >
+                                                </option > <option    >
                                                     Black Han Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Black Ops One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Blinker
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bodoni Moda
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bokor
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bonbon
-                      </option > <option    >
+                                                </option > <option    >
                                                     Boogaloo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bowlby One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bowlby One SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Brawler
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bree Serif
-                      </option > <option    >
+                                                </option > <option    >
                                                     Brygada 1918
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bubblegum Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bubbler One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Buda
-                      </option > <option    >
+                                                </option > <option    >
                                                     Buenard
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bungee
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bungee Hairline
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bungee Inline
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bungee Outline
-                      </option > <option    >
+                                                </option > <option    >
                                                     Bungee Shade
-                      </option > <option    >
+                                                </option > <option    >
                                                     Butcherman
-                      </option > <option    >
+                                                </option > <option    >
                                                     Butterfly Kids
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cabin
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cabin Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cabin Sketch
-                      </option > <option    >
+                                                </option > <option    >
                                                     Caesar Dressing
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cagliostro
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cairo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Caladea
-                      </option > <option    >
+                                                </option > <option    >
                                                     Calistoga
-                      </option > <option    >
+                                                </option > <option    >
                                                     Calligraffitti
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cambay
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cambo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Candal
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cantarell
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cantata One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cantora One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Capriola
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cardo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Carme
-                      </option > <option    >
+                                                </option > <option    >
                                                     Carrois Gothic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Carrois Gothic SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Carter One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Castoro
-                      </option > <option    >
+                                                </option > <option    >
                                                     Catamaran
-                      </option > <option    >
+                                                </option > <option    >
                                                     Caudex
-                      </option > <option    >
+                                                </option > <option    >
                                                     Caveat
-                      </option > <option    >
+                                                </option > <option    >
                                                     Caveat Brush
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cedarville Cursive
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ceviche One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chakra Petch
-                      </option > <option    >
+                                                </option > <option    >
                                                     Changa
-                      </option > <option    >
+                                                </option > <option    >
                                                     Changa One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chango
-                      </option > <option    >
+                                                </option > <option    >
                                                     Charm
-                      </option > <option    >
+                                                </option > <option    >
                                                     Charmonman
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chathura
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chau Philomene One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chela One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chelsea Market
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chenla
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cherry Cream Soda
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cherry Swash
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chewy
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chicle
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chilanka
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chivo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Chonburi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cinzel
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cinzel Decorative
-                      </option > <option    >
+                                                </option > <option    >
                                                     Clicker Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Coda
-                      </option > <option    >
+                                                </option > <option    >
                                                     Coda Caption
-                      </option > <option    >
+                                                </option > <option    >
                                                     Codystar
-                      </option > <option    >
+                                                </option > <option    >
                                                     Coiny
-                      </option > <option    >
+                                                </option > <option    >
                                                     Combo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Comfortaa
-                      </option > <option    >
+                                                </option > <option    >
                                                     Comic Neue
-                      </option > <option    >
+                                                </option > <option    >
                                                     Coming Soon
-                      </option > <option    >
+                                                </option > <option    >
                                                     Commissioner
-                      </option > <option    >
+                                                </option > <option    >
                                                     Concert One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Condiment
-                      </option > <option    >
+                                                </option > <option    >
                                                     Content
-                      </option > <option    >
+                                                </option > <option    >
                                                     Contrail One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Convergence
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cookie
-                      </option > <option    >
+                                                </option > <option    >
                                                     Copse
-                      </option > <option    >
+                                                </option > <option    >
                                                     Corben
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cormorant
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cormorant Garamond
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cormorant Infant
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cormorant SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cormorant Unicase
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cormorant Upright
-                      </option > <option    >
+                                                </option > <option    >
                                                     Courgette
-                      </option > <option    >
+                                                </option > <option    >
                                                     Courier Prime
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cousine
-                      </option > <option    >
+                                                </option > <option    >
                                                     Coustard
-                      </option > <option    >
+                                                </option > <option    >
                                                     Covered By Your Grace
-                      </option > <option    >
+                                                </option > <option    >
                                                     Crafty Girls
-                      </option > <option    >
+                                                </option > <option    >
                                                     Creepster
-                      </option > <option    >
+                                                </option > <option    >
                                                     Crete Round
-                      </option > <option    >
+                                                </option > <option    >
                                                     Crimson Pro
-                      </option > <option    >
+                                                </option > <option    >
                                                     Crimson Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Croissant One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Crushed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cuprum
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cute Font
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cutive
-                      </option > <option    >
+                                                </option > <option    >
                                                     Cutive Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     DM Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     DM Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     DM Serif Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     DM Serif Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Damion
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dancing Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dangrek
-                      </option > <option    >
+                                                </option > <option    >
                                                     Darker Grotesque
-                      </option > <option    >
+                                                </option > <option    >
                                                     David Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dawning of a New Day
-                      </option > <option    >
+                                                </option > <option    >
                                                     Days One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dekko
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dela Gothic One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Delius
-                      </option > <option    >
+                                                </option > <option    >
                                                     Delius Swash Caps
-                      </option > <option    >
+                                                </option > <option    >
                                                     Delius Unicase
-                      </option > <option    >
+                                                </option > <option    >
                                                     Della Respira
-                      </option > <option    >
+                                                </option > <option    >
                                                     Denk One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Devonshire
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dhurjati
-                      </option > <option    >
+                                                </option > <option    >
                                                     Didact Gothic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Diplomata
-                      </option > <option    >
+                                                </option > <option    >
                                                     Diplomata SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Do Hyeon
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dokdo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Domine
-                      </option > <option    >
+                                                </option > <option    >
                                                     Donegal One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Doppio One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dorsa
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dosis
-                      </option > <option    >
+                                                </option > <option    >
                                                     DotGothic16
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dr Sugiyama
-                      </option > <option    >
+                                                </option > <option    >
                                                     Duru Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Dynalight
-                      </option > <option    >
+                                                </option > <option    >
                                                     EB Garamond
-                      </option > <option    >
+                                                </option > <option    >
                                                     Eagle Lake
-                      </option > <option    >
+                                                </option > <option    >
                                                     East Sea Dokdo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Eater
-                      </option > <option    >
+                                                </option > <option    >
                                                     Economica
-                      </option > <option    >
+                                                </option > <option    >
                                                     Eczar
-                      </option > <option    >
+                                                </option > <option    >
                                                     El Messiri
-                      </option > <option    >
+                                                </option > <option    >
                                                     Electrolize
-                      </option > <option    >
+                                                </option > <option    >
                                                     Elsie
-                      </option > <option    >
+                                                </option > <option    >
                                                     Elsie Swash Caps
-                      </option > <option    >
+                                                </option > <option    >
                                                     Emblema One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Emilys Candy
-                      </option > <option    >
+                                                </option > <option    >
                                                     Encode Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Encode Sans Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Encode Sans Expanded
-                      </option > <option    >
+                                                </option > <option    >
                                                     Encode Sans Semi Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Encode Sans Semi Expanded
-                      </option > <option    >
+                                                </option > <option    >
                                                     Engagement
-                      </option > <option    >
+                                                </option > <option    >
                                                     Englebert
-                      </option > <option    >
+                                                </option > <option    >
                                                     Enriqueta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Epilogue
-                      </option > <option    >
+                                                </option > <option    >
                                                     Erica One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Esteban
-                      </option > <option    >
+                                                </option > <option    >
                                                     Euphoria Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ewert
-                      </option > <option    >
+                                                </option > <option    >
                                                     Exo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Exo 2
-                      </option > <option    >
+                                                </option > <option    >
                                                     Expletus Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fahkwang
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fanwood Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Farro
-                      </option > <option    >
+                                                </option > <option    >
                                                     Farsan
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fascinate
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fascinate Inline
-                      </option > <option    >
+                                                </option > <option    >
                                                     Faster One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fasthand
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fauna One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Faustina
-                      </option > <option    >
+                                                </option > <option    >
                                                     Federant
-                      </option > <option    >
+                                                </option > <option    >
                                                     Federo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Felipa
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fenix
-                      </option > <option    >
+                                                </option > <option    >
                                                     Finger Paint
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fira Code
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fira Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fira Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fira Sans Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fira Sans Extra Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fjalla One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fjord One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Flamenco
-                      </option > <option    >
+                                                </option > <option    >
                                                     Flavors
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fondamento
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fontdiner Swanky
-                      </option > <option    >
+                                                </option > <option    >
                                                     Forum
-                      </option > <option    >
+                                                </option > <option    >
                                                     Francois One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Frank Ruhl Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fraunces
-                      </option > <option    >
+                                                </option > <option    >
                                                     Freckle Face
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fredericka the Great
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fredoka One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Freehand
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fresca
-                      </option > <option    >
+                                                </option > <option    >
                                                     Frijole
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fruktur
-                      </option > <option    >
+                                                </option > <option    >
                                                     Fugaz One
-                      </option > <option    >
+                                                </option > <option    >
                                                     GFS Didot
-                      </option > <option    >
+                                                </option > <option    >
                                                     GFS Neohellenic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gabriela
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gaegu
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gafata
-                      </option > <option    >
+                                                </option > <option    >
                                                     Galada
-                      </option > <option    >
+                                                </option > <option    >
                                                     Galdeano
-                      </option > <option    >
+                                                </option > <option    >
                                                     Galindo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gamja Flower
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gayathri
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gelasio
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gentium Basic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gentium Book Basic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Geo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Geostar
-                      </option > <option    >
+                                                </option > <option    >
                                                     Geostar Fill
-                      </option > <option    >
+                                                </option > <option    >
                                                     Germania One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gidugu
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gilda Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Girassol
-                      </option > <option    >
+                                                </option > <option    >
                                                     Give You Glory
-                      </option > <option    >
+                                                </option > <option    >
                                                     Glass Antiqua
-                      </option > <option    >
+                                                </option > <option    >
                                                     Glegoo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gloria Hallelujah
-                      </option > <option    >
+                                                </option > <option    >
                                                     Goblin One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gochi Hand
-                      </option > <option    >
+                                                </option > <option    >
                                                     Goldman
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gorditas
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gothic A1
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gotu
-                      </option > <option    >
+                                                </option > <option    >
                                                     Goudy Bookletter 1911
-                      </option > <option    >
+                                                </option > <option    >
                                                     Graduate
-                      </option > <option    >
+                                                </option > <option    >
                                                     Grand Hotel
-                      </option > <option    >
+                                                </option > <option    >
                                                     Grandstander
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gravitas One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Great Vibes
-                      </option > <option    >
+                                                </option > <option    >
                                                     Grenze
-                      </option > <option    >
+                                                </option > <option    >
                                                     Grenze Gotisch
-                      </option > <option    >
+                                                </option > <option    >
                                                     Griffy
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gruppo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gudea
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gugi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gupter
-                      </option > <option    >
+                                                </option > <option    >
                                                     Gurajada
-                      </option > <option    >
+                                                </option > <option    >
                                                     Habibi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hachi Maru Pop
-                      </option > <option    >
+                                                </option > <option    >
                                                     Halant
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hammersmith One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hanalei
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hanalei Fill
-                      </option > <option    >
+                                                </option > <option    >
                                                     Handlee
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hanuman
-                      </option > <option    >
+                                                </option > <option    >
                                                     Happy Monkey
-                      </option > <option    >
+                                                </option > <option    >
                                                     Harmattan
-                      </option > <option    >
+                                                </option > <option    >
                                                     Headland One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Heebo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Henny Penny
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hepta Slab
-                      </option > <option    >
+                                                </option > <option    >
                                                     Herr Von Muellerhoff
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hi Melody
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hind
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hind Guntur
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hind Madurai
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hind Siliguri
-                      </option > <option    >
+                                                </option > <option    >
                                                     Hind Vadodara
-                      </option > <option    >
+                                                </option > <option    >
                                                     Holtwood One SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Homemade Apple
-                      </option > <option    >
+                                                </option > <option    >
                                                     Homenaje
-                      </option > <option    >
+                                                </option > <option    >
                                                     IBM Plex Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     IBM Plex Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     IBM Plex Sans Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     IBM Plex Serif
-                      </option > <option    >
+                                                </option > <option    >
                                                     IM Fell DW Pica
-                      </option > <option    >
+                                                </option > <option    >
                                                     IM Fell DW Pica SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     IM Fell Double Pica
-                      </option > <option    >
+                                                </option > <option    >
                                                     IM Fell Double Pica SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     IM Fell English
-                      </option > <option    >
+                                                </option > <option    >
                                                     IM Fell English SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     IM Fell French Canon
-                      </option > <option    >
+                                                </option > <option    >
                                                     IM Fell French Canon SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     IM Fell Great Primer
-                      </option > <option    >
+                                                </option > <option    >
                                                     IM Fell Great Primer SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ibarra Real Nova
-                      </option > <option    >
+                                                </option > <option    >
                                                     Iceberg
-                      </option > <option    >
+                                                </option > <option    >
                                                     Iceland
-                      </option > <option    >
+                                                </option > <option    >
                                                     Imbue
-                      </option > <option    >
+                                                </option > <option    >
                                                     Imprima
-                      </option > <option    >
+                                                </option > <option    >
                                                     Inconsolata
-                      </option > <option    >
+                                                </option > <option    >
                                                     Inder
-                      </option > <option    >
+                                                </option > <option    >
                                                     Indie Flower
-                      </option > <option    >
+                                                </option > <option    >
                                                     Inika
-                      </option > <option    >
+                                                </option > <option    >
                                                     Inknut Antiqua
-                      </option > <option    >
+                                                </option > <option    >
                                                     Inria Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Inria Serif
-                      </option > <option    >
+                                                </option > <option    >
                                                     Inter
-                      </option > <option    >
+                                                </option > <option    >
                                                     Irish Grover
-                      </option > <option    >
+                                                </option > <option    >
                                                     Istok Web
-                      </option > <option    >
+                                                </option > <option    >
                                                     Italiana
-                      </option > <option    >
+                                                </option > <option    >
                                                     Italianno
-                      </option > <option    >
+                                                </option > <option    >
                                                     Itim
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jacques Francois
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jacques Francois Shadow
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jaldi
-                      </option > <option    >
+                                                </option > <option    >
                                                     JetBrains Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jim Nightshade
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jockey One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jolly Lodger
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jomhuria
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jomolhari
-                      </option > <option    >
+                                                </option > <option    >
                                                     Josefin Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Josefin Slab
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jost
-                      </option > <option    >
+                                                </option > <option    >
                                                     Joti One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jua
-                      </option > <option    >
+                                                </option > <option    >
                                                     Judson
-                      </option > <option    >
+                                                </option > <option    >
                                                     Julee
-                      </option > <option    >
+                                                </option > <option    >
                                                     Julius Sans One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Junge
-                      </option > <option    >
+                                                </option > <option    >
                                                     Jura
-                      </option > <option    >
+                                                </option > <option    >
                                                     Just Another Hand
-                      </option > <option    >
+                                                </option > <option    >
                                                     Just Me Again Down Here
-                      </option > <option    >
+                                                </option > <option    >
                                                     K2D
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kadwa
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kalam
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kameron
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kanit
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kantumruy
-                      </option > <option    >
+                                                </option > <option    >
                                                     Karantina
-                      </option > <option    >
+                                                </option > <option    >
                                                     Karla
-                      </option > <option    >
+                                                </option > <option    >
                                                     Karma
-                      </option > <option    >
+                                                </option > <option    >
                                                     Katibeh
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kaushan Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kavivanar
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kavoon
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kdam Thmor
-                      </option > <option    >
+                                                </option > <option    >
                                                     Keania One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kelly Slab
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kenia
-                      </option > <option    >
+                                                </option > <option    >
                                                     Khand
-                      </option > <option    >
+                                                </option > <option    >
                                                     Khmer
-                      </option > <option    >
+                                                </option > <option    >
                                                     Khula
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kirang Haerang
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kite One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kiwi Maru
-                      </option > <option    >
+                                                </option > <option    >
                                                     Knewave
-                      </option > <option    >
+                                                </option > <option    >
                                                     KoHo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kodchasan
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kosugi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kosugi Maru
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kotta One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Koulen
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kranky
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kreon
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kristi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Krona One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Krub
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kufam
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kulim Park
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kumar One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kumar One Outline
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kumbh Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Kurale
-                      </option > <option    >
+                                                </option > <option    >
                                                     La Belle Aurore
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lacquer
-                      </option > <option    >
+                                                </option > <option    >
                                                     Laila
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lakki Reddy
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lalezar
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lancelot
-                      </option > <option    >
+                                                </option > <option    >
                                                     Langar
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lateef
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lato
-                      </option > <option    >
+                                                </option > <option    >
                                                     League Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Leckerli One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ledger
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lekton
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lemon
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lemonada
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lexend
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lexend Deca
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lexend Exa
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lexend Giga
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lexend Mega
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lexend Peta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lexend Tera
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lexend Zetta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Barcode 128
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Barcode 128 Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Barcode 39
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Barcode 39 Extended
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Barcode 39 Extended Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Barcode 39 Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Barcode EAN13 Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Baskerville
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Caslon Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Caslon Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Libre Franklin
-                      </option > <option    >
+                                                </option > <option    >
                                                     Life Savers
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lilita One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lily Script One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Limelight
-                      </option > <option    >
+                                                </option > <option    >
                                                     Linden Hill
-                      </option > <option    >
+                                                </option > <option    >
                                                     Literata
-                      </option > <option    >
+                                                </option > <option    >
                                                     Liu Jian Mao Cao
-                      </option > <option    >
+                                                </option > <option    >
                                                     Livvic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lobster
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lobster Two
-                      </option > <option    >
+                                                </option > <option    >
                                                     Londrina Outline
-                      </option > <option    >
+                                                </option > <option    >
                                                     Londrina Shadow
-                      </option > <option    >
+                                                </option > <option    >
                                                     Londrina Sketch
-                      </option > <option    >
+                                                </option > <option    >
                                                     Londrina Solid
-                      </option > <option    >
+                                                </option > <option    >
                                                     Long Cang
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lora
-                      </option > <option    >
+                                                </option > <option    >
                                                     Love Ya Like A Sister
-                      </option > <option    >
+                                                </option > <option    >
                                                     Loved by the King
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lovers Quarrel
-                      </option > <option    >
+                                                </option > <option    >
                                                     Luckiest Guy
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lusitana
-                      </option > <option    >
+                                                </option > <option    >
                                                     Lustria
-                      </option > <option    >
+                                                </option > <option    >
                                                     M PLUS 1p
-                      </option > <option    >
+                                                </option > <option    >
                                                     M PLUS Rounded 1c
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ma Shan Zheng
-                      </option > <option    >
+                                                </option > <option    >
                                                     Macondo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Macondo Swash Caps
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mada
-                      </option > <option    >
+                                                </option > <option    >
                                                     Magra
-                      </option > <option    >
+                                                </option > <option    >
                                                     Maiden Orange
-                      </option > <option    >
+                                                </option > <option    >
                                                     Maitree
-                      </option > <option    >
+                                                </option > <option    >
                                                     Major Mono Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mako
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mali
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mallanna
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mandali
-                      </option > <option    >
+                                                </option > <option    >
                                                     Manjari
-                      </option > <option    >
+                                                </option > <option    >
                                                     Manrope
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mansalva
-                      </option > <option    >
+                                                </option > <option    >
                                                     Manuale
-                      </option > <option    >
+                                                </option > <option    >
                                                     Marcellus
-                      </option > <option    >
+                                                </option > <option    >
                                                     Marcellus SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Marck Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Margarine
-                      </option > <option    >
+                                                </option > <option    >
                                                     Markazi Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Marko One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Marmelad
-                      </option > <option    >
+                                                </option > <option    >
                                                     Martel
-                      </option > <option    >
+                                                </option > <option    >
                                                     Martel Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Marvel
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mate
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mate SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Maven Pro
-                      </option > <option    >
+                                                </option > <option    >
                                                     McLaren
-                      </option > <option    >
+                                                </option > <option    >
                                                     Meddon
-                      </option > <option    >
+                                                </option > <option    >
                                                     MedievalSharp
-                      </option > <option    >
+                                                </option > <option    >
                                                     Medula One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Meera Inimai
-                      </option > <option    >
+                                                </option > <option    >
                                                     Megrim
-                      </option > <option    >
+                                                </option > <option    >
                                                     Meie Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Merienda
-                      </option > <option    >
+                                                </option > <option    >
                                                     Merienda One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Merriweather
-                      </option > <option    >
+                                                </option > <option    >
                                                     Merriweather Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Metal
-                      </option > <option    >
+                                                </option > <option    >
                                                     Metal Mania
-                      </option > <option    >
+                                                </option > <option    >
                                                     Metamorphous
-                      </option > <option    >
+                                                </option > <option    >
                                                     Metrophobic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Michroma
-                      </option > <option    >
+                                                </option > <option    >
                                                     Milonga
-                      </option > <option    >
+                                                </option > <option    >
                                                     Miltonian
-                      </option > <option    >
+                                                </option > <option    >
                                                     Miltonian Tattoo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mina
-                      </option > <option    >
+                                                </option > <option    >
                                                     Miniver
-                      </option > <option    >
+                                                </option > <option    >
                                                     Miriam Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mirza
-                      </option > <option    >
+                                                </option > <option    >
                                                     Miss Fajardose
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mitr
-                      </option > <option    >
+                                                </option > <option    >
                                                     Modak
-                      </option > <option    >
+                                                </option > <option    >
                                                     Modern Antiqua
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mogra
-                      </option > <option    >
+                                                </option > <option    >
                                                     Molengo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Molle
-                      </option > <option    >
+                                                </option > <option    >
                                                     Monda
-                      </option > <option    >
+                                                </option > <option    >
                                                     Monofett
-                      </option > <option    >
+                                                </option > <option    >
                                                     Monoton
-                      </option > <option    >
+                                                </option > <option    >
                                                     Monsieur La Doulaise
-                      </option > <option    >
+                                                </option > <option    >
                                                     Montaga
-                      </option > <option    >
+                                                </option > <option    >
                                                     Montez
-                      </option > <option    >
+                                                </option > <option    >
                                                     Montserrat
-                      </option > <option    >
+                                                </option > <option    >
                                                     Montserrat Alternates
-                      </option > <option    >
+                                                </option > <option    >
                                                     Montserrat Subrayada
-                      </option > <option    >
+                                                </option > <option    >
                                                     Moul
-                      </option > <option    >
+                                                </option > <option    >
                                                     Moulpali
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mountains of Christmas
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mouse Memoirs
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mr Bedfort
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mr Dafoe
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mr De Haviland
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mrs Saint Delafield
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mrs Sheppards
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mukta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mukta Mahee
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mukta Malar
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mukta Vaani
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mulish
-                      </option > <option    >
+                                                </option > <option    >
                                                     MuseoModerno
-                      </option > <option    >
+                                                </option > <option    >
                                                     Mystery Quest
-                      </option > <option    >
+                                                </option > <option    >
                                                     NTR
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nanum Brush Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nanum Gothic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nanum Gothic Coding
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nanum Myeongjo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nanum Pen Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nerko One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Neucha
-                      </option > <option    >
+                                                </option > <option    >
                                                     Neuton
-                      </option > <option    >
+                                                </option > <option    >
                                                     New Rocker
-                      </option > <option    >
+                                                </option > <option    >
                                                     New Tegomin
-                      </option > <option    >
+                                                </option > <option    >
                                                     News Cycle
-                      </option > <option    >
+                                                </option > <option    >
                                                     Newsreader
-                      </option > <option    >
+                                                </option > <option    >
                                                     Niconne
-                      </option > <option    >
+                                                </option > <option    >
                                                     Niramit
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nixie One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nobile
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nokora
-                      </option > <option    >
+                                                </option > <option    >
                                                     Norican
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nosifer
-                      </option > <option    >
+                                                </option > <option    >
                                                     Notable
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nothing You Could Do
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noticia Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Sans HK
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Sans JP
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Sans KR
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Sans SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Sans TC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Serif
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Serif JP
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Serif KR
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Serif SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Noto Serif TC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nova Cut
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nova Flat
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nova Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nova Oval
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nova Round
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nova Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nova Slim
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nova Square
-                      </option > <option    >
+                                                </option > <option    >
                                                     Numans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nunito
-                      </option > <option    >
+                                                </option > <option    >
                                                     Nunito Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Odibee Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Odor Mean Chey
-                      </option > <option    >
+                                                </option > <option    >
                                                     Offside
-                      </option > <option    >
+                                                </option > <option    >
                                                     Oi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Old Standard TT
-                      </option > <option    >
+                                                </option > <option    >
                                                     Oldenburg
-                      </option > <option    >
+                                                </option > <option    >
                                                     Oleo Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Oleo Script Swash Caps
-                      </option > <option    >
+                                                </option > <option    >
                                                     Open Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Open Sans Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Oranienbaum
-                      </option > <option    >
+                                                </option > <option    >
                                                     Orbitron
-                      </option > <option    >
+                                                </option > <option    >
                                                     Oregano
-                      </option > <option    >
+                                                </option > <option    >
                                                     Orelega One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Orienta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Original Surfer
-                      </option > <option    >
+                                                </option > <option    >
                                                     Oswald
-                      </option > <option    >
+                                                </option > <option    >
                                                     Over the Rainbow
-                      </option > <option    >
+                                                </option > <option    >
                                                     Overlock
-                      </option > <option    >
+                                                </option > <option    >
                                                     Overlock SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Overpass
-                      </option > <option    >
+                                                </option > <option    >
                                                     Overpass Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ovo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Oxanium
-                      </option > <option    >
+                                                </option > <option    >
                                                     Oxygen
-                      </option > <option    >
+                                                </option > <option    >
                                                     Oxygen Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     PT Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     PT Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     PT Sans Caption
-                      </option > <option    >
+                                                </option > <option    >
                                                     PT Sans Narrow
-                      </option > <option    >
+                                                </option > <option    >
                                                     PT Serif
-                      </option > <option    >
+                                                </option > <option    >
                                                     PT Serif Caption
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pacifico
-                      </option > <option    >
+                                                </option > <option    >
                                                     Padauk
-                      </option > <option    >
+                                                </option > <option    >
                                                     Palanquin
-                      </option > <option    >
+                                                </option > <option    >
                                                     Palanquin Dark
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pangolin
-                      </option > <option    >
+                                                </option > <option    >
                                                     Paprika
-                      </option > <option    >
+                                                </option > <option    >
                                                     Parisienne
-                      </option > <option    >
+                                                </option > <option    >
                                                     Passero One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Passion One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pathway Gothic One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Patrick Hand
-                      </option > <option    >
+                                                </option > <option    >
                                                     Patrick Hand SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pattaya
-                      </option > <option    >
+                                                </option > <option    >
                                                     Patua One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pavanam
-                      </option > <option    >
+                                                </option > <option    >
                                                     Paytone One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Peddana
-                      </option > <option    >
+                                                </option > <option    >
                                                     Peralta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Permanent Marker
-                      </option > <option    >
+                                                </option > <option    >
                                                     Petit Formal Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Petrona
-                      </option > <option    >
+                                                </option > <option    >
                                                     Philosopher
-                      </option > <option    >
+                                                </option > <option    >
                                                     Piazzolla
-                      </option > <option    >
+                                                </option > <option    >
                                                     Piedra
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pinyon Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pirata One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Plaster
-                      </option > <option    >
+                                                </option > <option    >
                                                     Play
-                      </option > <option    >
+                                                </option > <option    >
                                                     Playball
-                      </option > <option    >
+                                                </option > <option    >
                                                     Playfair Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Playfair Display SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Podkova
-                      </option > <option    >
+                                                </option > <option    >
                                                     Poiret One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Poller One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Poly
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pompiere
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pontano Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Poor Story
-                      </option > <option    >
+                                                </option > <option    >
                                                     Poppins
-                      </option > <option    >
+                                                </option > <option    >
                                                     Port Lligat Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Port Lligat Slab
-                      </option > <option    >
+                                                </option > <option    >
                                                     Potta One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pragati Narrow
-                      </option > <option    >
+                                                </option > <option    >
                                                     Prata
-                      </option > <option    >
+                                                </option > <option    >
                                                     Preahvihear
-                      </option > <option    >
+                                                </option > <option    >
                                                     Press Start 2P
-                      </option > <option    >
+                                                </option > <option    >
                                                     Pridi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Princess Sofia
-                      </option > <option    >
+                                                </option > <option    >
                                                     Prociono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Prompt
-                      </option > <option    >
+                                                </option > <option    >
                                                     Prosto One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Proza Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Public Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Puritan
-                      </option > <option    >
+                                                </option > <option    >
                                                     Purple Purse
-                      </option > <option    >
+                                                </option > <option    >
                                                     Quando
-                      </option > <option    >
+                                                </option > <option    >
                                                     Quantico
-                      </option > <option    >
+                                                </option > <option    >
                                                     Quattrocento
-                      </option > <option    >
+                                                </option > <option    >
                                                     Quattrocento Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Questrial
-                      </option > <option    >
+                                                </option > <option    >
                                                     Quicksand
-                      </option > <option    >
+                                                </option > <option    >
                                                     Quintessential
-                      </option > <option    >
+                                                </option > <option    >
                                                     Qwigley
-                      </option > <option    >
+                                                </option > <option    >
                                                     Racing Sans One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Radley
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rajdhani
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rakkas
-                      </option > <option    >
+                                                </option > <option    >
                                                     Raleway
-                      </option > <option    >
+                                                </option > <option    >
                                                     Raleway Dots
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ramabhadra
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ramaraja
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rambla
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rammetto One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ranchers
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rancho
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ranga
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rasa
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rationale
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ravi Prakash
-                      </option > <option    >
+                                                </option > <option    >
                                                     Recursive
-                      </option > <option    >
+                                                </option > <option    >
                                                     Red Hat Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Red Hat Text
-                      </option > <option    >
+                                                </option > <option    >
                                                     Red Rose
-                      </option > <option    >
+                                                </option > <option    >
                                                     Redressed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Reem Kufi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Reenie Beanie
-                      </option > <option    >
+                                                </option > <option    >
                                                     Reggae One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Revalia
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rhodium Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ribeye
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ribeye Marrow
-                      </option > <option    >
+                                                </option > <option    >
                                                     Righteous
-                      </option > <option    >
+                                                </option > <option    >
                                                     Risque
-                      </option > <option    >
+                                                </option > <option    >
                                                     Roboto
-                      </option > <option    >
+                                                </option > <option    >
                                                     Roboto Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Roboto Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Roboto Slab
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rochester
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rock Salt
-                      </option > <option    >
+                                                </option > <option    >
                                                     RocknRoll One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rokkitt
-                      </option > <option    >
+                                                </option > <option    >
                                                     Romanesco
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ropa Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rosario
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rosarivo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rouge Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rowdies
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rozha One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rubik
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rubik Mono One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ruda
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rufina
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ruge Boogie
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ruluko
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rum Raisin
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ruslan Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Russo One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ruthie
-                      </option > <option    >
+                                                </option > <option    >
                                                     Rye
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sacramento
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sahitya
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sail
-                      </option > <option    >
+                                                </option > <option    >
                                                     Saira
-                      </option > <option    >
+                                                </option > <option    >
                                                     Saira Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Saira Extra Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Saira Semi Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Saira Stencil One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Salsa
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sanchez
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sancreek
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sansita
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sansita Swashed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sarabun
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sarala
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sarina
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sarpanch
-                      </option > <option    >
+                                                </option > <option    >
                                                     Satisfy
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sawarabi Gothic
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sawarabi Mincho
-                      </option > <option    >
+                                                </option > <option    >
                                                     Scada
-                      </option > <option    >
+                                                </option > <option    >
                                                     Scheherazade
-                      </option > <option    >
+                                                </option > <option    >
                                                     Schoolbell
-                      </option > <option    >
+                                                </option > <option    >
                                                     Scope One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Seaweed Script
-                      </option > <option    >
+                                                </option > <option    >
                                                     Secular One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sedgwick Ave
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sedgwick Ave Display
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sen
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sevillana
-                      </option > <option    >
+                                                </option > <option    >
                                                     Seymour One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Shadows Into Light
-                      </option > <option    >
+                                                </option > <option    >
                                                     Shadows Into Light Two
-                      </option > <option    >
+                                                </option > <option    >
                                                     Shanti
-                      </option > <option    >
+                                                </option > <option    >
                                                     Share
-                      </option > <option    >
+                                                </option > <option    >
                                                     Share Tech
-                      </option > <option    >
+                                                </option > <option    >
                                                     Share Tech Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Shippori Mincho
-                      </option > <option    >
+                                                </option > <option    >
                                                     Shippori Mincho B1
-                      </option > <option    >
+                                                </option > <option    >
                                                     Shojumaru
-                      </option > <option    >
+                                                </option > <option    >
                                                     Short Stack
-                      </option > <option    >
+                                                </option > <option    >
                                                     Shrikhand
-                      </option > <option    >
+                                                </option > <option    >
                                                     Siemreap
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sigmar One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Signika
-                      </option > <option    >
+                                                </option > <option    >
                                                     Signika Negative
-                      </option > <option    >
+                                                </option > <option    >
                                                     Simonetta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Single Day
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sintony
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sirin Stencil
-                      </option > <option    >
+                                                </option > <option    >
                                                     Six Caps
-                      </option > <option    >
+                                                </option > <option    >
                                                     Skranji
-                      </option > <option    >
+                                                </option > <option    >
                                                     Slabo 13px
-                      </option > <option    >
+                                                </option > <option    >
                                                     Slabo 27px
-                      </option > <option    >
+                                                </option > <option    >
                                                     Slackey
-                      </option > <option    >
+                                                </option > <option    >
                                                     Smokum
-                      </option > <option    >
+                                                </option > <option    >
                                                     Smythe
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sniglet
-                      </option > <option    >
+                                                </option > <option    >
                                                     Snippet
-                      </option > <option    >
+                                                </option > <option    >
                                                     Snowburst One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sofadi One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sofia
-                      </option > <option    >
+                                                </option > <option    >
                                                     Solway
-                      </option > <option    >
+                                                </option > <option    >
                                                     Song Myung
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sonsie One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sora
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sorts Mill Goudy
-                      </option > <option    >
+                                                </option > <option    >
                                                     Source Code Pro
-                      </option > <option    >
+                                                </option > <option    >
                                                     Source Sans Pro
-                      </option > <option    >
+                                                </option > <option    >
                                                     Source Serif Pro
-                      </option > <option    >
+                                                </option > <option    >
                                                     Space Grotesk
-                      </option > <option    >
+                                                </option > <option    >
                                                     Space Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Spartan
-                      </option > <option    >
+                                                </option > <option    >
                                                     Special Elite
-                      </option > <option    >
+                                                </option > <option    >
                                                     Spectral
-                      </option > <option    >
+                                                </option > <option    >
                                                     Spectral SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Spicy Rice
-                      </option > <option    >
+                                                </option > <option    >
                                                     Spinnaker
-                      </option > <option    >
+                                                </option > <option    >
                                                     Spirax
-                      </option > <option    >
+                                                </option > <option    >
                                                     Squada One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sree Krushnadevaraya
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sriracha
-                      </option > <option    >
+                                                </option > <option    >
                                                     Srisakdi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Staatliches
-                      </option > <option    >
+                                                </option > <option    >
                                                     Stalemate
-                      </option > <option    >
+                                                </option > <option    >
                                                     Stalinist One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Stardos Stencil
-                      </option > <option    >
+                                                </option > <option    >
                                                     Stick
-                      </option > <option    >
+                                                </option > <option    >
                                                     Stint Ultra Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Stint Ultra Expanded
-                      </option > <option    >
+                                                </option > <option    >
                                                     Stoke
-                      </option > <option    >
+                                                </option > <option    >
                                                     Strait
-                      </option > <option    >
+                                                </option > <option    >
                                                     Stylish
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sue Ellen Francisco
-                      </option > <option    >
+                                                </option > <option    >
                                                     Suez One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sulphur Point
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sumana
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sunflower
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sunshiney
-                      </option > <option    >
+                                                </option > <option    >
                                                     Supermercado One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Sura
-                      </option > <option    >
+                                                </option > <option    >
                                                     Suranna
-                      </option > <option    >
+                                                </option > <option    >
                                                     Suravaram
-                      </option > <option    >
+                                                </option > <option    >
                                                     Suwannaphum
-                      </option > <option    >
+                                                </option > <option    >
                                                     Swanky and Moo Moo
-                      </option > <option    >
+                                                </option > <option    >
                                                     Syncopate
-                      </option > <option    >
+                                                </option > <option    >
                                                     Syne
-                      </option > <option    >
+                                                </option > <option    >
                                                     Syne Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Syne Tactile
-                      </option > <option    >
+                                                </option > <option    >
                                                     Tajawal
-                      </option > <option    >
+                                                </option > <option    >
                                                     Tangerine
-                      </option > <option    >
+                                                </option > <option    >
                                                     Taprom
-                      </option > <option    >
+                                                </option > <option    >
                                                     Tauri
-                      </option > <option    >
+                                                </option > <option    >
                                                     Taviraj
-                      </option > <option    >
+                                                </option > <option    >
                                                     Teko
-                      </option > <option    >
+                                                </option > <option    >
                                                     Telex
-                      </option > <option    >
+                                                </option > <option    >
                                                     Tenali Ramakrishna
-                      </option > <option    >
+                                                </option > <option    >
                                                     Tenor Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Text Me One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Texturina
-                      </option > <option    >
+                                                </option > <option    >
                                                     Thasadith
-                      </option > <option    >
+                                                </option > <option    >
                                                     The Girl Next Door
-                      </option > <option    >
+                                                </option > <option    >
                                                     Tienne
-                      </option > <option    >
+                                                </option > <option    >
                                                     Tillana
-                      </option > <option    >
+                                                </option > <option    >
                                                     Timmana
-                      </option > <option    >
+                                                </option > <option    >
                                                     Tinos
-                      </option > <option    >
+                                                </option > <option    >
                                                     Titan One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Titillium Web
-                      </option > <option    >
+                                                </option > <option    >
                                                     Tomorrow
-                      </option > <option    >
+                                                </option > <option    >
                                                     Trade Winds
-                      </option > <option    >
+                                                </option > <option    >
                                                     Train One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Trirong
-                      </option > <option    >
+                                                </option > <option    >
                                                     Trispace
-                      </option > <option    >
+                                                </option > <option    >
                                                     Trocchi
-                      </option > <option    >
+                                                </option > <option    >
                                                     Trochut
-                      </option > <option    >
+                                                </option > <option    >
                                                     Truculenta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Trykker
-                      </option > <option    >
+                                                </option > <option    >
                                                     Tulpen One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Turret Road
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ubuntu
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ubuntu Condensed
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ubuntu Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Ultra
-                      </option > <option    >
+                                                </option > <option    >
                                                     Uncial Antiqua
-                      </option > <option    >
+                                                </option > <option    >
                                                     Underdog
-                      </option > <option    >
+                                                </option > <option    >
                                                     Unica One
-                      </option > <option    >
+                                                </option > <option    >
                                                     UnifrakturCook
-                      </option > <option    >
+                                                </option > <option    >
                                                     UnifrakturMaguntia
-                      </option > <option    >
+                                                </option > <option    >
                                                     Unkempt
-                      </option > <option    >
+                                                </option > <option    >
                                                     Unlock
-                      </option > <option    >
+                                                </option > <option    >
                                                     Unna
-                      </option > <option    >
+                                                </option > <option    >
                                                     VT323
-                      </option > <option    >
+                                                </option > <option    >
                                                     Vampiro One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Varela
-                      </option > <option    >
+                                                </option > <option    >
                                                     Varela Round
-                      </option > <option    >
+                                                </option > <option    >
                                                     Varta
-                      </option > <option    >
+                                                </option > <option    >
                                                     Vast Shadow
-                      </option > <option    >
+                                                </option > <option    >
                                                     Vesper Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Viaoda Libre
-                      </option > <option    >
+                                                </option > <option    >
                                                     Vibes
-                      </option > <option    >
+                                                </option > <option    >
                                                     Vibur
-                      </option > <option    >
+                                                </option > <option    >
                                                     Vidaloka
-                      </option > <option    >
+                                                </option > <option    >
                                                     Viga
-                      </option > <option    >
+                                                </option > <option    >
                                                     Voces
-                      </option > <option    >
+                                                </option > <option    >
                                                     Volkhov
-                      </option > <option    >
+                                                </option > <option    >
                                                     Vollkorn
-                      </option > <option    >
+                                                </option > <option    >
                                                     Vollkorn SC
-                      </option > <option    >
+                                                </option > <option    >
                                                     Voltaire
-                      </option > <option    >
+                                                </option > <option    >
                                                     Waiting for the Sunrise
-                      </option > <option    >
+                                                </option > <option    >
                                                     Wallpoet
-                      </option > <option    >
+                                                </option > <option    >
                                                     Walter Turncoat
-                      </option > <option    >
+                                                </option > <option    >
                                                     Warnes
-                      </option > <option    >
+                                                </option > <option    >
                                                     Wellfleet
-                      </option > <option    >
+                                                </option > <option    >
                                                     Wendy One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Wire One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Work Sans
-                      </option > <option    >
+                                                </option > <option    >
                                                     Xanh Mono
-                      </option > <option    >
+                                                </option > <option    >
                                                     Yanone Kaffeesatz
-                      </option > <option    >
+                                                </option > <option    >
                                                     Yantramanav
-                      </option > <option    >
+                                                </option > <option    >
                                                     Yatra One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Yellowtail
-                      </option > <option    >
+                                                </option > <option    >
                                                     Yeon Sung
-                      </option > <option    >
+                                                </option > <option    >
                                                     Yeseva One
-                      </option > <option    >
+                                                </option > <option    >
                                                     Yesteryear
-                      </option > <option    >
+                                                </option > <option    >
                                                     Yrsa
-                      </option > <option    >
+                                                </option > <option    >
                                                     Yusei Magic
-                      </option > <option    >
+                                                </option > <option    >
                                                     ZCOOL KuaiLe
-                      </option > <option    >
+                                                </option > <option    >
                                                     ZCOOL QingKe HuangYou
-                      </option > <option    >
+                                                </option > <option    >
                                                     ZCOOL XiaoWei
-                      </option > <option    >
+                                                </option > <option    >
                                                     Zen Dots
-                      </option > <option    >
+                                                </option > <option    >
                                                     Zeyada
-                      </option > <option    >
+                                                </option > <option    >
                                                     Zhi Mang Xing
-                      </option > <option    >
+                                                </option > <option    >
                                                     Zilla Slab
-                      </option > <option    >
+                                                </option > <option    >
                                                     Zilla Slab Highlight
-                      </option >
+                                                </option >
                                             </select >
                                         </div >
                                     </div >
@@ -2441,38 +2475,44 @@ export default function Favicongenerator(props) {
                         </form >
                     </Card >
                     <br />
-
+                    <br />
                     <Grid>
                         <Grid item xs={12} sm={12} md={8} lg={8} xl={8}>
                             <Card elevation={1} className="box container">
-                                <h3 className="title is-4">Installation</h3>
-                                <p>First, use the download button to download the files listed below.
-                                Place the files in the root directory of your website.
-            </p>
+                                <h3 className="title is-4">Usage Instructions</h3>
+                                <p>First, Enter text, choose background and font color, <br />then use the download button to download the files listed below.
+                                    Place the files in the root directory of your website.
+                                </p>
                                 <ul>
                                     <li>android-chrome-192x192.png</li>
                                     <li>android-chrome-512x512.png</li>
                                     <li>apple-touch-icon.png</li>
                                     <li>favicon-16x16.png</li>
                                     <li>favicon-32x32.png</li>
+                                    <li>favicon-24x24.png</li>
+                                    <li>favicon-48x48.png</li>
                                     <li>favicon.ico</li>
                                     <li>site.webmanifest</li>
                                 </ul>
                                 <p>
                                     Next, copy the following link tags and paste them into the
-              <code>head</code>
-                                        of your HTML.
+                                    <code>head</code>
+                                    of your HTML.
 
-                                    </p>
+                                </p>
                                 <br />
                                 <pre>
                                     <code>&lt;link rel=&quot;apple-touch-icon &quot;sizes=&quot;180x180 &quot;href=&quot;/apple-touch-icon.png &quot;&gt;
                                         <br />
-                                    &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;32x32 &quot;href=&quot;/favicon-32x32.png &quot;&gt;
-                                    <br />
-                                    &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;16x16 &quot;href=&quot;/favicon-16x16.png &quot;&gt;
-                                    <br />
-                                    &lt;link rel=&quot;manifest &quot;href=&quot;/site.webmanifest &quot;&gt;</code>
+                                        &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;32x32 &quot;href=&quot;/favicon-32x32.png &quot;&gt;
+                                        <br />
+                                        &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;16x16 &quot;href=&quot;/favicon-16x16.png &quot;&gt;
+                                        <br />
+                                        &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;24x24 &quot;href=&quot;/favicon-24x24.png &quot;&gt;
+                                        <br />
+                                        &lt;link rel=&quot;icon &quot;type=&quot;image/png &quot;sizes=&quot;48x48 &quot;href=&quot;/favicon-48x48.png &quot;&gt;
+                                        <br />
+                                        &lt;link rel=&quot;manifest &quot;href=&quot;/site.webmanifest &quot;&gt;</code>
                                 </pre>
                                 <br />
                                 <button onClick={fncopytext} className="button is-info">Copy</button>
@@ -2482,14 +2522,14 @@ export default function Favicongenerator(props) {
                             <Card elevation={1} className="box container"  >
                                 <h3 className="title is-4"  >About favicon generator</h3>
                                 <p  >Whether you want to generate a favicon from text, from an
-                                existing image, or from an emoji we've got you covered. The
-                                favicon generator is completely free and extremely easy to
-                                use. The generated favicon will work for all browsers and
-                                multiple platforms.
-              </p>
+                                    existing image, or from an emoji we've got you covered. The
+                                    favicon generator is completely free and extremely easy to
+                                    use. The generated favicon will work for all browsers and
+                                    multiple platforms.
+                                </p>
                                 <br />
                                 <h3 className="title is-4"  >Getting started with the favicon generator
-              </h3>
+                                </h3>
                                 <p  >
                                     The tool above will allow you to generate a favicon from text.
                                     Start by choosing one to two letters for the favicon
@@ -2497,27 +2537,27 @@ export default function Favicongenerator(props) {
                                     images it's important to use few characters for maximum
                                     legibility. Once cool feature with this favicon generator is
                                     that you can copy and paste both unicode characters and emojis
-                                            into the text box.</p>
+                                    into the text box.</p>
                                 <br />
                                 <h3 className="title is-4"  >Making the background simple</h3>
                                 <p  >
                                     Next, select the shape of the background. There are three
                                     simple shapes available: square, circle, and rounded. These
                                     are the most common shapes used to generate a favicon.
-                                    </p>
+                                </p>
                                 <br />
                                 <h3 className="title is-4"  >Selecting the font for your favicon</h3>
                                 <p  >
                                     The favicon generator uses
-                <a href="https://fonts.google.com/" target="_blank" rel="noreferrer"  >Google Fonts</a>
-                                        which has 800+ fonts available. This is useful to match the
-                font used on your own website. In the future there will be a
-                dedicated font page to help you select your font. It will have
-                filters for languages, styles, and commonly used fonts. You
-                can edit the font size once you've selected your font. Try to
-                take up as much space as possible.
+                                    <a href="https://fonts.google.com/" target="_blank" rel="noreferrer"  >Google Fonts</a>
+                                    which has 800+ fonts available. This is useful to match the
+                                    font used on your own website. In the future there will be a
+                                    dedicated font page to help you select your font. It will have
+                                    filters for languages, styles, and commonly used fonts. You
+                                    can edit the font size once you've selected your font. Try to
+                                    take up as much space as possible.
 
-                                    </p>
+                                </p>
                                 <br />
                                 <h3 className="title is-4"  >Tailoring the colors</h3>
                                 <p  >
@@ -2526,7 +2566,7 @@ export default function Favicongenerator(props) {
                                     into the input box. Otherwise you can use some of the colors
                                     that we suggest using the color picker below each input box.
                                     .
-                                    </p>
+                                </p>
 
                             </Card>
                             <br />

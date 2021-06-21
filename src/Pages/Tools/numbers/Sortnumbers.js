@@ -171,7 +171,7 @@ export default function Sortnumbers() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 SORT NUMBERS ONLINE</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Sort numbers from a list in ascending order, descending order or randomly</p>
                         </div>
                     </div>
@@ -181,7 +181,7 @@ export default function Sortnumbers() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Original List</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>Original List</Typography><br />
                                     <span><strong>The numbers you want to sort with comma (,) seperation</strong></span><br /><br />
                                     <textarea className="input"
                                         id="originalText"
@@ -199,7 +199,7 @@ export default function Sortnumbers() {
                         <div className="column is-6" >
                             <Card className="box " >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Options</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>Options</Typography><br />
 
                                     <FormControlLabel
                                         control={
@@ -219,16 +219,16 @@ export default function Sortnumbers() {
                                                 onClick={onChangeSorttype}
                                             >
                                                 Ascending
-                                </Button>
+                                            </Button>
                                             <Button aria-label="Descending"
                                                 className={!state.isSortasc ? "button is-success" : 'button'}
                                                 onClick={onChangeSorttype}
                                             >
                                                 Descending
-                                    </Button>
+                                            </Button>
                                         </ButtonGroup><br />
                                     </>}
-                                    <Typography variant="h4" className={'text-option'}>Result</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>Result</Typography><br />
                                     <div className={'resultDiv blink_me'}>
                                         <textarea className="input"
                                             id="resulttext"

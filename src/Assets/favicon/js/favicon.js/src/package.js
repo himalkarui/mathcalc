@@ -8,10 +8,11 @@ Package.generate = canvas => {
   return {
     ico: ico.generate([16, 32, 48]),
     png16: png.generate(16),
+    png24: png.generate(24),
+    png48: png.generate(48),
     png32: png.generate(32),
-    png150: png.generate(150),
     png180: png.generate(180),
-    // png192: png.generate(192),
+    png192: png.generate(192),
     png512: png.generate(512)
   };
 };

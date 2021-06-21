@@ -98,7 +98,7 @@ export default function Discount() {
                                 <div className="container">
                                     <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                         ONLINE DICOUNT CALCULATOR</h1>
-                                    <p className="has-text-letter-spacing-wide has-text-grey">
+                                    <p className="  has-text-grey">
                                         To calculate Final price and the amount you save!</p>
                                 </div>
                             </div>

@@ -19,6 +19,7 @@ export default class Ico {
       const context = canvas.getContext("2d");
       const width = canvas.width;
       const height = canvas.height;
+      // eslint-disable-next-line
       const imageData = context.getImageData(0, 0, width, height);
       const bitmapInfoHeader = this.createBitmapInfoHeader(width, height);
       const bitmapImageData = this.createBitmapImageData(canvas);
@@ -59,6 +60,7 @@ export default class Ico {
     const ctx = canvas.getContext("2d");
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     const bitmapPixelData = new Uint32Array(imageData.data.buffer);
+    // eslint-disable-next-line
     const bitmapBuffer = bitmapPixelData.reverse().buffer;
     const bitmapMask = new Uint8Array((canvas.width * canvas.height * 2) / 8);
     bitmapMask.fill(0);

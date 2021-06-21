@@ -70,6 +70,16 @@ import Waisttohip from './Pages/General/apps/Waisttohip';
 import Matrices from './Pages/Maths/apps/Matrices';
 import Matrixadd from './Pages/Maths/apps/Matrix/Matrixadd';
 import Matrixsubtract from './Pages/Maths/apps/Matrix/Matrixsubtract';
+import Matrixmultiply from './Pages/Maths/apps/Matrix/Matrixmultiply';
+import Matrixtrace from './Pages/Maths/apps/Matrix/Matrixtrace';
+import Matrixdeterminant from './Pages/Maths/apps/Matrix/Matrixdeterminant';
+import Baseconvertor from './Pages/Tools/numbers/Baseconvertor';
+import Matrixinverse from './Pages/Maths/apps/Matrix/Matrixinverse';
+import Matrixtranspose from './Pages/Maths/apps/Matrix/Matrixtranspose';
+import Matrixrank from './Pages/Maths/apps/Matrix/Matrixrank';
+import Caseconverter from './Pages/Text/apps/Caseconverter';
+import Moorsecodetranslator from './Pages/Tools/Moorsecodetranslator';
+import Baseimagegen from './Pages/Tools/Baseimagegen';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -117,11 +127,14 @@ function App() {
               <Route exact path="/" component={Home} />
 
               <Route exact path="/tools/" component={AllTools} />
+              <Route exact path="/image-base64-generator/" component={Baseimagegen} />
+              <Route exact path="/morse-code-translator/" component={Moorsecodetranslator} />
               <Route exact path="/favicon-converter/" component={Faviconconvertor} />
               <Route exact path="/favicon-generator/" component={Favicongenerator} />
               <Route exact path="/covid19-tracker/" component={Covidtracker} />
               <Route exact path="/email-validator/" component={Emailvalidator} />
               <Route exact path="/image-editor/" component={Imageeditor} />
+              <Route exact path="/online-image-editor/" component={Imageeditor} />
 
               <Route exact path="/text-lists/" component={Textandlist} />
               <Route exact path="/reverse-list/" component={Reverselist} />
@@ -131,9 +144,11 @@ function App() {
               <Route exact path="/count-letters/" component={CountLetters} />
               <Route exact path="/count-words/" component={Countwords} />
               <Route exact path="/count-lines/" component={Countlines} />
+              <Route exact path="/case-converter" component={Caseconverter} />
 
               <Route exact path="/numbers/" component={Numbers} />
               <Route exact path="/generate-list-numbers/" component={Generatelistofnums} />
+              <Route exact path="/base-converter/" component={Baseconvertor} />
               <Route exact path="/binary-converter/" component={Binaryconverter} />
               <Route exact path="/hexadecimal-converter/" component={Hexadecimalconverter} />
               <Route exact path="/sort-numbers/" component={Sortnumbers} />
@@ -179,9 +194,16 @@ function App() {
               <Route exact path="/maths/shapes/rectangle" component={Rectangle} />
               <Route exact path="/maths/shapes/triangle" component={Triangle} />
               <Route exact path="/maths/graphs" component={Graphs} />
+
               <Route exact path="/maths/matrices" component={Matrices} />
               <Route exact path="/maths/matrices/add" component={Matrixadd} />
               <Route exact path="/maths/matrices/subtract" component={Matrixsubtract} />
+              <Route exact path="/maths/matrix/multiplication" component={Matrixmultiply} />
+              <Route exact path="/maths/matrix/trace" component={Matrixtrace} />
+              <Route exact path="/maths/matrix/determinant" component={Matrixdeterminant} />
+              <Route exact path="/maths/matrix/matrix-inverse" component={Matrixinverse} />
+              <Route exact path="/maths/matrix/matrix-transpose" component={Matrixtranspose} />
+              <Route exact path="/maths/matrix/matrix-rank" component={Matrixrank} />
 
               <Route exact path="/privacy-policy/" component={Privacy} />
               <Route exact path="/terms-of-use/" component={Termsofuse} />

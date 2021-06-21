@@ -33,19 +33,25 @@ export default function AllTools() {
 
     let Url = [
         {
-            urlname: 'Favicon Converter', urlpath: '/favicon-converter/'
+            urlname: 'Image to base64 generator', urlpath: '/image-base64-generator'
         },
         {
-            urlname: 'Favicon Generator', urlpath: '/favicon-generator/'
+            urlname: "Morse code translator", urlpath: "/morse-code-translator"
         },
         {
-            urlname: 'COVID-19 Tracker', urlpath: '/covid19-tracker/'
+            urlname: 'Simple image editor online', urlpath: '/online-image-editor'
         },
         {
-            urlname: 'Free Email Validation', urlpath: '/email-validator/'
+            urlname: 'Favicon converter from image', urlpath: '/favicon-converter'
         },
         {
-            urlname: 'Online Image Editor', urlpath: '/image-editor/'
+            urlname: 'Favicon generator from text', urlpath: '/favicon-generator'
+        },
+        {
+            urlname: 'COVID-19 tracker', urlpath: '/covid19-tracker'
+        },
+        {
+            urlname: 'Free email validation', urlpath: '/email-validator'
         }
     ]
 
@@ -58,16 +64,17 @@ export default function AllTools() {
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
             <Container maxWidth="xl">
                 <section className="hero" data-v-23847e07>
                     <div style={{ padding: '2rem 0.5rem' }}>
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Free Online Tools
-          </h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            </h1>
+                            <p className="  has-text-grey">
                                 Free online tools for various tasks
-          </p>
+                            </p>
                         </div>
                     </div>
                 </section>

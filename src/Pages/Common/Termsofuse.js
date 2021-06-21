@@ -21,7 +21,7 @@ export default function Privacy(props) {
                                 <div className="column is-7">
                                     <h1 className="subtitle is-spaced is-uppercase has-text-grey-light has-text-weight-bold">Terms of Use
           </h1>
-                                    <p className="title is-3 has-text-letter-spacing-wide">Terms of Use
+                                    <p className="title is-3  ">Terms of Use
           </p>
                                 </div>
                                 <div className="column is-4">

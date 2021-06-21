@@ -98,7 +98,7 @@ export default function Singlerulethreedir() {
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 SINGLE RULE OF THREE INVERSE ONLINE
           </h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Inverse proportion is, where more requires less, and less requires more.
           </p>
                         </div>
@@ -122,7 +122,7 @@ export default function Singlerulethreedir() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Options</Typography>
+                                    <Typography variant="h6" className={'text-option'}>Options</Typography>
                                     <br />
                                     <span> <strong>Value of a</strong></span><br />
                                     <TextField placeholder="0" className={classes.formelems} onChange={onInputChange} value={state.fielda} id="fielda" variant="outlined" type="number"></TextField><br />
@@ -144,7 +144,7 @@ export default function Singlerulethreedir() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Result</Typography>
+                                    <Typography variant="h6" className={'text-option'}>Result</Typography>
                                     <div className={'resultDiv'}>
                                         <span>{state.result}</span>
                                     </div>

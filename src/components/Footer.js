@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
     justifyContent: 'space-between',
     padding: '10px 20px',
-    backgroundColor: '#fafafa',
+    backgroundColor: 'transparent !important',
     marginTop: '25px',
     borderTop: '1px solid #00000012',
   },

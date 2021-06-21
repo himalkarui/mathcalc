@@ -221,7 +221,7 @@ export default function Generatelistofnums() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 GENERATE LIST OF NUMBERS ONLINE</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Generate a list of numbers, choose the first and last numbers and the step between consecutive numbers</p>
                         </div>
                     </div>
@@ -231,7 +231,7 @@ export default function Generatelistofnums() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Options</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>Options</Typography><br />
                                     <span><strong>First Number</strong></span><br />
                                     <TextField className={classes.formelems} onChange={onInputChange}
                                         value={state.fNumber} id="fNumber" variant="outlined" type="number"></TextField><br />
@@ -284,7 +284,7 @@ export default function Generatelistofnums() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box " >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Result</Typography>
+                                    <Typography variant="h6" className={'text-option'}>Result</Typography>
                                     <div className={'resultDiv blink_me'}>
                                         <textarea className="input"
                                             id="result"

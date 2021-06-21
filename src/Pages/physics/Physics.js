@@ -67,6 +67,7 @@ export default function Physics() {
                 <meta name="description" content="Use Mathcalc to calculate all mathematical expression in physics" />
                 <meta name="author" content="Mathcalc" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
             <Container maxWidth="xl">
                 <section className="hero" data-v-23847e07>
@@ -74,7 +75,7 @@ export default function Physics() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Physics
           </h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Calculate Various mathematical expresion in physics..
           </p>
                         </div>

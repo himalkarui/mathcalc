@@ -106,7 +106,7 @@ export default function Kineticenergy() {
                                     <div className="container">
                                         <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                             ONLINE FREE KINETIC ENERGY CALCULATOR</h1>
-                                        <p className="has-text-letter-spacing-wide has-text-grey">
+                                        <p className="  has-text-grey">
                                             To calculate the kinetic energy , velocity and mass of an object</p>
                                     </div>
                                 </div>

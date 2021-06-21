@@ -11,10 +11,8 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     curtomAlert: {
-        backgroundColor: 'blueviolet',
-        color: 'white',
-        marginTop: '43px'
-    }
+        marginBottom: '85px',
+    },
 }));
 
 export default function CustomSnakbar(props) {
@@ -26,9 +24,10 @@ export default function CustomSnakbar(props) {
                 Open success snackbar
       </Button> */}
             <Snackbar open={props.open} autoHideDuration={2000}
+                className={classes.curtomAlert}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                 onBlur={props.handleClose}
-                // onClose={props.handleClose}
+            // onClose={props.handleClose}
             >
                 <MuiAlert
                     onClose={props.handleClose}

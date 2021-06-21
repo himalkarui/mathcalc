@@ -67,9 +67,9 @@ export default function General() {
                 <section className="hero" data-v-23847e07>
                     <div style={{ padding: '2rem 0.5rem' }}>
                         <div className="container">
-                            <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">General
+                            <h1 className="subtitle is-spaced has-text-weight-bold">General
           </h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Various mathematical tasks, such as calculate percentages, simple shapes, graph fnctions and more..
           </p>
                         </div>

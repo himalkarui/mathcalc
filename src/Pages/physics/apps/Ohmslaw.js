@@ -104,7 +104,7 @@ export default function Ohmslaw() {
                                     <div className="container">
                                         <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                             ONLINE OHM'S LAW CALCULATOR</h1>
-                                        <p className="has-text-letter-spacing-wide has-text-grey">
+                                        <p className="  has-text-grey">
                                             To calculate the resistance, current and voltage of a conductor at constant temperature</p>
                                     </div>
                                 </div>

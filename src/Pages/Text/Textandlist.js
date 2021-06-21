@@ -58,8 +58,11 @@ export default function Textandlist() {
     {
         urlname: 'Count Letters',
         urlpath: '/count-letters/',
+    },
+    {
+        urlname: 'Case Converter',
+        urlpath: '/case-converter/',
     }
-
     ]
 
 
@@ -71,6 +74,7 @@ export default function Textandlist() {
                 <meta name="description" content="Work with lists and texts, sort, randomize, reverse" />
                 <meta name="author" content="Mathcalc" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
             <Container maxWidth="xl">
                 <section className="hero" data-v-23847e07>
@@ -78,7 +82,7 @@ export default function Textandlist() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">TEXT AND LISTS
                         </h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Tools for sorting lists alphabetically, reverse lists, random sort, remove duplicates, clean unnecessary whitespaces
                         </p>
                         </div>

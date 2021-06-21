@@ -102,7 +102,7 @@ export default function Capacitance() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 ONLINE FREE CAPACITANCE CALCULATOR</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 To calculate the capacitance , electric charge and electric potential.   </p>
                         </div>
                     </div>

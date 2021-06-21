@@ -148,7 +148,7 @@ export default function Square() {
                                             <Typography className="has-text-weight-bold">Square calculator</Typography>
                                         </Breadcrumbs>
                                     </h1>
-                                    <p className="has-text-letter-spacing-wide has-text-grey">
+                                    <p className="  has-text-grey">
                                         Calculate the length, area, perimeter and diagonal of a rectangle.</p>
                                 </div>
                             </div>

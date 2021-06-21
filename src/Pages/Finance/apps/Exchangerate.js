@@ -309,7 +309,7 @@ export default function Exchangerate() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 Foreign currency convertor ONLINE</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Convert the foreign currency from one country money to another with latest data</p>
                         </div>
                     </div>
@@ -404,7 +404,7 @@ export default function Exchangerate() {
                         <div className="column is-4" >
                             <Card elevation={1} className="box" >
                                 <div className="content" style={{ padding: '10px' }} >
-                                    <Typography variant="h4" className={'text-option'}>Result</Typography><br />
+                                    <Typography variant="h6" className={'text-option'}>Result</Typography><br />
                                     {
                                         state.isResult ? <div className={'resultDiv'}>
                                             <span><strong>1 USD</strong> {'= ' + state.oneusdFromrate.toFixed(3) + " " + fromCountryRate}</span><br /><br />

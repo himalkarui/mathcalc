@@ -113,7 +113,7 @@ export default function Binaryconverter() {
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 ONLINE BINARY CONVERTER
                            </h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Binary to decimal and decimal to binary conversion  </p>
                         </div>
                     </div>
@@ -123,7 +123,7 @@ export default function Binaryconverter() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box" >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Options</Typography>
+                                    <Typography variant="h6" className={'text-option'}>Options</Typography>
                                     <br />
                                     <span><strong>Type of Conversion</strong></span><br />
                                     <ButtonGroup style={{ margin: '10px 0px', display: 'flow-root' }}>
@@ -149,7 +149,7 @@ export default function Binaryconverter() {
                         <div className="column is-6" >
                             <Card elevation={1} className="box " >
                                 <div className="content" >
-                                    <Typography variant="h4" className={'text-option'}>Result</Typography>
+                                    <Typography variant="h6" className={'text-option'}>Result</Typography>
                                     <div className={'resultDiv blink_me'}>
                                         <span className={'resPercentage'}>{state.resultLabel}</span><br />
                                         <span style={{ overflowWrap: 'break-word' }} dangerouslySetInnerHTML={{ __html: state.result }}></span>

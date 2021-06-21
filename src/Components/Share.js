@@ -1,39 +1,227 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Fab from '@material-ui/core/Fab';
-import Facebook from '@material-ui/icons/Facebook';
-import Twitter from '@material-ui/icons/Twitter';
-import LinkedIn from '@material-ui/icons/LinkedIn';
-import Mail from '@material-ui/icons/Mail';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
+import {
+    EmailShareButton,
+    FacebookShareButton,
+    HatenaShareButton,
+    InstapaperShareButton,
+    LineShareButton,
+    LinkedinShareButton,
+    LivejournalShareButton,
+    MailruShareButton,
+    OKShareButton,
+    PinterestShareButton,
+    PocketShareButton,
+    RedditShareButton,
+    TelegramShareButton,
+    TumblrShareButton,
+    TwitterShareButton,
+    ViberShareButton,
+    VKShareButton,
+    WhatsappShareButton,
+    WorkplaceShareButton,
+    WeiboShareButton,
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-    },
-    extendedIcon: {
-        marginRight: theme.spacing(1),
-    },
-}));
+    EmailIcon,
+    FacebookIcon,
+    HatenaIcon,
+    InstapaperIcon,
+    LineIcon,
+    LinkedinIcon,
+    LivejournalIcon,
+    MailruIcon,
+    OKIcon,
+    PinterestIcon,
+    PocketIcon,
+    RedditIcon,
+    TelegramIcon,
+    TumblrIcon,
+    TwitterIcon,
+    ViberIcon,
+    VKIcon,
+    WeiboIcon,
+    WhatsappIcon,
+    WorkplaceIcon
+} from "react-share";
+import logo from '../Assets/images/mathcalcblack.png';
 
-export default function Share() {
-    const classes = useStyles();
+export default function Share(props) {
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('xs'));
+    const shareUrl = props.url ? props.url : window.location.href;
+    const title = props.urlHeader ? props.urlHeader : 'Mathcalc - One stop web app for all your mathematical calculations and tools for FREE !';
 
     return (
-        <div className={classes.root}>
-            <Fab color="primary" aria-label="add">
-                <Facebook />
-            </Fab>
-            <Fab color="secondary" aria-label="edit">
-                <Twitter />
-            </Fab>
-            <Fab >
-                <Mail />
-            </Fab>
-            <Fab >
-                <LinkedIn />
-            </Fab>
+        <div>
+            <Dialog
+                fullScreen={fullScreen}
+                open={props.open}
+                onClose={props.handleClose}
+                aria-labelledby="responsive-dialog-title"
+            >
+                <DialogTitle id="responsive-dialog-title">{"Share"}</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        {
+                            props.urlMessaage ? props.urlMessaage : 'Mathcalc - One stop web app for all your mathematical calculations and tools for FREE !'
+                        }
+                    </DialogContentText>
+                    <div className="box">
+                        < EmailShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <EmailIcon />
+                        </EmailShareButton>
+                        < FacebookShareButton
+                            url={shareUrl}
+                            quote={title}
+                        >
+                            <FacebookIcon />
+                        </FacebookShareButton>
+                        < TwitterShareButton
+                            url={shareUrl}
+                            title={title}
+                            hashtags="Mathcalc"
+                        >
+                            <TwitterIcon />
+                        </TwitterShareButton>
+                        < WhatsappShareButton
+                            url={shareUrl}
+                            title={title}
+                            separator=" - "
+                        >
+                            <WhatsappIcon />
+                        </WhatsappShareButton>
+
+                        <PinterestShareButton
+                            url={shareUrl}
+                            title={title}
+                            media={`${String(window.location)}/${logo}`}
+                        >
+                            <PinterestIcon />
+                        </PinterestShareButton>
+
+                        < TelegramShareButton
+                            url={shareUrl}
+                            title={title} >
+                            <TelegramIcon />
+                        </TelegramShareButton>
+
+                        < LinkedinShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <LinkedinIcon />
+                        </LinkedinShareButton>
+
+                        < HatenaShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <HatenaIcon />
+                        </HatenaShareButton>
+                        < InstapaperShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <InstapaperIcon />
+                        </InstapaperShareButton>
+
+                        < RedditShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <RedditIcon />
+                        </RedditShareButton>
+
+                        < LineShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <LineIcon />
+                        </LineShareButton>
+
+                        < LivejournalShareButton
+                            url={shareUrl}
+                            title={title}
+                            description={shareUrl}
+                        >
+                            <LivejournalIcon />
+                        </LivejournalShareButton>
+
+                        < MailruShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <MailruIcon />
+                        </MailruShareButton>
+                        < OKShareButton
+                            url={shareUrl}
+                            title={title}
+                            image={`${String(window.location)}/${logo}`}
+                        ><OKIcon /></OKShareButton>
+
+                        < PocketShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <PocketIcon />
+                        </PocketShareButton>
+
+                        < TumblrShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <TumblrIcon />
+                        </TumblrShareButton>
+
+                        < ViberShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <ViberIcon />
+                        </ViberShareButton>
+
+                        < WorkplaceShareButton
+                            url={shareUrl}
+                            title={title}
+                        >
+                            <WorkplaceIcon />
+                        </WorkplaceShareButton>
+
+                        <VKShareButton
+                            url={shareUrl}
+                            title={title}
+                            image={`${String(window.location)}/${logo}`}
+                        >
+                            <VKIcon />
+                        </VKShareButton>
+
+                        <WeiboShareButton
+                            url={shareUrl}
+                            title={title}
+                            image={`${String(window.location)}/${logo}`}
+                        >
+                            <WeiboIcon />
+                        </WeiboShareButton>
+
+                    </div>
+                </DialogContent>
+                <DialogActions>
+
+                    <Button onClick={props.handleClose} color="primary" autoFocus>
+                        Close
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </div>
     );
 }

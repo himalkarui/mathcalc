@@ -100,9 +100,9 @@ export default function Sortlist() {
         const sorter = (a, b) => {
             function chunkify(t) {
                 var tz = [], x = 0, y = -1, n = 0, i, j;
-
-                while (i = (j = t.charAt(x++)).charCodeAt(0)) {
-                    // eslint-disable-next-line
+                // eslint-disable-next-line
+                while (i = (j = t.charAt(x++)).charCodeAt(0)) // eslint-disable-next-line no-cond-assign
+                {
                     var m = (i === 46 || (i >= 48 && i <= 57));
                     if (m !== n) {
                         tz[++y] = "";
@@ -135,6 +135,7 @@ export default function Sortlist() {
         const sorterCaseInsestive = (a, b) => {
             function chunkify(t) {
                 var tz = [], x = 0, y = -1, n = 0, i, j;
+                // eslint-disable-next-line
                 while (i = (j = t.charAt(x++)).charCodeAt(0)) {
                     // eslint-disable-next-line
                     var m = (i === 46 || (i >= 48 && i <= 57));
@@ -253,7 +254,7 @@ export default function Sortlist() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 Sort LIST ONLINE</h1>
-                            <p className="has-text-letter-spacing-wide has-text-grey">
+                            <p className="  has-text-grey">
                                 Sort a list in (reverse) alphabetical order. You can use the natural sort algorithm (human friendly) or the classical sort algorithm (machine friendly)</p>
                         </div>
                     </div>
@@ -263,7 +264,7 @@ export default function Sortlist() {
                         <div className="column is-6" data-v-14591542>
                             <Card elevation={1} className="box" data-v-14591542>
                                 <div className="content" data-v-14591542>
-                                    <Typography variant="h4" className={'text-option'}>
+                                    <Typography variant="h6" className={'text-option'}>
                                         Original List</Typography><br />
                                     <span><strong>The list you want to sort</strong></span><br /><br />
                                     <textarea className="input"
@@ -290,7 +291,7 @@ export default function Sortlist() {
                             <Card elevation={1} className="box " data-v-14591542>
                                 <div className="content" data-v-14591542>
                                     <br />
-                                    <Typography variant="h4" className={'text-option'}>
+                                    <Typography variant="h6" className={'text-option'}>
                                         Options
                                     </Typography><br />
                                     <span><strong>Sorting algorithm</strong></span><br />
@@ -300,13 +301,13 @@ export default function Sortlist() {
                                             onClick={onChangeisNaturalSort}
                                         >
                                             Natural sort
-                                </Button>
+                                        </Button>
                                         <Button aria-label="" Machine sort
                                             className={!state.isNaturalSort ? "button is-success" : 'button'}
                                             onClick={onChangeisNaturalSort}
                                         >
                                             Machine sort
-                                    </Button>
+                                        </Button>
                                     </ButtonGroup><br />
                                     <span><strong>Reverse order ?</strong></span><br />
                                     <ButtonGroup style={{ margin: '10px 0px' }}>
@@ -315,13 +316,13 @@ export default function Sortlist() {
                                             onClick={onChangeisAlphabetOrder}
                                         >
                                             A - Z
-                                </Button>
+                                        </Button>
                                         <Button aria-label="Z-A"
                                             className={state.isAlphabetOrder ? "button is-success" : 'button'}
                                             onClick={onChangeisAlphabetOrder}
                                         >
                                             Z - A
-                                    </Button>
+                                        </Button>
                                     </ButtonGroup><br />
                                     <span><strong>Case sensitivity</strong></span><br />
                                     <ButtonGroup style={{ margin: '10px 0px' }}>
@@ -330,15 +331,15 @@ export default function Sortlist() {
                                             onClick={onChangeisCasesensitive}
                                         >
                                             Case-sensitive
-                                </Button>
+                                        </Button>
                                         <Button aria-label="Case-insensitive"
                                             className={!state.isCasesensitive ? "button is-success" : 'button'}
                                             onClick={onChangeisCasesensitive}
                                         >
                                             Case-insensitive
-                                    </Button>
+                                        </Button>
                                     </ButtonGroup><br />
-                                    <Typography variant="h4" className={'text-option'}>
+                                    <Typography variant="h6" className={'text-option'}>
                                         Sorted list
                                     </Typography><br />
                                     <div className={'resultsec'}>
