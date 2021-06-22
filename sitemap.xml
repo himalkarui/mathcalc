@@ -11,6 +11,34 @@
          
     </url>
 
+
+    <url>
+        <loc>https://mathcalc.xyz/?/files/</loc>
+
+        <lastmod>2021-06-22</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/base64-encode</loc>
+
+        <lastmod>2021-06-22</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/?/base64-decode</loc>
+
+        <lastmod>2021-06-22</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
     <url>
         <loc>https://mathcalc.xyz/?/image-base64-generator</loc>
         
