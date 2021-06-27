@@ -2,69 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://mathcalc.xyz/</loc>
-
         <lastmod>2021-06-12</lastmod>
-
         <changefreq>yearly</changefreq>
-
-        <priority>1</priority>
-         
+        <priority>1</priority>        
     </url>
 
 
     <url>
         <loc>https://mathcalc.xyz/?/files/</loc>
-
         <lastmod>2021-06-22</lastmod>
-
         <changefreq>yearly</changefreq>
-
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/?/base64-encode</loc>
-
-        <lastmod>2021-06-22</lastmod>
-
+        <loc>https://mathcalc.xyz/?/image-size-reducer</loc>
+        <lastmod>2021-06-27</lastmod>
         <changefreq>yearly</changefreq>
-
+    </url>
+    
+    <url>
+        <loc>https://mathcalc.xyz/?/base64-encode</loc>
+        <lastmod>2021-06-22</lastmod>
+        <changefreq>yearly</changefreq>
     </url>
 
     <url>
         <loc>https://mathcalc.xyz/?/base64-decode</loc>
-
         <lastmod>2021-06-22</lastmod>
-
         <changefreq>yearly</changefreq>
-
     </url>
 
     <url>
         <loc>https://mathcalc.xyz/?/image-base64-generator</loc>
-        
         <lastmod>2021-06-19</lastmod>
-
         <changefreq>yearly</changefreq>
-
     </url>
-
 
     <url>
         <loc>https://mathcalc.xyz/?/tools</loc>
-        
         <lastmod>2021-06-12</lastmod>
-
         <changefreq>yearly</changefreq>
-
     </url>
 
     <url>
         <loc>https://mathcalc.xyz/?/random-password-generator</loc>
-        
         <lastmod>2021-06-24</lastmod>
-
         <changefreq>yearly</changefreq>
-
     </url>
 
     <url>
