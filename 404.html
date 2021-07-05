@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="https://mathcalc.xyz/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="https://mathcalc.xyz/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://mathcalc.xyz/favicon-32x32.png">
-    <link rel="manifest" href="./site.webmanifest">
+    <link rel="manifest" href="https://mathcalc.xyz/site.webmanifest">
     <meta property="og:title" content=" Mathcalc - Free online calculators and tools">
     </meta>
     <meta property="og:url" content="https://mathcalc.xyz/">
@@ -58,16 +58,16 @@
         // https://username.github.io/repo-name/one/two?a=b&c=d#qwe becomes
         // https://username.github.io/repo-name/?/one/two&a=b~and~c=d#qwe
         // Otherwise, leave pathSegmentsToKeep as 0.
-        var pathSegmentsToKeep = 0;
+        // var pathSegmentsToKeep = 0;
 
-        var l = window.location;
-        l.replace(
-            l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-            l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-            l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-            (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-            l.hash
-        );
+        // var l = window.location;
+        // l.replace(
+        //     l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        //     l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        //     l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        //     (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        //     l.hash
+        // );
 
     </script>
 </head>
