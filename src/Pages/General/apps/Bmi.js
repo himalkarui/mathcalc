@@ -39,6 +39,8 @@ const useStyles = makeStyles((theme) => ({
             minWidth: "146px",
             fontSize: "13px",
         },
+    }, input: {
+        width: '100%'
     }
 }));
 
@@ -131,61 +133,67 @@ export default function Bmi() {
 
                                 Enter your weight and height using standard measures.
                                 Select "Calculate BMI" and your BMI will appear below.
-                        </p>
+                            </p>
                             <br />
-                            <Grid container justify="space-around">
+                            <Grid container justify="center" spacing={2}>
                                 <TextField id="outlined-basic" style={{ display: 'none' }}
                                     label="Outlined" variant="outlined" type={'number'} />
-                                <TextField
-                                    label="Height in cm"
-                                    id="height"
-                                    className={'gridItem'}
-                                    variant="outlined"
-                                    value={state.height}
-                                    maxLength={'7'}
-                                    type={'number'}
-                                    onChange={(e) => {
-                                        if (!isNaN(e.target.value) && e.currentTarget.value.length < 7) {
-                                            setSnakOpen(null);
-                                            setSnakMessage(null);
-                                            setState({
-                                                ...state, height: e.target.value
-                                            });
-                                        } else {
-                                            setSnakOpen(null);
-                                            setSnakMessage(null);
-                                            return
-                                        }
-                                    }}
-                                />
-                                <TextField
-                                    label="Weight in kgs"
-                                    id="weight"
-                                    className={'gridItem'}
-                                    variant="outlined"
-                                    value={state.weight}
-                                    maxLength={'7'}
-                                    type={'number'}
-                                    onChange={(e) => {
-                                        if (!isNaN(e.target.value) && e.currentTarget.value.length < 7) {
-                                            setSnakOpen(null);
-                                            setSnakMessage(null);
-                                            setState({
-                                                ...state, weight: e.target.value
-                                            });
-                                        } else {
-                                            setSnakOpen(null);
-                                            setSnakMessage(null);
-                                            return
-                                        }
-                                    }}
-                                />
-                                <Button
-                                    variant="contained"
-                                    className={classes.button + ' gridItem'}
-                                    startIcon={<CaculateIcon />}
-                                    onClick={onSubmitClick}
-                                >Calculate BMI</Button>
+                                <Grid item xs={12} sm={6} md={6} lg={6}>
+                                    <TextField
+                                        label="Height in cm"
+                                        id="height"
+                                        className={classes.input}
+                                        variant="outlined"
+                                        value={state.height}
+                                        maxLength={'7'}
+                                        type={'number'}
+                                        onChange={(e) => {
+                                            if (!isNaN(e.target.value) && e.currentTarget.value.length < 7) {
+                                                setSnakOpen(null);
+                                                setSnakMessage(null);
+                                                setState({
+                                                    ...state, height: e.target.value
+                                                });
+                                            } else {
+                                                setSnakOpen(null);
+                                                setSnakMessage(null);
+                                                return
+                                            }
+                                        }}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6} md={6} lg={6}>
+                                    <TextField
+                                        label="Weight in kgs"
+                                        id="weight"
+                                        className={classes.input}
+                                        variant="outlined"
+                                        value={state.weight}
+                                        maxLength={'7'}
+                                        type={'number'}
+                                        onChange={(e) => {
+                                            if (!isNaN(e.target.value) && e.currentTarget.value.length < 7) {
+                                                setSnakOpen(null);
+                                                setSnakMessage(null);
+                                                setState({
+                                                    ...state, weight: e.target.value
+                                                });
+                                            } else {
+                                                setSnakOpen(null);
+                                                setSnakMessage(null);
+                                                return
+                                            }
+                                        }}
+                                    />
+                                </Grid>
+                                <Grid item xs={12} sm={6} md={6} lg={6}>
+                                    <Button
+                                        variant="contained"
+                                        className={classes.button + " " + classes.input}
+                                        startIcon={<CaculateIcon />}
+                                        onClick={onSubmitClick}
+                                    >Calculate BMI</Button>
+                                </Grid>
                             </Grid>
                             <Collapse in={true} timeout="auto" unmountOnExit>
                                 <br />
@@ -197,7 +205,7 @@ export default function Bmi() {
                                     marginBottom: '1rem'
                                 }}>
                                     <Typography paragraph className='my-4 header-left' ><strong>Result:
-                                                              </strong> &nbsp; Your BMI is {state.bmi}
+                                    </strong> &nbsp; Your BMI is {state.bmi}
                                     </Typography>
                                     <Alert elevation={6} variant="filled" severity={state.seviority}>
                                         {state.message}
@@ -207,7 +215,7 @@ export default function Bmi() {
                                 <div style={{ backgroundColor: '#e5a400', width: '100%', padding: '1rem', borderRadius: '4px' }}>
                                     <Typography variant="h6" style={{ fontWeight: '800', fontSize: '1.5rem' }}>
                                         BMI Categories
-                                </Typography>
+                                    </Typography>
                                     <div style={{ color: 'white' }} >
                                         <List >
                                             <ListItem>
@@ -246,8 +254,8 @@ export default function Bmi() {
                                 <br />
                                 <Typography paragraph className='my-4 header-left' ><strong>Who shouldn't use a BMI calculator</strong></Typography>
                                 <p className={'header-left'} >  BMI is not used for muscle builders, long distance athletes, pregnant women, the elderly or young children. This is because BMI does not take into account whether the weight is carried as muscle or fat, just the number. Those with a higher muscle mass, such as athletes, may have a high BMI but not be at greater health risk. Those with a lower muscle mass, such as children who have not completed their growth or the elderly who may be losing some muscle mass may have a lower BMI.
-                                During pregnancy and lactation, a woman's body composition changes, so using BMI is not appropriate.
-                    </p>
+                                    During pregnancy and lactation, a woman's body composition changes, so using BMI is not appropriate.
+                                </p>
                             </Collapse>
                         </Card>
                         <br />
@@ -268,7 +276,7 @@ export default function Bmi() {
 
                             <p>  BMI is calculated by dividing a person’s weight in kilograms by the square of his/her height in meters.
                                 <br /> For example, if your weight is 60 kilograms and your height is 5 feet 3 inches, your BMI will be calculated as follows:60 / 2.61 (1.6 * 1.6) (5 feet 3 inches is approximately 1.6 meters)This gives us a BMI reading at 22.9.
-                          </p>
+                            </p>
                             <br />
                             <h2 className="title is-5"> Why is BMI calculation important for your health?</h2>
 
@@ -279,12 +287,12 @@ export default function Bmi() {
                                 <br /> Let’s say your BMI is 17.5. This means that you are underweight. Being underweight makes you more prone to diseases because it signifies that your body’s immunity is weak. You can even get osteoporosis in later stages of life or be anaemic.
                                 <br />
                                 <br />
-                                 However, if you are overweight, obese or severely obese, your chances of developing various diseases increase with the increase in your BMI number. You get more prone to diseases such as high blood pressure, type 2 diabetes, high cholesterol, coronary artery disease, stroke, among many others.
-                        </p>
+                                However, if you are overweight, obese or severely obese, your chances of developing various diseases increase with the increase in your BMI number. You get more prone to diseases such as high blood pressure, type 2 diabetes, high cholesterol, coronary artery disease, stroke, among many others.
+                            </p>
                             <br />
                             <h2 className="title is-5">What is the average BMI value for children and adults?</h2>
                             <p>In children, BMI is calculated in the same way as adults but the healthy and unhealthy ranges are determined in a different way. We do not have fixed values to determine healthy and at-risk thresholds in children.
-                            <br />
+                                <br />
                                 <br />
 
                                 Children’s BMI values are compared with other children of the same age and sex and a percentile is calculated.If the BMI value is below the 5th percentile for children, they are considered underweight. If the BMI value is over 95th percentile value, they are considered obese. A value within 85th and 95th percentile is considered overweight and from 5th to 85th percentile, the value is considered as normal.
@@ -296,7 +304,7 @@ export default function Bmi() {
                                 Ideally, if your BMI belongs to any category other than normal, you should get yourself tested every once in six months or a year at the maximum.
                                 <br />
                                 <br />
-                                 However, the farther your BMI is from the normal range, that is 18.5 to 25, the more risk you are at. If you are severely underweight or even at the beginning threshold of obesity, you must see a doctor immediately. For the rest of the readings, it is difficult to tell the exact condition of your health because of the limiting extent of a BMI number. The above value only gives you an estimate that applies to everyone. They are non-personal and should not replace medical advice in any situation.
+                                However, the farther your BMI is from the normal range, that is 18.5 to 25, the more risk you are at. If you are severely underweight or even at the beginning threshold of obesity, you must see a doctor immediately. For the rest of the readings, it is difficult to tell the exact condition of your health because of the limiting extent of a BMI number. The above value only gives you an estimate that applies to everyone. They are non-personal and should not replace medical advice in any situation.
                             </p>
                         </Card>
                         <br />

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import { Typography, Button } from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -23,7 +23,6 @@ import {
     TelegramShareButton,
     TumblrShareButton,
     TwitterShareButton,
-    ViberShareButton,
     VKShareButton,
     WhatsappShareButton,
     WorkplaceShareButton,
@@ -44,7 +43,6 @@ import {
     TelegramIcon,
     TumblrIcon,
     TwitterIcon,
-    ViberIcon,
     VKIcon,
     WeiboIcon,
     WhatsappIcon,
@@ -73,7 +71,7 @@ export default function Share(props) {
                             props.urlMessaage ? props.urlMessaage : 'Mathcalc - One stop web app for all your mathematical calculations and tools for FREE !'
                         }
                     </DialogContentText>
-                    <div className="box">
+                    <div className="box share-div">
                         < EmailShareButton
                             url={shareUrl}
                             title={title}
@@ -121,7 +119,11 @@ export default function Share(props) {
                         >
                             <LinkedinIcon />
                         </LinkedinShareButton>
-
+                        <br />
+                        <Typography>
+                            Other social media
+                        </Typography>
+                        <br />
                         < HatenaShareButton
                             url={shareUrl}
                             title={title}
@@ -183,13 +185,6 @@ export default function Share(props) {
                             <TumblrIcon />
                         </TumblrShareButton>
 
-                        < ViberShareButton
-                            url={shareUrl}
-                            title={title}
-                        >
-                            <ViberIcon />
-                        </ViberShareButton>
-
                         < WorkplaceShareButton
                             url={shareUrl}
                             title={title}
@@ -216,7 +211,6 @@ export default function Share(props) {
                     </div>
                 </DialogContent>
                 <DialogActions>
-
                     <Button onClick={props.handleClose} color="primary" autoFocus>
                         Close
                     </Button>

@@ -89,10 +89,10 @@ export default function Roiadsensecalc(props) {
     return (
         <React.Fragment>
             <Helmet>
-                <title>Return on Invest(ROI) Cost per Click Calculator Online</title>
+                <title>Return on Invest(ROI) cost per click calculator online | mathcalc</title>
                 <meta charset="utf-8" />
                 <meta data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-                <meta name="description" content="Email Address validator is a Simple Free tool to check whether an email address exists or not with up to 98% Accuracy - Get 0% Bounce Rate" />
+                <meta name="description" content=" Google Ads The ROI (Return  on Investment) Calculator Tool can be used to measure the ROI of CPC (cost per click) advertising.    " />
                 <meta name="keywords" content="Google Adsense Calculator, adsense calculator, click through rate , page impressions,cost per click" />
             </Helmet>
             <Container maxWidth="xl">

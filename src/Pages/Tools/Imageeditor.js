@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import FilerobotImageEditor from 'filerobot-image-editor';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../Components/SubNavBar';
-import { Card, Container, Grid } from '@material-ui/core';
+import { Card, Container, Grid, Dialog } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -30,27 +30,10 @@ export default function Imageeditor(props) {
     }
 
     useEffect(() => {
-        let namediv1 = document.getElementsByClassName('sc-fznMAR');
-        let namediv2 = document.getElementsByClassName('fgCecj');
-        let namediv3 = document.getElementsByClassName('oYzuD');
-        if (namediv1.length > 0) {
-            namediv1[0].style.display = 'none';
-            namediv1[0].innerText = '';
-        }
-        if (namediv2.length > 0) {
-            namediv2[0].style.display = 'none';
-            namediv2[0].innerText = '';
-        }
-        if (namediv3.length > 0) {
-            namediv3[0].style.display = 'none';
-            namediv3[0].innerText = '';
-        }
-
         var filerbot = document.getElementById("filerobot-image-editor-root");
         if (filerbot) {
             filerbot.style.position = "absolute";
         }
-
     }, [show, toggle]);
 
     return (
@@ -139,26 +122,42 @@ export default function Imageeditor(props) {
                         </Grid>
                         <br />
                     </div>
-                </> : <></>
+                </> : <>
+
+                    <Dialog
+                        fullScreen={true}
+                        open={true}
+                        aria-labelledby="responsive-dialog-title"
+                    >
+                        <FilerobotImageEditor
+                            show={show}
+                            src={file}
+                            onClose={() => { toggle(false) }}
+                            onOpen={() => {
+                                let namediv = document.getElementsByClassName('sc-fznMAR');
+                                if (namediv.length > 0) {
+                                    namediv[0].style.display = 'none';
+                                }
+                            }}
+                            config={
+                                {
+                                    colorScheme: 'dark',
+                                    language: 'en',
+                                    translations: {
+                                        en: {
+                                            'header.image_editor_title': 'Editor',
+                                        }
+                                    },
+                                    showInModal: false,
+                                    isLowQualityPreview: true,
+                                }
+                            }
+                        />
+                    </Dialog>
+                </>
             }
         </Container>
-            <FilerobotImageEditor
-                show={show}
-                src={file}
-                onClose={() => { toggle(false) }}
-                onOpen={() => {
-                    let namediv = document.getElementsByClassName('sc-fznMAR');
-                    if (namediv.length > 0) {
-                        namediv[0].style.display = 'none';
-                    }
-                }}
-                config={
-                    {
-                        showInModal: true,
-                        isLowQualityPreview: true,
-                    }
-                }
-            />
+
         </>
 
     )

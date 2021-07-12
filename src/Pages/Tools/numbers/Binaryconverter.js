@@ -95,7 +95,7 @@ export default function Binaryconverter() {
             <Helmet>
                 <title>Online Binary Converter | mathcalc</title>
                 <meta name="keywords" content="Mathcalc,binary to decimal , decimal to binary, binary convertion,decimal conversion" />
-                <meta name="description" content="Binary to decimal conversion and vice versa" />
+                <meta name="description" content="Binary to decimal conversion and vice versa online" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
             </Helmet>

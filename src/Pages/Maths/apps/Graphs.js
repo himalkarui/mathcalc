@@ -78,7 +78,7 @@ export default function Graphs() {
                 yArray.push(yval);
             }
 
-            let ctx = document.getElementById('myChart').getContext('2d');
+            let ctx = document.getElementsByTagName('canvas')[0].getContext('2d');
 
             if (
                 window.myLine !== undefined
@@ -181,7 +181,7 @@ export default function Graphs() {
     return (
         <div className={classes.root}>
             <Helmet>
-                <meta name="viewport" content="width=device-width, initial-scale=0.6" />
+                <meta name="viewport" content="width=device-width, initial-scale=0.9" />
                 <title>Graphs - Visualize the equations in graphs | MathCalc</title>
                 <meta name="keywords" content="Mathcalc, online graph calculator, visualize equation, visualize algebric equation" />
                 <meta name="description" content="online free graph calculator can calculate your mathematical algebric expression into the visible graph format" />

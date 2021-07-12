@@ -19,4 +19,4 @@ if (rootElement.hasChildNodes()) {
     , rootElement);
 }
 //for progressive web app
-serviveregistration.register();
+// serviveregistration.register();

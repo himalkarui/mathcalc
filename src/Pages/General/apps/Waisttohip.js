@@ -141,8 +141,8 @@ export default function Waisttohip() {
             />
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Waist to Hip Ratio Calculator online</title>
-                <meta name="keywords" content="waist hip ratio calculator, waist , hip, calorie calculator,fat calculator,coronary, diabetes,stroke causes" />
+                <title>Waist to Hip Ratio Calculator online | mathcalc</title>
+                <meta name="keywords" content="mathcalc,waist hip ratio calculator, waist , hip, calorie calculator,fat calculator,coronary, diabetes,stroke causes" />
                 <meta name="description" content="Waist to Hip Ratio Calculator is used to calculate the ratio between waist and hip" />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />

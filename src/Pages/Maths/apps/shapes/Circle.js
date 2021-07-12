@@ -152,7 +152,7 @@ export default function Circle() {
         <div className={classes.root}>
             <Helmet>
                 <title>Online Circle calculator | mathcalc</title>
-                <meta name="keywords" content="Online circle calculator, free calculator, online calculator, mathcalc" />
+                <meta name="keywords" content="circle calculator, area calculator, area of cirlceOnline circle calculator, free calculator, online calculator, mathcalc" />
                 <meta name="description"
                     content="Calculate diameter, Area and circumference of a circle online for free" />
             </Helmet>

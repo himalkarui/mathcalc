@@ -73,7 +73,7 @@ export default function Googleadsensecalc(props) {
     return (
         <React.Fragment>
             <Helmet>
-                <title>Google Adsense Calculator Online</title>
+                <title>Google Adsense Calculator Online | mathcalc</title>
                 <meta charset="utf-8" />
                 <meta data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
                 <meta name="description" content="Google Adsense Calculator is used to calculate daily, monthly and yearly earnings from page impressions , click through rate and cost per click" />

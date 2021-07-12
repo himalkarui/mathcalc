@@ -9,7 +9,7 @@ import CaculateIcon from '@material-ui/icons/SendOutlined';
 import MomentUtils from '@date-io/moment';
 import {
     MuiPickersUtilsProvider,
-    DatePicker,
+    KeyboardDatePicker
 } from '@material-ui/pickers';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
 import Table from '@material-ui/core/Table';
@@ -51,10 +51,11 @@ const useStyles = makeStyles((theme) => ({
         background:
             "transparent linear-gradient(180deg, rgb(0 85 255) 0%, #1962BF 100%) 0% 0% no-repeat padding-box",
         fontSize: 15,
-        color: "white",
+        color: "#fff",
         marginTop: 14,
         padding: '26px',
         position: "relative",
+        width: '100%',
         [theme.breakpoints.down("xs")]: {
             minWidth: "146px",
             fontSize: "13px",
@@ -64,6 +65,9 @@ const useStyles = makeStyles((theme) => ({
         zIndex: theme.zIndex.drawer + 1,
         color: '#fff',
     },
+    input: {
+        width: '100%',
+    }
 
 }));
 
@@ -140,52 +144,70 @@ export default function Age() {
                             </p>
                             <br />
                             <MuiPickersUtilsProvider utils={MomentUtils}>
-                                <Grid container justify="space-around">
-                                    <DatePicker
-                                        label="Date of Birth"
-                                        inputVariant="outlined"
-                                        id="selectedFrom"
-                                        value={selectedFrom}
-                                        openTo="year"
-                                        views={["year", "month", "date"]}
-                                        format='DD-MM-yyyy'
-                                        onChange={(e) => {
-                                            SetDateDiff(0);
-                                            if (new Date(e) > new Date(selectedTo)) {
-                                                setSnakOpen(true)
-                                                setSelectedFrom(new Date().toLocaleDateString().substr(0, 9));
-                                                setSnakMessage('Choose Date of birth less than the age at the date of');
-                                            }
-                                            else { setSelectedFrom(e); }
-                                        }}
-                                        className={'gridItem'}
-                                    />
-                                    <DatePicker
-                                        label="Age at the Date of"
-                                        inputVariant="outlined"
-                                        value={selectedTo}
-                                        id="selectedTo"
-                                        openTo="year"
-                                        views={["year", "month", "date"]}
-                                        format='DD-MM-yyyy'
-                                        onChange={(e) => {
-                                            SetDateDiff(0);
-                                            if (new Date(e) < new Date(selectedFrom)) {
-                                                setSnakOpen(true)
-                                                setSelectedTo(new Date().toLocaleDateString().substr(0, 9));
-                                                setSnakMessage('Choose Date of birth less than the age at the date of');
-                                            }
-                                            else { setSelectedTo(e); }
-                                        }}
-                                        className={'gridItem'}
-                                    />
-                                    <Button
-                                        variant="contained"
-                                        color="secondary"
-                                        className={classes.button + ' gridItem'}
-                                        startIcon={<CaculateIcon />}
-                                        onClick={() => { onCalculateClick() }}
-                                    >Calculate</Button>
+                                <Grid container spacing={4} justify="center">
+                                    <Grid item xs={12} sm={6} md={6} lg={6}>
+                                        <KeyboardDatePicker
+                                            disableToolbar
+                                            autoOk
+                                            label="Date of Birth"
+                                            inputVariant="outlined"
+                                            variant="inline"
+                                            id="selectedFrom"
+                                            value={selectedFrom}
+                                            openTo="year"
+                                            views={["year", "month", "date"]}
+                                            format='DD-MM-yyyy'
+                                            onChange={(e) => {
+                                                SetDateDiff(0);
+                                                if (new Date(e) > new Date(selectedTo)) {
+                                                    setSnakOpen(true)
+                                                    setSelectedFrom(new Date().toLocaleDateString().substr(0, 9));
+                                                    setSnakMessage('Choose Date of birth less than the age at the date of');
+                                                    setTimeout(() => {
+                                                        setSnakOpen(false)
+                                                    }, 2000)
+                                                }
+                                                else { setSelectedFrom(e); }
+                                            }}
+                                            className={classes.input}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={6} lg={6}>
+                                        <KeyboardDatePicker
+                                            disableToolbar
+                                            autoOk
+                                            label="Age at the Date of"
+                                            inputVariant="outlined"
+                                            variant="inline"
+                                            value={selectedTo}
+                                            id="selectedTo"
+                                            openTo="year"
+                                            views={["year", "month", "date"]}
+                                            format='DD-MM-yyyy'
+                                            onChange={(e) => {
+                                                SetDateDiff(0);
+                                                if (new Date(e) < new Date(selectedFrom)) {
+                                                    setSnakOpen(true)
+                                                    setSelectedTo(new Date().toLocaleDateString().substr(0, 9));
+                                                    setSnakMessage('Choose Date of birth less than the age at the date of');
+                                                    setTimeout(() => {
+                                                        setSnakOpen(false)
+                                                    }, 2000)
+                                                }
+                                                else { setSelectedTo(e); }
+                                            }}
+                                            className={classes.input}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={6} lg={6}>
+                                        <Button
+                                            variant="contained"
+                                            color="primary"
+                                            className={classes.button}
+                                            startIcon={<CaculateIcon />}
+                                            onClick={() => { onCalculateClick() }}
+                                        >Calculate</Button>
+                                    </Grid>
                                 </Grid>
                             </MuiPickersUtilsProvider>
                             <Collapse in={true} timeout="auto" unmountOnExit>
@@ -202,7 +224,7 @@ export default function Age() {
                                                 <StyledTableRow >
                                                     <StyledTableCell >
                                                         Your Age is
-                                                </StyledTableCell>
+                                                    </StyledTableCell>
                                                     <StyledTableCell align="right">{Math.floor(dateDiff / (1000 * 60 * 60 * 24 * 365)) + ' years '
                                                         + Math.floor(
                                                             (dateDiff % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24 * 30.5)
@@ -213,7 +235,7 @@ export default function Age() {
                                                 <StyledTableRow >
                                                     <StyledTableCell >
                                                         Your Age in weeks
-                                                </StyledTableCell>
+                                                    </StyledTableCell>
                                                     <StyledTableCell align="right">{
                                                         Math.floor(dateDiff / (1000 * 60 * 60 * 24 * 7)) + ' weeks '
                                                         + (dateDiff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24) + ' Days'
@@ -222,25 +244,25 @@ export default function Age() {
                                                 <StyledTableRow >
                                                     <StyledTableCell >
                                                         Your Age Days
-                                                </StyledTableCell>
+                                                    </StyledTableCell>
                                                     <StyledTableCell align="right">{dateDiff / (1000 * 60 * 60 * 24) + ' Days'}</StyledTableCell>
                                                 </StyledTableRow>
                                                 <StyledTableRow >
                                                     <StyledTableCell >
                                                         Your Age in Hours
-                                                </StyledTableCell>
+                                                    </StyledTableCell>
                                                     <StyledTableCell align="right">{dateDiff / (1000 * 60 * 60) + ' Hours'}</StyledTableCell>
                                                 </StyledTableRow>
                                                 <StyledTableRow >
                                                     <StyledTableCell >
                                                         Your Age in Minutes
-                                                </StyledTableCell>
+                                                    </StyledTableCell>
                                                     <StyledTableCell align="right">{dateDiff / (1000 * 60) + ' Minutes'}</StyledTableCell>
                                                 </StyledTableRow>
                                                 <StyledTableRow >
                                                     <StyledTableCell >
                                                         Your Age in Seconds
-                                                </StyledTableCell>
+                                                    </StyledTableCell>
                                                     <StyledTableCell align="right">{dateDiff / 1000 + ' Seconds'}</StyledTableCell>
                                                 </StyledTableRow>
                                             </TableBody>
@@ -254,13 +276,13 @@ export default function Age() {
                         <Card className="box" elevation={1}>
                             <h2 className="title is-5">How old am I today?</h2>
                             <p>If you want to know exactly how old you are today,
-                             <strong> {" " + new Date().toDateString() + ' '}</strong>
+                                <strong> {" " + new Date().toDateString() + ' '}</strong>
                                 this is possible using mathematical calculation or using my calculator. With my age calculator, you can find out how many years, months, weeks, days and hours have passed since you were born. If you know the time of your birth, enter it into the second box for an even more precise result.
                             </p>
                             <br />
                             <h2 className="title is-5">  How old was I on X date?</h2>
                             <p>Should you want to know how old you were on a certain date in past history, or how old you will be at a future date, we've got you covered. Simply make use of our 'Age at Date' option to enter a date in either the past or future. Our calculator will then make a calculation based upon that date.
-                           </p>
+                            </p>
                             <br />
                             <h2 className="title is-5">How many days old am I?</h2>
                             <p>People regularly ask how they can work out how many days they've been alive for and I point them to this calculator (it's one of the reasons I created it). Although you can have a rough guess by multiplying your age in years by 365, you could still be out by up to several hundred days. This will in most part be because you'll be working on the basis of your age at your last birthday, and therefore excluding the days since.
@@ -272,9 +294,9 @@ export default function Age() {
                             <p>The oldest person ever recorded was Jeanne Calment, a woman from France. She was born on February 21, 1875 and lived until the age of 122 years and 164 days before passing away on August 4, 1997. (ref)
                             </p>
                             <p> Of the top 10 oldest people ever, all 10 are currently women. The oldest man ever is currently recorded as being Jiroemon Kimura from Japan, who lived until the age of 116 years and 54 days. He passed away on June 12, 2013.
-                           </p>
+                            </p>
                             <p>With that said, Fredie Blom, a South African man born on 8 May 1904, was recorded as 'unofficially' the world's oldest man ('unofficial' because he wasn't listed in the Guinness Book of World Records). Fredie died on 22 August 2020 at a said age of 116 years, 3 months, and 14 days.
-                           </p>
+                            </p>
                             <br />
                             <h2 className="title is-5"> How to age well</h2>
                             <p>

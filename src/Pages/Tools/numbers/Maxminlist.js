@@ -11,27 +11,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         overflow: 'hidden'
-    },
-    divcalc: {
-        borderRadius: '12px',
-        padding: '1em',
-        color: '#314259'
-    },
-    formelems: {
-        '& > *': {
-            margin: '10px 0px 10px 0px',
-        },
-    },
-    row: {
-        margin: '10px'
-    },
-    imgcenter: {
-        marginLeft: '55px',
-    },
-    backdrop: {
-        zIndex: theme.zIndex.drawer + 1,
-        color: '#fff',
-    },
+    }
 }));
 
 export default function Maxminlist() {

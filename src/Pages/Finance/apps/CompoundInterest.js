@@ -107,11 +107,9 @@ export default function CompoundInterest() {
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Free Online Interest Calculator  - calculate your simple and compound interest | mathCalc</title>
+                <title>Free Online Interest Calculator  - calculate your simple and compound interest</title>
                 <meta name="keywords" content="mathcalc, free online interest calculator, free interest calculator Online, finance calculator" />
-                <meta name="description" content="Use Mathcalc interest calculator to calculate simple and compound interest. Simply, enter the details of the principal amount, interest rate, period, and compounding frequency to know the interest earned." />
-                <meta name="author" content="Mathcalc" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+                <meta name="description" content="Compound interest (or compounding interest) is the interest on a loan or deposit calculated based on both the initial principal and the accumulated interest from previous periods. Thought to have originated in 17th-century Italy, compound interest can be thought of as ' interest on interest,' and will make a sum grow at a faster rate than simple interest, which is calculated only on the principal amount" />
             </Helmet>
             <Container maxWidth={'xl'} >
                 <Grid container direction="row" justify="center" alignItems="center">
@@ -139,7 +137,7 @@ export default function CompoundInterest() {
                             <p>
                                 Compound interest is the interest on interest.
                                 In simple terms, the addition of interest to the principal sum of the loan or deposit is called compound interest.
-                                </p>
+                            </p>
                             <br />
                             <div className={classes.formelems} noValidate autoComplete="off">
                                 <TextField id="principleAmount" label="Principle Amount" variant="outlined"
@@ -251,8 +249,8 @@ export default function CompoundInterest() {
                                 <h2 className="title is-5">
                                     What would be the amount of interest? </h2>
                                 In this case, it would be:
-                            <br />
-                               $10,000 [(1 + 0.05) 3 – 1] = $10,000 [1.157625 – 1] = $1,576.25
+                                <br />
+                                $10,000 [(1 + 0.05) 3 – 1] = $10,000 [1.157625 – 1] = $1,576.25
                             </p>
                             <br />
                             <h2 className="title is-5">Growth of Compound Interest</h2>
@@ -274,24 +272,24 @@ export default function CompoundInterest() {
                             <h2 className="title is-5">The Frequency of Compounding</h2>
                             <p>
                                 Interest can be compounded on any given frequency schedule, from daily to annually. There are standard compounding frequency schedules that are usually applied to financial instruments.
-<br />
                                 <br />
-The commonly used compounding schedule for savings account at a bank is daily. For a CD, typical compounding frequency schedules are daily, monthly, or semi-annually; for money market accounts, it's often daily. For home mortgage loans, home equity loans, personal business loans, or credit card accounts, the most commonly applied compounding schedule is monthly.
-<br />
                                 <br />
-There can also be variations in the time frame in which the accrued interest is actually credited to the existing balance. Interest on an account may be compounded daily but only credited monthly. It is only when the interest is actually credited, or added to the existing balance, that it begins to earn additional interest in the account.
-<br />
+                                The commonly used compounding schedule for savings account at a bank is daily. For a CD, typical compounding frequency schedules are daily, monthly, or semi-annually; for money market accounts, it's often daily. For home mortgage loans, home equity loans, personal business loans, or credit card accounts, the most commonly applied compounding schedule is monthly.
                                 <br />
-Some banks also offer something called continuously compounding interest, which adds interest to the principal at every possible instant. For practical purposes, it doesn't accrue that much more than daily compounding interest unless you're wanting to put money in and take it out the same day.
-<br />
                                 <br />
-More frequent compounding of interest is beneficial to the investor or creditor. For a borrower, the opposite is true.
-</p>
+                                There can also be variations in the time frame in which the accrued interest is actually credited to the existing balance. Interest on an account may be compounded daily but only credited monthly. It is only when the interest is actually credited, or added to the existing balance, that it begins to earn additional interest in the account.
+                                <br />
+                                <br />
+                                Some banks also offer something called continuously compounding interest, which adds interest to the principal at every possible instant. For practical purposes, it doesn't accrue that much more than daily compounding interest unless you're wanting to put money in and take it out the same day.
+                                <br />
+                                <br />
+                                More frequent compounding of interest is beneficial to the investor or creditor. For a borrower, the opposite is true.
+                            </p>
                             <br />
                             <h2 className="title is-5">Time Value of Money Consideration</h2>
 
                             <p> Understanding the time value of money and the exponential growth created by compounding is essential for investors looking to optimize their income and wealth allocation.
-   </p>
+                            </p>
                         </Card>
                         <br />
                     </Grid>

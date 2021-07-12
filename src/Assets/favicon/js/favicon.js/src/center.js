@@ -19,7 +19,7 @@ function centerjs(options) {
    */
   let data = Object.assign({}, defaults, options);
   const canvas = data.canvas;
-  const ctx = data.canvas.getContext("2d");
+  const ctx = data.canvas ? data.canvas.getContext("2d") : document.createElement('canvas').getContext("2d");
   const width = data.width;
   const height = data.height;
   const shape = data.shape;
@@ -107,93 +107,95 @@ function centerjs(options) {
    * of the text on the canvas.
    */
   function measureOffsets(text, fontFamily, fontSize) {
-    /**
-     * Create and setup canvas
-     */
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    ctx.font = fontSize + "px " + fontFamily;
+    try {
+      /**
+       * Create and setup canvas
+       */
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      ctx.font = fontSize + "px " + fontFamily;
 
-    /**
-     * Make sure that there is enough room on the canvas for the text. Changing
-     * the width or height of a canvas element clears the content so you need
-     * to set the font again.
-     */
-    canvas.width = 2 * ctx.measureText(text).width;
-    canvas.height = 2 * fontSize;
+      /**
+       * Make sure that there is enough room on the canvas for the text. Changing
+       * the width or height of a canvas element clears the content so you need
+       * to set the font again.
+       */
+      canvas.width = 2 * ctx.measureText(text).width;
+      canvas.height = 2 * fontSize;
 
-    /**
-     * Center the text vertically and horizontally using the build in canvas
-     * functionality (textBaseline and textAlign). We're going to measure how
-     * far off the text is from the actual center since the textBaseline and
-     * textAlign are not always accurate.
-     */
-    ctx.font = fontSize + "px " + fontFamily;
-    ctx.textBaseline = "alphabetic";
-    ctx.textAlign = "center";
-    ctx.fillStyle = "white";
-    ctx.fillText(text, canvas.width / 2, canvas.height / 2);
+      /**
+       * Center the text vertically and horizontally using the build in canvas
+       * functionality (textBaseline and textAlign). We're going to measure how
+       * far off the text is from the actual center since the textBaseline and
+       * textAlign are not always accurate.
+       */
+      ctx.font = fontSize + "px " + fontFamily;
+      ctx.textBaseline = "alphabetic";
+      ctx.textAlign = "center";
+      ctx.fillStyle = "white";
+      ctx.fillText(text, canvas.width / 2, canvas.height / 2);
 
-    /**
-     * Get image data so that we can iterate of every RGBA pixel.
-     */
-    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+      /**
+       * Get image data so that we can iterate of every RGBA pixel.
+       */
+      const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
 
-    let textTop;
-    let textBottom;
-    for (let y = 0; y <= canvas.height; y++) {
-      for (let x = 0; x <= canvas.width; x++) {
-        let r_index = 4 * (canvas.width * y + x);
-        let r_value = data[r_index];
-        // let g_value = data[r_index + 1];
-        // let b_value = data[r_index + 2];
-        // let a_value = data[r_index + 3];
-
-        if (r_value === 255) {
-          if (!textTop) {
-            textTop = y;
-          }
-          textBottom = y;
-          break;
-        }
-      }
-    }
-
-    /**
-     * Vertical offset is the difference between the horizontal center of the
-     * canvas and the horizontal center of the text on the canvas.
-     */
-    const canvasHorizontalCenterLine = canvas.height / 2;
-    const textHorizontalCenterLine = (textBottom - textTop) / 2 + textTop;
-
-    let textLeft;
-    let textRight;
-    for (let x = 0; x <= canvas.width; x++) {
+      let textTop;
+      let textBottom;
       for (let y = 0; y <= canvas.height; y++) {
-        let r_index = 4 * (canvas.width * y + x);
-        let r_value = data[r_index];
+        for (let x = 0; x <= canvas.width; x++) {
+          let r_index = 4 * (canvas.width * y + x);
+          let r_value = data[r_index];
+          // let g_value = data[r_index + 1];
+          // let b_value = data[r_index + 2];
+          // let a_value = data[r_index + 3];
 
-        if (r_value === 255) {
-          if (!textLeft) {
-            textLeft = x;
+          if (r_value === 255) {
+            if (!textTop) {
+              textTop = y;
+            }
+            textBottom = y;
+            break;
           }
-          textRight = x;
-          break;
         }
       }
-    }
 
-    /**
-     * Horizontal offset is the difference between the vertical center of the
-     * canvas and the vertical center of the text on the canvas.
-     */
-    const canvasVerticalCenterLine = canvas.width / 2;
-    const textVerticalCenterLine = (textRight - textLeft) / 2 + textLeft;
+      /**
+       * Vertical offset is the difference between the horizontal center of the
+       * canvas and the horizontal center of the text on the canvas.
+       */
+      const canvasHorizontalCenterLine = canvas.height / 2;
+      const textHorizontalCenterLine = (textBottom - textTop) / 2 + textTop;
 
-    return {
-      vertical: canvasHorizontalCenterLine - textHorizontalCenterLine,
-      horizontal: canvasVerticalCenterLine - textVerticalCenterLine,
-    };
+      let textLeft;
+      let textRight;
+      for (let x = 0; x <= canvas.width; x++) {
+        for (let y = 0; y <= canvas.height; y++) {
+          let r_index = 4 * (canvas.width * y + x);
+          let r_value = data[r_index];
+
+          if (r_value === 255) {
+            if (!textLeft) {
+              textLeft = x;
+            }
+            textRight = x;
+            break;
+          }
+        }
+      }
+
+      /**
+       * Horizontal offset is the difference between the vertical center of the
+       * canvas and the vertical center of the text on the canvas.
+       */
+      const canvasVerticalCenterLine = canvas.width / 2;
+      const textVerticalCenterLine = (textRight - textLeft) / 2 + textLeft;
+
+      return {
+        vertical: canvasHorizontalCenterLine - textHorizontalCenterLine,
+        horizontal: canvasVerticalCenterLine - textVerticalCenterLine,
+      };
+    } catch (e) { }
   }
 }
 

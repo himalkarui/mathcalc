@@ -90,7 +90,7 @@ export default function EmiCalc() {
             <Helmet>
                 <title>EMI (Equated Monthly Installment) Calculator - Calulate emi for home load car loan and etc. | mathcalc</title>
                 <meta name="keywords" content="mathcalc, free online emi calculator, free calculator, online calculator,emi calculator online" />
-                <meta name="description" content="Use Mathcalc interest calculator to calculate simple and compound interest. Simply, enter the details of the principal amount, interest rate, period, and compounding frequency to know the interest earned." />
+                <meta name="description" content="An equated monthly installment (EMI) is a fixed payment amount made by a borrower to a lender at a specified date each calendar month. Equated monthly installments are applied to both interest and principal each month so that over a specified number of years, the loan is paid off in full. In the most common types of loans—such as real estate mortgages, auto loans, and student loans—the borrower makes fixed periodic payments to the lender over the course of several years with the goal of retiring the loan." />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>

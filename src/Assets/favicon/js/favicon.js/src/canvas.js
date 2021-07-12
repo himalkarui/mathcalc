@@ -29,12 +29,16 @@ Canvas.resizeCanvasOptimal = (canvas, targetWidth, targetHeight) => {
  * Simple resize of a canvas element.
  */
 Canvas.resizeCanvas = (canvas, targetWidth, targetHeight) => {
-  let resizedCanvas = document.createElement("canvas");
-  let resizedContext = resizedCanvas.getContext("2d");
-  resizedCanvas.width = targetWidth;
-  resizedCanvas.height = targetHeight;
-  resizedContext.drawImage(canvas, 0, 0, targetWidth, targetHeight);
-  return resizedCanvas;
+  try {
+    let resizedCanvas = document.createElement("canvas");
+    let resizedContext = resizedCanvas.getContext("2d");
+    resizedCanvas.width = targetWidth;
+    resizedCanvas.height = targetHeight;
+    resizedContext.drawImage(canvas, 0, 0, targetWidth, targetHeight);
+    return resizedCanvas;
+  } catch (e) {
+    return canvas;
+  }
 };
 
 export default Canvas;

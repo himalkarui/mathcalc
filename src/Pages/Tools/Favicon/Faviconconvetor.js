@@ -80,18 +80,20 @@ export default function Faviconconvertor(props) {
                 let file = ev.target.files[0];
                 let reader = new FileReader();
                 reader.onloadend = function (e) {
-                    let image = new Image();
-                    image.src = e.target.result;
-                    image.onload = function (ev) {
-                        let canvas = document.getElementById('canvas');
-                        canvas.width = image.width;
-                        canvas.height = image.height;
-                        let ctx = canvas.getContext('2d');
-                        ctx.drawImage(image, image.offsetLeft, image.offsetTop);
-                        // Create favicon.ico dataurl
-                        const resFiles = Favicon.generate(canvas);
-                        setResultFiles(resFiles);
-                    }
+                    try {
+                        let image = new Image();
+                        image.src = e.target.result;
+                        image.onload = function (ev) {
+                            let canvas = document.getElementsByTagName('canvas')[0];
+                            canvas.width = image.width;
+                            canvas.height = image.height;
+                            let ctx = canvas.getContext('2d');
+                            ctx.drawImage(image, image.offsetLeft, image.offsetTop);
+                            // Create favicon.ico dataurl
+                            const resFiles = Favicon.generate(canvas);
+                            setResultFiles(resFiles);
+                        }
+                    } catch (e) { }
                 }
                 reader.readAsDataURL(file);
             }

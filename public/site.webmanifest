@@ -29,8 +29,12 @@
       "type": "image/png"
     }
   ],
+  "permissions": [
+    "downloads",
+    "notifications"
+  ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "white",
+  "theme_color": "#3F518B",
   "background_color": "#ffffff"
 }

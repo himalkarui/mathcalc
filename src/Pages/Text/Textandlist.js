@@ -10,22 +10,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
         overflow: 'hidden'
-    },
-    control: {
-        padding: theme.spacing(2),
-    },
-    calcHeader: {
-        fontStyle: 'normal',
-        fontSize: '22px',
-        lineHeight: '39px',
-        textAlign: 'center',
-        marginTop: '20px',
-        marginBottom: '10px',
-        fontWeight: '600'
-    },
-    row: {
-        margin: '2px'
-    },
+    }
 }));
 
 export default function Textandlist() {
@@ -81,10 +66,10 @@ export default function Textandlist() {
                     <div style={{ padding: '2rem 0.5rem' }}>
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">TEXT AND LISTS
-                        </h1>
+                            </h1>
                             <p className="  has-text-grey">
                                 Tools for sorting lists alphabetically, reverse lists, random sort, remove duplicates, clean unnecessary whitespaces
-                        </p>
+                            </p>
                         </div>
                     </div>
                 </section>

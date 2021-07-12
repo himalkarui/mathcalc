@@ -5,7 +5,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Toolbar, Avatar, Typography, Tooltip, Menu, MenuItem } from '@material-ui/core';
+import { Toolbar, Avatar, Typography, Tooltip, Menu, MenuItem, InputBase } from '@material-ui/core';
 import ShareIcon from '@material-ui/icons/Share';
 import Fab from '@material-ui/core/Fab';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -13,7 +13,7 @@ import Sidebar from './Sidebar';
 import logo from '../Assets/images/mathcalcblack.png';
 import { Link } from 'react-router-dom';
 import Share from './Share';
-//import SearchIcon from '@material-ui/icons/Search';
+import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
 const drawerWidth = 240;
 
@@ -27,8 +27,8 @@ const useStyles = makeStyles((theme) => ({
     appBar: {
         backgroundColor: 'white',
         color: 'black !important',
-        boxShadow: '0px 2px 3px -5px rgb(0 0 0 / 5%), 0px 0px 5px 0px rgb(0 0 0 / 4%), 0px 1px 10px 0px rgb(0 0 0 / 12%)',
-         // [theme.breakpoints.up('sm')]: {
+        //  boxShadow: '0px 2px 3px -5px rgb(0 0 0 / 5%), 0px 0px 5px 0px rgb(0 0 0 / 4%), 0px 1px 10px 0px rgb(0 0 0 / 12%)',
+        // [theme.breakpoints.up('sm')]: {
         //     width: `calc(100% - ${drawerWidth}px)`,
         //     marginLeft: drawerWidth,
         // },
@@ -59,6 +59,9 @@ const useStyles = makeStyles((theme) => ({
         height: 35,
         marginLeft: '1px',
         backgroundColor: '#ffffff00',
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
     },
     rightMenus: {
         position: 'absolute',
@@ -94,23 +97,21 @@ const useStyles = makeStyles((theme) => ({
         bottom: theme.spacing(3),
         right: theme.spacing(3),
     },
-    grow: {
-        flexGrow: 1,
-    },
     title: {
-        display: 'flex',
-        marginLeft: '-10px',
+        // flexGrow: 1,
+        // marginLeft: '-10px',
         marginBottom: '3px',
         // [theme.breakpoints.up('sm')]: {
         //     display: 'flex',
         // },
     },
     search: {
+        display: 'none',
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
-        backgroundColor: '#f1f1f1',
+        backgroundColor: '#fafafa',
         '&:hover': {
-            backgroundColor: '#fafafa',
+            backgroundColor: '#f1f1f1',
         },
         marginRight: theme.spacing(2),
         marginLeft: 0,
@@ -185,7 +186,9 @@ function Header(props) {
         setAnchorEl(null);
     };
 
+    
     React.useEffect(() => {
+    
     }, []);
 
     return (
@@ -202,27 +205,27 @@ function Header(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography className={classes.title} variant="h6" noWrap>
+                    <Typography className={classes.title} variant="h6">
                         <Link style={{ display: 'flex' }} to="/">
-                            <Avatar className={classes.logo + " " + classes.sectionDesktop}>
+                            <Avatar className={classes.logo}>
                                 <img src={logo} alt="mathcalc logo" width={40} height={40} />
                             </Avatar>
-                            <strong>&nbsp;&nbsp;Mathcalc</strong>
+                            <Typography variant="h6"><strong>Mathcalc</strong></Typography>
                         </Link>
                     </Typography>
-                    {/* <div className={classes.search}>
+                    <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />
                         </div>
                         <InputBase
-                            placeholder="Search…"
+                            placeholder="Search.."
                             classes={{
                                 root: classes.inputRoot,
                                 input: classes.inputInput,
                             }}
                             inputProps={{ 'aria-label': 'search' }}
                         />
-                    </div> */}
+                    </div>
                     <div className={classes.rightMenus}>
                         <Link to='/feedback/' className={classes.sectionDesktop}>
                             Send feedback

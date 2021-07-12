@@ -24,18 +24,10 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         height: 40,
-        minWidth: "175px",
         background:
             "transparent linear-gradient(180deg, #2D88FC 0%, rebeccapurple 100%) 0% 0% no-repeat padding-box",
-        fontSize: 15,
-        color: "white",
-        marginTop: 14,
-        position: "relative",
+        color: "white !important",
         borderRadius: '60px',
-        [theme.breakpoints.down("xs")]: {
-            minWidth: "146px",
-            fontSize: "13px",
-        },
     },
     gridItem: {
         margin: '10px 10px 20px 15px',
@@ -142,12 +134,12 @@ export default function Main(props) {
                                         </h5>
                                         <p><Link to="/morse-code-translator/">Morse code translator</Link></p>
                                         <p><Link to="/favicon-converter/">Favicon Converter</Link></p>
-                                        <p><Link to="/favicon-generator/" className="">Favicon generator</Link></p>
-                                        <p><Link to="/covid19-tracker/" className="">COVID-19 tracker</Link></p>
-                                        <p><Link to="/email-validator/" className="">Free email validator</Link></p>
-                                        <p><Link to="/online-image-editor/" className="">Online image editor</Link></p>
-                                        <p hidden><Link to="/favicon/emoji-favicons/" className="">Emoji Favicons</Link></p>
-                                        <p hidden><Link to="/favicon/logo-generator/" className="">Logo Generator</Link></p>
+                                        <p><Link to="/favicon-generator/"  >Favicon generator</Link></p>
+                                        <p><Link to="/covid19-tracker/"  >COVID-19 tracker</Link></p>
+                                        <p><Link to="/email-validator/"  >Free email validator</Link></p>
+                                        <p><Link to="/online-image-editor/"  >Online image editor</Link></p>
+                                        <p hidden><Link to="/favicon/emoji-favicons/"  >Emoji Favicons</Link></p>
+                                        <p hidden><Link to="/favicon/logo-generator/"  >Logo Generator</Link></p>
                                     </div>
                                     <p className={classes.linkRoot}> <Link className={classes.linkElem} to='/tools/'  >More →</Link></p>
                                 </div>
@@ -163,7 +155,7 @@ export default function Main(props) {
                                                 General
                                             </Link>
                                         </h5>
-                                        <p><Link to="/general/age-calculator/" className="">Age Calculator</Link></p>
+                                        <p><Link to="/general/age-calculator/"  >Age Calculator</Link></p>
                                         <p><Link to="/general/bmi-calculator/">BMI Calculator</Link></p>
                                         <p><Link to="/general/flames-calculator/">Flames Calculator</Link></p>
                                         <p><Link to="/general/time-calculator/">Time Calculator</Link></p>
@@ -231,12 +223,12 @@ export default function Main(props) {
                                                 Numbers
                                             </Link>
                                         </h5>
-                                        <p><Link to="/generate-list-numbers/" className="">Generate List of Numbers</Link></p>
-                                        <p><Link to="/binary-converter/" className="">Binary Converter</Link></p>
-                                        <p><Link to="/hexadecimal-converter/" className="">Hexadecimal Converter</Link></p>
-                                        <p><Link to="/sort-numbers/" className="">Sort Numbers</Link></p>
-                                        <p><Link to="/minimum-maximum-list/" className="">Maximum and minimum of a list</Link></p>
-                                        <p><Link to="/filter-numbers/" className="">Filter Numbers</Link></p>
+                                        <p><Link to="/generate-list-numbers/"  >Generate List of Numbers</Link></p>
+                                        <p><Link to="/binary-converter/"  >Binary Converter</Link></p>
+                                        <p><Link to="/hexadecimal-converter/"  >Hexadecimal Converter</Link></p>
+                                        <p><Link to="/sort-numbers/"  >Sort Numbers</Link></p>
+                                        <p><Link to="/minimum-maximum-list/"  >Maximum and minimum of a list</Link></p>
+                                        <p><Link to="/filter-numbers/"  >Filter Numbers</Link></p>
                                     </div>
                                     <p className={classes.linkRoot}>
                                         <Link className={classes.linkElem} to="/numbers/">More →</Link>
@@ -257,12 +249,12 @@ export default function Main(props) {
                                                 Text and Lists
                                             </Link>
                                         </h5>
-                                        <p><Link to="/reverse-list/" className="">Reverse List</Link></p>
-                                        <p><Link to="/list-randomizer/" className="">List Randomizer</Link></p>
-                                        <p><Link to="/add-text-each-line/" className="">Add text to each line</Link></p>
-                                        <p><Link to="/sort-list/" className="">Sort List</Link></p>
-                                        <p><Link to="/count-letters/" className="">Count Letters</Link></p>
-                                        <p><Link to="/count-words/" className="">Count Words</Link></p>
+                                        <p><Link to="/reverse-list/"  >Reverse List</Link></p>
+                                        <p><Link to="/list-randomizer/"  >List Randomizer</Link></p>
+                                        <p><Link to="/add-text-each-line/"  >Add text to each line</Link></p>
+                                        <p><Link to="/sort-list/"  >Sort List</Link></p>
+                                        <p><Link to="/count-letters/"  >Count Letters</Link></p>
+                                        <p><Link to="/count-words/"  >Count Words</Link></p>
                                     </div>
                                     <p className={classes.linkRoot}>
                                         <Link className={classes.linkElem} to="/text-lists/">More →</Link>
@@ -270,7 +262,27 @@ export default function Main(props) {
                                 </div>
                             </Card>
                         </Grid>
-                        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}></Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+                            <Card elevation={2}>
+                                <div className="divContents">
+                                    <div className="content">
+                                        <h5 className="title is-5">
+                                            <Link to={'/files'}
+                                                key={'Files'}>
+                                                Files
+                                            </Link>
+                                        </h5>
+                                        <p><Link to='/zip-files'  >Zip or compress files</Link></p>
+                                        <p><Link to="/image-size-reducer/" >Online Image size reducer</Link></p>
+                                        <p><Link to="/base64-encode/"  >Base64 Encode</Link></p>
+                                        <p><Link to="/base64-decode/"  >Base64 Decode</Link></p>
+                                    </div>
+                                    <p className={classes.linkRoot}>
+                                        <Link className={classes.linkElem} to="/files/">More →</Link>
+                                    </p>
+                                </div>
+                            </Card>
+                        </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={4} xl={4}></Grid>
                     </Grid>
                     <Footer />

@@ -77,8 +77,8 @@ export default function Discount() {
         <div className={classes.root}>
             <Helmet>
                 <title>Discount Calculator  - calculate your discount value | mathcalc</title>
-                <meta name="keywords" content="mathcalc, free online discount calculator, discount calculator, free calculator, online calculator" />
-                <meta name="description" content="Use Mathcalc interest calculator to calculate simple and compound interest. Simply, enter the details of the principal amount, interest rate, period, and compounding frequency to know the interest earned." />
+                <meta name="keywords" content="mathcalc, free online discount calculator, discount calculator, free calculator,discount, online calculator" />
+                <meta name="description" content="A discount, broadly, refers to some reduction in the going price of an item or asset. In finance and investing, a discount refers to a situation when a security is trading for lower than its fundamental or intrinsic value." />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>

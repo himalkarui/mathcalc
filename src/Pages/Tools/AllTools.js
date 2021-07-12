@@ -33,6 +33,9 @@ export default function AllTools() {
 
     let Url = [
         {
+            urlname: 'Random password generator', urlpath: '/random-password-generator'
+        },
+        {
             urlname: 'Image to base64 generator', urlpath: '/image-base64-generator'
         },
         {

@@ -153,8 +153,8 @@ export default function Sortnumbers() {
             />
             <Helmet>
                 <title>Sort Numbers online | mathcalc</title>
-                <meta name="keywords" content="sort numbers from a list" />
-                <meta name="description" content="Sort numbers from a list" />
+                <meta name="keywords" content="sort numbers from a list,sort, list, array, dictionary, list of numbers" />
+                <meta name="description" content="Sort numbers from a list online" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
             </Helmet>

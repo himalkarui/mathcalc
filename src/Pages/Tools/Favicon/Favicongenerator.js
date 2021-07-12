@@ -226,7 +226,7 @@ export default function Favicongenerator(props) {
             />
             <input readOnly style={{ display: 'none' }} id='copytextcode' value='<link rel="apple-touch-icon "sizes="180x180 "href="/apple-touch-icon.png "><link rel="icon "type="image/png "sizes="32x32 "href="/favicon-32x32.png "><link rel="icon "type="image/png "sizes="16x16 "href="/favicon-16x16.png "><link rel="manifest "href="/site.webmanifest ">'></input>
             <Helmet>
-                <title>Favicon Generator - Text to Favicon - mathcalc.xyz</title>
+                <title>Favicon Generator - Text to Favicon - mathcalc</title>
                 <meta charset="utf-8" />
                 <meta data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
                 <meta data-key="description" name="description" content="The only favicon generator you need for your next project. Quickly generate your favicon from text, image, or choose from hundreds of emojis." />

@@ -136,7 +136,8 @@ export default function Square() {
                 <title>Online Rectangle calculator | mathcalc</title>
                 <meta name="keywords" content="calculate Area, perimeter and diagonal of a Rectangle, area calculator, perimeter calculator,free calculator, mathcalc" />
                 <meta name="description"
-                    content="Online rectangle calculator is used to calculate the area , perimeter and diagonal of the rectangle online for free" />     </Helmet>
+                    content="Online rectangle calculator is used to calculate the area , perimeter and diagonal of the rectangle online for free" />
+            </Helmet>
             <Container maxWidth={'xl'} >
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item lg={8} md={8} sm={12}>
@@ -161,7 +162,7 @@ export default function Square() {
                                 In Euclidean plane geometry, a rectangle is a quadrilateral with four right angles.
                                 It can also be defined as: an equiangular quadrilateral, since equiangular means that all of its angles are equal (360°/4 = 90°);
                                 or a parallelogram containing a right angle. A rectangle with four sides of equal length is a square.
-                                 </p>
+                            </p>
                             <div><FormControl variant="outlined" className={classes.solved_for} aria-autocomplete={'none'}>
                                 <InputLabel id="metrics">Solved For</InputLabel>
                                 <Select
@@ -257,14 +258,14 @@ export default function Square() {
                             <p>The properties of rectangle are given below:</p>
                             <ul className={classes.ulElem}>
                                 <li>    It has four sides and four vertices
-                        </li><li>  Each vertex has angle equal to 90 degrees
-                        </li><li>    The opposite sides are equal and parallel
-                        </li><li>  Diagonal bisect each other
+                                </li><li>  Each vertex has angle equal to 90 degrees
+                                </li><li>    The opposite sides are equal and parallel
+                                </li><li>  Diagonal bisect each other
                                 </li><li>  Perimeter is equal to twice of sum of its length and breadth
                                 </li><li> Area is equal to product of its length and breadth
                                 </li><li> It’s a parallelogram with four right angles.
                                 </li><li>    Sum of all interior angles equal to 360 degrees
-                         </li>
+                                </li>
                             </ul>
                             <br />
                             <h2 className="title is-5">Perimeter of a Rectangle</h2>
@@ -291,7 +292,7 @@ export default function Square() {
                             <p>  The rectangle is a symmetrical shape and has both the diagonals equal in length. A diagonal will divide the rectangle into two right angle triangles. Therefore we can easily calculate the length of diagonals using the Pythagoras Theorem, where the diagonals are considered as hypotenuse of the right triangle.
                             </p>
                             <p>  Let D is the hypotenuse, length (L)  and width (W) are the base and perpendicular, respectively.
-                             Hence, the length of the diagonal of rectangle will be:</p>
+                                Hence, the length of the diagonal of rectangle will be:</p>
 
                             <p><strong> D &nbsp;= &nbsp; √(L<sup>2</sup>+W<sup>2</sup>) </strong></p>
                         </Card>

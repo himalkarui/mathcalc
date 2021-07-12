@@ -38,6 +38,15 @@ const useStyles = makeStyles((theme) => ({
         zIndex: theme.zIndex.drawer + 1,
         color: '#fff',
     },
+    input: {
+        margin: '0px 10px',
+    },
+    link: {
+        color: '#065798',
+        "&hover": {
+            textDecoration: 'underline'
+        }
+    }
 }));
 
 export default function Generatelistofnums() {
@@ -50,6 +59,9 @@ export default function Generatelistofnums() {
         textBefore: '',
         textAfter: '',
         sameorSeperateline: false,
+        randomNumber: '',
+        Min: 0,
+        Max: 10
     })
 
     const [snakOpen, setSnakOpen] = React.useState(null);
@@ -68,7 +80,6 @@ export default function Generatelistofnums() {
         for (let j = 1; j < state.lNumber.toString().length; ++j) {
             trailingzero += '0';
         }
-
         if (fnumber > lnumber) {
             setSnakOpen(true);
             setSnakMessage('First number should be less than last number');
@@ -76,7 +87,6 @@ export default function Generatelistofnums() {
             setSnakOpen(true);
             setSnakMessage('Step difference should be greater than 0');
         } else {
-
             if (state.sameorSeperateline) {
                 if (state.isAddLeadingzero) {
                     resulttext = state.textBefore + trailingzero + fnumber + state.textAfter;
@@ -93,7 +103,7 @@ export default function Generatelistofnums() {
             }
 
             let continuenum = fnumber;
-            for (let i = fnumber; i < lnumber; ++i) {
+            for (let i = fnumber; i < lnumber / parseFloat(state.stepDiff); ++i) {
                 continuenum = parseFloat(continuenum + parseFloat(state.stepDiff))
 
                 trailingzero = trailingzero.slice(0, state.lNumber.toString().length - continuenum.toString().length);
@@ -101,15 +111,15 @@ export default function Generatelistofnums() {
                 if (continuenum <= lnumber) {
                     if (state.sameorSeperateline) {
                         if (state.isAddLeadingzero) {
-                            resulttext += state.textBefore + trailingzero + continuenum + state.textAfter;
+                            resulttext += state.textBefore + trailingzero + continuenum.toPrecision(2) + state.textAfter;
                         } else {
-                            resulttext += state.textBefore + continuenum + state.textAfter;
+                            resulttext += state.textBefore + continuenum.toPrecision(2) + state.textAfter;
                         }
                     } else {
                         if (state.isAddLeadingzero) {
-                            resulttext += state.textBefore + trailingzero + continuenum + state.textAfter + ' \n';
+                            resulttext += state.textBefore + trailingzero + continuenum.toPrecision(2) + state.textAfter + ' \n';
                         } else {
-                            resulttext += state.textBefore + continuenum + state.textAfter + ' \n';
+                            resulttext += state.textBefore + continuenum.toPrecision(2) + state.textAfter + ' \n';
                         }
                     }
                 }
@@ -132,16 +142,10 @@ export default function Generatelistofnums() {
         }, 1000);
     }
 
-    React.useEffect(() => {
-        onClickCalculate();
-        // eslint-disable-next-line
-    }, []);
-
-
-    const fncopytext = (e) => {
+    const fncopytext = (id) => {
         /* Get the text field */
 
-        let copyInput = document.getElementById('result');
+        let copyInput = document.getElementById(id);
         /* Select the text field */
         copyInput.select();
         copyInput.setSelectionRange(0, 99999); /* For mobile devices */
@@ -219,8 +223,8 @@ export default function Generatelistofnums() {
                 <section className="hero" >
                     <div style={{ padding: '2rem 0.5rem' }}>
                         <div className="container">
-                            <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
-                                GENERATE LIST OF NUMBERS ONLINE</h1>
+                            <h1 className="subtitle is-6 is-spaced is-uppercase has-text-weight-bold">
+                                GENERATE NUMBERS ONLINE , &nbsp; <a href="#randomnumbers" className={classes.link}>Generate random numbers</a></h1>
                             <p className="  has-text-grey">
                                 Generate a list of numbers, choose the first and last numbers and the step between consecutive numbers</p>
                         </div>
@@ -248,13 +252,13 @@ export default function Generatelistofnums() {
                                             onClick={onChangeLeadingZero}
                                         >
                                             No (.., 7, 8, 9,..)
-                                </Button>
+                                        </Button>
                                         <Button aria-label="Yes (..., 07, 08, 09, ...)"
                                             className={state.isAddLeadingzero ? "button is-success" : 'button'}
                                             onClick={onChangeLeadingZero}
                                         >
                                             YES (.., 07, 08, 09,..)
-                                    </Button>
+                                        </Button>
                                     </ButtonGroup><br />
 
                                     <span><strong>Text Before</strong></span><br />
@@ -272,7 +276,7 @@ export default function Generatelistofnums() {
                                             onClick={onChangeoneSeperateLine}
                                         >
                                             One Line
-                                </Button>
+                                        </Button>
                                         <Button aria-label="increase"
                                             className={!state.sameorSeperateline ? "button is-success" : 'button'}
                                             onClick={onChangeoneSeperateLine}
@@ -285,13 +289,13 @@ export default function Generatelistofnums() {
                             <Card elevation={1} className="box " >
                                 <div className="content" >
                                     <Typography variant="h6" className={'text-option'}>Result</Typography>
-                                    <div className={'resultDiv blink_me'}>
+                                    <div className={'resultDiv'}>
                                         <textarea className="input"
                                             id="result"
                                             style={{
                                                 resize: 'none',
                                                 minWidth: '255px',
-                                                minHeight: '250px'
+                                                minHeight: '200px'
                                             }} value={state.result}
                                             onChange={onInputChange}
                                         ></textarea>
@@ -300,10 +304,13 @@ export default function Generatelistofnums() {
                                     <Button variant="contained" style={{ margin: '5px' }} className={"button is-success"}
                                         startIcon={<SettingIcon />}
                                         onClick={onClickCalculate}
-                                    >Calculate</Button>
+                                    >Generate</Button>
                                     <Button variant="contained" style={{ margin: '5px' }} className={"button is-info"}
                                         startIcon={<FileCopyIcon />}
-                                        onClick={fncopytext}
+                                        onClick={() => {
+                                            fncopytext('result')
+                                        }
+                                        }
                                     >Copy</Button>
                                     <Button variant="contained" style={{ margin: '5px' }} className="button is-info"
                                         startIcon={<FontDownloadIcon />}
@@ -311,9 +318,84 @@ export default function Generatelistofnums() {
                                     >Download</Button>
                                 </div>
                             </Card>
+                            <br />
                         </div>
                     </div>
                     <br />
+                    <div className="columns">
+                        <div className="column is-6" >
+                            <Card elevation={1} className="box " id="randomnumbers" >
+                                <div className="content" >
+                                    <Typography variant="h6" className={'text-option'}>Generate random number</Typography>
+                                    <div>
+                                        <TextField className={classes.input}
+                                            id="Min"
+                                            value={state.Min}
+                                            type="number"
+                                            onChange={onInputChange}
+                                            label="Min"></TextField>
+                                        <TextField className={classes.input}
+                                            id="Max"
+                                            type="number"
+                                            value={state.Max}
+                                            onChange={onInputChange}
+                                            label="Max"></TextField>
+                                    </div>
+                                    <br />
+                                    <div className={'resultDi'}>
+                                        <textarea className="input"
+                                            id="randomNumber"
+                                            style={{
+                                                resize: 'none',
+                                                fontSize: '2rem',
+                                                minWidth: '255px',
+                                                minHeight: '70px'
+                                            }} value={state.randomNumber}
+                                            onChange={onInputChange}
+                                        ></textarea>
+                                    </div>
+                                    <br />
+                                    <Button variant="contained" style={{ margin: '5px' }} className={"button is-success"}
+                                        startIcon={<SettingIcon />}
+                                        onClick={() => {
+                                            function getRandomInt(min, max) {
+                                                min = Math.ceil(min);
+                                                max = Math.floor(max);
+                                                return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+                                            }
+                                            let resnumber = getRandomInt(state.Min, state.Max);
+                                            let connum = 0;
+                                            let step = resnumber / 10;
+                                            let intervalId = setInterval(() => {
+                                                connum = connum + step
+                                                if (connum <= resnumber) {
+                                                    setState({
+                                                        ...state,
+                                                        randomNumber: Math.round(connum)
+                                                    });
+                                                }
+                                                clear();
+                                            }, 1);
+                                            function clear() {
+                                                if (connum >= resnumber) {
+                                                    clearInterval(intervalId);
+                                                }
+                                            }
+                                        }
+                                        }
+                                    >Generate</Button>
+                                    <Button variant="contained" style={{ margin: '5px' }} className={"button is-info"}
+                                        startIcon={<FileCopyIcon />}
+                                        onClick={() => {
+                                            fncopytext('randomNumber')
+                                        }
+                                        }
+                                    >Copy</Button>
+                                </div>
+                            </Card>
+                            <br />
+                        </div>
+                    </div>
                 </div>
             </Container>
         </div >

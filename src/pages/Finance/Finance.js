@@ -43,11 +43,9 @@ export default function Finance() {
     return (
         <div className={classes.root}>
             <Helmet>
-                <title>Free Finance Calculator - Calculate some of commom financial expresion | mathcalc</title>
+                <title>Free Finance Calculator - Calculate some of commom financial expresion</title>
                 <meta name="keywords" content="free online finance calculator, simple interest calculator, compound interest calculator, online calculator , free calculator" />
-                <meta name="description" content="Use Mathcalc finance calculators to do the calculations for various financial expressions" />
-                <meta name="author" content="Mathcalc" />
-                <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+                <meta name="description" content="Use Mathcalc finance calculators to do the calculations for various financial calculations" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Helmet>
             <Container maxWidth="xl">
@@ -55,10 +53,10 @@ export default function Finance() {
                     <div style={{ padding: '2rem 0.5rem' }}>
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Finance
-          </h1>
+                            </h1>
                             <p className="  has-text-grey">
                                 Common financial calculators like simple interest, Compound interest , Discount and more..
-          </p>
+                            </p>
                         </div>
                     </div>
                 </section>

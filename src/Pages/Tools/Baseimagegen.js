@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../Components/SubNavBar';
 import CustomSnakbar from '../../Components/CustomSnakbar';
-import { Card, Container, Grid, Button, Tooltip } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import { Card, Container, Typography, Grid, Button, Tooltip, Select, MenuItem } from '@material-ui/core';
 function scrolldiv(div) {
     window.scroll(0,
         findPosition(div));
@@ -18,6 +19,12 @@ function findPosition(obj) {
 }
 
 export default function Baseimagegen(props) {
+
+    const [state, setState] = useState({
+        baseString: "",
+        casetype: '1',
+    })
+
     const [file, setFile] = useState();
     const onCHangeFile = (e) => {
         if (e.target.files.length > 0) {
@@ -26,20 +33,62 @@ export default function Baseimagegen(props) {
     }
     const convertImgtoBaseString = (e) => {
         try {
-            debugger;
             if (file) {
                 let reader = new FileReader();
                 reader.onloadend = function (e) {
                     if (e.target.result.length < 524287) {
-                        console.log(e.target.result.length);
-                        document.getElementById("txtBaseString").value = e.target.result;
-                        document.getElementById("txtHtmlString").value = '<img src="' + e.target.result + '" alt="' + file.name.split('.')[0] + '" />';
+                        setState({
+                            ...state,
+                            baseString: e.target.result
+                        });
+                        document.getElementById("txtBaseString").value = e.target.result.split(",")[1].toString();
                         scrolldiv(document.getElementById("txtBaseString"));
                     }
                 }
                 reader.readAsDataURL(file);
             }
         } catch (e) { }
+    }
+    const onchangeType = (val) => {
+        setState({
+            ...state,
+            casetype: val
+        })
+        let resText = "";
+        let baseString = state.baseString;
+        let outputFormat = val
+        if (outputFormat === "1") {
+            resText = baseString.split(",")[1].toString();
+        }
+        else if (outputFormat === "2") {
+            resText = baseString;
+        }
+        else if (outputFormat === "3") {
+            resText = '.yourclassName { \n background-image: url("';
+            if (state.isTextInput) {
+                resText += 'data:image/jpeg;base64,' + baseString.split(",")[1].toString();
+            } else {
+                resText += baseString;
+            }
+            resText += '"); \n }'
+        }
+        else if (outputFormat === "4") {
+            if (state.isTextInput) {
+                resText = "<img src='data:image/jpeg;base64," + baseString.split(",")[1].toString() + "' />";
+            } else {
+                resText = "<img src='" + baseString + "' />";
+            }
+        }
+        else if (outputFormat === "5") {
+            resText = "<xml>\n<image>"
+            if (state.isTextInput) {
+                resText += 'data:image/jpeg;base64,' + baseString.split(",")[1].toString();
+            } else {
+                resText += baseString;
+            }
+            resText += "</image>\n</xml>";
+        }
+        document.getElementById("txtBaseString").value = resText;
     }
 
     const [open, setOpen] = React.useState(false);
@@ -120,9 +169,35 @@ export default function Baseimagegen(props) {
                                 </p>
                             </div>
                         </Card>
+                        <fieldset title="Related tools" className="field field-light"
+                            style={{
+                                padding: '1rem',
+                                border: '2px solid mediumpurple'
+                            }}>
+                            <legend><strong>Related tools</strong></legend>
+
+                            <Typography>
+                                To encode text file try this tool &nbsp;
+                                <Link to={'/base64-encode'} style={{ color: 'blue', textDecoration: 'underline' }}>
+                                    Text file encoder</Link>.
+                            </Typography>
+                        </fieldset>
                         <br />
                         <Card elevation={1} className="box" data-v-14591542>
-                            <h1 className="title is-6">Base64 string</h1>
+                            <h1 className="title is-6">Output Format</h1>
+                            <Select
+                                labelId="casetype-label"
+                                id="casetype"
+                                value={state.casetype}
+                                onChange={(e) => {
+                                    onchangeType(e.target.value)
+                                }}
+                            >   <MenuItem value="1">Base64 string</MenuItem>
+                                <MenuItem value="2">Data URL</MenuItem>
+                                <MenuItem value="3">Image embedding in CSS</MenuItem>
+                                <MenuItem value="4">Image embedding in HTML</MenuItem>
+                                <MenuItem value="5">Image embedding in XML</MenuItem>
+                            </Select>
                             <pre>
                                 <textarea rows={4}
                                     id="txtBaseString"
@@ -143,28 +218,10 @@ export default function Baseimagegen(props) {
                                 </Button>
                             </Tooltip>
                         </Card>
-                        <Card elevation={1} className="box" data-v-14591542>
-                            <h1 className="title is-6">Embed html code of image</h1>
-                            <pre>
-                                <textarea id="txtHtmlString"
-                                    maxLength={999999999}
-                                    style={{ resize: 'none', minHeight: '120px' }}
-                                    rows={4} className="input"></textarea>
-                            </pre>
-                            <br />
-                            <Tooltip title="Copy">
-                                <Button variant="contained" color="secondary" onClick={(e) => {
-                                    fncopytext('txtHtmlString')
-                                }
-                                } >
-                                    Copy
-                                </Button>
-                            </Tooltip>
-                        </Card>
+                        <br />
                     </Grid>
                     <Grid item sm={false} md={4} lg={4}></Grid>
                 </Grid>
-
             </div>
         </Container>
     )

@@ -58,6 +58,7 @@ const Sidebar = (props) => {
         { url: '/numbers/', urlname: 'Numbers', icon: <>N</> },
         { url: '/tools/', urlname: 'Tools', icon: <Apps /> },
         { url: '/text-lists/', urlname: 'Text and Lists', icon: <>T</> },
+        { url: '/files/', urlname: 'Files', icon: <>F</> },
         { url: '/finance/', urlname: 'Finance', icon: <AttachMoney /> },
         { url: '/physics/', urlname: 'Physics', icon: <ScatterPlot /> },
         { url: '/feedback/', urlname: 'Feedback', icon: <FeedbackIcon /> },

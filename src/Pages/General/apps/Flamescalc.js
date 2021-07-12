@@ -180,7 +180,7 @@ export default function Flamescalc() {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>Online flames calculator - Mathcalc</title>
-                <meta name="keywords" content="flames, flames calculator, flames games , names, flames names calculator" />
+                <meta name="keywords" content="flames, flames calculator, flames games , names, flames names calculator,mathcalc" />
                 <meta name="description" content="This flames calculator assesses and predicts the outcome of a relationship based on an algorithm of two given names." />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />
