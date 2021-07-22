@@ -52,6 +52,7 @@ export default class Imagecompressor extends React.Component {
             height: 300,
             newImage: "",
             quality: 100,
+            percentage: 100,
             finalFormat: "JPEG",
         };
     }
@@ -162,6 +163,7 @@ export default class Imagecompressor extends React.Component {
         this.setState({
             width: Math.ceil(width * (percentage / 100)),
             height: Math.ceil(height * (percentage / 100)),
+            percentage: percentage
         })
     }
 
@@ -333,6 +335,7 @@ export default class Imagecompressor extends React.Component {
                                                                     label="Percentage"
                                                                     name="percentage"
                                                                     type="number"
+                                                                    value={this.state.percentage}
                                                                     onChange={this.changePercentage}
                                                                 ></TextField>
                                                             </Grid>

@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid, Card, Typography, FormControl, InputLabel, Select, MenuItem } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Helmet from 'react-helmet';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -271,7 +272,8 @@ export default function Lawofgravity() {
 
                              </Card>
                         </Grid>
-                        <Grid item lg={4} md={4} sm={false}></Grid>
+                        <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds /></Grid>
                     </Grid>
                 </div>
             </Container>

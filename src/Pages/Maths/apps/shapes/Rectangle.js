@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import imgRectangle from '../../../../Assets/images/rectangle.svg';
+import VerticalAds from '../../../../Components/VerticalAds';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 const useStyles = makeStyles((theme) => ({
@@ -298,7 +299,8 @@ export default function Square() {
                         </Card>
                         <br />
                     </Grid>
-                    <Grid item lg={4} md={4} sm={false}></Grid>
+                    <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds /></Grid>
                 </Grid>
             </Container>
         </div >

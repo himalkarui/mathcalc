@@ -44,6 +44,16 @@ html ::-webkit-scrollbar-thumb:hover {
 .lds-ripple div:nth-child(2) {
   animation-delay: -0.5s;
 }
+
+#loader-wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
 @keyframes lds-ripple {
   0% {
     top: 36px;
@@ -80,7 +90,7 @@ html ::-webkit-scrollbar-thumb:hover {
 }
 
 body {
-  background-color: white;
+  background-color: #f3f6fa !important;
   font-family: "Noto Sans KR", sans-serif !important;
   margin: 0px;
   padding: 0px;
@@ -408,13 +418,10 @@ li {
   align-items: center;
   place-self: stretch;
   color: #242a31;
-  background-color:white;
+  background-color: white;
   border-radius: 3px;
-  min-width: 305px;
-  max-width: 100%;
   min-height: 100px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
 }
 
 .divLink span {
@@ -677,6 +684,24 @@ input[type="number"] {
   }
 }
 
+@media (min-width: 140px) and (max-width: 450px) {
+  .divLink {
+    width: 100%;
+  }
+}
+
+@media (min-width: 450px) and (max-width: 950px) {
+  .divLink {
+    width: 224px;
+  }
+}
+
+@media (min-width: 950px) and (max-width: 100%) {
+  .divLink {
+    width: 350px;
+  }
+}
+
 @media (min-width: 140px) and (max-width: 640px) {
   .divLink {
     width: 100%;
@@ -715,7 +740,7 @@ input[type="number"] {
     padding: 12px;
   }
   .divLink {
-    width: 100%;
+    width: 300px;
   }
   .appContainer {
     margin: 1rem;
@@ -723,6 +748,9 @@ input[type="number"] {
 }
 
 @media (min-width: 1024px) {
+  .divLink {
+    width: 300px;
+  }
   .bhAFtM {
     padding: 12px;
     min-width: 255px;

@@ -6,6 +6,7 @@ import {
     Grid, Radio, FormControl, RadioGroup, FormControlLabel, Card, Backdrop, CircularProgress, Container
 } from '@material-ui/core';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 // Inspired by blueprintjs
 function StyledRadio(props) {
@@ -436,7 +437,8 @@ The first pendulum mechanical clock was created by Christiaan Huygens in 1656, a
                             </Card>
                             <br />
                         </Grid>
-                        <Grid item lg={4} md={4} sm={false}></Grid>
+                        <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds /></Grid>
                     </Grid>
                 </div >
             </Container>

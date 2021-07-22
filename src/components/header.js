@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     appBar: {
         backgroundColor: 'white',
         color: 'black !important',
-        //  boxShadow: '0px 2px 3px -5px rgb(0 0 0 / 5%), 0px 0px 5px 0px rgb(0 0 0 / 4%), 0px 1px 10px 0px rgb(0 0 0 / 12%)',
+        boxShadow: '0px 2px 2px 0px rgb(0 0 0 / 20%), 0px 2px 3px 0px rgb(0 0 0 / 14%), 0px 1px 1px 0px rgb(0 0 0 / 12%) !important',
         // [theme.breakpoints.up('sm')]: {
         //     width: `calc(100% - ${drawerWidth}px)`,
         //     marginLeft: drawerWidth,
@@ -186,9 +186,9 @@ function Header(props) {
         setAnchorEl(null);
     };
 
-    
+
     React.useEffect(() => {
-    
+
     }, []);
 
     return (
@@ -206,7 +206,7 @@ function Header(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography className={classes.title} variant="h6">
-                        <Link style={{ display: 'flex' }} to="/">
+                        <Link style={{ display: 'flex', alignItems: 'center' }} to="/">
                             <Avatar className={classes.logo}>
                                 <img src={logo} alt="mathcalc logo" width={40} height={40} />
                             </Avatar>

@@ -8,6 +8,7 @@ import {
 import Like from '@material-ui/icons/FavoriteBorderRounded';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
 import SubNavBar from '../../../Components/SubNavBar';
+import VerticalAds from '../../../Components/VerticalAds';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -276,7 +277,8 @@ export default function Flamescalc() {
                         </Card>
                         <br />
                     </Grid>
-                    <Grid item lg={4} md={4} sm={false}></Grid>
+                    <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds /></Grid>
                 </Grid>
             </Container>
         </div >

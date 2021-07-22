@@ -11,6 +11,7 @@ import Helmet from 'react-helmet';
 // import js , css and iamges
 import '../../../Assets/favicon/css/stylesfavicon.css';
 import SubNavBar from '../../../Components/SubNavBar';
+import VerticalAds from '../../../Components/VerticalAds';
 
 const useStyles = makeStyles((theme) => ({
     table: {
@@ -114,7 +115,7 @@ export default function Roiadsensecalc(props) {
                                                 Google Ads Return on Invest(ROI) Cost per Click Calculator</h1>
                                             <p style={{ fontSize: '1rem', lineHeight: '27px' }} className="  has-text-grey">
                                                 Google Ads The ROI (Return  on Investment) Calculator Tool can be used to measure
-                                            the ROI of CPC (cost per click) advertising.                       </p>
+                                                the ROI of CPC (cost per click) advertising.                       </p>
                                         </div>
                                     </div>
                                 </section>
@@ -197,32 +198,34 @@ export default function Roiadsensecalc(props) {
                                         <h4 className="title is-6 subtext subtitle">
                                             The ROI (Return  on Investment) Calculator Tool can be used to measure
                                             the ROI of CPC (cost per click) advertising
-                                 </h4> <br />
+                                        </h4> <br />
                                         <h4 className="title is-6">
                                             Monthly Clicks Total From Publisher</h4>
                                         <p>
                                             Each month you will receive a Client Activity Report email from your advertising publisher. Use the number located in this email to calculate your ROI for the last month. You will also have the ability to predict the potential ROI for the next month.
-                                    </p>
+                                        </p>
                                         <br />
                                         <h4 className="title is-6">Average Estimated CPC</h4>
                                         <p>
                                             CPC is simply the amount of money that you pay to the advertisement published for each time a user clicks on one of your listings. This number can also be obtained from the Client Activity Report email that you receive each month.
-                                    </p>
+                                        </p>
                                         <br />
                                         <h4 className="title is-6">Conversion Rates</h4>
                                         <p>The percentage of users that come to your site from the ad publisher and are converted into customers is referred to as the conversion rate. This number must be obtained from your personal records and will not be found in the Client Activity Report email. Conversion rates will always vary greatly depending on the company but if you want to test an average rate, you can use 2-3%. Be sure to enter a percent number as opposed to a fraction. For example, for 5% enter 5, not 0.05.
-                                    </p>
+                                        </p>
                                         <br />
                                         <h4 className="title is-6">Profit Average Per Conversion</h4>
                                         <p>The amount of money earned from a sale is referred to as profit. For instance, if you sell your product for $80 but it only cost you $20, then your profit would be $60. Using your own records, you will need to estimate the average profit you make from each conversion.
-                                    </p>
+                                        </p>
                                     </div>
                                 </Card>
                                 <hr />
                             </div >
                         </div>
                     </Grid >
-                    <Grid item md={4} lg={4} sm={12}></Grid>
+                    <Grid item md={4} lg={4} sm={12}>
+                        <VerticalAds />
+                    </Grid>
                 </Grid >
             </Container>
         </React.Fragment >

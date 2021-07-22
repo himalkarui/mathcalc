@@ -13,6 +13,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import VerticalAds from '../../../Components/VerticalAds';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -424,7 +425,7 @@ export default function Exchangerate() {
                         <Card elevation={1} className="box" >
                             <h2 className="title is-5">Exchange Rates of Countries</h2>
                             <p>Last Updated Date :
-                           <strong>{exchangeRates ? exchangeRates.time_last_update_utc.toString() : ''}</strong></p>
+                                <strong>{exchangeRates ? exchangeRates.time_last_update_utc.toString() : ''}</strong></p>
                             <br />
                             <TableContainer component={Paper}>
                                 <Table className={classes.table} aria-label="simple table">
@@ -452,6 +453,7 @@ export default function Exchangerate() {
                         <br />
                     </Grid>
                     <Grid item sm={12} md={12} lg={4} xl={4}>
+                        <VerticalAds />
                     </Grid>
                 </Grid>
 

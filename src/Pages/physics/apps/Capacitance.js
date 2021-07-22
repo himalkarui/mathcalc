@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Helmet from 'react-helmet';
 import capacitanceform from '../../../Assets/images/capacitanceform.svg';
 import capacitor from '../../../Assets/images/capacitor.png';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -205,7 +206,8 @@ export default function Capacitance() {
                              </Typography>
                             </Card>
                         </Grid>
-                        <Grid item lg={4} md={4} sm={false}></Grid>
+                        <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds /></Grid>
                     </Grid>
                 </div>
             </Container>

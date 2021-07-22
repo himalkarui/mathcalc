@@ -13,6 +13,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -306,7 +307,8 @@ export default function Waisttohip() {
                         </Card>
                         <br />
                     </Grid>
-                    <Grid item lg={4} md={4} sm={false}></Grid>
+                    <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds /></Grid>
                 </Grid>
             </Container>
         </div >

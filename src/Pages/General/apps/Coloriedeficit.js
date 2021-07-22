@@ -14,6 +14,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import VerticalAds from '../../../Components/VerticalAds';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -125,7 +126,7 @@ export default function Coloriedeficit() {
                                             Calorie Deficit CALCULATOR</h1>
                                         <p style={{ lineHeight: '27px' }} className="  has-text-grey subtitle is-6">
                                             Estimating the calories you are consuming in your food and beverages and factoring
-                                        in what you burn through activity are the two key elements to calculate your goal calorie deficit.   </p>
+                                            in what you burn through activity are the two key elements to calculate your goal calorie deficit.   </p>
                                     </div>
                                 </div>
                             </section>
@@ -137,14 +138,14 @@ export default function Coloriedeficit() {
                                 <h2 className="title is-4">What are Calories?</h2>
                                 <p>
                                     Calories are simply a measure of heat, or energy. Technically, 1 calorie is the amount of heat it takes to raise the temperature of one gram of water by one degree Celsius. To our bodies, calories are the way we exchange energy. Food contains the energy that we put in our bodies, and exercise is the way that we expend or burn energy. When our body stores energy, it is typically in the form of body fat.
-                               </p>
+                                </p>
                                 <br />
                                 <br />
 
                                 <h2 className="title is-4">  What is a Calorie Deficit?</h2>
 
                                 <p> A calorie deficit is when you are consuming fewer calories than you are burning over time. For example, if you burn 2000 calories a day but only consume 1500, you’ll be in a 500 calorie deficit. Another example of a calorie deficit is consuming 2000 calories for a day but burning 2500.
-                               </p>
+                                </p>
                                 <br />
                                 <p>
                                     Based on your diet and exercise, you can achieve a deficit in two ways – eating less or exercising more – or more often, a combination of both.
@@ -257,7 +258,7 @@ export default function Coloriedeficit() {
                                 <h2 className="title is-5">     2. Adjust your calorie intake for weight loss</h2>
 
                                 <p>Once you know your maintenance calories, for example let’s say 2500, we can calculate the calorie intake level needed for weight loss.
-                               </p>
+                                </p>
                                 <br />
                                 <p>Remembering that 1 kilo of body fat is about 7,700 calories and we want to aim for 0.5-1 kilo of weight loss per week:
                                 </p>
@@ -290,11 +291,13 @@ export default function Coloriedeficit() {
                                 <br />
                                 <h2 className="title is-5"> Take Home Message</h2>
                                 <p> While calculating a calorie deficit is based on science, it is not always straightforward. You have to examine your habits – both in the kitchen and gym – and decide where you can make sustainable changes to have long term success for fat loss. Keep in mind that your goals should be realistic and recognize that weight loss takes time.
-                               </p>
+                                </p>
                             </Card>
                             <br />
                         </Grid>
-                        <Grid item lg={4} md={4} sm={12}></Grid>
+                        <Grid item lg={4} md={4} sm={12}>
+                            <VerticalAds />
+                        </Grid>
                     </Grid>
                 </div>
             </Container>

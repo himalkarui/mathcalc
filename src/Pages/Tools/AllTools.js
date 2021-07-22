@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Container, Grid, } from '@material-ui/core';
 import Helmet from 'react-helmet';
 import Compress from '../../Assets/icons/Compress';
-import Footer from '../../Components/Footer';
 import { Link } from 'react-router-dom';
+import VerticalAds from '../../Components/VerticalAds';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -95,10 +95,11 @@ export default function AllTools() {
                             }
                         </div>
                     </Grid>
-                    <Grid item lg={4} md={4} sm={false}></Grid>
+                    <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds />
+                    </Grid>
                 </Grid>
             </Container>
-            <Footer />
         </div >
     );
 }

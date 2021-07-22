@@ -8,6 +8,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import logo from '../Assets/images/smlmclogo.jpg';
 import FeedbackIcon from '@material-ui/icons/Feedback';
+import DownloadIcon from '@material-ui/icons/YouTube';
 // icons
 import { Home, Apps, AttachMoney, Functions, ScatterPlot, Accessibility } from '@material-ui/icons';
 
@@ -53,15 +54,16 @@ const Sidebar = (props) => {
 
     let urls = [
         { url: '/', urlname: 'Home', icon: <Home /> },
-        { url: '/general/', urlname: 'General', icon: <Accessibility /> },
-        { url: '/maths/', urlname: 'Mathematics', icon: <Functions /> },
-        { url: '/numbers/', urlname: 'Numbers', icon: <>N</> },
-        { url: '/tools/', urlname: 'Tools', icon: <Apps /> },
-        { url: '/text-lists/', urlname: 'Text and Lists', icon: <>T</> },
-        { url: '/files/', urlname: 'Files', icon: <>F</> },
-        { url: '/finance/', urlname: 'Finance', icon: <AttachMoney /> },
-        { url: '/physics/', urlname: 'Physics', icon: <ScatterPlot /> },
-        { url: '/feedback/', urlname: 'Feedback', icon: <FeedbackIcon /> },
+        { url: '/general', urlname: 'General', icon: <Accessibility /> },
+        { url: '/youtube-to-video', urlname: 'Youtube', icon: <DownloadIcon /> },
+        { url: '/maths', urlname: 'Mathematics', icon: <Functions /> },
+        { url: '/numbers', urlname: 'Numbers', icon: <>N</> },
+        { url: '/tools', urlname: 'Tools', icon: <Apps /> },
+        { url: '/text-lists', urlname: 'Text and Lists', icon: <>T</> },
+        { url: '/files', urlname: 'Files', icon: <>F</> },
+        { url: '/finance', urlname: 'Finance', icon: <AttachMoney /> },
+        { url: '/physics', urlname: 'Physics', icon: <ScatterPlot /> },
+        { url: '/feedback', urlname: 'Feedback', icon: <FeedbackIcon /> },
     ]
 
     const onChangeStyle = (e) => {

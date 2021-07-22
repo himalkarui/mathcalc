@@ -5,6 +5,7 @@ import {
     Grid, FormControl, InputLabel, MenuItem,
     Typography, Container, TextField, Select, Card
 } from '@material-ui/core';
+import VerticalAds from '../../../../Components/VerticalAds';
 import SubNavBar from '../../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -266,7 +267,8 @@ export default function Circle() {
                         </Card>
                         <br />
                     </Grid>
-                    <Grid item lg={4} md={4} sm={false}></Grid>
+                    <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds /></Grid>
                 </Grid>
             </Container>
         </div >

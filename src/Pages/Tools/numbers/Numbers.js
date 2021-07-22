@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid, CssBaseline, Container } from '@material-ui/core';
 import Compress from '../../../Assets/icons/Compress';
 import Helmet from 'react-helmet';
-import Footer from '../../../Components/Footer';
 import { Link } from 'react-router-dom';
+import VerticalAds from '../../../Components/VerticalAds';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -63,11 +63,11 @@ export default function Numbers() {
                             }
                         </div>
                     </Grid>
-                    <Grid item lg={4} md={4} sm={false}>
+                    <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds />
                     </Grid>
                 </Grid>
             </Container>
-            <Footer />
         </div >
     );
 }

@@ -61,7 +61,7 @@ export default function Imageeditor(props) {
                             <Grid item sm={12} md={8} lg={8}>
                                 <Card elevation={1} className="box" data-v-14591542>
                                     <h1 style={{ display: 'flex' }} className="subtitle has-text-weight-bold">
-                                        <div class="sc-1gyxcpm-0 csDfHB sc-17y9jfw-4 iqUd" style={{ width: '32px', height: '32px' }}>
+                                        <div className="sc-1gyxcpm-0 csDfHB sc-17y9jfw-4 iqUd" style={{ width: '32px', height: '32px' }}>
                                             <img src="https://visualpharm.com/assets/548/Edit%20Image-595b40b85ba036ed117dc0a5.svg" alt="edit im " width="32" height="32" />
                                         </div>
                                         <div>

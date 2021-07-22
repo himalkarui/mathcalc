@@ -190,8 +190,8 @@ export default function Graphs() {
             </Helmet>
             <Container maxWidth={'xl'} >
 
-                <div class="output" id="latex"></div>
-                <div class="output" id="mathjson"></div>
+                <div className="output" id="latex"></div>
+                <div className="output" id="mathjson"></div>
 
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item lg={8} md={8} sm={12}>

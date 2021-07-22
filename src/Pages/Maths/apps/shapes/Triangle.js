@@ -5,6 +5,7 @@ import {
     Grid, FormControl, InputLabel, MenuItem,
     Typography, Container, TextField, Select, Divider, Card
 } from '@material-ui/core';
+import VerticalAds from '../../../../Components/VerticalAds';
 import SubNavBar from '../../../../Components/SubNavBar';
 import imgTriangle from '../../../../Assets/images/triangle.svg';
 
@@ -568,7 +569,8 @@ export default function Triangle() {
                         </Card>
                         <br />
                     </Grid>
-                    <Grid item lg={4} md={4} sm={false}></Grid>
+                    <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds /></Grid>
                 </Grid>
             </Container>
         </div >

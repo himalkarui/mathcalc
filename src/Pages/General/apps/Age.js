@@ -18,6 +18,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 
 const StyledTableCell = withStyles((theme) => ({
@@ -306,7 +307,9 @@ export default function Age() {
                         </Card>
                         <br />
                     </Grid>
-                    <Grid item lg={4} md={4} sm={false}></Grid>
+                    <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds />
+                    </Grid>
                 </Grid>
             </Container>
         </div >

@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Helmet from 'react-helmet';
 import inductanceimg from '../../../Assets/images/inductance.png';
 import inductor from '../../../Assets/images/inductor.png';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -182,7 +183,8 @@ export default function Inductance() {
 
                             </Card>
                         </Grid>
-                        <Grid item lg={4} md={4} sm={false}></Grid>
+                        <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds /></Grid>
                     </Grid>
                 </div>
             </Container>

@@ -9,6 +9,7 @@ import Header from './Components/Header';
 import Feedback from './Components/Feedback';
 import Home from './Pages/Home/Home';
 import Loading from './Components/Loading';
+import Footer from './Components/Footer';
 // import Commingsoon from './Components/Commingsoon';
 
 const Time = lazy(() => import('./Pages/General/apps/Time'));
@@ -91,6 +92,7 @@ const Basesfdecode = lazy(() => import("./Pages/Files/apps/Basesfdecode"));
 const Passwordgenerator = lazy(() => import("./Pages/Tools/Passwordgenerator"));
 const Imagecompressor = lazy(() => import('./Pages/Files/apps/Imagecompressor'));
 const Zipfiles = lazy(() => import("./Pages/Files/apps/Zipfiles"));
+const Ytvideo = lazy(() => import("./Pages/videodo/Ytvideo"));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -231,18 +233,21 @@ function App() {
                 <Route exact path="/maths/matrix/matrix-rank" component={Matrixrank} />
 
                 {/* files calc */}
-                <Route exact path="/files/" component={Filesconverter} />
+                <Route exact path="/files" component={Filesconverter} />
                 <Route exact path="/zip-files" component={Zipfiles} />
                 <Route exact path="/image-size-reducer" component={Imagecompressor} />
-                <Route exact path="/base64-encode/" component={BasesfEncode} />
-                <Route exact path="/base64-decode/" component={Basesfdecode} />
+                <Route exact path="/base64-encode" component={BasesfEncode} />
+                <Route exact path="/base64-decode" component={Basesfdecode} />
 
-                <Route exact path="/privacy-policy/" component={Privacy} />
-                <Route exact path="/terms-of-use/" component={Termsofuse} />
+                <Route exact path="/youtube-to-video" component={Ytvideo} />
+
+                <Route exact path="/privacy-policy" component={Privacy} />
+                <Route exact path="/terms-of-use" component={Termsofuse} />
                 <Route exact path="/feedback" component={Feedback} />
                 <Route path="/" component={FileNotFound} />
               </Switch>
             </Suspense>
+            <Footer />
           </main>
         </div>
       </MuiThemeProvider>

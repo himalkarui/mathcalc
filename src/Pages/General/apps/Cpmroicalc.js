@@ -10,6 +10,7 @@ import { Container, FormControl, Grid, TextField, Tooltip, Card } from '@materia
 import Helmet from 'react-helmet';
 // import js , css and iamges
 import '../../../Assets/favicon/css/stylesfavicon.css';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 const useStyles = makeStyles((theme) => ({
     table: {
@@ -111,11 +112,11 @@ export default function Roiadsensecalc(props) {
                                 <div className="container">
                                     <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                         CPM (Cost per thousand Advertising model) Advertising ROI Calculator
-                                        </h1>
+                                    </h1>
                                     <p style={{ fontSize: '1rem', lineHeight: '27px' }} className="  has-text-grey">
                                         This calculator measures your ROI (return on investment) if you are using the CPM (cost per thousand)
                                         impressions advertising model (which is common to most banner and button ad campaigns).
-                                        </p>
+                                    </p>
                                 </div>
                             </div>
                         </section>
@@ -210,11 +211,11 @@ export default function Roiadsensecalc(props) {
                             <div className="col-lg-12">
                                 <h4 className="title is-6 subtext subtitle">
                                     This calculator measures your ROI (return on investment) if you are using the CPM (cost per thousand)
-                                        impressions advertising model (which is common to most banner and button ad campaigns).</h4>
+                                    impressions advertising model (which is common to most banner and button ad campaigns).</h4>
                                 <br />
                                 <h4 className="title is-6">Total monthly impressions from your CPM advertising</h4>
                                 <p> This section of this CPM calculator tool lets you put in last month's number to calculate last month's ROI. You can also project next month's number to calculate next month's potential ROI
-                              </p><br />
+                                </p><br />
                                 <h4 className="title is-6">Estimated average CPM</h4>
                                 <p> Here you can put in last month's number to calculate last month's ROI. You can also project next month's number to calculate next month's potential ROI.</p>
                                 <br />
@@ -230,7 +231,9 @@ export default function Roiadsensecalc(props) {
                         </Card>
                         <hr />
                     </Grid >
-                    <Grid item md={4} lg={4} sm={12}></Grid>
+                    <Grid item md={4} lg={4} sm={12}>
+                        <VerticalAds />
+                    </Grid>
                 </Grid >
             </Container>
         </React.Fragment >

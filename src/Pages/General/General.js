@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid, CssBaseline, Container } from '@material-ui/core';
 import Compress from '../../Assets/icons/Compress';
 import Helmet from 'react-helmet';
-import Footer from '../../Components/Footer';
 import { Link } from 'react-router-dom';
+import VerticalAds from '../../Components/VerticalAds';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -68,10 +68,10 @@ export default function General() {
                     <div style={{ padding: '2rem 0.5rem' }}>
                         <div className="container">
                             <h1 className="subtitle is-spaced has-text-weight-bold">General
-          </h1>
+                            </h1>
                             <p className="  has-text-grey">
                                 Various mathematical tasks, such as calculate percentages, simple shapes, graph fnctions and more..
-          </p>
+                            </p>
                         </div>
                     </div>
                 </section>
@@ -91,11 +91,12 @@ export default function General() {
                             }
                         </div>
                     </Grid>
-                    <Grid item lg={4} md={4} sm={false}>
+                    <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds />
+                        <VerticalAds />
                     </Grid>
                 </Grid>
             </Container>
-            <Footer />
         </div >
     );
 }

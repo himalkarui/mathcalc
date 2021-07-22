@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import '../Assets/favicon/css/stylesfavicon.css';
-import Footer from "./Footer";
 import { makeStyles } from '@material-ui/core/styles';
 import {
     Card, CardContent, Typography, Container, Grid
@@ -285,7 +284,6 @@ export default function Main(props) {
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={4} xl={4}></Grid>
                     </Grid>
-                    <Footer />
                 </div>
             </div>
         </React.Fragment >

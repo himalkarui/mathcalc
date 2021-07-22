@@ -10,6 +10,7 @@ import { Card, Container, Grid, TextField } from '@material-ui/core';
 import Helmet from 'react-helmet';
 // import js , css and iamges
 import '../../../Assets/favicon/css/stylesfavicon.css';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -99,7 +100,7 @@ export default function Googleadsensecalc(props) {
                                             <p className="  has-text-grey" style={{ fontSize: '1rem', lineHeight: '27px' }}>
                                                 Google Adsense Calculator is used to calculate daily,
                                                 monthly and yearly earnings from page impressions , click through rate and cost per click
-                        </p>
+                                            </p>
                                         </div>
                                     </div>
                                 </section>
@@ -175,23 +176,25 @@ export default function Googleadsensecalc(props) {
                                 <Card className="box" elevation={1} style={{ fontSize: '1rem', lineHeight: '27px' }}>
                                     <div className="col-lg-12">
                                         <h4 className="title is-6 subtext subtitle">  Our AdSense Calculator helps Google AdSense users understand what affects their potential earnings allowing users to experiment with values:
-                                 </h4> <br />
+                                        </h4> <br />
                                         <h4 className="title is-6"> Daily Page Impressions</h4>
                                         <p> Use your average, anticipated, or current daily page impressions, which indicates how many times ads are shownper page
-                                   </p><br />
+                                        </p><br />
                                         <h4 className="title is-6"> Click Through Rate (CTR)</h4>
                                         <p> The CTR represents how many visitorsclick on your advertisements. You can access this information easily on yourGoogle AdSense stats page labeled "CTR." The average rate isestimated to be about 1.5%.
-                                  </p><br />
+                                        </p><br />
                                         <h4 className="title is-6">Cost Per Click (CPC)</h4>
                                         <p>Your CPC is the average amount paid whensomeone clicks one of your advertisements. To find your average CPC, take theamount of money earned from AdSense (daily, monthly, or all time) and divide itby your total clicks (daily, monthly, or all time).
-                                  </p>
+                                        </p>
                                     </div>
                                 </Card>
                                 <hr />
                             </div >
                         </div>
                     </Grid >
-                    <Grid item md={4} lg={4} sm={12}></Grid>
+                    <Grid item md={4} lg={4} sm={12}>
+                        <VerticalAds />
+                    </Grid>
                 </Grid >
             </Container>
         </React.Fragment >

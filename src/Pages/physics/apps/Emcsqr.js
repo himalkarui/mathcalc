@@ -4,6 +4,7 @@ import { Container, Grid, Card, Typography } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../Components/SubNavBar';
+import VerticalAds from '../../../Components/VerticalAds';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -246,7 +247,8 @@ export default function Emcsqr() {
                                 </p>
                             </Card>
                         </Grid>
-                        <Grid item lg={4} md={4} sm={false}></Grid>
+                        <Grid item lg={4} md={4} sm={12}>
+                        <VerticalAds /></Grid>
                     </Grid>
                 </div>
             </Container>
