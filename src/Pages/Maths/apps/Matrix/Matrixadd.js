@@ -10,6 +10,7 @@ import CustomSnakbar from '../../../../Components/CustomSnakbar';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
+import VerticalAds from '../../../../Components/VerticalAds';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
@@ -215,12 +216,12 @@ export default function Matrixadd() {
                             variant="text"
                             color="secondary">
                             Cancel
-          </Button>
+                        </Button>
                         <Button
                             variant="contained"
                             onClick={handleCloseDialog} color="primary">
                             Ok
-          </Button>
+                        </Button>
                     </DialogActions>
                 </Dialog>
             </div>
@@ -305,7 +306,7 @@ export default function Matrixadd() {
                                         onClick={() => { onCalculateClick() }}
                                     >
                                         Calculate
-                                </Button>
+                                    </Button>
                                 </div>
                             </div>
                         </Grid>
@@ -333,7 +334,7 @@ export default function Matrixadd() {
                                         onClick={letResultasInput}
                                     >
                                         &nbsp;   Set Result as Matrix A
-                                </Button>
+                                    </Button>
                                 </div>
                             </div>
                         </Grid>
@@ -341,6 +342,7 @@ export default function Matrixadd() {
 
                 </Card>
                 <br />
+                <VerticalAds />
             </Container>
         </div >
     );

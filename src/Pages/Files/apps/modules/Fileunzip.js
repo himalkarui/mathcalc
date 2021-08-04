@@ -159,7 +159,7 @@ export default function Fileunzip() {
         <li style={{
             padding: '4px 8px',
             display: 'flex',
-            backgroundColor: i % 2 === 0 ? 'rgb(250 250 250)' : 'white'
+            backgroundColor: i % 2 === 0 ? 'rgb(250 250 250)' : '#fff'
         }}>
             <a href="#" style={{
                 width: '80%',
@@ -335,14 +335,15 @@ export default function Fileunzip() {
                                             accept={"." + options[selectedIndex].slice(0, options[selectedIndex].length - 5)}
                                         />
                                         <div style={{ margin: '15px' }}>
-                                            <ButtonGroup variant="contained" color="primary" aria-label="split button">
+                                            <ButtonGroup variant="contained"
+                                                color="primary" aria-label="split button">
                                                 <Button variant="contained"
                                                     startIcon={<LibraryAddIcon />}
                                                     onClick={(e) => {
                                                         document.getElementById("folder").click();
                                                     }}
                                                     color="primary">Select file</Button>
-                                                <Button color="inherit" >{options[selectedIndex]}</Button>
+                                                <Button style={{ borderColor: '#e0e0e0' }} color="inherit" >{options[selectedIndex]}</Button>
                                                 <Select
                                                     className={classes.select}
                                                     IconComponent={ArrowDropDownIcon}

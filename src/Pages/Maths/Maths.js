@@ -40,6 +40,7 @@ export default function Maths() {
     let urls = [
         { url: '/maths/shapes/', title: 'Shapes' },
         { url: '/maths/matrices/', title: 'Matrices' },
+        { url: '/random-number-generator', title: 'Random number generator' },
         { url: '/maths/graphs/', title: 'Graphs' },
         { url: '/maths/percentage-calculator/', title: 'Percentage calculator' },
         { url: '/maths/single-rule-of-three-direct/', title: 'Single rule of three direct' },
@@ -73,11 +74,11 @@ export default function Maths() {
                         <div className={classes.calcContent}>
                             {
                                 urls.map((ur, i) => {
-                                    return (<a href={ur.url} className={'divLink'} key={i} >
+                                    return (<Link to={ur.url} className={'divLink'} key={i} >
                                         <Compress style={{
                                             width: '30px',
                                             margin: '0px 16px 0px 16px'
-                                        }} /> <span>{ur.title}</span></a>
+                                        }} /> <span>{ur.title}</span></Link>
                                     )
                                 })
                             }

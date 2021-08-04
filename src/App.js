@@ -93,6 +93,11 @@ const Passwordgenerator = lazy(() => import("./Pages/Tools/Passwordgenerator"));
 const Imagecompressor = lazy(() => import('./Pages/Files/apps/Imagecompressor'));
 const Zipfiles = lazy(() => import("./Pages/Files/apps/Zipfiles"));
 const Ytvideo = lazy(() => import("./Pages/videodo/Ytvideo"));
+const Imagetopdf = lazy(() => import("./Pages/Files/apps/Imagetopdf"));
+const Randomnumgen = lazy(() => import("./Pages/Maths/apps/Randomnumgen"));
+const Power = lazy(() => import("./Pages/physics/apps/Power"));
+const Weight = lazy(() => import("./Pages/physics/apps/Weight"));
+const Pressure = lazy(() => import("./Pages/physics/apps/Pressure"));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -124,13 +129,13 @@ function App() {
         light: '#757ce8',
         main: '#3f50b5',
         dark: '#002884',
-        contrastText: 'white',
+        contrastText: '#fff',
       },
       secondary: {
         light: '#ff7961',
         main: '#f44336',
         dark: '#ba000d',
-        contrastText: 'white',
+        contrastText: '#fff',
       },
     },
   });
@@ -200,13 +205,16 @@ function App() {
                 <Route exact path="/finance/emi-calculator" component={EmiCalc} />
 
                 {/* routes for physics */}
-                <Route exact path="/physics/" component={Physics} />
-                <Route exact path="/physics/eeqlmc2/" component={Emcsqr} />
-                <Route exact path="/physics/ohmslaw/" component={Ohmslaw} />
-                <Route exact path="/physics/newtons-law-of-gravity/" component={Lawofgravity} />
-                <Route exact path="/physics/capacitance/" component={Capacitance} />
-                <Route exact path="/physics/inductance/" component={Inductance} />
-                <Route exact path="/physics/kinetic-energy/" component={Kineticenergy} />
+                <Route exact path="/physics" component={Physics} />
+                <Route exact path="/physics/eeqlmc2" component={Emcsqr} />
+                <Route exact path="/physics/ohmslaw" component={Ohmslaw} />
+                <Route exact path="/physics/newtons-law-of-gravity" component={Lawofgravity} />
+                <Route exact path="/physics/capacitance" component={Capacitance} />
+                <Route exact path="/physics/inductance" component={Inductance} />
+                <Route exact path="/physics/kinetic-energy" component={Kineticenergy} />
+                <Route exact path="/physics/power" component={Power} />
+                <Route exact path="/physics/weight" component={Weight} />
+                <Route exact path="/physics/pressure" component={Pressure} />
 
                 {/* routes for maths */}
                 <Route exact path="/maths/" component={Maths} />
@@ -232,14 +240,17 @@ function App() {
                 <Route exact path="/maths/matrix/matrix-transpose" component={Matrixtranspose} />
                 <Route exact path="/maths/matrix/matrix-rank" component={Matrixrank} />
 
+                <Route exact path="/random-number-generator" component={Randomnumgen} />
+
                 {/* files calc */}
                 <Route exact path="/files" component={Filesconverter} />
+                <Route exact path="/image-to-pdf" component={Imagetopdf} />
                 <Route exact path="/zip-files" component={Zipfiles} />
                 <Route exact path="/image-size-reducer" component={Imagecompressor} />
                 <Route exact path="/base64-encode" component={BasesfEncode} />
                 <Route exact path="/base64-decode" component={Basesfdecode} />
 
-                <Route exact path="/youtube-to-video" component={Ytvideo} />
+                <Route exact path="/youtube-video-downloader" component={Ytvideo} />
 
                 <Route exact path="/privacy-policy" component={Privacy} />
                 <Route exact path="/terms-of-use" component={Termsofuse} />

@@ -3,6 +3,7 @@ import FilerobotImageEditor from 'filerobot-image-editor';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../Components/SubNavBar';
 import { Card, Container, Grid, Dialog } from '@material-ui/core';
+import VerticalAds from '../../Components/VerticalAds';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -57,7 +58,7 @@ export default function Imageeditor(props) {
                             txtTitle="Mathcal Free Online Image Editor tool create your own images resize crop avatars and images. Photo tool for your favorite pictures. Edit an image here fast and easy online."
                         />
                         <br />
-                        <Grid container>
+                        <Grid container spacing={1}>
                             <Grid item sm={12} md={8} lg={8}>
                                 <Card elevation={1} className="box" data-v-14591542>
                                     <h1 style={{ display: 'flex' }} className="subtitle has-text-weight-bold">
@@ -118,7 +119,9 @@ export default function Imageeditor(props) {
                                 </Card>
 
                             </Grid>
-                            <Grid item sm={12} md={4} lg={4}></Grid>
+                            <Grid item sm={12} md={4} lg={4}>
+                                <VerticalAds />
+                            </Grid>
                         </Grid>
                         <br />
                     </div>

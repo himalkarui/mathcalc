@@ -71,12 +71,12 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         right: theme.spacing(1),
         top: theme.spacing(1),
-        color: 'white',
+        color: '#fff',
     },
     searchInput: {
         width: '100%',
         borderRadius: '0px',
-        backgroundColor: 'white',
+        backgroundColor: '#fff',
         "&> *": {
             borderRadius: '0px'
         }
@@ -93,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
     },
     select: {
         width: '89%',
-        backgroundColor: 'white',
+        backgroundColor: '#fff',
         boxShadow: '1px 1px 5px 0 #48c774',
     },
     dialog: {
@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
     },
     dialogTitle: {
         backgroundColor: '#7a7a7a',
-        color: 'white'
+        color: '#fff'
     },
     paper: {
         minWidth: '254px',
@@ -138,25 +138,31 @@ export default function Ytvideo() {
     const [url, setUrl] = React.useState('');
     const [videoDetails, setVideoDetails] = React.useState();
     const [loading, setLoading] = React.useState(false);
-    const [generateLink, setGenerateLink] = React.useState(false);
-    const [vformats, setVFormats] = React.useState([]);
-    const [aformats, setAFormats] = React.useState([]);
+    const [formats, setFormats] = React.useState([]);
 
-    const [value, setValue] = React.useState('female');
+    const [vvalue, setVValue] = React.useState('');
+    const [avalue, setAValue] = React.useState('');
 
-    const handleChange = (event) => {
-        setValue(event.target.value);
+    const vhandleChange = (event) => {
+        setVValue(event.target.value.toString());
+        setAValue('');
+        let itag = formats.filter(frt => frt.itag === parseInt(avalue) || frt.itag === parseInt(vvalue));
+        console.log(itag);
     };
 
+    const ahandleChange = (event) => {
+        setAValue(event.target.value.toString());
+        setVValue('');
+        let itag = formats.filter(frt => frt.itag === parseInt(avalue) || frt.itag === parseInt(vvalue));
+        console.log(itag);
+    };
 
     const clickGetInfo = async () => {
         try {
-            console.log(url)
             setLoading(true);
             var myHeaders = new Headers();
             myHeaders.append("Authorization", "");
             myHeaders.append("Content-Type", "application/json");
-
 
             var requestOptions = {
                 method: 'GET',
@@ -170,18 +176,8 @@ export default function Ytvideo() {
                     if (result.status === "200") {
                         console.log(result.Response);
                         let formats = result.Response.formats;
-                        let vfms = [];
-                        let afms = [];
-                        for (let i = 0; i < formats.length; ++i) {
-                            if (formats[i].hasVideo && formats[i].container === 'mp4') {
-                                console.log(formats[i])
-                                vfms.push(formats[i]);
-                            } else if (!formats[i].hasVideo && formats[i].hasAudio) {
-                                afms.push(formats[i]);
-                            }
-                        }
-                        setVFormats(vfms.sort());
-                        setAFormats(afms.sort());
+                        setFormats(formats);
+
                         setVideoDetails(result.Response.videoDetails);
                         setLoading(false);
                     } else {
@@ -196,33 +192,14 @@ export default function Ytvideo() {
     }
 
     const downloadFile = async () => {
-
-        var myHeaders = new Headers();
-        myHeaders.append("Authorization", "");
-        myHeaders.append("Content-Type", "application/json");
-
-
-        var requestOptions = {
-            method: 'GET',
-            headers: myHeaders,
-            redirect: 'follow'
-        };
-        const resResult = await fetch("http://localhost:8080/api/download-file/?url=" + url, requestOptions);
-
-        const blob = await resResult.blob();
-        const newBlob = new Blob([blob]);
-
-        const blobUrl = window.URL.createObjectURL(newBlob);
-
+        let itag = formats.filter(frt => frt.itag === parseInt(avalue) || frt.itag === parseInt(vvalue));
         const link = document.createElement('a');
-        link.href = blobUrl;
-        link.setAttribute('download', 'video.mp4');
+        link.href = itag[0].url
+        link.setAttribute('download', 'videoplayback' + '.' + itag[0].container);
+        link.setAttribute('target', '_blank');
         document.body.appendChild(link);
         link.click();
         link.parentNode.removeChild(link);
-
-        window.URL.revokeObjectURL(blob);
-
 
         // https://www.youtube.com/watch?v=hPQ79rrkziM
     }
@@ -276,12 +253,14 @@ export default function Ytvideo() {
                                     <FormControl component="fieldset">
                                         <FormLabel component="legend">Videos (MP4)</FormLabel>
                                         <br />
-                                        <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+                                        <RadioGroup aria-label="videos" name="videos" value={vvalue.toString()} onChange={vhandleChange}>
                                             {
-                                                vformats ? vformats.map((frt, index) => (
-                                                    < FormControlLabel value={frt.url} control={< Radio />}
-                                                        label={frt.qualityLabel + ' ( ' + (frt.contentLength / 1000000).toFixed(1) + 'MB )'} />
-                                                )) : <></>
+                                                formats ? formats.filter(
+                                                    formt => formt.hasVideo && formt.container === 'mp4' && formt.itag !== 18 && !isNaN(formt.contentLength)).map(
+                                                        (frt, index) => (
+                                                            < FormControlLabel key={index} value={frt.itag.toString()} control={< Radio />}
+                                                                label={frt.qualityLabel + ' ( ' + (frt.contentLength / 1000000).toFixed(1) + 'MB )'} />
+                                                        )) : <></>
                                             }
                                         </RadioGroup>
                                     </FormControl>
@@ -292,13 +271,14 @@ export default function Ytvideo() {
                                     <FormControl component="fieldset">
                                         <FormLabel component="legend">Audios</FormLabel>
                                         <br />
-                                        <RadioGroup aria-label="gender" name="gender1" value={value} onChange={handleChange}>
+                                        <RadioGroup aria-label="audios" name="audios" value={avalue.toString()} onChange={ahandleChange}>
                                             {
-                                                aformats ? aformats.map((frt, index) => (
-                                                    <FormControlLabel value={frt.url} control={<Radio />}
-                                                        label={frt.quality + ' ( ' + (frt.contentLength / 1000000).toFixed(1) + 'MB )'} />
-                                                ))
-                                                    : <></>
+                                                formats ? formats.filter(
+                                                    formt => !formt.hasVideo && formt.hasAudio && !isNaN(formt.contentLength)).map(
+                                                        (frt, index) => (
+                                                            < FormControlLabel key={index} value={frt.itag.toString()} control={< Radio />}
+                                                                label={frt.audioQuality.replace('AUDIO_QUALITY_', '').toLowerCase() + ' ( ' + (frt.contentLength / 1000000).toFixed(1) + 'MB )'} />
+                                                        )) : <></>
                                             }
                                         </RadioGroup>
                                     </FormControl>
@@ -315,7 +295,7 @@ export default function Ytvideo() {
                                         downloadFile
                                     }
                                     color="secondary">
-                                    Download  {/* <a target='_blank' style={{ color: 'white' }} href={value} download file='download'>Download</a> */}
+                                    Play and Download  {/* <a target='_blank' style={{ color: '#fff' }} href={value} download file='download'>Download</a> */}
                                 </Button>
                             </Grid>
                         </Grid>
@@ -325,15 +305,15 @@ export default function Ytvideo() {
             </Dialog>
 
             <Helmet>
-                <title>Youtube Downloader - Online Youtube Video Downloader | mathcalc</title>
-                <meta name="description" content="Convert,preview and download Youtube videos to MP3, MP4, 3GP for free with our Youtube Downloader. The downloading is very quick and simple, just wait a few seconds for the file to be ready on your device." />
-                <meta name="keywords" content="youtube, convert video, mp4, mp3, webm, varius quality,medium, low, high quality" />
+                <title>Youtube video downloader - Online Youtube Video Downloader | mathcalc</title>
+                <meta name="description" content="Convert,preview and download Youtube videos to MP3, MP4, 3GP for free with our Youtube video downloader. The downloading is very quick and simple, just wait a few seconds for the file to be ready on your device." />
+                <meta name="keywords" content="youtube, convert video, mp4, mp3, webm, varius quality,medium, low, high quality,youtube video downloader, youtube downloader/" />
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
             </Helmet>
             <Box m={3} className={classes.appBar}>
                 <Typography variant="h5">
                     <svg xmlns="http://www.w3.org/2000/svg" width="37" height="28" viewBox="0 0 37 28" fill="none" alt="Our">
-                        <g clip-path="url(#clip0)">
+                        <g clipPath="url(#clip0)">
                             <path d="M0.413567 5.80249C0.646742 2.9375 2.94402 0.705376 5.81232 0.517162C9.497 0.275378 14.5363 0 18.375 0C22.2137 0 27.253 0.275378 30.9377 0.517162C33.806 0.705375 36.1033 2.9375 36.3364 5.80249C36.5469 8.38873 36.75 11.5252 36.75 14C36.75 16.4748 36.5469 19.6113 36.3364 22.1975C36.1033 25.0625 33.806 27.2946 30.9377 27.4828C27.253 27.7246 22.2137 28 18.375 28C14.5363 28 9.497 27.7246 5.81232 27.4828C2.94402 27.2946 0.646742 25.0625 0.413567 22.1975C0.203079 19.6113 0 16.4748 0 14C0 11.5252 0.203079 8.38873 0.413567 5.80249Z" fill="#FF0000"></path>
                             <path d="M11.1223 8.18535L8 11.1334L18 21L28 11.1334L24.8777 8.18535L20.1879 12.8132V0H15.8121V12.8132L11.1223 8.18535Z" fill="white"></path>
                         </g>
@@ -399,8 +379,8 @@ export default function Ytvideo() {
                                         }}>
                                         <figure className="image">
                                             <img src={
-                                                videoDetails.thumbnails[videoDetails.thumbnails.length - 1].url
-                                            } />
+                                                videoDetails.thumbnails[videoDetails.thumbnails.length - 1].url}
+                                                alt={videoDetails.title} />
                                         </figure>
                                     </Grid>
                                     <Grid item xs={12} sm={7} md={7} lg={7}>
@@ -421,67 +401,39 @@ export default function Ytvideo() {
                                                 </p>
                                                 <br />
                                             </div>
-                                            {
-                                                !generateLink ?
-                                                    <div style={{ width: '100%', display: 'flex' }}>
-                                                        {/* <div style={{ width: '50%' }}>
-                                                            <Select
-                                                                className={classes.select}
-                                                                IconComponent={ArrowDropDownIcon}
-                                                                variant="outlined"
-                                                                value={selectedFormat}
-                                                                onChange={
-                                                                    (e) => {
-                                                                        console.log(e);
-                                                                        setSelectedFormat(e.target.value)
-                                                                    }
-                                                                }
-                                                            >
-                                                                {
-                                                                    formats ? formats.map((fmt, index) => (
-                                                                        <MenuItem value={index}>
-                                                                            {
-                                                                                fmt.mimeType
-                                                                            }
-                                                                        </MenuItem>
-                                                                    )) : <></>
-                                                                }
-                                                            </Select>
-                                                        </div> */}
-                                                        <div style={{ width: '50%', paddingRight: '5px' }}>
-                                                            <Button variant="contained"
-                                                                style={{
-                                                                    height: '54px',
-                                                                    width: '100%',
-                                                                    textTransform: 'none',
-                                                                    fontWeight: '600',
-                                                                    marginRight: '4px'
-                                                                }} className="button is-info"
+                                            <div style={{ width: '100%', display: 'flex' }}>
+                                                <div style={{ width: '50%', paddingRight: '5px' }}>
+                                                    <Button variant="contained"
+                                                        style={{
+                                                            height: '54px',
+                                                            width: '100%',
+                                                            textTransform: 'none',
+                                                            fontWeight: '600',
+                                                            marginRight: '4px'
+                                                        }} className="button is-info"
 
-                                                                onClick={(e) => {
-                                                                    setVideoDetails(undefined);
-                                                                }}
+                                                        onClick={(e) => {
+                                                            setVideoDetails(undefined);
+                                                        }}
 
-                                                            >Convert next</Button>
-                                                        </div>
-                                                        <div style={{ width: '50%' }}>
-                                                            <Button variant='contained'
-                                                                style={{
-                                                                    height: '54px',
-                                                                    width: '100%',
-                                                                    fontWeight: '600',
-                                                                    textTransform: 'none',
-                                                                }}
-                                                                className='button is-success'
-                                                                onClick={
-                                                                    () => {
-                                                                        setOpen(true)
-                                                                    }}
-                                                            >Get link</Button>
-                                                        </div>
-                                                    </div>
-                                                    : <></>
-                                            }
+                                                    >Convert next</Button>
+                                                </div>
+                                                <div style={{ width: '50%' }}>
+                                                    <Button variant='contained'
+                                                        style={{
+                                                            height: '54px',
+                                                            width: '100%',
+                                                            fontWeight: '600',
+                                                            textTransform: 'none',
+                                                        }}
+                                                        className='button is-success'
+                                                        onClick={
+                                                            () => {
+                                                                setOpen(true)
+                                                            }}
+                                                    >Get link</Button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </Grid>
                                 </Grid>
@@ -521,7 +473,7 @@ export default function Ytvideo() {
                 <Grid container spacing={2} justify='center'>
                     {
                         imageData.map((img, i) => (
-                            <Grid item xs={12} sm={6} md={6} lg={4}>
+                            <Grid item xs={12} sm={6} md={6} lg={4} key={i}>
                                 <Card className={classes.cards}>
                                     <CardActionArea>
                                         <CardMedia
@@ -559,26 +511,40 @@ export default function Ytvideo() {
                     <br />
                     <hr />
                     <p className="magT40">
-                        <Button variant="contained" color="primary" style={{ height: '48px', minWidth: '254px' }}>
-                            <a className="btn-red mag0" type="button" style={{ color: 'white' }} href="#convert">Convert now</a>
-                        </Button>
+                        <a className="btn-red mag0" type="button" style={{ color: '#fff' }} href="#convert">
+                            <Button variant="contained" color="primary" style={{ height: '48px', minWidth: '254px' }}>
+                                Convert now
+                            </Button>
+                        </a>
                     </p>
                 </Box>
                 <hr />
-                <h2 className="title is-4" style={{ textAlign: 'center' }}>How to download Youtube video? </h2>
+
+                <h2 className="title is-4" style={{ textAlign: 'center' }}>  Disclaimer</h2>
+                <p style={{ textAlign: 'center' }}>
+                    Downloading videos from YouTube is against the YouTube Policy. The only videos that your allowed to download is your own which you can already do using YouTube Studio.
+                </p>
+                <hr />
+
+                <h2 className="title is-4" style={{ textAlign: 'center' }}>How to download Youtube video oline? </h2>
                 <Box p={2}>
 
                     <div className={classes.root}>
                         <Stepper activeStep={3} orientation="vertical">
                             <Step key={'label1'}>
-                                <StepLabel>Paste YouTube url or enter keywords into the input box.</StepLabel>
+                                <StepLabel>Paste YouTube url and click convert button</StepLabel>
                             </Step>
                             <Step key={'label2'}>
-                                <StepLabel>Choose output MP4 or MP3 format you want to convert and click "Download" button.
+                                <StepLabel>Choose output MP4 or MP3 format you want to convert and click "Play and Download" button.
                                 </StepLabel>
                             </Step>
                             <Step key={'label3'}>
-                                <StepLabel>Wait until the conversion is completed and download the file. Very easy and fast.
+                                <StepLabel>New page will open and video or audio will play.
+                                </StepLabel>
+                            </Step>
+                            <Step key={'label4'}>
+                                <StepLabel>
+                                    If you like, Click three dots and download. Very easy ,fast and secure. because it downloads files from google itself
                                 </StepLabel>
                             </Step>
                         </Stepper>
@@ -586,7 +552,7 @@ export default function Ytvideo() {
                 </Box>
                 <hr />
                 <h3 className="title is-4" style={{ textAlign: 'center' }}>Questions and Answers</h3>
-                <div className={classes.root} style={{ backgroundColor: 'white' }}>
+                <div className={classes.root} style={{ backgroundColor: '#fff' }}>
                     <Box p={2}>
                         <section itemScope="" itemType="https://schema.org/FAQPage">
                             <div className="container">

@@ -73,7 +73,7 @@ export default function Textandlist() {
                         </div>
                     </div>
                 </section>
-                <Grid container direction="row" justify="center" alignItems="center">
+                <Grid spacing={1} container direction="row" justify="center" alignItems="center">
                     <Grid item lg={8} md={8} sm={12}>
                         <div style={{ display: 'flex', flexWrap: 'wrap', padding: '0px', justifyContent: 'center' }}>
                             {

@@ -90,7 +90,7 @@ const Keypad = (props) => {
                 <CalcButton value="±" onClick={props.onToggleSign}>±</CalcButton>
                 <CalcButton value="0" onClick={handleOnDigit}>0</CalcButton>
                 <CalcButton value="." onClick={props.onDecimalPoint}>.</CalcButton>
-                <CalcButton style={{ color: 'white', backgroundColor: '#dcbc11' }} value="=" onClick={props.onEquals}>=</CalcButton>
+                <CalcButton style={{ color: '#fff', backgroundColor: '#dcbc11' }} value="=" onClick={props.onEquals}>=</CalcButton>
             </div>
         </Card>
 

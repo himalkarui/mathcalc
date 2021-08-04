@@ -7,6 +7,7 @@ import Helmet from 'react-helmet';
 // import js , css and iamges
 import '../../Assets/favicon/css/stylesfavicon.css';
 import { checkSingle } from '@reacherhq/api';
+import VerticalAds from '../../Components/VerticalAds';
 import SubNavBar from '../../Components/SubNavBar';
 import CustomSnakbar from '../../Components/CustomSnakbar';
 
@@ -74,7 +75,7 @@ export default function Emailvalidator(props) {
                 <meta name="keywords" content="free email validator, email validation, free email validation, free email check, email test, email valid" />
             </Helmet>
             <Container maxWidth="xl">
-                <Grid container direction="row">
+                <Grid container direction="row" spacing={1}>
                     <Grid item md={8} lg={8} sm={12}>
                         <SubNavBar
                             pageTitle="EMAIL ADDRESS VALIDATOR"
@@ -119,7 +120,7 @@ export default function Emailvalidator(props) {
                                                     }}
 
                                                 >
-                                                    <label style={{ color: 'white', fontWeight: 'bolder' }}>Enter Email to Validate</label>
+                                                    <label style={{ color: '#fff', fontWeight: 'bolder' }}>Enter Email to Validate</label>
                                                     <input
                                                         style={{
                                                             margin: '2rem 50px',
@@ -140,7 +141,7 @@ export default function Emailvalidator(props) {
                                         <br />
                                         <div className="columns is-6">
                                             {emailResultShow ?
-                                                <div className="card box" style={{ backgroundColor: '#4caf50b8', color: 'white' }}>
+                                                <div className="card box" style={{ backgroundColor: '#4caf50b8', color: '#fff' }}>
                                                     <div className="card-content">
                                                         <h4 className="title is-4" style={{ color: 'whitesmoke' }}>Validation Results</h4>
                                                         <p className="title is-5" style={{ color: 'whitesmoke' }}>
@@ -308,7 +309,9 @@ export default function Emailvalidator(props) {
                             </div >
                         </div>
                     </Grid >
-                    <Grid item md={4} lg={4} sm={12}></Grid>
+                    <Grid item md={4} lg={4} sm={12}>
+                        <VerticalAds />
+                    </Grid>
                 </Grid >
             </Container>
         </React.Fragment >

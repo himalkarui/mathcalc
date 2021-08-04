@@ -11,6 +11,8 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Filezip from './modules/Filezip';
 import Fileunzip from './modules/Fileunzip';
 import Converter from './modules/Converter';
+import VerticalAds from '../../../Components/VerticalAds';
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -54,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down('sm')]: {
             marginLeft: '0.3rem'
         },
-        backgroundColor: "#fafafa"
+        backgroundColor: "transparent",
     },
     tabs: {
         flexGrow: 1,
@@ -128,6 +130,7 @@ export default function Zipfiles() {
                 <TabPanel value={value} index={1}>
                     <Fileunzip />
                 </TabPanel>
+                <VerticalAds />
 
                 {/* <TabPanel value={value} index={2}>
                 <Converter />

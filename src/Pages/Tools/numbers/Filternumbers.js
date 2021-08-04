@@ -8,6 +8,7 @@ import SettingIcon from '@material-ui/icons/Settings';
 import FontDownloadIcon from '@material-ui/icons/GetApp';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import Helmet from 'react-helmet';
+import VerticalAds from '../../../Components/VerticalAds';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
 import SubNavBar from '../../../Components/SubNavBar';
 import * as fileSave from "file-saver";
@@ -354,10 +355,11 @@ export default function Filternumbers() {
                                 FILTER NUMBERS ONLINE</h1>
                             <p className="  has-text-grey">
                                 Filter numbers from a list, according to various criteria, such as maximum, minimum, divisor, multiple and more
-                        </p>
+                            </p>
                         </div>
                     </div>
                 </section>
+                <VerticalAds />
                 <div className="container" >
                     <div className="columns" >
                         <div className="column is-6" >
@@ -414,13 +416,13 @@ export default function Filternumbers() {
                                             onClick={hasRemovecriteriameetChange}
                                         >
                                             Preserve
-                                </Button>
+                                        </Button>
                                         <Button aria-label="Remove"
                                             className={state.hasRemovecriteriameet ? "button is-success" : 'button'}
                                             onClick={hasRemovecriteriameetChange}
                                         >
                                             Remove
-                                    </Button>
+                                        </Button>
                                     </ButtonGroup><br />
                                     <span><strong>Select the numbers that meet any or all conditions?</strong></span><br />
                                     <ButtonGroup style={{ margin: '10px 0px' }}>
@@ -429,13 +431,13 @@ export default function Filternumbers() {
                                             onClick={isAnyorAllChange}
                                         >
                                             Any (OR)
-                                </Button>
+                                        </Button>
                                         <Button aria-label="All(AND)"
                                             className={!state.isAnyorAll ? "button is-success" : 'button'}
                                             onClick={isAnyorAllChange}
                                         >
                                             All (AND)
-                                    </Button>
+                                        </Button>
                                     </ButtonGroup><br />
                                     <hr />
                                     <FormControlLabel

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Grid, makeStyles, Container } from '@material-ui/core';
 import Helmet from 'react-helmet';
 // import js , css and iamges
-import '../../Assets/favicon/css/stylesfavicon.css';
+import VerticalAds from '../../Components/VerticalAds';
 import SubNavBar from '../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
         "& th": {
             backgroundColor: '#59327a',
             border: '1px solid black',
-            color: 'white',
+            color: '#fff',
             padding: '5px'
         }
     },
@@ -270,7 +270,9 @@ export default function CovidTracker(props) {
                         </div>
                         <br />
                     </Grid >
-                    <Grid item md={3} lg={3} sm={false}></Grid>
+                    <Grid item md={3} lg={3} sm={12}>
+                        <VerticalAds/>
+                    </Grid>
                 </Grid>
             </Container>
         </React.Fragment >

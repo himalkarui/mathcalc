@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Card, Typography, FormControl, InputLabel, Select, MenuItem, Container } from '@material-ui/core';
+import { Grid, Card, Typography, FormControl, InputLabel, Select, MenuItem, Chip, Box, Container } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Helmet from 'react-helmet';
 import capacitanceform from '../../../Assets/images/capacitanceform.svg';
@@ -31,6 +31,25 @@ const useStyles = makeStyles((theme) => ({
     imgcenter: {
         marginLeft: '55px',
         width: '100px !important'
+    },
+    allCalc: {
+        padding: '24px',
+        border: '1px solid antiquewhite',
+        backgroundColor: 'white'
+    },
+    anchorCalc: {
+        margin: '0px 8px 16px 0px',
+        cursor: 'pointer',
+        border: 'none',
+        boxShadow: '0 1px 3px rgb(34 25 25 / 40%)',
+        color: 'white',
+        padding: '2px',
+        backgroundColor: '#112233b0',
+        '&:hover': {
+            color: '#112233b0 !important',
+            backgroundColor: 'transparent',
+            border: '1px solid #112233b0'
+        },
     },
 }));
 
@@ -78,6 +97,50 @@ export default function Capacitance() {
             ...state, [e.target.id]: e.target.value
         })
     }
+
+    const [calcs, setCalcs] = React.useState([
+        {
+            urlname: "Power",
+            urlpath: "/physics/power/"
+        },
+        {
+            urlname: 'Energy Mass',
+            urlpath: '/physics/eeqlmc2/'
+        },
+        {
+            urlname: 'Ohms law',
+            urlpath: '/physics/ohmslaw/'
+        },
+        {
+            urlname: 'Newtons law of gravity',
+            urlpath: '/physics/newtons-law-of-gravity/'
+        },
+        {
+            urlname: 'Capacitance',
+            urlpath: '/physics/capacitance/'
+        },
+        {
+            urlname: 'Inductance',
+            urlpath: '/physics/inductance/'
+        },
+        {
+            urlname: 'Kinetic Energy',
+            urlpath: '/physics/kinetic-energy/'
+        },
+        {
+            urlname: 'Power',
+            urlpath: '/physics/power/'
+        }
+        // 'Weight',
+        // "Newton's second law",
+        // "Acceleration",
+        // "Torque",
+        // "constant acceleration",
+        // "Centripetel acceleration",
+        // "Efficiency",
+        // "Frequency",
+        // "Pressure"
+    ]);
 
     const classes = useStyles();
     return (
@@ -168,7 +231,20 @@ export default function Capacitance() {
                                     </div>
                                 </div>
                             </Card>
-                            <hr />
+                            <br />
+                            <Box className={classes.allCalc} itemScope itemType="https://schema.org/SiteNavigationElement">
+                                <Typography component="h1" className={"title is-6"} variant="h1">Related calculators</Typography>
+                                {
+                                    calcs && calcs.length > 0 ? calcs.map((calc, index) => {
+                                        return (
+                                            <Chip
+                                                itemProp="name" component="a" href={calc.urlpath}
+                                                className={classes.anchorCalc} key={index} variant="outlined" label={calc.urlname + ' calculator'} />
+                                        )
+                                    }) : <></>
+                                }
+                            </Box>
+                            <br />
                             <Card elevation={1} className="box">
                                 <h2 className="title is-5">Capacitor</h2>
                                 <figure className="image">
@@ -177,22 +253,22 @@ export default function Capacitance() {
                                 <br />
                                 <Typography>
                                     Capacitance is the ratio of the amount of electric charge stored on a conductor to a difference in electric potential.
-                                      <br />
-                                        where
+                                    <br />
+                                    where
                                     <ul>
                                         <br />   <li><strong>q - </strong> is the charge held on the conductor,</li>
                                         <br />  <li>
                                             <img alt="electric potential" className={classes.imgcenter} src='https://wikimedia.org/api/rest_v1/media/math/render/svg/3c012cba2a017a63dd08776373adebb0b2b5e67c' />
-                                                is the electric potential,  </li>
+                                            is the electric potential,  </li>
                                         <br /> <li>
                                             <strong> σ - </strong>  is the surface charge density.
-                                            </li>
+                                        </li>
                                         <br />  <li>
                                             <strong>dS - </strong> is an infinitesimal element of area on the surface of the conductor,
-                                            </li>
+                                        </li>
                                         <br />   <li>
                                             <strong>r - </strong> is the length from dS to a fixed point M on the conductor
-                                            </li>
+                                        </li>
                                         <br />  <li>
                                             <strong>ε - </strong> is the vacuum permittivity</li>
                                         <br />  <li>
@@ -203,11 +279,11 @@ export default function Capacitance() {
                                     <br />
                                     The SI unit of capacitance is the farad (symbol: F), named after the English physicist Michael Faraday. A 1 farad capacitor, when charged with 1 coulomb of electrical charge,
                                     has a potential difference of 1 volt between its plates. The reciprocal of capacitance is called elastance.
-                             </Typography>
+                                </Typography>
                             </Card>
                         </Grid>
                         <Grid item lg={4} md={4} sm={12}>
-                        <VerticalAds /></Grid>
+                            <VerticalAds /></Grid>
                     </Grid>
                 </div>
             </Container>

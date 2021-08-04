@@ -4,6 +4,7 @@ import { Button, Card, Container, Typography } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import SettingIcon from '@material-ui/icons/Settings';
 import Ruleofthree from '../../../Assets/images/ruleofthree.png';
+import VerticalAds from '../../../Components/VerticalAds';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../Components/SubNavBar';
 
@@ -18,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#314259'
     },
     formelems: {
+        width: '100%',
         '& > *': {
             margin: '10px 0px 10px 0px',
         },
@@ -97,24 +99,24 @@ export default function Singlerulethreedir() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 SINGLE RULE OF THREE INVERSE ONLINE
-          </h1>
+                            </h1>
                             <p className="  has-text-grey">
                                 Inverse proportion is, where more requires less, and less requires more.
-          </p>
+                            </p>
                         </div>
                     </div>
                 </section>
                 <Card elevation={1} className="box">
                     <h3 className="title is-5">  For example:
-                          </h3>
+                    </h3>
                     <img src={Ruleofthree} alt="rule of three"></img>
                     <p> If 8 men can paint a wall in 4 days, how long will 6 men take to paint a similar wall?
-                               &nbsp; <strong>Answer:</strong>  a: 8, b: 4, c: 6, x: 5.33333 (days)
-                        </p><br />
+                        &nbsp; <strong>Answer:</strong>  a: 8, b: 4, c: 6, x: 5.33333 (days)
+                    </p><br />
                     <p>
                         If 6 days are required to move a sandpile using 10 trucks, how many trucks are required to move the same sandpile within 4 days?
-                              &nbsp; <strong>Answer:</strong> a: 6, b: 10, c: 4, x: 15 (trucks)
-                            </p>
+                        &nbsp; <strong>Answer:</strong> a: 6, b: 10, c: 4, x: 15 (trucks)
+                    </p>
                 </Card>
 
                 <div className="container" >
@@ -159,6 +161,7 @@ export default function Singlerulethreedir() {
                     </div>
                 </div>
                 <br />
+                <VerticalAds />
             </Container>
         </div >
     );

@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import SettingIcon from '@material-ui/icons/Settings';
 import Ruleofthree from '../../../Assets/images/ruleofthree.png';
 import Helmet from 'react-helmet';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -96,23 +97,23 @@ export default function Singlerulethreedir() {
                 <section className="hero" >
                     <div style={{ padding: '2rem 0.5rem', fontSize: '1rem', lineHeight: '27px' }}>
                         <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">SINGLE RULE OF THREE DIRECT ONLINE
-          </h1>
+                        </h1>
                         <p className="  has-text-grey">
                             Find out x, in such proportion to c as b is to a.
-          </p>
+                        </p>
                     </div>
                 </section>
                 <Card elevation={1} className="box">
                     <h3 className="title is-5">  For example:
-                          </h3>
+                    </h3>
                     <img src={Ruleofthree} alt="rule of three"></img>
                     <p>    If 4 kg of a product cost $36, how much would be the cost of 18 kg?
-                               &nbsp; <strong>Answer:</strong> a: 4, b: 36, c: 18, x: 162 ($162)
-                        </p><br />
+                        &nbsp; <strong>Answer:</strong> a: 4, b: 36, c: 18, x: 162 ($162)
+                    </p><br />
                     <p>
                         If 2 liters of paint are required to paint 5 rooms, how many liters are required to paint 7 rooms?
-                               &nbsp; <strong>Answer:</strong> a: 5, b: 2, c: 7, x: 2.8 (liters)
-                            </p>
+                        &nbsp; <strong>Answer:</strong> a: 5, b: 2, c: 7, x: 2.8 (liters)
+                    </p>
                 </Card>
 
                 <div className="container" >
@@ -155,6 +156,7 @@ export default function Singlerulethreedir() {
                     </div>
                     <br />
                 </div>
+                <VerticalAds />
             </Container>
         </div >
     );

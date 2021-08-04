@@ -45,6 +45,7 @@ export default function Filesconverter() {
     debugger
     const classes = useStyles();
     let arrUrls = [
+        { urlname: 'Image to pdf', url: '/image-to-pdf' },
         { urlname: 'Zip or compress files', url: '/zip-files' },
         { urlname: 'Image size reducer', url: '/image-size-reducer' },
         { urlname: 'Base64 Encode', url: '/base64-encode' },

@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography, Container, Card, FormControl, } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import SettingIcon from '@material-ui/icons/Settings'
+import VerticalAds from '../../../Components/VerticalAds';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../Components/SubNavBar';
 
@@ -167,7 +168,7 @@ export default function Baseconvertor() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 ONLINE BASE CONVERTER OF NUMMBERS
-                           </h1>
+                            </h1>
                             <p className="  has-text-grey">
                                 Base conversion of a numbers from varoius bases like binary , octal, decimal, hexadecimal and custom radix conversion </p>
                         </div>
@@ -223,7 +224,7 @@ export default function Baseconvertor() {
                                             onClick={ClearAll}
                                         >
                                             Clear All
-                                    </Button>
+                                        </Button>
                                     </FormControl>
                                 </div>
                             </Card>
@@ -326,7 +327,7 @@ export default function Baseconvertor() {
                                             }}
                                         >
                                             Convert
-                                    </Button>
+                                        </Button>
                                     </FormControl>
                                     <br />
                                     <br />
@@ -337,7 +338,7 @@ export default function Baseconvertor() {
                     </div>
                     <br />
                 </div>
-
+                <VerticalAds />
                 <Card elevation={1} className="box">
                     <h1 className="title is-5"> The base converter</h1>
                     <p>
@@ -354,7 +355,7 @@ export default function Baseconvertor() {
                     <br />
                     <p>
                         By clicking on the Clear all button will clear all the values in input fields .
-                   </p>
+                    </p>
                     <br />
                 </Card>
                 <br />

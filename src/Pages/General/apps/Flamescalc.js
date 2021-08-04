@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
     resultDiv: {
         backgroundColor: '#03a9f4',
-        color: 'white',
+        color: '#fff',
         borderRadius: '0px',
         textAlign: 'center',
         background: 'linear-gradient(122deg, #f44336, #ff0dcc, blue,#452b2b9e)',
@@ -217,7 +217,7 @@ export default function Flamescalc() {
                                 <br />
                                 {state.showResult ?
                                     <div className={classes.resultDiv + " box"}>
-                                        <h3 className="title" style={{ color: 'white' }}>
+                                        <h3 className="title" style={{ color: '#fff' }}>
                                             The relationship between {state.nameOne} and {state.nametwo + " "}
                                         will end in
                                         <br />

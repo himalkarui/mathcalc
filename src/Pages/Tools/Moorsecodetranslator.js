@@ -14,6 +14,7 @@ import * as fileSave from "file-saver";
 import SubNavBar from '../../Components/SubNavBar';
 import Share from '../../Components/Share';
 import clickAud from '../../Assets/media/audio/click.wav';
+import VerticalAds from '../../Components/VerticalAds';
 import * as morsepro from 'morse-pro/lib/morse-pro';
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -273,6 +274,7 @@ export default function Moorsecodetranslator() {
                         </div>
                     </div>
                 </section>
+                <VerticalAds />
                 <div style={{ display: state.hrefHaveData ? 'block' : 'none' }} className="container" data-v-14591542>
                     <div className="columns" data-v-14591542>
                         <div className="column is-6" data-v-14591542>

@@ -55,7 +55,7 @@ const Sidebar = (props) => {
     let urls = [
         { url: '/', urlname: 'Home', icon: <Home /> },
         { url: '/general', urlname: 'General', icon: <Accessibility /> },
-        { url: '/youtube-to-video', urlname: 'Youtube', icon: <DownloadIcon /> },
+        { url: '/youtube-video-downloader', urlname: 'Youtube dl', icon: <DownloadIcon /> },
         { url: '/maths', urlname: 'Mathematics', icon: <Functions /> },
         { url: '/numbers', urlname: 'Numbers', icon: <>N</> },
         { url: '/tools', urlname: 'Tools', icon: <Apps /> },

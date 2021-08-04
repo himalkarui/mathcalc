@@ -2,6 +2,7 @@ import React from 'react';
 import { Chart, registerables } from 'chart.js';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Container, TextField } from '@material-ui/core';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 import Helmet from 'react-helmet';
 import { MathfieldElement } from 'mathlive';
@@ -239,6 +240,7 @@ export default function Graphs() {
                         </div>
                     </Grid>
                 </Grid>
+                <VerticalAds />
             </Container>
         </div >
     );

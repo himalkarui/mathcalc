@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Settings';
 import InfoIcon from '@material-ui/icons/InfoRounded';
 import Helmet from 'react-helmet';
+import VerticalAds from '../../../../Components/VerticalAds';
 import SubNavBar from '../../../../Components/SubNavBar';
 import CustomSnakbar from '../../../../Components/CustomSnakbar';
 
@@ -157,7 +158,7 @@ export default function Matrixtranspose() {
         } catch (e) { }
 
     }
-   
+
     const createMatrix = (noofRows, noofCols) => {
         generateMatrix(noofRows, noofCols, 'matrixa');
         generateMatrix(noofCols, noofRows, 'matrixatrans');
@@ -247,7 +248,7 @@ export default function Matrixtranspose() {
                                         onClick={() => { onCalculateClick() }}
                                     >
                                         Transpose
-                                </Button>
+                                    </Button>
                                 </div>
                             </div>
                         </Grid>
@@ -265,6 +266,8 @@ export default function Matrixtranspose() {
                     <br />
                 </Card>
                 <br />
+                <VerticalAds />
+                <hr />
                 <Card elevation={1} className="box">
                     <h1 className="title is-5"> Transpose of a Matrix</h1>
                     <p>

@@ -7,6 +7,7 @@ import CopyIcon from '@material-ui/icons/FileCopyOutlined';
 import { makeStyles, withStyles } from '@material-ui/styles';
 import CustomSnakbar from '../../Components/CustomSnakbar';
 import InfoIcon from '@material-ui/icons/InfoOutlined';
+import VerticalAds from '../../Components/VerticalAds';
 
 const useStyles = makeStyles((theme) => ({
     ulElem: {
@@ -212,7 +213,7 @@ export default function Passwordgenerator(props) {
                     txtTitle="Strong Password Generator to create secure passwords that are impossible to crack on your device without sending them across the Internet, and learn over tricks to keep your passwords, accounts and documents safe."
                 />
                 <br />
-                <Grid container>
+                <Grid container spacing={1}>
                     <Grid item sm={12} md={8} lg={8} >
                         <h1 style={{ display: 'flex' }} className="subtitle has-text-weight-bold">
                             Secure password generator online
@@ -394,7 +395,9 @@ export default function Passwordgenerator(props) {
                         </Card>
 
                     </Grid>
-                    <Grid item sm={12} md={4} lg={4}></Grid>
+                    <Grid item sm={12} md={4} lg={4}>
+                        <VerticalAds />
+                    </Grid>
                 </Grid>
                 <br />
             </div>

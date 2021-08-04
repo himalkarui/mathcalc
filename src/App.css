@@ -54,6 +54,27 @@ html ::-webkit-scrollbar-thumb:hover {
   z-index: 1000;
 }
 
+.hearten {
+  animation: 2s ease 0s infinite normal none running dgzxEO;
+}
+
+@keyframes dgzxEO {
+  1% {
+    transform: scale(1.25);
+  }
+
+  10% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.25);
+  }
+  18% {
+    transform: scale(1);
+  }
+}
+
 @keyframes lds-ripple {
   0% {
     top: 36px;
@@ -70,6 +91,45 @@ html ::-webkit-scrollbar-thumb:hover {
     opacity: 0;
   }
 }
+
+/* tart of styles for image to pdf module */
+
+.divImageGridParent ::-webkit-scrollbar {
+  height: 7px;
+  background-color: #3273dc;
+  border-radius: 60px;
+}
+
+.divImageGridParent ::-webkit-scrollbar-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 5px;
+  width: 15%;
+  border-radius: 60px;
+  background: #000;
+  margin-top: -4px;
+}
+
+.divImageGridParent::-webkit-scrollbar-track {
+  width: 300px;
+  height: 2px;
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+}
+
+.divImageGridParent:focus {
+  outline: none;
+}
+.divImageGridParent:focus::-webkit-scrollbar-runnable-track {
+  background: rgb(66, 56, 56) !important;
+}
+
+.divImageGridParent {
+  padding-bottom: 20px !important;
+  overflow: visible !important;
+}
+/* end of styles for img to pdf */
 
 .field-light {
   padding: 2rem !important;
@@ -408,7 +468,6 @@ li {
 .divLink {
   color: #744cbc;
   text-decoration: none;
-  border: 1px solid #e6ecf1;
   margin: 10px;
   box-sizing: border-box;
   cursor: pointer;
@@ -419,9 +478,13 @@ li {
   place-self: stretch;
   color: #242a31;
   background-color: white;
-  border-radius: 3px;
+  border-radius: 2px;
   min-height: 100px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 40%);
+}
+
+.divLink:hover {
+  box-shadow: 1px 1px 8px 0px rgb(0 0 0 / 40%);
 }
 
 .divLink span {
@@ -589,6 +652,38 @@ input[type="number"] {
 .line:after {
   left: 0.5em;
   margin-right: -50%;
+}
+
+.gsc-results-wrapper-overlay {
+  text-align: left;
+}
+
+.gsc-search-button .gsc-search-button-v2 {
+  background-color: white;
+  cursor: pointer;
+  border: none;
+  padding: 12px 16px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.gsc-search-button .gsc-search-button-v2:hover {
+  background-color: #eee;
+  border-left: 1px solid #c5c5c5;
+}
+
+.gsc-control-wrapper-cse {
+  border: 1px solid #c5c5c5;
+  border-radius: 5px;
+}
+.gsc-search-button-v2 svg {
+  fill: black !important;
+}
+.gsc-input-box {
+  border: none !important;
+}
+.gsc-search-box {
+  margin-bottom: 0px !important;
 }
 
 .divContents {

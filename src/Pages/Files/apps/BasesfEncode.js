@@ -12,6 +12,7 @@ import CustomSnakbar from '../../../Components/CustomSnakbar';
 import * as fileSave from "file-saver";
 import SubNavBar from '../../../Components/SubNavBar';
 import { Grid } from '@material-ui/core';
+import VerticalAds from '../../../Components/VerticalAds';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -259,6 +260,7 @@ export default function BasesfEncode() {
                                     <Link to={'/image-base64-generator'} style={{ color: 'blue', textDecoration: 'underline' }}>Image file encoder</Link>.
                                 </Typography>
                             </fieldset>
+                            <VerticalAds />
                         </div>
                         <div className="column is-6" data-v-14591542>
                             <Card elevation={1} className="box" data-v-14591542>

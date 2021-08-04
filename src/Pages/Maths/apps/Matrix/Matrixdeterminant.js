@@ -5,6 +5,7 @@ import Alert from '@material-ui/lab/Alert';
 import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Settings';
 import InfoIcon from '@material-ui/icons/InfoRounded';
+import VerticalAds from '../../../../Components/VerticalAds';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../../Components/SubNavBar';
 import CustomSnakbar from '../../../../Components/CustomSnakbar';
@@ -274,7 +275,7 @@ export default function Matrixdeterminant() {
                                         onClick={() => { onCalculateClick() }}
                                     >
                                         Calculate
-                                </Button>
+                                    </Button>
                                     <br /><br />
                                     {state.showResult ?
                                         <> <Typography variant="h1" className="title is-5">Result :<br />
@@ -294,6 +295,8 @@ export default function Matrixdeterminant() {
                     </Grid>
                 </Card>
                 <br />
+                <VerticalAds />
+                <hr />
                 <Card elevation={1} className="box">
                     <h1 className="title is-5">Determinant of a Matrix</h1>
                     <p>

@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography, Select, MenuItem, Container, Card } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import VerticalAds from '../../../Components/VerticalAds';
 import SettingIcon from '@material-ui/icons/Settings'
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../Components/SubNavBar';
@@ -219,13 +220,14 @@ export default function Percentage() {
                     <div style={{ padding: '2rem 0.5rem' }}>
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Online Percentage Calculator
-          </h1>
+                            </h1>
                             <h1 className="  has-text-grey" style={{ lineHeight: '27px' }}>
                                 Calculate the percentage of a number, or find a number given its percent, or find the percent given two numbers, or calculate the percentage increment or decrement
-          </h1>
+                            </h1>
                         </div>
                     </div>
                 </section>
+                <VerticalAds />
                 <div className="container" >
                     <div className="columns" >
                         <div className="column is-6" >

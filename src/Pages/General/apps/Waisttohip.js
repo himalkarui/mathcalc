@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles, } from '@material-ui/core/styles';
 import { Helmet } from "react-helmet";
 import {
-    Card, Grid, FormControl, InputLabel, InputAdornment, Button, Container, OutlinedInput
+    Card, Grid, FormControl, InputLabel, InputAdornment, Button, Container, OutlinedInput,
 } from '@material-ui/core';
 import Settings from '@material-ui/icons/Settings';
 import Table from '@material-ui/core/Table';
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     },
     resultDiv: {
         backgroundColor: '#03a9f4',
-        color: 'white',
+        color: '#fff',
         borderRadius: '0px',
         textAlign: 'center',
         background: 'linear-gradient(122deg, #f44336, #ff0dcc, blue,#452b2b9e)',
@@ -70,7 +70,6 @@ export default function Waisttohip() {
     const [snakMessage, setSnakMessage] = React.useState(null);
 
     const onCalculateClick = (e) => {
-
         if (!state.Waist || state.Waist === "") {
             setSnakOpen(true);
             setSnakMessage("Enter Waist");
@@ -99,17 +98,17 @@ export default function Waisttohip() {
             if (res <= 0.95) {
                 rowLow.style.backgroundColor = '#00d1b2'; setColor(rowLow.children, 'green');
 
-                rowMedium.style.backgroundColor = 'white'; setColor(rowMedium.children, 'black');
-                rowHigh.style.backgroundColor = 'white'; setColor(rowHigh.children, 'black');
+                rowMedium.style.backgroundColor = '#fff'; setColor(rowMedium.children, 'black');
+                rowHigh.style.backgroundColor = '#fff'; setColor(rowHigh.children, 'black');
             }
             else if (res <= 1 && res >= 0.95) {
                 rowMedium.style.backgroundColor = '#ffff0040'; setColor(rowMedium.children, '#ffdd57');
-                rowLow.style.backgroundColor = 'white'; setColor(rowLow.children, 'black');
-                rowHigh.style.backgroundColor = 'white'; setColor(rowHigh.children, 'black');
+                rowLow.style.backgroundColor = '#fff'; setColor(rowLow.children, 'black');
+                rowHigh.style.backgroundColor = '#fff'; setColor(rowHigh.children, 'black');
             } else if (res > 1) {
                 rowHigh.style.backgroundColor = '#ededed'; setColor(rowHigh.children, 'red');
-                rowLow.style.backgroundColor = 'white'; setColor(rowLow.children, 'black');
-                rowMedium.style.backgroundColor = 'white'; setColor(rowMedium.children, 'black');
+                rowLow.style.backgroundColor = '#fff'; setColor(rowLow.children, 'black');
+                rowMedium.style.backgroundColor = '#fff'; setColor(rowMedium.children, 'black');
             }
             setState({
                 ...state,
@@ -212,16 +211,13 @@ export default function Waisttohip() {
                                         onClick={() => { onCalculateClick() }}
                                     >Calculate</Button>
                                 </FormControl>
-
                             </Grid>
-                            <br />
                         </Card>
                         <br />
-
                         <Card style={{ display: state.showResult ? 'block' : 'none' }} elevation={1} className="box">
                             <h2 className="title is-5">
                                 Waist-to-Hip Ratio Calculation Results
-                                </h2>
+                            </h2>
                             <br />
                             <TableContainer component={Paper}>
                                 <Table className={classes.table} aria-label="spanning table">
@@ -230,7 +226,7 @@ export default function Waisttohip() {
                                             <TableCell style={{ backgroundColor: '#3298dc' }} colSpan={12} >
                                                 <h2
                                                     style={{
-                                                        color: 'white',
+                                                        color: '#fff',
                                                     }}
                                                     className="title is-6">Your Waist-to-Hip Ratio is {state.result}
                                                 </h2>
@@ -240,7 +236,7 @@ export default function Waisttohip() {
                                             <TableCell colSpan={12} style={{ backgroundColor: '#f2f2f2' }}>
                                                 <h2 className="title is-6" >
                                                     Body Parameters
-                                                 </h2>
+                                                </h2>
                                             </TableCell>
                                         </TableRow>
                                     </TableHead>
@@ -248,34 +244,34 @@ export default function Waisttohip() {
                                         <TableRow align="center">
                                             <TableCell colSpan={6} >
                                                 Waist-to-Hip Ratio
-                                                </TableCell>
+                                            </TableCell>
                                             <TableCell colSpan={6} >
                                                 Health Risk
-                                                </TableCell>
+                                            </TableCell>
                                         </TableRow>
                                         <TableRow id="rowLow" align="left">
                                             <TableCell colSpan={6} >
                                                 0.95 or below
-                                                </TableCell>
+                                            </TableCell>
                                             <TableCell colSpan={6} >
                                                 Low risk
-                                                </TableCell>
+                                            </TableCell>
                                         </TableRow>
                                         <TableRow id="rowMedium" align="left">
                                             <TableCell colSpan={6} >
                                                 0.96 - 1.0
-                                                </TableCell>
+                                            </TableCell>
                                             <TableCell colSpan={6} >
                                                 Moderate risk
-                                                </TableCell>
+                                            </TableCell>
                                         </TableRow>
                                         <TableRow id="rowHigh" align="left">
                                             <TableCell colSpan={6} >
                                                 1.0 +
-                                                </TableCell>
+                                            </TableCell>
                                             <TableCell colSpan={6} >
                                                 High risk
-                                                </TableCell>
+                                            </TableCell>
                                         </TableRow>
                                     </TableBody>
                                 </Table>
@@ -284,12 +280,9 @@ export default function Waisttohip() {
                             {
                                 parseFloat(state.result) < 0.95 ? <p>
                                     Your shape puts you at a lower risk of coronary heart disease, diabetes and stroke. There's more fat on your hips than your midsection. Your body does not convert lower body fat as readily as midsection fat. This keeps cholesterol down.
-                              </p> : <>Your shape puts you at a risk of coronary heart disease , diabetes and stroke</>
-
-
+                                </p> : <>Your shape puts you at a risk of coronary heart disease , diabetes and stroke</>
                             }
                         </Card>
-
                         <br />
                         <Card elevation={1} className="box">
                             <h4 className="title is-5">Notes</h4>
@@ -299,10 +292,10 @@ export default function Waisttohip() {
                             </p>
                             <br />
                             <p>  A common measure of fat distribution is the waist-to-hip (WTH) ratio. It is calculated by dividing the circumference of your waist by the circumference of your hips.
-                          </p>
+                            </p>
                             <br />
                             <p>  The waist-to-hip ratio, in some case, can be a better indicator of mortality risks than body mass index (BMI). You could possibly have too large of a waist, even though your BMI indicates a healthy weight. On the other hand, if you are muscular, a BMI may indicate an unhealthy weight.
-                          </p>
+                            </p>
                             <br />
                         </Card>
                         <br />

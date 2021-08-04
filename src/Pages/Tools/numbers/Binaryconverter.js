@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography, ButtonGroup, Container, Card, } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
+import VerticalAds from '../../../Components/VerticalAds';
 import SettingIcon from '@material-ui/icons/Settings'
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../Components/SubNavBar';
@@ -112,12 +113,13 @@ export default function Binaryconverter() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 ONLINE BINARY CONVERTER
-                           </h1>
+                            </h1>
                             <p className="  has-text-grey">
                                 Binary to decimal and decimal to binary conversion  </p>
                         </div>
                     </div>
                 </section>
+                <VerticalAds />
                 <div className="container" >
                     <div className="columns" >
                         <div className="column is-6" >
@@ -132,13 +134,13 @@ export default function Binaryconverter() {
                                             onClick={onChangeNumbersysisbin}
                                         >
                                             Binary to Decimal
-                                </Button>
+                                        </Button>
                                         <Button aria-label="Decimal to Binary"
                                             className={!state.isBinarytodec ? "button is-success" : 'button'}
                                             onClick={onChangeNumbersysisbin}
                                         >
                                             Decimal to Binary
-                                    </Button>
+                                        </Button>
                                     </ButtonGroup><br />
                                     <span><strong> {state.labelInput}</strong></span><br />
                                     <TextField className={classes.formelems} onChange={onInputChange}

@@ -178,7 +178,7 @@ export default function Circle() {
                             <p>
                                 Circle is a particular shape and defined as the set of points in a plane placed at equal
                                 distance from a single point called the center of the circle
-                                </p>
+                            </p>
                             <br />
                             <Grid container direction="row" justify="center" alignItems="center">
                                 <Grid item xl={6} lg={9} md={12} sm={12}>
@@ -228,26 +228,26 @@ export default function Circle() {
                             </h2>
                             <ul className={classes.ulElem}>
                                 <li>  The circle is the shape with the largest area for a given length of perimeter (see Isoperimetric inequality).
-                              </li>   <li> The circle is a highly symmetric shape: every line through the centre forms a line of reflection symmetry, and it has rotational symmetry around the centre for every angle. Its symmetry group is the orthogonal group O(2,R). The group of rotations alone is the circle group T.
-                              </li>   <li>    All circles are similar.
-                              </li>   <li>   A circle circumference and radius are proportional.
-                              </li>   <li>  The area enclosed and the square of its radius are proportional.
+                                </li>   <li> The circle is a highly symmetric shape: every line through the centre forms a line of reflection symmetry, and it has rotational symmetry around the centre for every angle. Its symmetry group is the orthogonal group O(2,R). The group of rotations alone is the circle group T.
+                                </li>   <li>    All circles are similar.
+                                </li>   <li>   A circle circumference and radius are proportional.
+                                </li>   <li>  The area enclosed and the square of its radius are proportional.
                                 </li>   <li>   The constants of proportionality are 2π and π respectively.
                                 </li>   <li>  The circle that is centred at the origin with radius 1 is called the unit circle.
                                 </li>   <li>  Thought of as a great circle of the unit sphere, it becomes the Riemannian circle.
                                 </li>   <li>  Through any three points, not all on the same line, there lies a unique circle. In Cartesian coordinates, it is possible to give explicit formulae for the coordinates of the centre of the circle and the radius in terms of the coordinates of the three given points
-                               </li>
+                                </li>
                             </ul>
                             <br />
                             <h2 className="title is-5">What is called a circle?</h2>
                             <p>
                                 A circle is a closed two-dimensional curve shaped figure, where all the points on the surface of the circle are equidistant from the centre point.
-                        </p>
+                            </p>
                             <br />
                             <h2 className="title is-5">What are the different parts of a circle?</h2>
                             <p>
                                 The different parts of a circle are radius, diameter, chord, tangent, arc, centre, secant, sector.
-                        </p>
+                            </p>
                             <br />
                             <h2 className="title is-5">The circle formulas.</h2>
                             <p>
@@ -268,7 +268,8 @@ export default function Circle() {
                         <br />
                     </Grid>
                     <Grid item lg={4} md={4} sm={12}>
-                        <VerticalAds /></Grid>
+                        <VerticalAds />
+                    </Grid>
                 </Grid>
             </Container>
         </div >

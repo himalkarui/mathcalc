@@ -217,7 +217,7 @@ export default function Bmi() {
                                     <Typography variant="h6" style={{ fontWeight: '800', fontSize: '1.5rem' }}>
                                         BMI Categories
                                     </Typography>
-                                    <div style={{ color: 'white' }} >
+                                    <div style={{ color: '#fff' }} >
                                         <List >
                                             <ListItem>
                                                 <ListItemAvatar>

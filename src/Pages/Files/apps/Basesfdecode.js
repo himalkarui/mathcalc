@@ -10,6 +10,7 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import Helmet from 'react-helmet';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
 import * as fileSave from "file-saver";
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 import { Grid } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
@@ -210,7 +211,7 @@ export default function Basesfdecode() {
                 />
                 <br />
                 <div className="container" data-v-14591542>
-                    <Grid>
+                    <Grid spacing={1}>
                         <Grid item sm={12} md={12} lg={8}>
                             <div className="columns" data-v-14591542>
                                 <div className="column is-6" data-v-14591542>
@@ -317,7 +318,9 @@ export default function Basesfdecode() {
                                 </div>
                             </Card>
                         </Grid>
-                        <Grid item sm={false} md={false} lg={4}> </Grid>
+                        <Grid item xs={12} sm={4} md={4} lg={4}>
+                            <VerticalAds />
+                        </Grid>
                     </Grid>
                     <br />
                 </div>

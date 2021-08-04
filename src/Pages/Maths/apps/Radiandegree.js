@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography, FormGroup, Switch, FormControlLabel, Container, Card, } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import SettingIcon from '@material-ui/icons/Settings'
+import VerticalAds from '../../../Components/VerticalAds';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../Components/SubNavBar';
 
@@ -163,6 +164,7 @@ export default function Radiandegree() {
                         </div>
                     </div>
                     <br />
+                    <VerticalAds />
                 </div>
             </Container>
         </div >

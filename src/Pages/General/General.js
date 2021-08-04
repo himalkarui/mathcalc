@@ -70,7 +70,7 @@ export default function General() {
                             <h1 className="subtitle is-spaced has-text-weight-bold">General
                             </h1>
                             <p className="  has-text-grey">
-                                Various mathematical tasks, such as calculate percentages, simple shapes, graph fnctions and more..
+                                Various mathematical tasks, such as calculate percentages, simple shapes, graph functions and more..
                             </p>
                         </div>
                     </div>

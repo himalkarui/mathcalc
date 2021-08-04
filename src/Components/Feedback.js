@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
-import { Card, Container, Divider, TextField, CardHeader } from '@material-ui/core';
+import { Card, Container, TextField, CardHeader } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Send from '@material-ui/icons/SendSharp';
+import VerticalAds from './VerticalAds';
 import CustomSnakbar from './CustomSnakbar';
 import Helmet from 'react-helmet';
 
 const useStyles = makeStyles((theme) => ({
     inputField: {
         flexGrow: 1,
-        width: '95%',
+        width: '100%',
         maxWidth: '600px',
         margin: '0.5rem',
     },
@@ -116,7 +117,7 @@ export default function Feedback() {
                         <div className="columns">
                             <div className="column is-6">
                                 <Card elevation={1} className="box">
-                                    <CardHeader avatar="Feedback" />
+                                    <CardHeader style={{ padding: '0px 0px 0px 10px', fontWeight: 'bolder' }} avatar="Feedback" />
                                     <CustomSnakbar
                                         open={snakOpen}
                                         msg={snakMessage}
@@ -147,21 +148,22 @@ export default function Feedback() {
                                         variant={"outlined"}
                                         aria-label="Have feedback? We’d love to hear it, but please don’t share sensitive information. Have questions? Try help or support." placeholder={'Have feedback? We’d love to hear it, but please don’t share sensitive information. Have questions? Try help or support.'} /><br />
                                     <br />
-                                    <Divider />
-                                    <br />
-                                    <Button style={{
-                                        width: '100%',
-                                        height: '42px',
-                                        marginLeft: '9px',
-                                        letterSpacing: '4px',
-                                        fontWeight: 'bolder'
-                                    }} onClick={handleSendClose} color="primary"
+                                    <Button
+                                        variant="contained"
+                                        style={{
+                                            width: '100%',
+                                            height: '42px',
+                                            marginLeft: '9px',
+                                            letterSpacing: '4px',
+                                            textTransform: 'none'
+                                        }} onClick={handleSendClose} color="primary"
                                     >
                                         Send message &nbsp; {<Send />}
                                     </Button>
                                 </Card>
                             </div >
                             <div className="column is-6">
+                                <VerticalAds />
                             </div>
                         </div>
                     </div>

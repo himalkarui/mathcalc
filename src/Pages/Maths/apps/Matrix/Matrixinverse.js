@@ -5,6 +5,7 @@ import Alert from '@material-ui/lab/Alert';
 import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Settings';
 import InfoIcon from '@material-ui/icons/InfoRounded';
+import VerticalAds from '../../../../Components/VerticalAds';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../../Components/SubNavBar';
 import CustomSnakbar from '../../../../Components/CustomSnakbar';
@@ -360,8 +361,8 @@ export default function Matrixinverse() {
                         <p className="title is-5">
                             <strong>A<sup>-1</sup> &nbsp;= &nbsp;Adj(A) / |A|<br />
                                 <br />
-                                  Where |A| ≠ 0
-                                  </strong>
+                                Where |A| ≠ 0
+                            </strong>
                         </p>
                     </pre>
                     <br />
@@ -409,7 +410,7 @@ export default function Matrixinverse() {
                                         onClick={() => { onCalculateClick() }}
                                     >
                                         Invert
-                                </Button>
+                                    </Button>
                                     <br /><br />
                                     {state.showResult ?
                                         <> <Typography variant="h1" className="title is-5">Result :<br />
@@ -477,6 +478,8 @@ export default function Matrixinverse() {
                     </Grid>
                 </Card>
                 <br />
+                <VerticalAds />
+                <hr />
                 <Grid container>
                     <Grid item sm={12} md={8} lg={8}>
                         <Card elevation={1} className="box">
@@ -491,7 +494,7 @@ export default function Matrixinverse() {
                         <Card elevation={1} className="box">
                             <h1 className="title is-5">  Identity Matrix</h1>
                             <p>  We just mentioned the "Identity Matrix". It is the matrix equivalent of the number "1":
-                    </p>
+                            </p>
                             <br />
                             <p>It is "square" (has same number of rows as columns),</p>
                             <p>It has 1s on the diagonal and 0s everywhere else.</p>

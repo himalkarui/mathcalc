@@ -6,6 +6,8 @@ import {
 import SettingIcon from '@material-ui/icons/Settings';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../Components/SubNavBar';
+import VerticalAds from '../../../Components/VerticalAds';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -102,6 +104,7 @@ export default function Countwords() {
                         </div>
                     </div>
                 </section>
+                <VerticalAds />
                 <div className="container" data-v-14591542>
                     <div className="columns" data-v-14591542>
                         <div className="column is-6" data-v-14591542>

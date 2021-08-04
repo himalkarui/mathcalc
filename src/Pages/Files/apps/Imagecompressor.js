@@ -7,6 +7,7 @@ import InsertPhotoIcon from '@material-ui/icons/InsertPhoto';
 import Helmet from 'react-helmet';
 import SubNavBar from "../../../Components/SubNavBar";
 import Resizer from "react-image-file-resizer";
+import VerticalAds from '../../../Components/VerticalAds';
 
 const useStyles = {
     root: {
@@ -197,7 +198,7 @@ export default class Imagecompressor extends React.Component {
                                                         backgroundColor: '#009688',
                                                         width: '100%',
                                                         height: '100%',
-                                                        color: 'white',
+                                                        color: '#fff',
                                                         fontSize: '0.9rem',
                                                     }}
                                                     data-v-14591542>
@@ -505,7 +506,9 @@ export default class Imagecompressor extends React.Component {
                                 </Card>
                                 <br />
                             </Grid>
-                            <Grid item xs={12} sm={12} md={3} lg={3}></Grid>
+                            <Grid item xs={12} sm={12} md={3} lg={3}>
+                                <VerticalAds />
+                            </Grid>
                         </Grid>
                     </div>
                 </Container>

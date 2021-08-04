@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import SubNavBar from '../../Components/SubNavBar';
 import CustomSnakbar from '../../Components/CustomSnakbar';
 import { Link } from 'react-router-dom';
+import VerticalAds from '../../Components/VerticalAds';
 import { Card, Container, Typography, Grid, Button, Tooltip, Select, MenuItem } from '@material-ui/core';
 function scrolldiv(div) {
     window.scroll(0,
@@ -123,7 +124,7 @@ export default function Baseimagegen(props) {
                 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
             </Helmet>
             <div className="container" style={{ padding: '1rem' }} data-v-14591542>
-                <Grid container>
+                <Grid container spacing={1}>
                     <Grid item sm={12} md={8} lg={8}>
                         <SubNavBar
                             pageTitle="Image to base64 string generator"
@@ -138,7 +139,7 @@ export default function Baseimagegen(props) {
                             <h3 className="title is-5" data-v-14591542>Image to base64 string generator</h3>
                             <div className="file-dropzone" style={{
                                 backgroundColor: 'rgb(245 0 87 / 29%)',
-                                color: 'white',
+                                color: '#fff',
                                 cursor: 'pointer'
                             }} data-v-14591542>
                                 <input id="image" type="file" data-v-14591542 onChange={onCHangeFile}
@@ -220,7 +221,9 @@ export default function Baseimagegen(props) {
                         </Card>
                         <br />
                     </Grid>
-                    <Grid item sm={false} md={4} lg={4}></Grid>
+                    <Grid item sm={12} md={4} lg={4}>
+                        <VerticalAds />
+                    </Grid>
                 </Grid>
             </div>
         </Container>

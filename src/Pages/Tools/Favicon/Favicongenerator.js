@@ -7,6 +7,7 @@ import * as fileSave from "file-saver";
 import { Link } from 'react-router-dom';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 // import js , css and iamges
+import VerticalAds from '../../../Components/VerticalAds';
 import '../../../Assets/favicon/css/stylesfavicon.css';
 import Favicon from "../../../Assets/favicon/js/favicon.js/src/package";
 import Center from "../../../Assets/favicon/js/favicon.js/src/center";
@@ -230,6 +231,7 @@ export default function Favicongenerator(props) {
                 <meta charset="utf-8" />
                 <meta data-key="viewport" name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
                 <meta data-key="description" name="description" content="The only favicon generator you need for your next project. Quickly generate your favicon from text, image, or choose from hundreds of emojis." />
+                <meta name="keywords" content="generate favicon,convertor, favicon maker, favicon, png, sitemap image, favicon image, ico image generator" />
             </Helmet>
             <Container maxWidth="xl">
                 <br />
@@ -250,6 +252,7 @@ export default function Favicongenerator(props) {
                                 </div>
                                 <div className="column is-4">
                                     <div className="is-pulled-right">
+                                        <VerticalAds />
                                     </div>
                                 </div>
                             </div>
@@ -2571,7 +2574,9 @@ export default function Favicongenerator(props) {
                             </Card>
                             <br />
                         </Grid>
-                        <Grid item xs={false} sm={false} md={4} lg={4} xl={4}></Grid>
+                        <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
+                            <VerticalAds />
+                        </Grid>
                     </Grid>
                 </div >
             </Container>

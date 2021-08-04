@@ -4,6 +4,7 @@ import { Button, Typography, ButtonGroup, Container, Card, } from '@material-ui/
 import TextField from '@material-ui/core/TextField';
 import SettingIcon from '@material-ui/icons/Settings'
 import Helmet from 'react-helmet';
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -114,13 +115,14 @@ export default function Hexadecimalconverter() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">
                                 ONLINE HEXADECIMAL CONVERTER
-                           </h1>
+                            </h1>
                             <p className="  has-text-grey">
                                 Hexadecimal to decimal and decimal to hexadecimal conversion
-                        </p>
+                            </p>
                         </div>
                     </div>
                 </section>
+                <VerticalAds />
                 <div className="container" >
                     <div className="columns" >
                         <div className="column is-6" >
@@ -135,13 +137,13 @@ export default function Hexadecimalconverter() {
                                             onClick={onChangeNumbersysisbin}
                                         >
                                             Hexadecimal to Decimal
-                                </Button>
+                                        </Button>
                                         <Button aria-label="Decimal to Hexadecimal"
                                             className={!state.isBinarytodec ? "button is-success" : 'button'}
                                             onClick={onChangeNumbersysisbin}
                                         >
                                             Decimal to Hexadecimal
-                                    </Button>
+                                        </Button>
                                     </ButtonGroup><br />
                                     <span><strong> {state.labelInput}</strong></span><br />
                                     <TextField className={classes.formelems} onChange={onInputChange}

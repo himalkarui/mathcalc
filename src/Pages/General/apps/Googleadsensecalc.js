@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
+import { Table, Button } from '@material-ui/core';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
@@ -143,29 +143,45 @@ export default function Googleadsensecalc(props) {
                                             </div>
                                         </div>
                                         <br />
+                                        <br />
                                         <div className="columns is-6">
                                             <div className="container">
                                                 <div className="flex-column">
-                                                    <label>Page Impressions</label><br />
-                                                    <TextField name="txtEmail"
-                                                        onChange={onChangeInput}
-                                                        variant="outlined"
-                                                        value={state.dailyPageImpression} type="number" id="dailyPageImpression"
-                                                        className={classes.formelems} placeholder="Daily Page Impressions" /><br />
-                                                    <label>Click Through Rate</label><br />
-                                                    <TextField
-                                                        onChange={onChangeInput}
-                                                        value={state.clickThroughRate} type="number" id="clickThroughRate" variant="outlined"
-                                                        className={classes.formelems} placeholder="Click Through Rate (%)" /><br />
-                                                    <label>Cost per Click</label>
-                                                    <br />
-                                                    <TextField
-                                                        onChange={onChangeInput}
-                                                        value={state.costPerClick} type="number" id="costPerClick" variant="outlined"
-                                                        className={classes.formelems} placeholder="Cost per click ($)" /><br />
-                                                    <div style={{ margin: '1rem 0px' }}>
-                                                        <button onClick={onClickCalculate} id="btncheck" className="button is-info">Calculate</button>
-                                                    </div>
+                                                    <Grid container spacing={1}>
+                                                        <Grid item xs={12} sm={4} md={4} lg={4} >
+                                                            <label>Page Impressions</label><br />
+                                                            <TextField name="txtEmail"
+                                                                onChange={onChangeInput}
+                                                                variant="outlined"
+                                                                value={state.dailyPageImpression} type="number" id="dailyPageImpression"
+                                                                className={classes.formelems} placeholder="Daily Page Impressions" /><br />
+                                                        </Grid>
+                                                        <Grid item xs={12} sm={4} md={4} lg={4} >
+                                                            <label>Click Through Rate</label><br />
+                                                            <TextField
+                                                                onChange={onChangeInput}
+                                                                value={state.clickThroughRate} type="number" id="clickThroughRate" variant="outlined"
+                                                                className={classes.formelems} placeholder="Click Through Rate (%)" /><br />
+                                                        </Grid>
+                                                        <Grid item xs={12} sm={4} md={4} lg={4} >
+                                                            <label>Cost per Click</label>
+                                                            <br />
+                                                            <TextField
+                                                                onChange={onChangeInput}
+                                                                value={state.costPerClick} type="number" id="costPerClick" variant="outlined"
+                                                                className={classes.formelems} placeholder="Cost per click ($)" /><br />
+                                                        </Grid>
+                                                        <Grid item style={{
+                                                            width: '100%',
+                                                            justifyContent: 'center',
+                                                            alignItems: 'center',
+                                                            display: 'flex'
+                                                        }}>
+                                                            <Button onClick={onClickCalculate} id="btncheck"
+                                                                variant="contained" color='primary'>Calculate</Button>
+                                                        </Grid>
+                                                    </Grid>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -173,10 +189,10 @@ export default function Googleadsensecalc(props) {
                                     </div>
                                 </Card>
                                 <hr />
-                                <Card className="box" elevation={1} style={{ fontSize: '1rem', lineHeight: '27px' }}>
+                                <Card className="box" elevation={1}>
                                     <div className="col-lg-12">
-                                        <h4 className="title is-6 subtext subtitle">  Our AdSense Calculator helps Google AdSense users understand what affects their potential earnings allowing users to experiment with values:
-                                        </h4> <br />
+                                        <h4 className="title is-4">Our AdSense Calculator helps Google AdSense users understand what affects their potential earnings allowing users to experiment with values:
+                                        </h4>
                                         <h4 className="title is-6"> Daily Page Impressions</h4>
                                         <p> Use your average, anticipated, or current daily page impressions, which indicates how many times ads are shownper page
                                         </p><br />
@@ -189,6 +205,46 @@ export default function Googleadsensecalc(props) {
                                     </div>
                                 </Card>
                                 <hr />
+                                <Card className="box" elevation={1} >
+                                    <h1 className="title is-5">  What is RPM?</h1>
+
+                                    <p>Fundamentally it’s the calculation of how much money you made per 1000 visitors. It’s calculated based on your traffic, CTR (click-through-rate), and CPC (cost per click). The average RPM I’ve experienced with Adsense is about $5 to $10 for broad niches and up to $100 for more competitive niches with high CPC.
+                                    </p><br /><p>
+                                        If you’re able to know your RPM, you can precisely estimate earnings potentials for superior traffic numbers, as well as the amount of traffic you’ll need to make a full-time income.
+                                    </p><br /><p>
+
+                                        For instance, if you’re making an average $10 RPM from one of your websites, that’s $10 for every 1000 visitors on your site.
+                                    </p><br /><p>
+
+                                        So you can easily calculate that if you increased your traffic to 100,000 visitors, you would make $1000. If you grew it to 1,000,000 you would make $10,000. Once more, not completely precise, but a first-rate opinion.
+                                    </p><br /><p>
+
+                                        This guide today is centered on the requirements to make 10 dollars per day from your existing blog (or even the new blog you are going to start) from Google Adsense. If you currently leverage/earn 6$ from 2000 Page views daily, then your RPM is 3$ (6 x 1000/2000) and if you are making $8 from 1000 page views daily, then your RPM is $6 (6 x 1000/1000). We will be connecting all the statistics/maths in RPM and thrash out how to make 10 dollars daily from Adsense.
+                                    </p><br /><p>
+
+                                        The RPM is not entirely the same for all type of blog, for example, Business, technology,Investments, news, entertainment, free stuff, financing and education etc.… blogs will have diverse RPM ( because the CPC and CTR would be different for each blogs).
+                                    </p><br /><p>
+
+                                        I would say practically that 3$ RPM is rational and your target should be centered on getting more than that. If you are generating 2 to 3 $ RPM, then you should spend more time to increase the RPM to 6$ or more dollars.
+                                    </p><br /><p>
+
+                                        In order to Earn 10 Dollars per Day from Adsense, you need to understand the following vividly;
+                                    </p><br /><p>
+
+                                        Let us assume 4$ RPM, you will likely make 4$ from every 1000 Page views generated from your sites daily. To get 10$ daily from Adsense, multiply this by 3 (this will give you 12$, although its $2 higher than $10) to get 10$ round figure per day. This simply implies that, your blog has to generate 3000 page views daily to make 10$ per day from Google Adsense.
+                                    </p><br /><p>
+
+                                        Do you think generating 3000 page views per day is a difficult task?…It will look hard for any new bloggers and even for the old bloggers who are under pressure to generate minimal traffic for their blogs.
+                                    </p><br /><p>
+
+                                        Let me break down the 3000 Page Views per day technically, so you can clearly understand the direction am coming from.
+                                    </p><br /><p>
+                                        It’s your decision and it’s up to you to choose which of them suites your status.
+                                    </p><br /><p>
+
+                                        At the end we need genuine 3000 page views daily to make 10 dollars per day from Google Adsense assuming the RPM is 3.5$.
+                                    </p><br />
+                                </Card>
                             </div >
                         </div>
                     </Grid >

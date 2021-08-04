@@ -262,7 +262,7 @@ export default function Main(props) {
                             </Card>
                         </Grid>
                         <Grid item xs={12} sm={12} md={4} lg={4} xl={4}>
-                            <Card elevation={2}>
+                            <Card style={{ height: '100%' }} elevation={2}>
                                 <div className="divContents">
                                     <div className="content">
                                         <h5 className="title is-5">
@@ -271,6 +271,7 @@ export default function Main(props) {
                                                 Files
                                             </Link>
                                         </h5>
+                                        <p><Link to='/image-to-pdf'>Image to pdf converter</Link></p>
                                         <p><Link to='/zip-files'  >Zip or compress files</Link></p>
                                         <p><Link to="/image-size-reducer/" >Online Image size reducer</Link></p>
                                         <p><Link to="/base64-encode/"  >Base64 Encode</Link></p>

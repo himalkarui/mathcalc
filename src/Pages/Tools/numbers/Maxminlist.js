@@ -4,6 +4,7 @@ import {
     Button, Card, Container, Typography
 } from '@material-ui/core';
 import SettingIcon from '@material-ui/icons/Settings';
+import VerticalAds from '../../../Components/VerticalAds';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../Components/SubNavBar';
 
@@ -100,6 +101,7 @@ export default function Maxminlist() {
                         </div>
                     </div>
                 </section>
+                <VerticalAds />
                 <div className="container" >
                     <div className="columns" >
                         <div className="column is-6" >

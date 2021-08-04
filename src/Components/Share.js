@@ -87,21 +87,15 @@ export default function Share(props) {
                         < TwitterShareButton
                             url={shareUrl}
                             title={title}
-                            hashtags="#Mathcalc"
+                            hashtags={['#Mathcalc']}
                         >
                             <TwitterIcon />
                         </TwitterShareButton>
 
-                        <div>
-                            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button" data-show-count="false">Tweet</a>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-                        </div>
-
-
                         < WhatsappShareButton
                             url={shareUrl}
                             title={title}
-                            separator=" - "
+                            separator=" | "
                         >
                             <WhatsappIcon />
                         </WhatsappShareButton>

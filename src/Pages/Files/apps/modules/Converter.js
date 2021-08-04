@@ -158,7 +158,7 @@ export default function Converter() {
         <li style={{
             padding: '4px 8px',
             display: 'flex',
-            backgroundColor: i % 2 === 0 ? 'rgb(250 250 250)' : 'white'
+            backgroundColor: i % 2 === 0 ? 'rgb(250 250 250)' : '#fff'
         }}>
             <a href="#" style={{
                 width: '80%',

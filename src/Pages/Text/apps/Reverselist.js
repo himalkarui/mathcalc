@@ -9,6 +9,7 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import Helmet from 'react-helmet';
 import * as fileSave from 'file-saver';
 import SubNavBar from '../../../Components/SubNavBar';
+import VerticalAds from '../../../Components/VerticalAds';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -201,6 +202,7 @@ export default function Reverselist() {
                     </div>
                     <br />
                 </div>
+                <VerticalAds />
             </Container>
         </div >
     );

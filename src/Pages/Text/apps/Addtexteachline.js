@@ -12,6 +12,7 @@ import Helmet from 'react-helmet';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
 import SubNavBar from '../../../Components/SubNavBar';
 import * as fileSave from "file-saver";
+import VerticalAds from '../../../Components/VerticalAds';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -236,41 +237,9 @@ export default function Addtexttoeachline() {
                                     <br />
                                 </div>
                             </Card>
+
                         </div>
                         <div className="column is-6" data-v-14591542>
-                            <Card elevation={1} className="box " data-v-14591542>
-                                <div className="content" data-v-14591542>
-                                    <Typography variant="h6" className={'text-option'}>New Text</Typography><br />
-                                    <span>Tip: write  <strong>%N%</strong> for the line number; and <strong>%L%</strong> for the line itself</span>
-                                    <div className={'resultsec'}>
-                                        <textarea className="input"
-                                            id="result"
-                                            style={{
-                                                resize: 'none',
-                                                minWidth: '255px',
-                                                minHeight: '210px'
-                                            }} value={state.result}
-                                            onChange={onInputChange}
-                                        ></textarea>
-                                    </div>
-                                    <Button variant="contained" style={{ margin: '5px' }} className={"shade_me button is-success"}
-                                        startIcon={<SettingIcon />}
-                                        onClick={onClickCalculate}
-                                    >Execute</Button>
-                                    <Button variant="contained" style={{ margin: '5px' }} className={"button is-info"}
-                                        startIcon={<FileCopyIcon />}
-                                        onClick={fncopytext}
-                                    >Copy</Button>
-                                    <Button variant="contained" style={{ margin: '5px' }} className="button is-info"
-                                        startIcon={<FontDownloadIcon />}
-                                        onClick={onClickDownload}
-                                    >Download</Button>
-                                </div>
-                            </Card>
-                        </div>
-                    </div>
-                    <div className="columns" data-v-14591542>
-                        <div className="column is-6">
                             <Card className="box " data-v-14591542>
                                 <div className="content" data-v-14591542>
                                     <Typography variant="h6" className={'text-option'}>Options</Typography><br />
@@ -326,16 +295,53 @@ export default function Addtexttoeachline() {
                                             onClick={onChangeLeadingZero}
                                         >
                                             1,2,3..
-                                    </Button>
+                                        </Button>
                                         <Button aria-label="01,02,03.."
                                             className={state.isAddLeadingzero ? "button is-success" : 'button'}
                                             onClick={onChangeLeadingZero}
                                         >
                                             01,02,03..
-                                    </Button>
+                                        </Button>
                                     </ButtonGroup><br />
                                 </div>
                             </Card>
+
+                        </div>
+                    </div>
+                    <div className="columns" data-v-14591542>
+                        <div className="column is-6">
+                            <Card elevation={1} className="box " data-v-14591542>
+                                <div className="content" data-v-14591542>
+                                    <Typography variant="h6" className={'text-option'}>New Text</Typography><br />
+                                    <span>Tip: write  <strong>%N%</strong> for the line number; and <strong>%L%</strong> for the line itself</span>
+                                    <div className={'resultsec'}>
+                                        <textarea className="input"
+                                            id="result"
+                                            style={{
+                                                resize: 'none',
+                                                minWidth: '255px',
+                                                minHeight: '210px'
+                                            }} value={state.result}
+                                            onChange={onInputChange}
+                                        ></textarea>
+                                    </div>
+                                    <Button variant="contained" style={{ margin: '5px' }} className={"shade_me button is-success"}
+                                        startIcon={<SettingIcon />}
+                                        onClick={onClickCalculate}
+                                    >Execute</Button>
+                                    <Button variant="contained" style={{ margin: '5px' }} className={"button is-info"}
+                                        startIcon={<FileCopyIcon />}
+                                        onClick={fncopytext}
+                                    >Copy</Button>
+                                    <Button variant="contained" style={{ margin: '5px' }} className="button is-info"
+                                        startIcon={<FontDownloadIcon />}
+                                        onClick={onClickDownload}
+                                    >Download</Button>
+                                </div>
+                            </Card>
+                        </div>
+                        <div className="column i-6">
+                            <VerticalAds />
                         </div>
                     </div>
                 </div>

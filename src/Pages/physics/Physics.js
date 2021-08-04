@@ -31,33 +31,44 @@ const useStyles = makeStyles((theme) => ({
 export default function Physics() {
     const classes = useStyles();
 
-    let Url = [{
-        urlname: 'Energy Mass Calculator',
-        urlpath: '/physics/eeqlmc2/'
-    },
-    {
-        urlname: 'Ohms law',
-        urlpath: '/physics/ohmslaw/'
-    },
-    {
-        urlname: 'Newtons law of gravity',
-        urlpath: '/physics/newtons-law-of-gravity/'
-    },
-    {
-        urlname: 'Capacitance',
-        urlpath: '/physics/capacitance/'
-    },
-    {
-        urlname: 'Inductance',
-        urlpath: '/physics/inductance/'
-    },
-    {
-        urlname: 'Kinetic Energy',
-        urlpath: '/physics/kinetic-energy/'
-    }
-
+    let Url = [
+        {
+            urlname: 'Pressure',
+            urlpath: '/physics/pressure'
+        },
+        {
+            urlname: 'Energy Mass',
+            urlpath: '/physics/eeqlmc2/'
+        },
+        {
+            urlname: 'Ohms law',
+            urlpath: '/physics/ohmslaw/'
+        },
+        {
+            urlname: 'Newtons law of gravity',
+            urlpath: '/physics/newtons-law-of-gravity/'
+        },
+        {
+            urlname: 'Capacitance',
+            urlpath: '/physics/capacitance/'
+        },
+        {
+            urlname: 'Inductance',
+            urlpath: '/physics/inductance/'
+        },
+        {
+            urlname: 'Kinetic Energy',
+            urlpath: '/physics/kinetic-energy/'
+        },
+        {
+            urlname: 'Power',
+            urlpath: '/physics/power/'
+        },
+        {
+            urlname: 'Weight',
+            urlpath: '/physics/weight/'
+        }
     ]
-
 
     return (
         <div className={classes.root}>
@@ -76,7 +87,7 @@ export default function Physics() {
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Physics
                             </h1>
                             <p className="  has-text-grey">
-                                Calculate Various mathematical expresion in physics..
+                                Physics is the study of the fundamental nature of all things. Calculate Various mathematical expresion in physics..
                             </p>
                         </div>
                     </div>
@@ -90,7 +101,7 @@ export default function Physics() {
                                         <Compress style={{
                                             width: '30px',
                                             margin: '0px 8px 0px 16px'
-                                        }} /> <span>{val.urlname}</span></Link>
+                                        }} /> <span>{val.urlname + ' calculator'}</span></Link>
                                 })
                             }
                         </div>

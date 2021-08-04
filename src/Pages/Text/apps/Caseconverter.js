@@ -11,6 +11,8 @@ import Helmet from 'react-helmet';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
 import * as fileSave from "file-saver";
 import SubNavBar from '../../../Components/SubNavBar';
+import VerticalAds from '../../../Components/VerticalAds';
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -326,6 +328,7 @@ export default function Caseconverter() {
                     </div>
                     <br />
                 </div>
+                <VerticalAds />
             </Container>
 
         </div >

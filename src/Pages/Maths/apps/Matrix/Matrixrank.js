@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Button, Card, Container, Typography, Grid } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import AddIcon from '@material-ui/icons/Settings';
+import VerticalAds from '../../../../Components/VerticalAds';
 import InfoIcon from '@material-ui/icons/InfoRounded';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../../Components/SubNavBar';
@@ -358,6 +359,8 @@ export default function Matrixrank() {
                     </Grid>
                 </Card>
                 <br />
+                <VerticalAds />
+                <hr />
                 <Card elevation={1} className="box">
                     <h1 className="title is-5"> Rank of a Matrix</h1>
                     <p>

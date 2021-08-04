@@ -427,9 +427,15 @@
         
         <lastmod>2021-06-12</lastmod>
 
-        <changefreq>yearly</changefreq>
+        <changefreq>yearly</changefreq>        
+    </url>
 
-         
+     <url>
+        <loc>https://mathcalc.xyz/physics/power</loc>
+        
+        <lastmod>2021-08-02</lastmod>
+
+        <changefreq>yearly</changefreq>        
     </url>
 
     <url>
@@ -606,12 +612,33 @@
     </url>
 
     <url>
-        <loc>https://mathcalc.xyz/youtube-to-video</loc>
-        
+        <loc>https://mathcalc.xyz/youtube-video-downloader</loc>      
         <lastmod>2021-07-20</lastmod>
-
         <changefreq>yearly</changefreq>
+    </url>
 
+    <url>
+        <loc>https://mathcalc.xyz/image-to-pdf</loc>      
+        <lastmod>2021-07-26</lastmod>
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/random-number-generator</loc>
+        <lastmod>2021-07-31</lastmod>
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/physics/weight</loc>
+         <lastmod>2021-08-03</lastmod>
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/physics/pressure</loc>
+         <lastmod>2021-08-04</lastmod>
+        <changefreq>yearly</changefreq>
     </url>
 
 </urlset>

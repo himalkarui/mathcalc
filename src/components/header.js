@@ -5,7 +5,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Toolbar, Avatar, Typography, Tooltip, Menu, MenuItem, InputBase } from '@material-ui/core';
+import { Toolbar, Avatar, Typography, Tooltip, Menu, MenuItem, Button } from '@material-ui/core';
 import ShareIcon from '@material-ui/icons/Share';
 import Fab from '@material-ui/core/Fab';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -13,7 +13,6 @@ import Sidebar from './Sidebar';
 import logo from '../Assets/images/mathcalcblack.png';
 import { Link } from 'react-router-dom';
 import Share from './Share';
-import SearchIcon from '@material-ui/icons/Search';
 import MoreIcon from '@material-ui/icons/MoreVert';
 const drawerWidth = 240;
 
@@ -25,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     appBar: {
-        backgroundColor: 'white',
+        backgroundColor: '#fff',
         color: 'black !important',
         boxShadow: '0px 2px 2px 0px rgb(0 0 0 / 20%), 0px 2px 3px 0px rgb(0 0 0 / 14%), 0px 1px 1px 0px rgb(0 0 0 / 12%) !important',
         // [theme.breakpoints.up('sm')]: {
@@ -65,7 +64,14 @@ const useStyles = makeStyles((theme) => ({
     },
     rightMenus: {
         position: 'absolute',
-        right: '20px'
+        right: '20px',
+        display: 'flex',
+        float: 'right',
+        textAlign: 'right',
+        /* background-color: blue !important; */
+        alignItems: 'center',
+        height: '54px !important',
+        overflow: 'hidden'
     },
     button: {
         height: 40,
@@ -106,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
         // },
     },
     search: {
-        display: 'none',
+        display: 'flex',
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
         backgroundColor: '#fafafa',
@@ -213,22 +219,14 @@ function Header(props) {
                             <Typography variant="h6"><strong>Mathcalc</strong></Typography>
                         </Link>
                     </Typography>
-                    <div className={classes.search}>
-                        <div className={classes.searchIcon}>
-                            <SearchIcon />
-                        </div>
-                        <InputBase
-                            placeholder="Search.."
-                            classes={{
-                                root: classes.inputRoot,
-                                input: classes.inputInput,
-                            }}
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </div>
                     <div className={classes.rightMenus}>
-                        <Link to='/feedback/' className={classes.sectionDesktop}>
-                            Send feedback
+                        <div className={classes.search + " " + classes.sectionDesktop}>
+                            <div className="gcse-search"></div>
+                        </div>
+                        <Link to='/feedback/' style={{ color: '#fff' }} className={classes.sectionDesktop}>
+                            <Button variant="contained" color="primary" style={{ textTransform: 'none' }}>
+                                Share feedback
+                            </Button>
                         </Link>
                         <IconButton aria-controls="header-menu" className={classes.sectionMobile}
                             aria-haspopup="true" onClick={handlemenuClick}

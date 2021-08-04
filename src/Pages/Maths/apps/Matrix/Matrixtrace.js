@@ -6,6 +6,7 @@ import AddIcon from '@material-ui/icons/Settings';
 import InfoIcon from '@material-ui/icons/InfoRounded';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../../Components/SubNavBar';
+import VerticalAds from '../../../../Components/VerticalAds';
 import CustomSnakbar from '../../../../Components/CustomSnakbar';
 
 const useStyles = makeStyles((theme) => ({
@@ -234,7 +235,7 @@ export default function Matrixtrace() {
                                         onClick={() => { onCalculateClick() }}
                                     >
                                         Calculate
-                                </Button>
+                                    </Button>
                                     <br /><br />
                                     {state.showResult ?
                                         <Typography variant="h1" className="title is-5">Result :<br /><br />tr(A) =  {state.resultvalue}</Typography>
@@ -247,6 +248,8 @@ export default function Matrixtrace() {
                     </Grid>
                 </Card>
                 <br />
+                <VerticalAds />
+                <hr />
                 <Card elevation={1} className="box">
                     <h1 className="title is-5">Trace of a Matrix</h1>
                     <p>

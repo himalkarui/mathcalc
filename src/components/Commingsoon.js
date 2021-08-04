@@ -14,7 +14,7 @@ const Commingsoon = (props) => {
                     background: 'linear-gradient(120deg,#98BBE3,#8fa2c9,#1F305E, #fcf7fb)',
                     padding: '153px 0px 0px 0px'
                 }}>
-                    <Typography style={{ textAlign: 'center', color: 'white' }} variant="h2">
+                    <Typography style={{ textAlign: 'center', color: '#fff' }} variant="h2">
                         Coming Soon !
                     </Typography>
                 </Container>

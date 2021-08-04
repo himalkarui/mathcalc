@@ -106,7 +106,8 @@ export default function Matrices() {
                         </div>
                     </Grid>
                     <Grid item lg={4} md={4} sm={12}>
-                        <VerticalAds /></Grid>
+                        <VerticalAds />
+                    </Grid>
                 </Grid>
             </Container>
         </div >

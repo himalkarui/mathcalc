@@ -10,6 +10,7 @@ import FontDownloadIcon from '@material-ui/icons/GetApp';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import Helmet from 'react-helmet';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
+import VerticalAds from '../../../Components/VerticalAds';
 import * as fileSave from "file-saver";
 import SubNavBar from '../../../Components/SubNavBar';
 
@@ -394,6 +395,9 @@ export default function Generatelistofnums() {
                                 </div>
                             </Card>
                             <br />
+                        </div>
+                        <div className="column is-6">
+                            <VerticalAds />
                         </div>
                     </div>
                 </div>

@@ -9,6 +9,7 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import Helmet from 'react-helmet';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
 import * as fileSave from "file-saver";
+import VerticalAds from '../../../Components/VerticalAds';
 import SubNavBar from '../../../Components/SubNavBar';
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -168,6 +169,7 @@ export default function Listrandomizer() {
                         </div>
                     </div>
                 </section>
+                <VerticalAds />
                 <div className="container" data-v-14591542>
                     <div className="columns" data-v-14591542>
                         <div className="column is-6" data-v-14591542>

@@ -4,6 +4,7 @@ import { Button, Card, Container, Typography, Grid, Divider } from '@material-ui
 import TextField from '@material-ui/core/TextField';
 import CloseIcon from '@material-ui/icons/Close';
 import InfoIcon from '@material-ui/icons/Info';
+import VerticalAds from '../../../../Components/VerticalAds';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../../../Components/SubNavBar';
 import CustomSnakbar from '../../../../Components/CustomSnakbar';
@@ -174,7 +175,7 @@ export default function Matrixmultiply() {
             }
         }
     }
-  
+
     return (
         <div className={classes.root}>
             <CustomSnakbar
@@ -252,7 +253,7 @@ export default function Matrixmultiply() {
                                         onClick={() => { createMatrix() }}
                                     >
                                         Create Matrices
-                                </Button>
+                                    </Button>
                                 </div>
                             </div>
                         </Grid>
@@ -307,7 +308,7 @@ export default function Matrixmultiply() {
                                         onClick={() => { onCalculateClick() }}
                                     >
                                         Calculate
-                                </Button>
+                                    </Button>
                                 </div>
                             </div>
                         </Grid>
@@ -330,6 +331,8 @@ export default function Matrixmultiply() {
                     </Grid>
                     <br />
                 </Card>
+                <hr />
+                <VerticalAds />
                 <br />
             </Container>
         </div >
