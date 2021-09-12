@@ -33,6 +33,9 @@ export default function AllTools() {
 
     let Url = [
         {
+            urlname: 'Color converter', urlpath: '/color-converter'
+        },
+        {
             urlname: 'Random password generator', urlpath: '/random-password-generator'
         },
         {

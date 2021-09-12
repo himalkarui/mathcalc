@@ -121,8 +121,9 @@ export default function Imagetopdf() {
         for (let i = 0; i < state.filelist.length; ++i) {
             var image = document.getElementById('cardImage' + i.toString());
             // get image width and height
-            let width = 425;
+            let width = image.naturalWidth > 425 ? 425 : image.naturalWidth;//425;
             let height = 620;
+
             if (image.naturalHeight < height) {
                 height = image.naturalHeight;
             }
@@ -131,7 +132,7 @@ export default function Imagetopdf() {
                 doc.addPage('a4', 'p');
             }
         }
-        doc.save('combined_pdf' + '.pdf');
+        doc.save('combined_pdf.pdf');
     }
 
     const imageData = [
@@ -176,20 +177,23 @@ export default function Imagetopdf() {
             <Container maxWidth="xl">
                 <Helmet>
                     <title>PDF Converter - Convert images to pdf online fast, easy and secure</title>
-                    <meta name="description" content="Get any images converted to PDF format online, quickly and easily, without having to install any software." />
+                    <meta name="description" content="No downloads, no ad watermarks - just a great free online tool to convert your Images to pdf quickly and easily, without having to install any software." />
                     <meta name="keywords" content="convert image to pdf, jpg to pdf, jpeg to pdf, online image converter, online pdf converter" />
                     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
                 </Helmet>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={12} md={9} lg={9}>
                         <Box m={2} className={classes.appBar}>
-                            <Typography variant="h5">
-                                <svg viewBox="0 0 32 32" style={{ width: '32px', height: '32px' }} xmlns="http://www.w3.org/2000/svg">
+                            <Typography variant="h5"
+                                style={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    flexFlow: 'wrap'
+                                }}>
+                                <svg viewBox="0 0 32 32" style={{ width: '32px', height: '32px', margin: '4px', alignItems: 'center' }} xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0 4C0 1.79086 1.79086 0 4 0H28C30.2091 0 32 1.79086 32 4V28C32 30.2091 30.2091 32 28 32H4C1.79086 32 0 30.2091 0 28V4Z" fill="#FFB700"></path><rect x="7.5" y="7.5" width="10" height="13" stroke="white"></rect><path d="M7.5 16.5L10 14L13.5 17.5L15 16L17.5 18.5" stroke="white"></path><circle cx="15" cy="10" r="0.5" fill="white" stroke="white"></circle>
                                     <path d="M18 11.5H24.5V24.5H14.5V20" stroke="white"></path>
                                 </svg>
-                            </Typography>
-                            <Typography variant="h5">
                                 &nbsp; Image to PDF Converter
                             </Typography>
                         </Box>
@@ -262,7 +266,6 @@ export default function Imagetopdf() {
                                                                                 startIcon={<CloudDownloadOutlinedIcon />}
                                                                                 style={{
                                                                                     width: '100%',
-                                                                                    height: '35px',
                                                                                     margin: '3px 12px',
                                                                                     alignItems: 'center',
                                                                                     height: '34px',

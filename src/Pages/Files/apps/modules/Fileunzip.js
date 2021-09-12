@@ -161,7 +161,7 @@ export default function Fileunzip() {
             display: 'flex',
             backgroundColor: i % 2 === 0 ? 'rgb(250 250 250)' : '#fff'
         }}>
-            <a href="#" style={{
+            <a href="/" style={{
                 width: '80%',
                 borderRight: '1px solid rgb(242 242 242)',
                 marginRight: '10px'
@@ -171,6 +171,7 @@ export default function Fileunzip() {
                     f.lelativepath
                 }
             </a>
+            {/* // eslint-disable-next-line */}
             <Button style={{ width: '20%' }}
                 startIcon={<SaveAltIcon />}
                 color="primary"
@@ -201,7 +202,7 @@ export default function Fileunzip() {
 
     const saveZippedFile = () => {
         const fileSave = require("file-saver");
-        let filename = state.outputfilename;
+        // let filename = state.outputfilename;
         for (let i = 0; i < state.zippedFile.length; ++i) {
             if (state.zippedFile[i].content) {
                 fileSave.saveAs(state.zippedFile[i].content,

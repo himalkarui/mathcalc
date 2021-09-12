@@ -195,7 +195,7 @@ export default function Ytvideo() {
         let itag = formats.filter(frt => frt.itag === parseInt(avalue) || frt.itag === parseInt(vvalue));
         const link = document.createElement('a');
         link.href = itag[0].url
-        link.setAttribute('download', 'videoplayback' + '.' + itag[0].container);
+        link.setAttribute('download', 'videoplayback.' + itag[0].container);
         link.setAttribute('target', '_blank');
         document.body.appendChild(link);
         link.click();

@@ -160,7 +160,7 @@ export default function Converter() {
             display: 'flex',
             backgroundColor: i % 2 === 0 ? 'rgb(250 250 250)' : '#fff'
         }}>
-            <a href="#" style={{
+            <a href="/" style={{
                 width: '80%',
                 borderRight: '1px solid rgb(242 242 242)',
                 marginRight: '10px'
@@ -200,7 +200,7 @@ export default function Converter() {
 
     const saveZippedFile = () => {
         const fileSave = require("file-saver");
-        let filename = state.outputfilename;
+        // let filename = state.outputfilename;
         for (let i = 0; i < state.zippedFile.length; ++i) {
             if (state.zippedFile[i].content) {
                 fileSave.saveAs(state.zippedFile[i].content,
@@ -208,7 +208,6 @@ export default function Converter() {
                 );
             }
         }
-
         setTimeout(() => {
             resetCick();
         }, 1500);
@@ -222,12 +221,10 @@ export default function Converter() {
         setSelectedIndex(index);
     };
 
-
     const [open, setOpen] = React.useState(false);
     const handleClose = () => {
         setOpen(false);
     }
-
 
     return (
         <div className={classes.root}>

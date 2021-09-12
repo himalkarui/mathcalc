@@ -202,7 +202,6 @@ export default function Filezip() {
         if (anchorRef.current && anchorRef.current.contains(event.target)) {
             return;
         }
-
         setOpen(false);
     };
     return (

@@ -130,51 +130,6 @@ export default function Basesfdecode() {
         fileSave.saveAs(blob, 'output.txt');
     }
 
-
-    const b64toBlob = (bytechars, contentType = '', sliceSize = 512) => {
-        const byteCharacters = bytechars;
-        const byteArrays = [];
-        for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-            const slice = byteCharacters.slice(offset, offset + sliceSize);
-            const byteNumbers = new Array(slice.length);
-            for (let i = 0; i < slice.length; i++) {
-                byteNumbers[i] = slice.charCodeAt(i);
-            }
-            const byteArray = new Uint8Array(byteNumbers);
-            byteArrays.push(byteArray);
-        }
-
-        const blob = new Blob(byteArrays, { type: contentType });
-        return blob;
-    }
-
-    const onClickDownloadFile = () => {
-        let filetype = "text";
-        let ext = "txt";
-        let chars = "";
-        let bytechars = atob(state.originalText);
-        chars = bytechars.slice(0, 4);
-        if (chars.toLowerCase().indexOf('png') !== -1) {
-            filetype = "image";
-            ext = "png"
-        } else if (chars.toLowerCase().indexOf('jpeg') !== -1) {
-            filetype = "image";
-            ext = "jpeg"
-        } else if (chars.toLowerCase().indexOf('jpg') !== -1) {
-            filetype = "image";
-            ext = "jpg"
-        } else if (chars.toLowerCase().indexOf('gif') !== -1) {
-            filetype = "image";
-            ext = "gif"
-        } else if (chars.toLowerCase().indexOf('pdf') !== -1) {
-            ext = "pdf"
-        } else if (chars.toLowerCase().indexOf('doc') !== -1) {
-            ext = "doc"
-        }
-        let blob = b64toBlob(bytechars, filetype + "/" + ext);
-        fileSave.saveAs(blob, 'output.' + ext);
-    }
-
     const onInputChange = (e) => {
         setState({
             ...state, [e.target.id]: e.target.value
@@ -196,9 +151,9 @@ export default function Basesfdecode() {
                 handleClose={handleClose}
             />
             <Helmet>
-                <title>Base64 decode online</title>
+                <title>Base64 decode online | Base64 decode to file and download easily</title>
                 <meta name="keywords" content="base64 base 64 decode files texts strings html css images" />
-                <meta name="description" content="Decode base64 from text, you can generate files or texts" />
+                <meta name="description" content="Decode base64 from text, you can generate files or texts After converting your base64 to readable text you can download to text file easily" />
             </Helmet>
             <Container maxWidth="xl">
                 <SubNavBar
@@ -232,7 +187,7 @@ export default function Basesfdecode() {
                                                     className={state.isTextInput ? "button is-success" : 'button'}
                                                     onClick={onClickInputFormat}
                                                 >
-                                                    Text
+                                                    Text(Base64)
                                                 </Button>
                                             </ButtonGroup>
                                             <br />
@@ -252,7 +207,7 @@ export default function Basesfdecode() {
                                             state.isTextInput ?
                                                 <>
                                                     <Typography variant="h1" className={'title is-6 text-option'}>
-                                                        Input Text</Typography><br />
+                                                        Input Text (base64)</Typography><br />
                                                     <textarea className="input"
                                                         id="originalText"
                                                         style={{
@@ -288,7 +243,7 @@ export default function Basesfdecode() {
                             <Card elevation={1} className="box" data-v-14591542>
                                 <div>
                                     <Typography variant="h1" className={'title is-6 text-option'}>
-                                        Output text (base64)
+                                        Output text
                                     </Typography><br />
                                     <div className={'resultsec'}>
                                         <textarea className="input"
@@ -309,10 +264,6 @@ export default function Basesfdecode() {
                                     <Button variant="outlined" style={{ margin: '5px' }} color="primary"
                                         startIcon={<FontDownloadIcon />}
                                         onClick={onClickDownload}
-                                    >Download Text</Button>
-                                    <Button variant="outlined" style={{ margin: '5px' }} color="primary"
-                                        startIcon={<FontDownloadIcon />}
-                                        onClick={onClickDownloadFile}
                                     >Download File</Button>
                                     <br />
                                 </div>

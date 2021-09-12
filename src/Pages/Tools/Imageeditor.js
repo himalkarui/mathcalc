@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import FilerobotImageEditor from 'filerobot-image-editor';
 import Helmet from 'react-helmet';
-import SubNavBar from '../../Components/SubNavBar';
+ import SubNavBar from '../../Components/SubNavBar';
 import { Card, Container, Grid, Dialog } from '@material-ui/core';
 import VerticalAds from '../../Components/VerticalAds';
 import { makeStyles } from '@material-ui/styles';
@@ -39,7 +39,7 @@ export default function Imageeditor(props) {
 
     return (
 
-        <>  <Container maxWidth="xl">
+        <><Container maxWidth="xl">
             <Helmet>
                 <title>Free Online Image Editor | Mathcalc</title>
                 <meta name="keywords" content="free online image editor gif edit animated photo photos pictures gifs jpeg jpg bmp convert converter create creator animate png tiff picture resize crop split frames text to add mask" />

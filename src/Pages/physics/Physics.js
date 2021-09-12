@@ -67,6 +67,10 @@ export default function Physics() {
         {
             urlname: 'Weight',
             urlpath: '/physics/weight/'
+        },
+        {
+            urlname: 'Frequency',
+            urlpath: '/physics/frequency'
         }
     ]
 
@@ -86,9 +90,11 @@ export default function Physics() {
                         <div className="container">
                             <h1 className="subtitle is-spaced is-uppercase has-text-weight-bold">Physics
                             </h1>
-                            <p className="  has-text-grey">
-                                Physics is the study of the fundamental nature of all things. Calculate Various mathematical expresion in physics..
+                            <p className="has-text-grey">
+                                Physics is the study of the fundamental nature of all things. The well-known American author, Bill Bryson, once said:  “Physics is really nothing more than a search for ultimate simplicity, but so far all we have is a kind of elegant messiness.” Physics is indeed the most fundamental of the sciences that tries to describe the whole nature with thousands of mathematical formulas. How not to get lost in all of this knowledge? How to organize it? The solution is here! .
+                                The Mathcalc might be exactly what you’re looking for!.
                             </p>
+                            <br />
                         </div>
                     </div>
                 </section>

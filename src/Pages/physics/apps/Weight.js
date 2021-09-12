@@ -63,7 +63,7 @@ export default function Weight() {
         result: null,
     })
 
-    const [calcs, setCalcs] = React.useState([
+    const calcs = [
         {
             urlname: "Power",
             urlpath: "/physics/power/"
@@ -104,7 +104,7 @@ export default function Weight() {
         // "Efficiency",
         // "Frequency",
         // "Pressure"
-    ]);
+    ];
 
     const onCalculate = () => {
         let mass = state.mass ? state.mass : 0;

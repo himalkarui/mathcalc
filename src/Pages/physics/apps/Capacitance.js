@@ -98,7 +98,7 @@ export default function Capacitance() {
         })
     }
 
-    const [calcs, setCalcs] = React.useState([
+    const calcs = [
         {
             urlname: "Power",
             urlpath: "/physics/power/"
@@ -140,7 +140,7 @@ export default function Capacitance() {
         // "Efficiency",
         // "Frequency",
         // "Pressure"
-    ]);
+    ];
 
     const classes = useStyles();
     return (

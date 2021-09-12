@@ -98,6 +98,9 @@ const Randomnumgen = lazy(() => import("./Pages/Maths/apps/Randomnumgen"));
 const Power = lazy(() => import("./Pages/physics/apps/Power"));
 const Weight = lazy(() => import("./Pages/physics/apps/Weight"));
 const Pressure = lazy(() => import("./Pages/physics/apps/Pressure"));
+const Frequency = lazy(() => import("./Pages/physics/apps/Frequency"));
+const Dayofweek = lazy(() => import("./Pages/General/apps/Dayofweek"));
+const Colorconverter = lazy(() => import("./Pages/Tools/Colorconverter"));
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -167,6 +170,7 @@ function App() {
                 <Route exact path="/image-editor/" component={Imageeditor} />
                 <Route exact path="/online-image-editor/" component={Imageeditor} />
                 <Route exact path="/random-password-generator/" component={Passwordgenerator} />
+                <Route exact path="/color-converter/" component={Colorconverter} />
 
                 <Route exact path="/text-lists/" component={Textandlist} />
                 <Route exact path="/reverse-list/" component={Reverselist} />
@@ -196,6 +200,7 @@ function App() {
                 <Route exact path="/general/google-adsense-calculator/" component={Googleadsensecalc}></Route>
                 <Route exact path="/general/cpc-roi-calculator/" component={Roiadsensecalc}></Route>
                 <Route exact path="/general/cpm-roi-calculator/" component={Cpmroicalc}></Route>
+                <Route exact path="/general/weekday/" component={Dayofweek}></Route>
 
                 <Route exact path="/finance" component={Finance} />
                 <Route exact path="/finance/foreign-currency-convertor" component={Exchangerate} />
@@ -215,6 +220,7 @@ function App() {
                 <Route exact path="/physics/power" component={Power} />
                 <Route exact path="/physics/weight" component={Weight} />
                 <Route exact path="/physics/pressure" component={Pressure} />
+                <Route exact path="/physics/frequency" component={Frequency} />
 
                 {/* routes for maths */}
                 <Route exact path="/maths/" component={Maths} />

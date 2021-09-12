@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import SubNavBar from '../../Components/SubNavBar';
 import { Card, Container, Grid, Checkbox, Slider, FormGroup, FormControlLabel, TextField, IconButton, Typography, LinearProgress, Tooltip, Box } from '@material-ui/core';
@@ -55,7 +55,6 @@ const BorderLinearProgress = withStyles((theme) => ({
 
 export default function Passwordgenerator(props) {
     const classes = useStyles();
-    const [show, toggle] = useState(false);
     const [value, setValue] = React.useState(14);
     const [progress, setProgress] = React.useState(100);
 
@@ -178,7 +177,8 @@ export default function Passwordgenerator(props) {
     };
 
     useEffect(() => {
-        generatePassword()
+        generatePassword();
+        // eslint-disable-next-line
     }, [value]);
 
 

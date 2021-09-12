@@ -87,6 +87,15 @@
     </url>
 
     <url>
+        <loc>https://mathcalc.xyz/color-converter</loc>
+           
+        <lastmod>2021-09-01</lastmod>
+
+        <changefreq>yearly</changefreq>
+
+    </url>
+
+    <url>
         <loc>https://mathcalc.xyz/generate-list-numbers</loc>
         
         <lastmod>2021-06-12</lastmod>
@@ -638,6 +647,18 @@
     <url>
         <loc>https://mathcalc.xyz/physics/pressure</loc>
          <lastmod>2021-08-04</lastmod>
+        <changefreq>yearly</changefreq>
+    </url>
+
+    <url>
+        <loc>https://mathcalc.xyz/physics/frequency</loc>
+         <lastmod>2021-08-13</lastmod>
+        <changefreq>yearly</changefreq>
+    </url>
+
+     <url>
+        <loc>https://mathcalc.xyz/general/weekday/</loc>
+         <lastmod>2021-08-13</lastmod>
         <changefreq>yearly</changefreq>
     </url>
 

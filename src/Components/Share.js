@@ -28,6 +28,7 @@ import {
     WorkplaceShareButton,
     WeiboShareButton,
 
+
     EmailIcon,
     FacebookIcon,
     HatenaIcon,
@@ -47,6 +48,7 @@ import {
     WeiboIcon,
     WhatsappIcon,
     WorkplaceIcon
+
 } from "react-share";
 import logo from '../Assets/images/mathcalcblack.png';
 
@@ -54,8 +56,7 @@ export default function Share(props) {
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('xs'));
     const shareUrl = props.url ? props.url : window.location.href;
-    const title = props.urlHeader ? props.urlHeader : 'Mathcalc - One stop web app for all your mathematical calculations and tools for FREE !';
-
+    const title = props.urlHeader ? props.urlHeader : 'Mathcalc - One stop web app for all your mathematical calculations and tools for FREE ! |' + document.getElementsByTagName('title')[0].innerText;
     return (
         <div>
             <Dialog
@@ -84,6 +85,7 @@ export default function Share(props) {
                         >
                             <FacebookIcon />
                         </FacebookShareButton>
+
                         < TwitterShareButton
                             url={shareUrl}
                             title={title}

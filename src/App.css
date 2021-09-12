@@ -150,7 +150,7 @@ html ::-webkit-scrollbar-thumb:hover {
 }
 
 body {
-  background-color: #f3f6fa !important;
+  background-color: #fafafa !important;
   font-family: "Noto Sans KR", sans-serif !important;
   margin: 0px;
   padding: 0px;
@@ -159,6 +159,27 @@ body {
   font-size: 0.95rem !important;
   letter-spacing: 0.0142857143em;
   font-weight: 400;
+}
+
+.datepicker-input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.datepicker-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 .div-card {
@@ -659,7 +680,7 @@ input[type="number"] {
 }
 
 .gsc-search-button .gsc-search-button-v2 {
-  background-color: white;
+  background-color: transparent;
   cursor: pointer;
   border: none;
   padding: 12px 16px;
@@ -667,20 +688,51 @@ input[type="number"] {
   border-bottom-left-radius: 0px;
 }
 
-.gsc-search-button .gsc-search-button-v2:hover {
-  background-color: #eee;
-  border-left: 1px solid #c5c5c5;
+.gsc-search-box-tools .gsc-search-box .gsc-input {
+  font-size: 14px;
+  min-width: 130px;
+  transition-duration: 0.8s;
+}
+
+.gsc-search-box-tools .gsc-search-box .gsc-input:focus {
+  min-width: 180px;
+  transition-duration: 0.8s;
+}
+.gsib_b {
+  margin-top: 3px;
+}
+
+td.gsc-search-button:hover {
+  border-left: none;
 }
 
 .gsc-control-wrapper-cse {
-  border: 1px solid #c5c5c5;
-  border-radius: 5px;
+  border: 1px solid #3f50b5;
+  border-radius: 21px;
+  height: 36px;
 }
 .gsc-search-button-v2 svg {
-  fill: black !important;
+  fill: #3f50b5 !important;
 }
+.gsc-search-button-v2:hover {
+  background-color: transparent !important;
+  margin: 0 2%;
+}
+
+.gsst_a .gscb_a {
+  color: #6f78af !important;
+  font: icon;
+  font-size: x-large;
+}
+
 .gsc-input-box {
   border: none !important;
+  border-radius: 21px;
+  display: flex;
+  align-items: center;
+  height: 28px;
+  padding: 4px;
+  background-color:transparent;
 }
 .gsc-search-box {
   margin-bottom: 0px !important;

@@ -74,26 +74,7 @@ const useStyles = makeStyles((theme) => ({
         overflow: 'hidden'
     },
     button: {
-        height: 40,
-        minWidth: "175px",
-        borderRadius: '4px',
-        transition: 'margin 0.5s',
-        border: '1px solid #e0d7d7',
-        // boxShadow: '1px 2px 5px 2px #afaead',
-        [theme.breakpoints.down("xs")]: {
-            minWidth: "146px",
-            fontSize: "13px",
-        },
-        // display: 'none',
-        // [theme.breakpoints.up('sm')]: {
-        //     display: 'flex',
-        // },
-        "&:hover": {
-            color: '#5d5d5de0',
-            margin: '-3px -3px 0px 0px',
-            backgroundColor: 'transparent',
-            background: 'transparent',
-        }
+        borderRadius: '21px',
     },
     fab: {
         position: 'fixed', /* Fixed/sticky position */
@@ -224,7 +205,7 @@ function Header(props) {
                             <div className="gcse-search"></div>
                         </div>
                         <Link to='/feedback/' style={{ color: '#fff' }} className={classes.sectionDesktop}>
-                            <Button variant="contained" color="primary" style={{ textTransform: 'none' }}>
+                            <Button variant="contained" color="primary" style={{ textTransform: 'none', borderRadius:'21px' }}>
                                 Share feedback
                             </Button>
                         </Link>

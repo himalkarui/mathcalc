@@ -11,7 +11,7 @@ export default function VerticalAds() {
 
     return (
         <>   {/* <!-- vertical ads --> */}
-            <div style={{ display: 'none' }}>
+            <div>
                 {/* <!-- mathcalc vertical ads --> */}
                 <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-client="ca-pub-7365466138029430"
                     data-ad-slot="1095146861" data-ad-format="auto" data-full-width-responsive="true"></ins>

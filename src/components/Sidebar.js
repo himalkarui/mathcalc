@@ -13,6 +13,12 @@ import DownloadIcon from '@material-ui/icons/YouTube';
 import { Home, Apps, AttachMoney, Functions, ScatterPlot, Accessibility } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        background:
+            'linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0, linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0, linear-gradient(315deg, #ECEDDC 25%, transparent 25%),linear-gradient(45deg, #ECEDDC 25%, transparent 25%)',
+        backgroundColor: '#ffff',
+        height: '100%',
+    },
     list: {
         width: 250,
         paddingRight: '10px'
@@ -39,7 +45,8 @@ const useStyles = makeStyles((theme) => ({
         color: '#fff',
         height: '30px !important',
         width: '30px !important',
-        background: 'linear-gradient(200deg, #dfd1d1, #bdbdcf,#98ba98, #d1b4b4)',
+        background: 'linear-gradient(200deg, #15c, #3273dc,#3298dc, #3f50b5)',
+        //'linear-gradient(200deg, #dfd1d1, #bdbdcf,#98ba98, #d1b4b4)',
     },
     logo: {
         width: 40,
@@ -84,7 +91,7 @@ const Sidebar = (props) => {
                 </div>
             </div> : <></>
             }
-            <List >
+            <List className={classes.root} >
                 {
                     urls.map(ur => {
                         return (<Link to={ur.url} style={{ textDecoration: 'none', color: 'inherit' }} key={ur.urlname}

@@ -33,7 +33,7 @@ export default function Loading() {
     const classes = useStyles();
     return (
         <div className={classes.root}>
-            <Grid container justify="center" style={{ height: '80vh' }} >
+            <Grid container justify="center" style={{ height: '96vh' }} >
                 <Grid item sm={false} md={4} lg={4} ></Grid>
                 <Grid item sm={false} md={4} lg={4} className={classes.loader} >
                     <div className="lds-ripple">

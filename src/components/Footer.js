@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import mclogo from '../Assets/images/mathcalcblack.png';
-import { Box, Grid, Chip, Icon, Avatar } from '@material-ui/core';
+import { Box, Grid, Chip } from '@material-ui/core';
 import VerticalAds from './VerticalAds';
-import FeedbackIcon from '@material-ui/icons/Feedback';
+// import FeedbackIcon from '@material-ui/icons/Feedback';
 import DownloadIcon from '@material-ui/icons/YouTube';
 import { Home, Apps, AttachMoney, Functions, ScatterPlot, Accessibility } from '@material-ui/icons';
 
@@ -25,6 +25,7 @@ import {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: '#fff',
+    marginTop: '3rem',
   },
   froot: {
     display: 'flex',
@@ -68,21 +69,21 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '3px'
   },
   link: {
-    color: 'white',
-    border: 'navajowhite',
+    border: 'none',
     height: '34px',
-    margin: '0px 15px 15px 0px',
+    margin: '9px',
     display: 'flex !important',
-    minWidth: '120px',
-    boxShadow: '0 0px 1px 2px #3273dc',
-    borderRadius: '50px',
-    backgroundColor: '#3273dc',
-    "&hover:": {
-      color: '#3298FF !important',
+    padding: '5px !important',
+    color: '#3f50b5',
+    transition: '0.9s',
+    boxShadow: '2px 2px 6px 0 rgb(34 25 25 / 40%)',
+    // backgroundColor: '#3273dc',
+    "&:hover": {
+      boxShadow: '2px 2px 12px 1px rgb(34 25 25 / 60%)',
     }
   },
   chips: {
-    padding: '5px 10px',
+    padding: '20px 10px',
     textAlign: "center"
   },
   icon: {
@@ -93,9 +94,13 @@ const useStyles = makeStyles((theme) => ({
     color: 'white'
   },
   share: {
-    margin: '3px',
-    "& a": {
-      boxShadow: '0 3px 4px rgb(0 0 0 / 40%)'
+    margin: '4px',
+    '& svg': {
+      borderRadius: '6px',
+      margin: '4px',
+      '& rect': {
+        borderRadius: '4px'
+      }
     }
   }
 }));
@@ -117,37 +122,34 @@ export default function Footer() {
     { url: '/files', urlname: 'Files', icon: null },
     { url: '/finance', urlname: 'Finance', icon: <AttachMoney className={classes.icon} /> },
     { url: '/physics', urlname: 'Physics', icon: <ScatterPlot className={classes.icon} /> },
-    { url: '/feedback', urlname: 'Feedback', icon: <FeedbackIcon className={classes.icon} /> },
+    // { url: '/feedback', urlname: 'Feedback', icon: <FeedbackIcon className={classes.icon} /> },
   ]
 
   return (
     <div className={classes.root}>
-      <hr style={{
-        height: '1px',
-        backgroundColor: '#00000012',
-      }} />
       <Grid container className={classes.chips}>
         <Grid item xs={12} sm={8} md={8} lg={8}>
           <Box>
             <h1 className="title is-5">Categories</h1>
-            <ul itemScope itemType="https://schema.org/SiteNavigationElement" style={{ justifyContent: 'center' }} style={{ padding: '0px' }} className={classes.divLinks}>
+            <ul itemScope itemType="https://schema.org/SiteNavigationElement"
+              style={{ justifyContent: 'center', padding: '0px' }} className={classes.divLinks}>
               {
                 urls.map((url, index) => {
                   return (
                     url.icon ? <li itemProp="name" key={index} >
                       <Chip key={index} color="primary"
                         variant="outlined"
-                        icon={url.icon}
+                        // icon={url.icon}
                         label={url.urlname} className={classes.link} component="a" href={url.url} clickable />
                     </li> :
                       <li itemProp="name" key={index} >
                         <Chip key={index} color="primary"
                           variant="outlined"
-                          avatar={<Avatar style={{ backgroundColor: '#3298dc', fontWeight: 'bolder' }} className={classes.icon}>
-                            {
-                              url.urlname.substring(0, 1)
-                            }
-                          </Avatar>}
+                          // avatar={<Avatar style={{ backgroundColor: '#3298dc', fontWeight: 'bolder' }} className={classes.icon}>
+                          //   {
+                          //     url.urlname.substring(0, 1)
+                          //   }
+                          // </Avatar>}
                           label={url.urlname} className={classes.link} component="a" href={url.url} clickable />
                       </li>
                   )
@@ -191,11 +193,7 @@ export default function Footer() {
           </Box>
         </Grid>
       </Grid >
-      <hr style={{
-        height: '1px',
-        backgroundColor: '#00000012',
-        margin: '0px'
-      }} />
+      <VerticalAds />
       <footer className={classes.froot} style={{ backgroundColor: '#f3f6fa' }}
         role="complementary" itemScope itemType="https://schema.org/WPFooter">
         <div className={classes.divLinks}>

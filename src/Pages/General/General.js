@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, CssBaseline, Container } from '@material-ui/core';
+import { Grid, CssBaseline, Container, Tooltip } from '@material-ui/core';
 import Compress from '../../Assets/icons/Compress';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
@@ -52,6 +52,7 @@ export default function General() {
         { urlname: 'Google adsense calculator', url: '/general/google-adsense-calculator/' },
         { urlname: 'CPC ROI Calculator', url: '/general/cpc-roi-calculator/' },
         { urlname: 'CPM Ads ROI Calculator', url: '/general/cpm-roi-calculator/' },
+        { urlname: 'Weekday of the date calculator', url: '/general/weekday/' },
     ];
     return (
         <div className={classes.root}>
@@ -81,11 +82,19 @@ export default function General() {
                         <div style={{ display: 'flex', flexWrap: 'wrap', padding: '0px', justifyContent: 'center' }}>
                             {
                                 arrUrls.map((val, i) => {
-                                    return <Link to={val.url} className={'divLink'} key={i}>
-                                        <Compress style={{
-                                            width: '30px',
-                                            margin: '0px 8px 0px 16px'
-                                        }} /> <span>{val.urlname}</span></Link>
+                                    return (
+                                        <>
+                                            <Tooltip  title={val.urlname}>
+                                                <Link to={val.url} className={'divLink'} key={i}>
+                                                    <Compress style={{
+                                                        width: '30px',
+                                                        margin: '0px 8px 0px 16px'
+                                                    }} />
+                                                    <span>{val.urlname}</span>
+                                                </Link>
+                                            </Tooltip>
+                                        </>
+                                    )
                                 })
 
                             }

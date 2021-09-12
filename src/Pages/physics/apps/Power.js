@@ -67,7 +67,7 @@ export default function Power() {
         result: null,
     })
 
-    const [calcs, setCalcs] = React.useState([
+    const calcs = [
         {
             urlname: "Power",
             urlpath: "/physics/power/"
@@ -107,8 +107,7 @@ export default function Power() {
         // "Centripetel acceleration",
         // "Efficiency",
         // "Frequency",
-        // "Pressure"
-    ]);
+    ];
 
     const onCalculate = () => {
         let work = state.work ? state.work : 0;

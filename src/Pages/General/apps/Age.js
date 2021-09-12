@@ -118,8 +118,8 @@ export default function Age() {
             </Backdrop>
             <Helmet>
                 <meta charSet="utf-8" />
-                <title>Age calculator - mathcalc</title>
-                <meta name="keywords" content="mathcalc, age calculator, free online calculator, free age calculator, age , age calculation" />
+                <title>Age calculator || How old am I today? || How old was i on ? - mathcalc</title>
+                <meta name="keywords" content="mathcalc,how old was i on , how old i am,  age calculator, free online calculator, free age calculator, age , age calculation" />
                 <meta name="description" content="Use Mathcalc age calculator for calculating the the difference between two dates online for free" />
                 <meta name="author" content="Mathcalc" />
                 <meta name="copyright" content="Mathcalc Inc. Copyright (c) 2021" />

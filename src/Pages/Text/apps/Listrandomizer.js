@@ -137,7 +137,6 @@ export default function Listrandomizer() {
             <Backdrop className={classes.backdrop} open={backDropopen}>
                 <CircularProgress color="inherit" />
             </Backdrop>
-
             <CustomSnakbar
                 open={snakOpen}
                 msg={snakMessage}
@@ -232,6 +231,24 @@ export default function Listrandomizer() {
                     </div>
                     <br />
                 </div>
+            </Container>
+            <Container>
+                <Typography variant="h5"> Why You Should Use a list randomizer ?</Typography>
+                <br />
+                <p>
+                    Now, if you're trying to come up with a list of random words yourself, you probably will find a pattern. Even subconsciously,
+                    the human mind is conditioned to look for and create things in a pattern or sequence.
+                    Unfortunately, this could negatively impact math problems you're working on or activities you have planned.
+                </p>
+                <br />
+                <p>
+                    To make sure it stays up to chance and that you don’t have any influence over this choice, we’ve created this handy random generator that can randomize a list for you. It’s simple to use. Just put in list of words and the generator will give you a randomized list
+                </p>
+                <br />
+                <Typography variant="h5">How To Use a list randomizer ?</Typography>
+                <br />
+                <p> The random list generator recognizes words and lines. just enter the list of words and lines and click randomize. it will randomize your input list and you can download it in a text file.
+                </p>
             </Container>
         </div >
     );

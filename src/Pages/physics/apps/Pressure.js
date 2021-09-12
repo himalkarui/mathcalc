@@ -63,7 +63,7 @@ export default function Pressure() {
         result: null,
     })
 
-    const [calcs, setCalcs] = React.useState([
+    const calcs = [
         {
             urlname: "Power",
             urlpath: "/physics/power/"
@@ -108,7 +108,7 @@ export default function Pressure() {
         // "Efficiency",
         // "Frequency",
         // "Pressure"
-    ]);
+    ];
 
     const onCalculate = () => {
         let force = state.force ? state.force : 0;

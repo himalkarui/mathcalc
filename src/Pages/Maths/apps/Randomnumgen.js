@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
     Button, Typography, Grid,
-    Backdrop, CircularProgress, Container, Card,
+    Container, Card,
 } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import SettingIcon from '@material-ui/icons/Settings';
@@ -10,7 +10,6 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import Helmet from 'react-helmet';
 import CustomSnakbar from '../../../Components/CustomSnakbar';
 import VerticalAds from '../../../Components/VerticalAds';
-import * as fileSave from "file-saver";
 import SubNavBar from '../../../Components/SubNavBar';
 
 const useStyles = makeStyles((theme) => ({
@@ -93,14 +92,8 @@ export default function Generatelistofnums() {
         setSnakMessage(null);
     };
 
-    const [backDropopen, SetBackDropopen] = React.useState(false);
-
     return (
         <div className={classes.root}>
-            <Backdrop className={classes.backdrop} open={backDropopen}>
-                <CircularProgress color="inherit" />
-            </Backdrop>
-
             <CustomSnakbar
                 open={snakOpen}
                 msg={snakMessage}
